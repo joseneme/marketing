@@ -1,0 +1,55 @@
+HA$PBExportHeader$dw_consulta_mantenimiento_cta.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=108 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="553648127"  height.autosize=yes)
+table(column=(type=char(2000) updatewhereclause=yes name=obsvst dbname="vtavstcli.obsvst" )
+ column=(type=char(2) updatewhereclause=yes name=estatus dbname="vtavstcli.estatus" initial="02" )
+ column=(type=char(40) updatewhereclause=yes name=nomect dbname="vtatabect.nomect" )
+ column=(type=char(40) updatewhereclause=yes name=nomcnt dbname="vtatabcntcli.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=carcnt dbname="vtatabcntcli.carcnt" )
+ column=(type=char(40) updatewhereclause=yes name=dsctipect dbname="vtatipect.dsctipect" )
+ column=(type=char(100) updatewhereclause=yes name=estado_seguimiento_descripcion dbname="estado_seguimiento.descripcion" )
+ column=(type=datetime updatewhereclause=yes name=fecusu dbname="vtavstcli.fecusu" )
+ retrieve="  SELECT ~"VTAVSTCLI~".~"OBSVST~" OBSVST,   
+         ~"VTAVSTCLI~".~"ESTATUS~" ESTATUS,   
+         ~"VTATABECT~".~"NOMECT~" NOMECT,   
+         ~"VTATABCNTCLI~".~"NOMCNT~" NOMCNT,   
+         ~"VTATABCNTCLI~".~"CARCNT~" CARCNT,
+         ~"VTATIPECT~".~"DSCTIPECT~" DSCTIPECT,
+			~"ESTADO_SEGUIMIENTO~".~"DESCRIPCION~" DESCRIPCION,
+         ~"VTAVSTCLI~".~"FECUSU~" FECUSU
+    FROM ~"VTAVSTCLI~",   
+         ~"VTATABCNTCLI~" ,
+			~"VTATABECT~",
+			~"ESTADO_SEGUIMIENTO~",
+			~"VTATIPECT~"   
+   WHERE ( vtatipect.tipect = 14) and
+         ( vtavstcli.codcli = vtatabcntcli.codcli (+)) and
+			( estado_seguimiento.codest = vtavstcli.estatus) and  
+         ( vtavstcli.codcnt = vtatabcntcli.codcnt (+)) and  
+         ( vtavstcli.codcnt = vtatabcntcli.codcnt (+)) and  
+			( vtavstcli.codect = vtatabect.codect ) and
+			( vtatabect.tipect = vtatipect.tipect (+)) and
+         ( ( ~"VTAVSTCLI~".~"CODCLI~" = :as_codcli ) ) 
+   ORDER BY vtavstcli.fecusu desc" arguments=(("as_codcli", string)) )
+text(band=header alignment="2" text="Tipo de Ejecutivo" border="0" color="0" x="398" y="8" height="96" width="544" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="N$$HEX1$$b000$$ENDHEX$$" border="0" color="0" x="9" y="8" height="96" width="137" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Contacto" border="0" color="0" x="2011" y="8" height="96" width="517" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo" border="0" color="0" x="2537" y="8" height="96" width="521" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Observaciones" border="0" color="0" x="3067" y="8" height="96" width="1458" html.valueishtml="0"  name=vtavstcli_obsvst_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fecha Generado" border="0" color="0" x="155" y="8" height="96" width="233" html.valueishtml="0"  name=obj_28139502 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ejecutivo Cuenta" border="0" color="0" x="951" y="8" height="96" width="448" html.valueishtml="0"  name=obj_2923620 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="0" color="0" x="1408" y="8" height="96" width="594" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="137" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2011" y="4" height="56" width="517" format="[general]" html.valueishtml="0"  name=nomcnt visible="1" height.autosize=yes edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2537" y="4" height="56" width="521" format="[general]" html.valueishtml="0"  name=carcnt visible="1" height.autosize=yes edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="3067" y="4" height="56" width="1458" format="[general]" html.valueishtml="0"  name=obsvst visible="1" height.autosize=yes edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0 edit.vscrollbar=yes edit.displayonly=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="398" y="4" height="56" width="544" format="[general]" html.valueishtml="0"  name=dsctipect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="155" y="4" height="56" width="233" format="[shortdate] [time]" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="951" y="4" height="56" width="448" format="[general]" html.valueishtml="0"  name=nomect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1408" y="4" height="56" width="594" format="[general]" html.valueishtml="0"  name=estado_seguimiento_descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

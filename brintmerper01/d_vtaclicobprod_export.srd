@@ -1,0 +1,114 @@
+HA$PBExportHeader$d_vtaclicobprod_export.srd
+$PBExportComments$empleado para exportar a excel-edwin
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=124 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtaclicobprod.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(50) updatewhereclause=yes name=estado dbname="cliestado.estado" )
+ column=(type=char(3) updatewhereclause=yes name=tipdide dbname="vtatabcli.tipdide" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(120) updatewhereclause=yes name=dircli dbname="vtaclicobprod.dircli" )
+ column=(type=char(10) updatewhereclause=yes name=codubi dbname="vtaclicobprod.codubi" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="vtatabdst.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=segmento dbname="vtatabseg.segmento" )
+ column=(type=char(60) updatewhereclause=yes name=consultor dbname="vtatabect.consultor" )
+ column=(type=char(1) updatewhereclause=yes name=flgventa dbname="vtaclicobprod.flgventa" )
+ column=(type=decimal(0) updatewhereclause=yes name=producto dbname="vtaclicobprod.producto" )
+ column=(type=char(50) updatewhereclause=yes name=obsventa dbname="vtaclicobprod.obsventa" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_diasinstal dbname="vtaclicobprod.diasinstal" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_codlead dbname="vtaclicobprod.codlead" )
+ column=(type=char(40) updatewhereclause=yes name=vm_contacto_nomcnt dbname="vm_contacto.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=vm_contacto_carcnt dbname="vm_contacto.carcnt" )
+ column=(type=char(50) updatewhereclause=yes name=vm_medio_numcomcli dbname="vm_medio.numcomcli" )
+ retrieve="SELECT A.CODCLI,
+B.NOMCLI, 
+F.DESCRIPCION ESTADO,
+B.TIPDIDE,   
+B.NTDIDE,   
+A.DIRCLI,   
+A.CODUBI,   
+C.NOMDST,   
+D.DSCSEG SEGMENTO,         
+E.NOMECT CONSULTOR,            
+A.FLGVENTA,   
+A.CODPRODLEAD PRODUCTO,
+A.OBSVENTA,   
+A.DIASINSTAL,         
+A.CODLEAD,
+G.NOMCNT,
+G.CARCNT,
+H.NUMCOMCLI
+FROM VTACLICOBPROD	A,   
+     VTATABCLI	B,
+     VTATABDST	C,
+	 VTATABSEG  D,
+ 	 VTATABECT	E,
+	 CLIESTADO	F,
+	 VM_CONTACTO G,
+	 VM_MEDIO H
+WHERE ( A.CODCLI = B.CODCLI ) and
+         ( A.CODUBI = C.CODUBI ) AND
+		 (B.IDESTADO = F.IDESTADO(+))  AND
+         B.codseg =D.codseg and
+			B.codect=E.codect AND
+	      G.CODCLI(+)=A.CODCLI AND
+      H.CODCLI(+)=A.CODCLI AND
+A.CODLEAD = :acodlead 
+ORDER BY A.CODCLI	  " arguments=(("acodlead", number)) )
+text(band=header alignment="2" text="A
+Codcli" border="0" color="0" x="9" y="8" height="112" width="247"  name=codcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="B
+Nomcli" border="0" color="0" x="265" y="8" height="112" width="3511"  name=nomcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="B
+Tipdide" border="0" color="0" x="3790" y="8" height="112" width="187"  name=tipdide_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="B
+Ntdide" border="0" color="0" x="3986" y="8" height="112" width="439"  name=ntdide_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Dircli" border="0" color="0" x="4434" y="8" height="112" width="3319"  name=dircli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Codubi" border="0" color="0" x="7762" y="8" height="112" width="302"  name=codubi_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="C
+Nomdst" border="0" color="0" x="8073" y="8" height="112" width="1125"  name=nomdst_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="D
+Segmento" border="0" color="0" x="9207" y="8" height="112" width="1125"  name=segmento_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="E
+Consultor" border="0" color="0" x="10341" y="8" height="112" width="1125"  name=consultor_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Flgventa" border="0" color="0" x="11474" y="8" height="112" width="219"  name=flgventa_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Producto" border="0" color="0" x="11703" y="8" height="112" width="329"  name=producto_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Obsventa" border="0" color="0" x="12041" y="8" height="112" width="1399"  name=obsventa_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Diasinstal" border="0" color="0" x="13449" y="8" height="112" width="329"  name=diasinstal_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="A
+Codlead" border="0" color="0" x="13787" y="8" height="112" width="329"  name=codlead_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="G
+Juridicos" border="0" color="0" x="14126" y="8" height="112" width="1125"  name=juridicos_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="8" height="76" width="247" format="[general]"  name=codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="265" y="8" height="76" width="3511" format="[general]"  name=nomcli edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="3790" y="8" height="76" width="187" format="[general]"  name=tipdide edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="3986" y="8" height="76" width="439" format="[general]"  name=ntdide edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="4434" y="8" height="76" width="3319" format="[general]"  name=dircli edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="7762" y="8" height="76" width="302" format="[general]"  name=codubi edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="8073" y="8" height="76" width="1125" format="[general]"  name=nomdst edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="9207" y="8" height="76" width="1125" format="[general]"  name=segmento edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="10341" y="8" height="76" width="1125" format="[general]"  name=consultor edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="11474" y="8" height="76" width="219" format="[general]"  name=flgventa edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="0" color="0" x="11703" y="8" height="76" width="329" format="[general]"  name=producto edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="12041" y="8" height="76" width="1399" format="[general]"  name=obsventa edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=32766 border="0" color="0" x="13449" y="8" height="76" width="329" format="[general]"  name=a_diasinstal edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="1" tabsequence=32766 border="0" color="0" x="13787" y="8" height="76" width="329" format="[general]"  name=a_codlead edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="14126" y="8" height="76" width="1125" format="[general]"  name=contacto edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=0 border="0" color="0" x="15264" y="0" height="56" width="910"  name=vm_contacto_nomcnt  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Vm Contacto Nomcnt" border="0" color="0" x="15259" y="4" height="76" width="914"  name=t_2  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="0" tabsequence=0 border="0" color="0" x="16187" y="0" height="56" width="910"  name=vm_contacto_carcnt  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Vm Contacto Carcnt" border="0" color="0" x="16183" y="4" height="76" width="914"  name=t_3  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=0 border="0" color="0" x="17111" y="0" height="56" width="1143"  name=vm_medio_numcomcli  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Vm Medio Numcomcli" border="0" color="0" x="17106" y="4" height="76" width="1147"  name=t_4  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

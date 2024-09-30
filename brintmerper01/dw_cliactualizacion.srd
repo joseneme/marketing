@@ -1,0 +1,20 @@
+HA$PBExportHeader$dw_cliactualizacion.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=80269524 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no row.resize=1 grid.lines=1 grid.columnmove=no selected.mouse=no )
+header(height=4 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=36 color="536870912" )
+table(column=(type=char(50) updatewhereclause=yes name=tipoactualizacion_descripcion dbname="tipoactualizacion.descripcion" )
+ column=(type=datetime updatewhereclause=yes name=clienteactualizacion_fecha dbname="clienteactualizacion.fecha" )
+ retrieve="SELECT a.DESCRIPCION, b.fecha
+    FROM TIPOACTUALIZACION a,   
+         CLIENTEACTUALIZACION b
+   WHERE a.idtipact = b.idtipact and  
+         b.CODCLI = :as_codcli
+   order by b.fecha desc  
+" arguments=(("as_codcli", string)) )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="0" height="48" width="366" format="[general]" html.valueishtml="0"  name=tipoactualizacion_descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="384" y="0" height="48" width="398" format="[shortdate] [time]" html.valueishtml="0"  name=clienteactualizacion_fecha visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

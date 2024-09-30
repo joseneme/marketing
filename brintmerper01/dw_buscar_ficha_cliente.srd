@@ -1,0 +1,112 @@
+HA$PBExportHeader$dw_buscar_ficha_cliente.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no row.resize=1 grid.lines=0 selected.mouse=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(10) updatewhereclause=yes name=abrdid dbname="vtatipdid.abrdid" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(60) updatewhereclause=yes name=nomect dbname="vtatabect.nomect" )
+ column=(type=char(8) updatewhereclause=yes name=codect dbname="vtatabect.codect" )
+ column=(type=char(10) updatewhereclause=yes name=codubi dbname="vtatabcli.codubi" )
+ column=(type=char(3) updatewhereclause=yes name=tipdide dbname="vtatabcli.tipdide" )
+ column=(type=char(120) updatewhereclause=yes name=dircli dbname="vtatabcli.dircli" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_tipvia dbname="vtatabcli.tipvia" )
+ column=(type=char(60) updatewhereclause=yes name=nomvia dbname="vtatabcli.nomvia" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nombre dbname="vtatabcli.nombre" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabcli_apepat dbname="vtatabcli.apepat" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabcli_apmat dbname="vtatabcli.apmat" )
+ column=(type=char(50) updatewhereclause=yes name=numvia dbname="vtatabcli.numvia" )
+ column=(type=char(50) updatewhereclause=yes name=nomurb dbname="vtatabcli.nomurb" )
+ column=(type=char(40) updatewhereclause=yes name=interior dbname="vtatabcli.interior" )
+ column=(type=char(2) updatewhereclause=yes name=tipviap dbname="vtatabcli.tipviap" )
+ column=(type=char(200) updatewhereclause=yes name=vtatabcli_referencia dbname="vtatabcli.referencia" )
+ column=(type=decimal(0) updatewhereclause=yes name=idinmueble dbname="vtatabcli.idinmueble" )
+ column=(type=decimal(0) updatewhereclause=yes name=flg_usuario dbname="vtatabcli.flg_usuario" )
+ column=(type=decimal(0) updatewhereclause=yes name=flg_actual dbname="vtatabcli.flg_actual" )
+ column=(type=decimal(0) updatewhereclause=yes name=flg_prospecto dbname="vtatabcli.flg_prospecto" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide_comp dbname="vtatabcli.ntdide_comp" )
+ column=(type=char(20) updatewhereclause=yes name=codpos dbname="vtatabcli.codpos" )
+ column=(type=char(40) updatewhereclause=yes name=v_ubicaciones_nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(163) updatewhereclause=yes name=direccion dbname="direccion" )
+ column=(type=char(8) updatewhereclause=yes name=codclipadre dbname="vtatabcli.codclipadre" )
+ column=(type=decimal(0) updatewhereclause=yes name=tipo_entidad dbname="vtatabcli.tipo_entidad" values="Cliente	1/Sucursal	2/" )
+ column=(type=decimal(0) updatewhereclause=yes name=codsecmark dbname="vtatabcli.codsecmark" )
+ column=(type=decimal(0) updatewhereclause=yes name=codsegmark dbname="vtatabcli.codsegmark" )
+ column=(type=char(3) updatewhereclause=yes name=codgirmark dbname="vtatabcli.codgirmark" )
+ column=(type=decimal(0) updatewhereclause=yes name=idestado dbname="vtatabcli.idestado" )
+ column=(type=decimal(0) updatewhereclause=yes name=idficha dbname="vtatabficha.idficha" )
+ retrieve="  SELECT vtatabcli.codcli,   
+         vtatabcli.nomcli,
+		   vtatabcli.nomabr,
+         vtatipdid.abrdid,   
+         vtatabcli.ntdide,   
+         vtatabect.nomect,   
+         vtatabect.codect,
+         VTATABCLI.CODUBI,   
+         VTATABCLI.TIPDIDE,   
+         VTATABCLI.DIRCLI,   
+         VTATABCLI.TIPVIA,   
+         VTATABCLI.NOMVIA,   
+         VTATABCLI.NOMBRE,   
+         VTATABCLI.APEPAT,   
+         VTATABCLI.APMAT,   
+         VTATABCLI.NUMVIA,   
+         VTATABCLI.NOMURB,   
+         VTATABCLI.INTERIOR,   
+         VTATABCLI.TIPVIAP,   
+         VTATABCLI.REFERENCIA,   
+         VTATABCLI.IDINMUEBLE,
+		   VTATABCLI.FLG_USUARIO,
+			VTATABCLI.FLG_ACTUAL,
+			VTATABCLI.FLG_PROSPECTO,
+         vtatabcli.ntdide_comp,
+			vtatabcli.codpos,
+			v_ubicaciones.nomdst,
+			VTATABCLI.DIRCLI || ' - ' || v_ubicaciones.nomdst as direccion,
+			vtatabcli.codclipadre,
+			vtatabcli.tipo_entidad,
+			vtatabcli.codsecmark,
+			vtatabcli.codsegmark,
+			vtatabcli.codgirmark,
+			vtatabcli.idestado,
+         vtatabficha.idficha
+    FROM vtatabcli,   
+         vtatabect,   
+         vtatipdid,
+			v_ubicaciones,
+         vtatabficha  
+   WHERE  
+			(vtatabcli.idestado = 1 or vtatabcli.idestado is null) and
+			( vtatipdid.tipdide (+) = vtatabcli.tipdide) and  
+         ( vtatabect.codect (+) = vtatabcli.codect) and
+         ( vtatabcli.codcli = vtatabficha.codcli) and
+			( v_ubicaciones.codubi (+) = vtatabcli.codubi) " )
+text(band=header alignment="2" text="Tip.Doc." border="6" color="0" x="5568" y="8" height="56" width="251" html.valueishtml="0"  name=vtatipdid_abrdid_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Identificaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="5829" y="8" height="56" width="421" html.valueishtml="0"  name=vtatabcli_ntdide_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ejecutivo" border="6" color="0" x="4535" y="8" height="56" width="1024" html.valueishtml="0"  name=nomect_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Comp" border="6" color="0" x="6258" y="8" height="56" width="334" html.valueishtml="0"  name=ntdide_comp_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="#" border="6" color="0" x="9" y="8" height="56" width="146" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Entidad" border="6" color="0" x="521" y="8" height="56" width="311" html.valueishtml="0"  name=tipo_entidad_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="841" y="8" height="56" width="370" html.valueishtml="0"  name=idestado_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="6" color="0" x="1221" y="8" height="56" width="247" html.valueishtml="0"  name=codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre" border="6" color="0" x="1477" y="4" height="56" width="1321" html.valueishtml="0"  name=nomcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="2807" y="8" height="56" width="1719" html.valueishtml="0"  name=direccion_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ficha" border="6" color="0" x="165" y="8" height="56" width="347" html.valueishtml="0"  name=idficha_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="5568" y="4" height="56" width="251" format="[general]" html.valueishtml="0"  name=abrdid visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="5829" y="4" height="56" width="421" format="[general]~tf_str_mascara_ntdide( tipdide )" html.valueishtml="0"  name=ntdide visible="1" edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="6258" y="4" height="56" width="334" format="[general]~tf_str_mascara_ntdide_comp()" html.valueishtml="0"  name=ntdide_comp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4535" y="4" height="56" width="1024" format="[general]" html.valueishtml="0"  name=nomect visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1477" y="4" height="56" width="1321" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="0" color="0" x="2807" y="4" height="56" width="1719" format="[general]" html.valueishtml="0"  name=direccion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="getrow()"border="6" color="0" x="9" y="4" height="56" width="146" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="1221" y="4" height="56" width="247" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=30 alignment="0" tabsequence=32766 border="0" color="0" x="521" y="4" height="56" width="311" format="[general]" html.valueishtml="0"  name=tipo_entidad visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="0" color="0" x="841" y="4" height="56" width="370" format="[general]" html.valueishtml="0"  name=idestado visible="1" dddw.name=dddw_estado_cliente dddw.displaycolumn=descripcion dddw.datacolumn=idestado dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=35 alignment="0" tabsequence=32766 border="0" color="0" x="165" y="4" height="56" width="347" format="[general]" html.valueishtml="0"  name=idficha  tag="" visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

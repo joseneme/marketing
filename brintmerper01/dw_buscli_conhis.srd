@@ -1,0 +1,38 @@
+HA$PBExportHeader$dw_buscli_conhis.srd
+$PBExportComments$original de sigconhis01.pbl
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes key=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(3) updatewhereclause=yes name=tipdide dbname="vtatabcli.tipdide" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(150) updatewhereclause=yes name=nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(2) updatewhereclause=yes name=selcli dbname="vtatabcli.tipcli" values="	1/	0" )
+ retrieve="  SELECT ~"A~".~"CODCLI~",   
+         ~"A~".~"NOMCLI~",   
+         ~"A~".~"TIPDIDE~",   
+         ~"A~".~"NTDIDE~",   
+         ~"A~".~"NOMABR~",   
+         ~"A~".~"TIPCLI~"  
+    FROM ~"VTATABCLI~" ~"A~"   
+" update="VTATABCLI" updatewhere=0 updatekeyinplace=no )
+text(band=header alignment="2" text="N$$HEX1$$b000$$ENDHEX$$" border="0" color="0" x="9" y="8" height="56" width="146" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="0" color="0" x="443" y="8" height="56" width="238" html.valueishtml="0"  name=codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="TipDoc" border="0" color="0" x="690" y="8" height="56" width="146" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="N$$HEX2$$b0002000$$ENDHEX$$Doc." border="0" color="0" x="846" y="8" height="56" width="242" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre" border="0" color="0" x="1097" y="8" height="56" width="1221" html.valueishtml="0"  name=nomcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Abreviado" border="0" color="0" x="2327" y="8" height="56" width="1097" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Seleccionar" border="0" color="0" x="165" y="8" height="56" width="270" html.valueishtml="0"  name=obj_185913980 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="146" format="" html.valueishtml="0"  name=obj_30658224 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1097" y="4" height="56" width="1221" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="0" x="846" y="4" height="56" width="242" format="[general]" html.valueishtml="0"  name=ntdide visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="0" x="690" y="4" height="56" width="146" format="[general]" html.valueishtml="0"  name=tipdide visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="443" y="4" height="56" width="238" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2327" y="4" height="56" width="1097" format="[general]" html.valueishtml="0"  name=nomabr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="2" tabsequence=10 border="0" color="0" x="165" y="4" height="56" width="270" format="[general]" html.valueishtml="0"  name=selcli visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=yes checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
