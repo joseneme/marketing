@@ -1,0 +1,62 @@
+HA$PBExportHeader$dw_tabpspcli_cli01.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=324 color="536870912" )
+table(column=(type=char(10) updatewhereclause=yes name=numpsp dbname="vtatabpspcli_v.numpsp" )
+ column=(type=datetime updatewhereclause=yes name=fecpsp dbname="vtatabpspcli_v.fecpsp" )
+ column=(type=char(2) updatewhereclause=yes name=estpspcli dbname="vtatabpspcli_v.estpspcli" )
+ column=(type=char(80) updatewhereclause=yes name=estado_oc dbname="estado_oc" )
+ column=(type=char(10) updatewhereclause=yes name=numslc dbname="vtatabpspcli_v.numslc" )
+ column=(type=char(2) updatewhereclause=yes name=idopc dbname="vtatabpspcli_v.idopc" )
+ column=(type=char(8) updatewhereclause=yes name=codsol dbname="vtatabslcfac.codsol" )
+ column=(type=char(60) updatewhereclause=yes name=nomect dbname="vtatabect.nomect" )
+ column=(type=char(4) updatewhereclause=yes name=tipsrv dbname="vtatabslcfac.tipsrv" )
+ column=(type=char(50) updatewhereclause=yes name=dsctipsrv dbname="tystipsrv.dsctipsrv" )
+ column=(type=datetime updatewhereclause=yes name=fecapr dbname="vtatabpspcli_v.fecapr" )
+ column=(type=datetime updatewhereclause=yes name=fecestcom dbname="vtatabslcfac.fecestcom" )
+ column=(type=char(100) updatewhereclause=yes name=desc_solucion dbname="desc_solucion" )
+ retrieve="select a.numpsp, 
+	    a.fecpsp, 
+	    a.estpspcli,
+       (select desest from vtaestado where tabest = '01' and codest = a.estpspcli) Estado_OC,
+	    a.numslc, 
+	    a.idopc, 
+	    b.codsol,
+		 d.nomect,
+	    b.tipsrv,
+		 c.dsctipsrv,
+		 a.fecapr,
+       b.fecestcom,
+       (select solucion from soluciones where idsolucion = b.idsolucion) Desc_solucion			
+from  vtatabpspcli_v a,
+	   vtatabslcfac b,
+	   tystipsrv c,
+	   vtatabect d
+where b.codcli = :as_codcli	and
+	   a.numslc = b.numslc and
+	   b.tipsrv = c.tipsrv and
+	   b.codsol = d.codect
+order by a.numslc desc" arguments=(("as_codcli", string)) )
+compute(band=detail alignment="2" expression="getrow()"border="6" color="0" x="18" y="8" height="56" width="192" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+line(band=detail x1="18" y1="312" x2="3122" y2="312"  name=l_1 visible="1" pen.style="0" pen.width="9" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="2" tabsequence=32766 border="0" color="0" x="1129" y="84" height="56" width="128" format="[general]" html.valueishtml="0"  name=idopc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="N$$HEX1$$fa00$$ENDHEX$$mero Proyecto: " border="0" color="8388608" x="242" y="8" height="56" width="503" html.valueishtml="0"  name=numslc_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="N$$HEX1$$fa00$$ENDHEX$$mero Presupuesto: " border="0" color="0" x="242" y="84" height="56" width="503" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Fecha Generaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="242" y="160" height="56" width="503" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Fecha Aprobaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="242" y="236" height="56" width="503" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="777" y="84" height="56" width="329" format="[general]" html.valueishtml="0"  name=numpsp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Soluci$$HEX1$$f300$$ENDHEX$$n:" border="0" color="0" x="1582" y="8" height="56" width="343" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Consultor:" border="0" color="0" x="1582" y="156" height="56" width="343" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Estado OC" border="0" color="0" x="1582" y="232" height="56" width="343" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Familia de Prod." border="0" color="0" x="1582" y="84" height="56" width="343" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="1952" y="84" height="56" width="1083" format="[general]" html.valueishtml="0"  name=dsctipsrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=0 border="0" color="0" x="1952" y="8" height="56" width="1083" html.valueishtml="0"  name=desc_solucion visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="1952" y="160" height="56" width="1083" format="[general]" html.valueishtml="0"  name=nomect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1952" y="236" height="56" width="1083" format="[general]" html.valueishtml="0"  name=estado_oc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="777" y="232" height="56" width="480" format="dd/mm/yyyy hh:mm am/pm" html.valueishtml="0"  name=fecapr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=0 border="0" color="0" x="777" y="160" height="56" width="480" format="dd/mm/yyyy hh:mm am/pm" html.valueishtml="0"  name=fecestcom visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="8388608" x="777" y="8" height="56" width="480" format="[general]" html.valueishtml="0"  name=numslc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
