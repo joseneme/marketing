@@ -1,0 +1,52 @@
+HA$PBExportHeader$dw_rep_servicio.srd
+$PBExportComments$d_lis_tystabsrvgral_br~r~nmodtys
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=124 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(5) updatewhereclause=yes name=codsrv dbname="tystabsrv.codsrv" )
+ column=(type=char(4) updatewhereclause=yes name=tipsrv dbname="tystabsrv.tipsrv" initial="0000" )
+ column=(type=char(50) updatewhereclause=yes name=dscsrv dbname="tystabsrv.dscsrv" )
+ column=(type=char(1) updatewhereclause=yes name=estado dbname="tystabsrv.estado" initial="1" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=banwid dbname="tystabsrv.banwid" )
+ column=(type=char(10) updatewhereclause=yes name=codsercor dbname="tystabsrv.codsercor" )
+ column=(type=decimal(0) updatewhereclause=yes name=idproducto dbname="tystabsrv.idproducto" )
+ column=(type=decimal(0) updatewhereclause=yes name=idcategoria dbname="tystabsrv.idcategoria" )
+ column=(type=decimal(0) updatewhereclause=yes name=iddegrado dbname="tystabsrv.iddegrado" )
+ column=(type=char(8) updatewhereclause=yes name=codcon dbname="tystabsrv.codcon" initial="00000000" )
+ column=(type=char(100) updatewhereclause=yes name=descripcionprod dbname="producto.descripcion" )
+ retrieve="  SELECT A.CODSRV,   
+         A.TIPSRV,   
+         A.DSCSRV,   
+         A.ESTADO,   
+         A.BANWID,   
+         A.CODSERCOR,   
+         A.IDPRODUCTO,   
+         A.IDCATEGORIA,   
+         A.IDDEGRADO,   
+         A.CODCON,   
+         PRODUCTO.DESCRIPCION  
+    FROM TYSTABSRV A,   
+         PRODUCTO  
+   WHERE ( A.IDPRODUCTO = PRODUCTO.IDPRODUCTO )    
+" filter=" estado = '1'")
+text(band=header alignment="2" text="Item" border="6" color="0" x="9" y="4" height="112" width="165" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79741120" )
+text(band=header alignment="2" text="Servicios" border="6" color="0" x="2482" y="4" height="112" width="1765" html.valueishtml="0"  name=dsctipsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79741120" )
+text(band=header alignment="0" text="Estado" border="6" color="0" x="4256" y="4" height="112" width="174" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79741120" )
+text(band=header alignment="2" text="Codigo" border="6" color="0" x="183" y="4" height="112" width="197" html.valueishtml="0"  name=codsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Familia de Servicios" border="6" color="0" x="389" y="4" height="112" width="1230" html.valueishtml="0"  name=tipsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Grupo de Servicios" border="6" color="0" x="1627" y="4" height="112" width="846" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="165" format="0000" html.valueishtml="0"  name=obj_8969048 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="6478" y="8" height="56" width="480" format="[general]" html.valueishtml="0"  name=codsercor_1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="183" y="4" height="56" width="197" format="[general]" html.valueishtml="0"  name=codsrv  tag="" visible="1" edit.limit=4 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="389" y="4" height="56" width="1230" format="[general]" html.valueishtml="0"  name=tipsrv  tag="servicio" visible="1" dddw.name=dddw_tipsrv_br dddw.displaycolumn=dsctipsrv dddw.datacolumn=tipsrv dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="2482" y="4" height="56" width="1765" format="[general]" html.valueishtml="0"  name=dscsrv  tag="descripcion" visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="0" x="4256" y="4" height="56" width="174" format="" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=yes checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4439" y="4" height="56" width="2030" format="[general]" html.valueishtml="0"  name=codsercor visible="1" dddw.name=dddw_productocorp_br dddw.displaycolumn=dscsercor dddw.datacolumn=codsercor dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1627" y="0" height="56" width="846" format="[general]" html.valueishtml="0"  name=idproducto visible="1" dddw.name=dddw_idproducto_br dddw.displaycolumn=descripcion dddw.datacolumn=idproducto dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Servicio Corporativo" border="6" color="0" x="4439" y="4" height="112" width="2030" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo Servicio Corporativo" border="6" color="0" x="6478" y="4" height="112" width="480" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

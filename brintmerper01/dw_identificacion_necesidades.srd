@@ -1,0 +1,22 @@
+HA$PBExportHeader$dw_identificacion_necesidades.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=140 color="536870912" )
+table(column=(type=char(30) updatewhereclause=yes name=dscestneg dbname="estado_negocio.dscestneg" )
+ column=(type=char(8) updatewhereclause=yes name=vtatabficha_codcli dbname="vtatabficha.codcli" )
+ column=(type=decimal(0) updatewhereclause=yes name=idficha dbname="vtatabficha.idficha" )
+ retrieve="select b.dscestneg, a.codcli, a.idficha 
+from vtatabficha a, ESTADO_NEGOCIO b
+where a.idestneg = b.idestneg
+and a.codcli = :as_codcli
+and a.IDFICHA = :an_idfic 	
+	" arguments=(("as_codcli", string),("an_idfic", number)) )
+text(band=detail alignment="0" text="Estado Negocio:" border="2" color="0" x="37" y="88" height="44" width="416" html.valueishtml="0"  name=estado_negocio_dscestneg_t visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="2" color="33554432" x="457" y="88" height="44" width="1102" format="[general]" html.valueishtml="0"  name=dscestneg visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="III. Identificaci$$HEX1$$f300$$ENDHEX$$n de Necesidades del Cliente" border="2" color="0" x="37" y="40" height="44" width="4457" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217729" )
+text(band=detail alignment="0" text="Observaciones : " border="2" color="0" x="1563" y="88" height="44" width="357" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="" border="2" color="0" x="1925" y="88" height="44" width="2569" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

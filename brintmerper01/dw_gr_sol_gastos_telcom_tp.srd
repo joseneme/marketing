@@ -1,0 +1,53 @@
+HA$PBExportHeader$dw_gr_sol_gastos_telcom_tp.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no row.resize=1 grid.lines=0 selected.mouse=no )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=idsol dbname="sol_gastos_telcom.idsol" )
+ column=(type=char(8) updatewhereclause=yes name=codcli dbname="sol_gastos_telcom.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(2) updatewhereclause=yes name=idestado dbname="sol_gastos_telcom.idestado" )
+ column=(type=char(200) updatewhereclause=yes name=observacion dbname="sol_gastos_telcom.observacion" )
+ column=(type=char(50) updatewhereclause=yes name=codusu dbname="sol_gastos_telcom.codusu" )
+ column=(type=datetime updatewhereclause=yes name=fecusu dbname="sol_gastos_telcom.fecusu" )
+ column=(type=char(8) updatewhereclause=yes name=codect dbname="sol_gastos_telcom.codect" )
+ retrieve="SELECT ~"SOL_GASTOS_TELCOM~".~"IDSOL~",
+       ~"SOL_GASTOS_TELCOM~".~"CODCLI~",
+       ~"VTATABCLI~".~"NOMCLI~",
+       ~"SOL_GASTOS_TELCOM~".~"IDESTADO~",
+       ~"SOL_GASTOS_TELCOM~".~"OBSERVACION~",
+       ~"SOL_GASTOS_TELCOM~".~"CODUSU~",
+       ~"SOL_GASTOS_TELCOM~".~"FECUSU~",
+       ~"SOL_GASTOS_TELCOM~".~"CODECT~"
+FROM ~"SOL_GASTOS_TELCOM~",
+     ~"VTATABCLI~",
+	  ~"VTATABUSUECT~",
+     ~"VTATABECT~"
+WHERE ~"SOL_GASTOS_TELCOM~".~"CODCLI~" = ~"VTATABCLI~".~"CODCLI~"  and
+      ~"SOL_GASTOS_TELCOM~".~"IDESTADO~" = '01' AND
+      ~"SOL_GASTOS_TELCOM~".~"CODECT~" =  ~"VTATABECT~".~"CODECT~"  and
+      ~"VTATABECT~".~"CODECT~" = ~"VTATABUSUECT~".~"CODECT~"  and 
+      ~"SOL_GASTOS_TELCOM~".~"TIPGP~" = 2 and
+      ~"VTATABUSUECT~".~"USUARIO~" = user     
+" )
+text(band=header alignment="2" text="Observacion" border="6" color="0" x="3058" y="4" height="56" width="1504" html.valueishtml="0"  name=sol_gastos_telcom_observacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Usuario" border="6" color="0" x="4571" y="4" height="56" width="448" html.valueishtml="0"  name=sol_gastos_telcom_codusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fecha" border="6" color="0" x="5029" y="4" height="56" width="393" html.valueishtml="0"  name=sol_gastos_telcom_fecusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Solicitud" border="6" color="0" x="119" y="4" height="56" width="288" html.valueishtml="0"  name=sol_gastos_telcom_idsol_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Codigo" border="6" color="0" x="416" y="4" height="56" width="320" html.valueishtml="0"  name=sol_gastos_telcom_codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Nombre" border="6" color="0" x="745" y="4" height="56" width="1006" html.valueishtml="0"  name=vtatabcli_nomcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ejecutivo" border="6" color="0" x="1760" y="4" height="56" width="590" html.valueishtml="0"  name=sol_gastos_telcom_codect_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="2359" y="4" height="56" width="690" html.valueishtml="0"  name=estado visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="8" height="56" width="101" format="[GENERAL]" html.valueishtml="0"  name=fila visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="119" y="0" height="56" width="288" format="[general]" html.valueishtml="0"  name=idsol visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="416" y="0" height="56" width="320" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="745" y="0" height="56" width="1006" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="1760" y="0" height="56" width="590" format="[general]" html.valueishtml="0"  name=codect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2359" y="0" height="56" width="690" format="[general]" html.valueishtml="0"  name=idestado visible="1" dddw.name=dddw_estado_gp dddw.displaycolumn=desest dddw.datacolumn=codest dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3058" y="0" height="56" width="1504" format="[general]" html.valueishtml="0"  name=observacion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4571" y="0" height="56" width="448" format="[general]" html.valueishtml="0"  name=codusu visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="5029" y="0" height="56" width="393" format="[shortdate] [time]" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
