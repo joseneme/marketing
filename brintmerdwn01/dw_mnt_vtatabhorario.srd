@@ -1,0 +1,41 @@
+HA$PBExportHeader$dw_mnt_vtatabhorario.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912"  height.autosize=yes)
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idhorario dbname="vtatabhorario.idhorario" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=titulo dbname="vtatabhorario.titulo" )
+ column=(type=char(200) update=yes updatewhereclause=yes name=dschorario dbname="vtatabhorario.dschorario" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estado dbname="vtatabhorario.estado" values="	1/	0" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=tipo dbname="vtatabhorario.tipo" values="Estandar	S/Otros	O/" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="vtatabhorario.fecusu" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=codusu dbname="vtatabhorario.codusu" )
+ retrieve="  SELECT HOR.IDHORARIO,  
+			HOR.TITULO, 
+         HOR.DSCHORARIO,   
+         HOR.ESTADO,   
+         HOR.TIPO,   
+         HOR.FECUSU,   
+         HOR.CODUSU
+    FROM VTATABHORARIO HOR
+" update="VTATABHORARIO" updatewhere=1 updatekeyinplace=no )
+text(band=header alignment="2" text="N$$HEX1$$ba00$$ENDHEX$$" border="6" color="33554432" x="9" y="12" height="60" width="178" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="ID" border="6" color="33554432" x="197" y="12" height="60" width="215" html.valueishtml="0"  name=idhorario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Titulo" border="6" color="33554432" x="421" y="12" height="60" width="631" html.valueishtml="0"  name=titulo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Dschorario" border="6" color="33554432" x="1061" y="12" height="60" width="1216" html.valueishtml="0"  name=dschorario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Estado" border="6" color="33554432" x="2286" y="12" height="60" width="325" html.valueishtml="0"  name=estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Tipo" border="6" color="33554432" x="2619" y="12" height="60" width="416" html.valueishtml="0"  name=tipo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Fecusu" border="6" color="33554432" x="3045" y="12" height="60" width="603" html.valueishtml="0"  name=fecusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Codusu" border="6" color="33554432" x="3657" y="12" height="60" width="850" html.valueishtml="0"  name=codusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="33554432" x="197" y="8" height="68" width="215" format="[general]" html.valueishtml="0"  name=idhorario visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="33554432" x="421" y="8" height="68" width="631" format="[general]" html.valueishtml="0"  name=titulo visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="33554432" x="1061" y="8" height="68" width="1216" format="[general]" html.valueishtml="0"  name=dschorario visible="1" height.autosize=yes edit.limit=200 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=30 border="0" color="33554432" x="2286" y="8" height="68" width="325" format="[general]" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="0" color="33554432" x="2619" y="8" height="68" width="416" format="[general]" html.valueishtml="0"  name=tipo visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="3045" y="8" height="68" width="603" format="[shortdate] [time]" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="33554432" x="3657" y="8" height="68" width="850" format="[general]" html.valueishtml="0"  name=codusu visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="GetRow()"border="0" color="33554432" x="9" y="8" height="68" width="178" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
