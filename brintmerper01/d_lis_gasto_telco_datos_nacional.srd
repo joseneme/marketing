@@ -1,0 +1,55 @@
+HA$PBExportHeader$d_lis_gasto_telco_datos_nacional.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=iddet dbname="det_gastos_telcom.iddet" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idoperador dbname="det_gastos_telcom.idoperador" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idproductomkt dbname="det_gastos_telcom.idproductomkt" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecfin dbname="det_gastos_telcom.fecfin" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=banwid dbname="det_gastos_telcom.banwid" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idsede dbname="det_gastos_telcom.idsede" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecultact dbname="det_gastos_telcom.fecultact" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=cr dbname="det_gastos_telcom.cr" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idsol dbname="det_gastos_telcom.idsol" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numpuerta dbname="det_gastos_telcom.numpuerta" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idprvsrv dbname="det_gastos_telcom.idprvsrv" )
+ retrieve="  SELECT ~"DET_GASTOS_TELCOM~".~"IDDET~",   
+         ~"DET_GASTOS_TELCOM~".~"IDOPERADOR~",   
+         ~"DET_GASTOS_TELCOM~".~"IDPRODUCTOMKT~",   
+         ~"DET_GASTOS_TELCOM~".~"FECFIN~",   
+         ~"DET_GASTOS_TELCOM~".~"BANWID~",   
+        	~"DET_GASTOS_TELCOM~".~"IDSEDE~",
+         ~"DET_GASTOS_TELCOM~".~"FECULTACT~",
+         ~"DET_GASTOS_TELCOM~".~"CR~",
+         ~"DET_GASTOS_TELCOM~".~"IDSOL~",
+         ~"DET_GASTOS_TELCOM~".~"NUMPUERTA~",
+         ~"DET_GASTOS_TELCOM~".~"IDPRVSRV~"
+    FROM ~"DET_GASTOS_TELCOM~"   where  ~"DET_GASTOS_TELCOM~".~"IDSOL~" = :an_idsol 
+and  ~"DET_GASTOS_TELCOM~".~"IDPRODUCTOMKT~" = :an_idproductomkt
+ 
+" update="DET_GASTOS_TELCOM" updatewhere=0 updatekeyinplace=no arguments=(("an_idsol", number),("an_idproductomkt", number))  sort="idsede A idproductomkt A idoperador A " )
+text(band=header alignment="2" text="" border="6" color="33554432" x="9" y="8" height="56" width="105" html.valueishtml="0"  name=fila_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="U. Geografica" border="6" color="134217751" x="123" y="8" height="56" width="457" html.valueishtml="0"  name=idsede_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Servicio" border="6" color="134217751" x="590" y="8" height="56" width="549" html.valueishtml="0"  name=idproductomkt_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Proveedor" border="6" color="134217751" x="1147" y="8" height="56" width="544" html.valueishtml="0"  name=idoperador_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="US$ Mensual" border="6" color="134217751" x="1701" y="8" height="56" width="594" html.valueishtml="0"  name=cr_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fecha Fin Contrato" border="6" color="134217751" x="3291" y="8" height="56" width="535" html.valueishtml="0"  name=fecfin_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ultima Actualizacion" border="6" color="134217751" x="3835" y="8" height="56" width="544" html.valueishtml="0"  name=fecultact_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="# Puertas" border="6" color="0" x="2304" y="8" height="56" width="439" html.valueishtml="0"  name=numpuerta_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Banwid" border="6" color="0" x="2752" y="8" height="56" width="530" html.valueishtml="0"  name=banwid_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Idprvsrv" border="6" color="0" x="4389" y="8" height="56" width="334" html.valueishtml="0"  name=idprvsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="105" format="[GENERAL]" html.valueishtml="0"  name=fila visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+column(band=detail id=4 alignment="2" tabsequence=40 border="0" color="0" x="3291" y="0" height="56" width="535" format="[shortdate] [time]" html.valueishtml="0"  name=fecfin visible="1" editmask.mask="dd/mm/yyyy" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="0" x="3835" y="0" height="56" width="544" format="[shortdate] [time]" html.valueishtml="0"  name=fecultact visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="1" tabsequence=10 border="0" color="0" x="1701" y="0" height="56" width="594" format="[general]" html.valueishtml="0"  name=cr visible="1" editmask.mask="##,###,###,###.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="123" y="0" height="56" width="457" format="[general]" html.valueishtml="0"  name=idsede visible="1" dddw.name=dddw_tiposede dddw.displaycolumn=dscsede dddw.datacolumn=idsede dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="590" y="0" height="56" width="549" format="[general]" html.valueishtml="0"  name=idproductomkt visible="1" dddw.name=dddw_producto_marketing dddw.displaycolumn=descripcion dddw.datacolumn=idproductomkt dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1147" y="0" height="56" width="544" format="[general]" html.valueishtml="0"  name=idoperador visible="1" dddw.name=dddw_operador_telecom dddw.displaycolumn=operador dddw.datacolumn=idoperador dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="2" tabsequence=20 border="0" color="0" x="2304" y="0" height="56" width="439" format="[general]" html.valueishtml="0"  name=numpuerta visible="1" editmask.mask="####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="2" tabsequence=30 border="0" color="0" x="2752" y="0" height="56" width="530" format="[general]" html.valueishtml="0"  name=banwid visible="1" editmask.mask="##########" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="4393" y="0" height="56" width="329" format="[general]" html.valueishtml="0"  name=idprvsrv visible="0" editmask.mask="##########" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

@@ -1,0 +1,32 @@
+HA$PBExportHeader$d_lead_cabecera.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=552 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=codlead dbname="lead.codlead" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=observacion dbname="lead.observacion" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estlead dbname="lead.estlead" initial="1" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=codusu dbname="lead.codusu" )
+ column=(type=datetime updatewhereclause=yes name=fecusu dbname="lead.fecusu" )
+ retrieve="  SELECT ~"LEAD~".~"CODLEAD~",   
+         ~"LEAD~".~"OBSERVACION~",   
+         ~"LEAD~".~"ESTLEAD~",   
+         ~"LEAD~".~"CODUSU~",   
+         ~"LEAD~".~"FECUSU~"  
+    FROM ~"LEAD~"  
+   WHERE ~"LEAD~".~"CODLEAD~" = :acodlead    
+" update="LEAD" updatewhere=1 updatekeyinplace=no arguments=(("acodlead", number)) )
+groupbox(band=detail text=""border="5" color="0" x="37" y="20" height="524" width="3278"  name=gb_1 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="1" text="Identificador" border="0" color="0" x="64" y="44" height="56" width="343" html.valueishtml="0"  name=codlead_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Observacion" border="0" color="0" x="64" y="180" height="56" width="343" html.valueishtml="0"  name=observacion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Creado por" border="0" color="0" x="59" y="316" height="56" width="343" html.valueishtml="0"  name=codusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Fecha" border="0" color="0" x="238" y="448" height="56" width="165" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="1" text="Estado" border="0" color="0" x="2231" y="48" height="56" width="343" html.valueishtml="0"  name=estlead_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="425" y="180" height="76" width="1399" format="[general]" html.valueishtml="0"  name=observacion visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="1" tabsequence=20 border="5" color="0" x="2592" y="48" height="76" width="608" format="[general]" html.valueishtml="0"  name=estlead visible="1" dddw.name=dddw_lead_estado dddw.displaycolumn=descripcion dddw.datacolumn=estlead dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.required=yes dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="0" x="425" y="48" height="76" width="329" format="[general]" html.valueishtml="0"  name=codlead visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="425" y="316" height="76" width="850" format="[general]" html.valueishtml="0"  name=codusu visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="0" x="425" y="448" height="64" width="384" format="dd/mm/yyyy" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

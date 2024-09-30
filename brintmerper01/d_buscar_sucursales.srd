@@ -1,0 +1,48 @@
+HA$PBExportHeader$d_buscar_sucursales.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtasuccli.codcli" )
+ column=(type=char(10) updatewhereclause=yes name=codsuc dbname="vtasuccli.codsuc" )
+ column=(type=char(100) updatewhereclause=yes name=nomsuc dbname="vtasuccli.nomsuc" )
+ column=(type=char(120) updatewhereclause=yes name=dirsuc dbname="vtasuccli.dirsuc" )
+ column=(type=char(10) updatewhereclause=yes name=ubisuc dbname="vtasuccli.ubisuc" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(126) updatewhereclause=yes name=distrito_desc dbname="vtasuccli.distrito_desc" )
+ column=(type=char(4) updatewhereclause=yes name=tipsuc dbname="vtasuccli.tipsuc" )
+ column=(type=char(60) updatewhereclause=yes name=dsctipsuc dbname="vtasuccli.dsctipsuc" )
+ retrieve="select a.codcli, a.codsuc, a.nomsuc, a.dirsuc, a.ubisuc, b.nomcli, d.distrito_desc, a.tipsuc, e.dsctipsuc
+from vtasuccli a,
+	 vtatabcli b, 		 
+( select codsuc, count(*) 
+    FROM vtasuccli a,   
+         vtatabcli b  
+   WHERE ( a.codcli = b.codclipadre ) and
+         ( b.codcli = :ascodcli or :ascodcli = '*' ) and 
+         ( b.nomcli	like  :asdescli or :asdescli = '*' )
+  group by codsuc ) c,
+  	v_ubicaciones d,
+	vtatipsuc e			   		 		   		 
+where a.codcli = b.codcli and
+	  a.codsuc = c.codsuc and
+	  a.ubisuc = d.codubi and
+	  a.tipsuc = e.tipsuc" arguments=(("ascodcli", string),("asdescli", string)) )
+text(band=header alignment="2" text="#" border="6" color="0" x="9" y="12" height="56" width="187" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Id" border="6" color="0" x="206" y="12" height="56" width="370" html.valueishtml="0"  name=codsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="585" y="12" height="56" width="800" html.valueishtml="0"  name=nomsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="1394" y="12" height="56" width="1330" html.valueishtml="0"  name=dirsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="2734" y="12" height="56" width="1312" html.valueishtml="0"  name=distrito_desc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cliente" border="6" color="0" x="4055" y="12" height="56" width="1221" html.valueishtml="0"  name=nomcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Sucursal" border="6" color="0" x="5285" y="12" height="56" width="667" html.valueishtml="0"  name=dsctipsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="585" y="0" height="56" width="800" format="[general]" html.valueishtml="0"  name=nomsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1394" y="0" height="56" width="1330" format="[general]" html.valueishtml="0"  name=dirsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="0" x="206" y="0" height="56" width="370" format="[general]" html.valueishtml="0"  name=codsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="0" height="56" width="187" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4055" y="0" height="56" width="1221" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="2734" y="0" height="56" width="1312" format="[general]" html.valueishtml="0"  name=distrito_desc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="5285" y="0" height="56" width="667" format="[general]" html.valueishtml="0"  name=dsctipsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
