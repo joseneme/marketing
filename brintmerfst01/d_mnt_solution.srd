@@ -1,0 +1,46 @@
+HA$PBExportHeader$d_mnt_solution.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=79416533 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=360 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=id_solution dbname="solution_tree.id_solution" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=code dbname="solution_tree.code" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=description dbname="solution_tree.description" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=usercode dbname="solution_tree.usercode" )
+ column=(type=datetime update=yes updatewhereclause=yes name=userdate dbname="solution_tree.userdate" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=tipo dbname="solution_tree.tipo" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idpath dbname="solution_tree.idpath" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numlevel dbname="solution_tree.numlevel" )
+ column=(type=number updatewhereclause=yes name=nivel dbname="nivel" )
+ column=(type=number updatewhereclause=yes name=compute_0010 dbname="compute_0010" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=active dbname="solution_tree.active" values="	1/	0" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=levelfather dbname="solution_tree.levelfather" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=code dbname="solution_tree.code" )
+ retrieve="   select id_solution,
+        code,
+          description,
+          usercode,
+          userdate,
+          tipo,
+          idpath,
+          numlevel,
+          0 nivel, 
+          f_obt_nivel_solution(id_solution),
+          active,
+          levelfather,code
+   from solution_tree
+   where id_solution= :ad_id	" update="solution_tree" updatewhere=0 updatekeyinplace=yes arguments=(("ad_id", number)) )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="33554432" x="59" y="436" height="56" width="987" format="[general]" html.valueishtml="0"  name=compute_0010 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79416533" )
+text(band=detail alignment="0" text="Raiz:" border="0" color="0" x="750" y="16" height="56" width="123" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="33554432" x="887" y="16" height="56" width="306" format="[general]" html.valueishtml="0"  name=levelfather visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79416533" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="5" color="0" x="329" y="172" height="56" width="585" format="[general]" html.valueishtml="0"  name=description visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="329" y="88" height="56" width="590" format="[general]" html.valueishtml="0"  name=numlevel visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79416533" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="329" y="8" height="56" width="379" format="[general]" html.valueishtml="0"  name=code visible="1" editmask.mask="#####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=30 border="0" color="33554432" x="329" y="264" height="56" width="238" format="[general]" html.valueishtml="0"  name=active visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="79416533" )
+text(band=detail alignment="0" text="Nivel :" border="0" color="0" x="37" y="92" height="56" width="293" html.valueishtml="0"  name=numlevel_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Code :" border="0" color="0" x="37" y="16" height="56" width="293" html.valueishtml="0"  name=code_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Description :" border="0" color="0" x="37" y="168" height="56" width="293" html.valueishtml="0"  name=description_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Activo :" border="0" color="0" x="37" y="260" height="56" width="293" html.valueishtml="0"  name=path_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
