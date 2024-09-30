@@ -1,0 +1,95 @@
+HA$PBExportHeader$d_mnt_factibilidad_gis_wimax.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=id_fact_gis dbname="factibilidad_gis_wimax.id_fact_gis" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=rut dbname="factibilidad_gis_wimax.rut" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=nom_clte dbname="factibilidad_gis_wimax.nom_clte" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=calle dbname="factibilidad_gis_wimax.calle" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numero dbname="factibilidad_gis_wimax.numero" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=direccion dbname="factibilidad_gis_wimax.direccion" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=comuna dbname="factibilidad_gis_wimax.comuna" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=ciudad dbname="factibilidad_gis_wimax.ciudad" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=segmento dbname="factibilidad_gis_wimax.segmento" )
+ column=(type=number update=yes updatewhereclause=yes name=bw1 dbname="factibilidad_gis_wimax.bw1" )
+ column=(type=number update=yes updatewhereclause=yes name=bw2 dbname="factibilidad_gis_wimax.bw2" )
+ column=(type=number update=yes updatewhereclause=yes name=bw3 dbname="factibilidad_gis_wimax.bw3" )
+ column=(type=number update=yes updatewhereclause=yes name=bw4 dbname="factibilidad_gis_wimax.bw4" )
+ column=(type=number update=yes updatewhereclause=yes name=bw5 dbname="factibilidad_gis_wimax.bw5" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=grupo_carga dbname="factibilidad_gis_wimax.grupo_carga" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=valida dbname="factibilidad_gis_wimax.valida" values="	1/	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=procesa dbname="factibilidad_gis_wimax.procesa" values="	1/	0" )
+ column=(type=char(200) update=yes updatewhereclause=yes name=error dbname="factibilidad_gis_wimax.error" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codsuc dbname="factibilidad_gis_wimax.codsuc" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=abrvia dbname="factibilidad_gis_wimax.abrvia" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=bts dbname="factibilidad_gis_wimax.bts" )
+ column=(type=number update=yes updatewhereclause=yes name=nro_bts dbname="factibilidad_gis_wimax.nro_bts" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=cobertura_los dbname="factibilidad_gis_wimax.cobertura_los" )
+ retrieve=" SELECT ID_FACT_GIS,
+RUT,
+NOM_CLTE,
+CALLE,
+NUMERO,
+DIRECCION,
+COMUNA,
+CIUDAD,
+SEGMENTO,
+BW1,
+BW2,
+BW3,
+BW4,
+BW5,
+GRUPO_CARGA,
+VALIDA,
+PROCESA,
+ERROR,
+CODSUC,
+ABRVIA,
+BTS ,
+nro_bts,
+cobertura_los
+FROM FACTIBILIDAD_GIS_WIMAx
+where 1=1" update="FACTIBILIDAD_GIS_WIMAx" updatewhere=0 updatekeyinplace=yes )
+text(band=header alignment="2" text="Calle" border="6" color="134217730" x="3643" y="8" height="56" width="850" html.valueishtml="0"  name=calle_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Numero" border="6" color="134217730" x="4503" y="8" height="56" width="329" html.valueishtml="0"  name=numero_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Direccion" border="6" color="134217730" x="4841" y="8" height="56" width="1371" html.valueishtml="0"  name=direccion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Comuna" border="6" color="134217730" x="6222" y="8" height="56" width="677" html.valueishtml="0"  name=comuna_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Ciudad" border="6" color="134217730" x="6907" y="8" height="56" width="677" html.valueishtml="0"  name=ciudad_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Rut (F9)" border="6" color="134217730" x="864" y="8" height="56" width="338" html.valueishtml="0"  name=rut_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Id" border="6" color="134217730" x="9" y="8" height="56" width="151" html.valueishtml="0"  name=id_fact_gis_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Grupo Carga" border="6" color="134217730" x="169" y="8" height="56" width="686" html.valueishtml="0"  name=grupo_carga_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="V" border="6" color="134217730" x="10459" y="8" height="56" width="137" html.valueishtml="0"  name=valida_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="P" border="6" color="134217730" x="10606" y="8" height="56" width="119" html.valueishtml="0"  name=procesa_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Tipo Via" border="6" color="134217730" x="3378" y="8" height="56" width="256" html.valueishtml="0"  name=abrvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="BW Max." border="6" color="134217730" x="10021" y="8" height="56" width="430" html.valueishtml="0"  name=bw1_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Segmento" border="6" color="134217730" x="7593" y="8" height="56" width="677" html.valueishtml="0"  name=segmento_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Mensaje" border="6" color="134217730" x="10734" y="8" height="56" width="1664" html.valueishtml="0"  name=error_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Cliente" border="6" color="134217730" x="1211" y="8" height="56" width="1714" html.valueishtml="0"  name=nom_clte_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Sucursal  (F9)" border="6" color="134217730" x="2935" y="8" height="56" width="434" html.valueishtml="0"  name=codsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Bts (F9)" border="6" color="134217730" x="8279" y="8" height="56" width="795" html.valueishtml="0"  name=bts_1_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Nro Bts" border="6" color="134217730" x="9083" y="8" height="56" width="325" html.valueishtml="0"  name=nro_bts_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+text(band=header alignment="2" text="Cobertura Los" border="6" color="134217730" x="9417" y="8" height="56" width="594" html.valueishtml="0"  name=cobertura_los_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217728" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="864" y="4" height="60" width="338" format="[general]" html.valueishtml="0"  name=rut visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="60" width="151" format="[general]" html.valueishtml="0"  name=id_fact_gis visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="0" tabsequence=10 border="0" color="0" x="169" y="4" height="60" width="686" format="[general]" html.valueishtml="0"  name=grupo_carga visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=60 border="0" color="0" x="3643" y="4" height="60" width="850" format="[general]" html.valueishtml="0"  name=calle visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=70 border="0" color="0" x="4503" y="4" height="60" width="329" format="[general]" html.valueishtml="0"  name=numero visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=80 border="0" color="0" x="4841" y="4" height="60" width="1371" format="[general]" html.valueishtml="0"  name=direccion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=90 border="0" color="0" x="6222" y="4" height="60" width="677" format="[general]" html.valueishtml="0"  name=comuna visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=100 border="0" color="0" x="6907" y="4" height="60" width="677" format="[general]" html.valueishtml="0"  name=ciudad visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=150 border="0" color="0" x="10021" y="4" height="60" width="430" format="[general]" html.valueishtml="0"  name=bw1 visible="1" dddw.name=dddw_bandwith_br dddw.displaycolumn=descripcion dddw.datacolumn=banwid dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="2" tabsequence=32766 border="0" color="0" x="10459" y="4" height="60" width="137" format="[general]" html.valueishtml="0"  name=valida visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="2" tabsequence=32766 border="0" color="0" x="10606" y="4" height="60" width="119" format="[general]" html.valueishtml="0"  name=procesa visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="0" tabsequence=50 border="0" color="0" x="3378" y="4" height="60" width="256" format="[general]" html.valueishtml="0"  name=abrvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=110 border="0" color="0" x="7593" y="4" height="60" width="677" format="[general]" html.valueishtml="0"  name=segmento visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="10734" y="4" height="60" width="1664" format="[general]" html.valueishtml="0"  name=error visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="0" color="0" x="1211" y="4" height="60" width="1714" format="[general]" html.valueishtml="0"  name=nom_clte visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=40 border="0" color="0" x="2935" y="4" height="60" width="434" format="[general]" html.valueishtml="0"  name=codsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=21 alignment="0" tabsequence=120 border="0" color="0" x="8279" y="0" height="60" width="795" format="[general]" html.valueishtml="0"  name=bts visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes criteria.required=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=22 alignment="0" tabsequence=130 border="0" color="0" x="9083" y="8" height="56" width="325" format="[general]" html.valueishtml="0"  name=nro_bts visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes criteria.required=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=23 alignment="0" tabsequence=140 border="0" color="0" x="9417" y="8" height="56" width="594" format="[general]" html.valueishtml="0"  name=cobertura_los visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

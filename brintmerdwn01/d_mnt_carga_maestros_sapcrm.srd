@@ -1,0 +1,72 @@
+HA$PBExportHeader$d_mnt_carga_maestros_sapcrm.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no )
+header(height=0 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1700 color="536870912" )
+table(column=(type=char(1) updatewhereclause=yes name=ruta dbname="ruta" )
+ column=(type=number updatewhereclause=yes name=filtro dbname="filtro" values="General	1/Cliente	2/" )
+ column=(type=number updatewhereclause=yes name=ic_cliente dbname="ic_cliente" values="Cliente	1/Cliente	0" )
+ column=(type=number updatewhereclause=yes name=ic_contacto dbname="ic_contacto" values="Contacto	1/Contacto	0" )
+ column=(type=number updatewhereclause=yes name=ic_ubicacion dbname="ic_ubicacion" values="Ubicaci$$HEX1$$f300$$ENDHEX$$n	1/Ubicaci$$HEX1$$f300$$ENDHEX$$n	0" )
+ column=(type=number updatewhereclause=yes name=ic_empleado dbname="ic_empleado" values="Empleado	1/Empleado	0" )
+ column=(type=number updatewhereclause=yes name=relaciones dbname="relaciones" values="Relaciones	1/Relaciones	0" )
+ column=(type=number updatewhereclause=yes name=atrib_cliente dbname="atrib_cliente" values="Atributos de Cliente	1/Atributos de Cliente	0" )
+ column=(type=number updatewhereclause=yes name=atrib_contacto dbname="atrib_contacto" values="Atributos de Contacto	1/Atributos de Contacto	0" )
+ column=(type=number updatewhereclause=yes name=medcom_tel dbname="medcom_tel" values="Telefono	1/Telefono	0" )
+ column=(type=number updatewhereclause=yes name=medcom_telmov dbname="medcom_telmov" values="Telefono Movil	1/Telefono Movil	0" )
+ column=(type=number updatewhereclause=yes name=medcom_fax dbname="medcom_fax" values="Fax	1/Fax	0" )
+ column=(type=number updatewhereclause=yes name=medcom_email dbname="medcom_email" values="eMail	1/eMail	0" )
+ column=(type=char(1) updatewhereclause=yes name=codcli dbname="codcli" )
+ column=(type=char(1) updatewhereclause=yes name=nomcli dbname="nomcli" )
+ retrieve="Select 
+' ' ruta,
+0 filtro,
+0 ic_cliente,
+0 ic_contacto,
+0 ic_ubicacion,
+0 ic_empleado,
+0 relaciones,
+0 atrib_cliente,
+0 atrib_contacto,
+0 medcom_tel,
+0 medcom_telmov,
+0 medcom_fax,
+0 medcom_email,
+' ' codcli,
+' ' nomcli
+From dual" )
+text(band=detail alignment="0" text="Ruta:" border="0" color="33554432" x="59" y="32" height="56" width="160" html.valueishtml="0"  name=ruta_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+button(band=detail text="..." enabled=yes action="0" border="0" color="0" x="1769" y="28" height="64" width="82" vtextalign="0" htextalign="0"  name=b_ruta visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="33554432" x="224" y="32" height="56" width="1522" format="[general]" html.valueishtml="0"  name=ruta visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+groupbox(band=detail text="Relaciones"border="5" color="33554432" x="41" y="744" height="176" width="1815"  name=gb_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+groupbox(band=detail text="Filtro"border="5" color="33554432" x="41" y="104" height="164" width="1806"  name=gb_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+groupbox(band=detail text="Interlocutores"border="5" color="33554432" x="41" y="292" height="436" width="1806"  name=gb_2 visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="33554432" x="101" y="380" height="64" width="329" format="[general]" html.valueishtml="0"  name=ic_cliente visible="1" checkbox.text="Cliente" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="5" color="33554432" x="919" y="176" height="56" width="896" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=2 alignment="1" tabsequence=10 border="0" color="33554432" x="78" y="172" height="64" width="635" format="[general]" html.valueishtml="0"  name=filtro visible="1" radiobuttons.columns=2 radiobuttons.scale=no radiobuttons.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=20 border="5" color="33554432" x="649" y="176" height="56" width="251" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="1" tabsequence=60 border="0" color="33554432" x="101" y="632" height="64" width="329" format="[general]" html.valueishtml="0"  name=ic_empleado visible="1" checkbox.text="Empleado" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=70 border="0" color="33554432" x="101" y="824" height="64" width="329" format="[general]" html.valueishtml="0"  name=relaciones visible="1" checkbox.text="Relaciones" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+groupbox(band=detail text="Atributos"border="5" color="33554432" x="41" y="940" height="272" width="1815"  name=gb_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=4 alignment="1" tabsequence=40 border="0" color="33554432" x="101" y="464" height="64" width="329" format="[general]" html.valueishtml="0"  name=ic_contacto visible="1" checkbox.text="Contacto" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=50 border="0" color="33554432" x="101" y="548" height="64" width="329" format="[general]" html.valueishtml="0"  name=ic_ubicacion visible="1" checkbox.text="Ubicaci$$HEX1$$f300$$ENDHEX$$n" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=80 border="0" color="33554432" x="101" y="1016" height="64" width="581" format="[general]" html.valueishtml="0"  name=atrib_cliente visible="1" checkbox.text="Atributos de Cliente" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=90 border="0" color="33554432" x="101" y="1100" height="64" width="590" format="[general]" html.valueishtml="0"  name=atrib_contacto visible="1" checkbox.text="Atributos de Contacto" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+groupbox(band=detail text="Medios de Comunicaci$$HEX1$$f300$$ENDHEX$$n"border="5" color="33554432" x="46" y="1240" height="428" width="1810"  name=gb_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=10 alignment="1" tabsequence=100 border="0" color="33554432" x="101" y="1320" height="64" width="329" format="[general]" html.valueishtml="0"  name=medcom_tel visible="1" checkbox.text="Telefono" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="1" tabsequence=110 border="0" color="33554432" x="101" y="1404" height="64" width="521" format="[general]" html.valueishtml="0"  name=medcom_telmov visible="1" checkbox.text="Telefono Movil" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="1" tabsequence=120 border="0" color="33554432" x="101" y="1488" height="64" width="329" format="[general]" html.valueishtml="0"  name=medcom_fax visible="1" checkbox.text="Fax" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=130 border="0" color="33554432" x="101" y="1572" height="64" width="329" format="[general]" html.valueishtml="0"  name=medcom_email visible="1" checkbox.text="eMail" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 

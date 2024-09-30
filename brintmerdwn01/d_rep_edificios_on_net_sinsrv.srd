@@ -1,0 +1,93 @@
+HA$PBExportHeader$d_rep_edificios_on_net_sinsrv.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=56 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(10) updatewhereclause=yes name=vtasuccli_codsuc dbname="vtasuccli.codsuc" )
+ column=(type=char(10) updatewhereclause=yes name=compute_0003 dbname="compute_0003" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_razon dbname="vtatabcli.razon" )
+ column=(type=char(50) updatewhereclause=yes name=vtasuccli_sucursal dbname="vtasuccli.sucursal" )
+ column=(type=char(120) updatewhereclause=yes name=vtasuccli_direccion dbname="vtasuccli.direccion" )
+ column=(type=decimal(0) updatewhereclause=yes name=edificio_cod_edificio dbname="edificio.cod_edificio" )
+ column=(type=char(50) updatewhereclause=yes name=edificio_edificio dbname="edificio.edificio" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtasuccli_pop dbname="vtasuccli.pop" )
+ column=(type=datetime updatewhereclause=yes name=compute_0010 dbname="compute_0010" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabdst_nomdst dbname="vtatabdst.nomdst" )
+ column=(type=char(20) updatewhereclause=yes name=vtatabdst_codpos dbname="vtatabdst.codpos" )
+ column=(type=char(50) updatewhereclause=yes name=tipooficina_descripcion dbname="tipooficina.descripcion" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_censo dbname="vtatabcli.censo" values="	1/	0" )
+ retrieve="SELECT  a.codcli codcli,   
+         b.codsuc codsuc,
+         min(d.numslc),
+         a.nomcli razon,   
+         b.nomsuc sucursal,   
+         b.dirsuc direccion,   
+         c.codigo cod_edificio,   
+         c.nombre edificio,
+         b.cenintid  pop,
+			min(d.fecini ),
+			f.nomdst,
+			f.codpos,
+			g.descripcion,
+			a.censo
+    FROM edificio c,   
+         vtatabcli a,   
+         vtasuccli b,
+			inssrv d,
+			tystipsrv e,
+			vtatabdst f,
+			tipooficina g
+   WHERE b.on_net = 1    
+	and d.codsrv <> '0000' 
+    and ( b.codcli = a.codcli ) and  
+         ( b.codedi = c.codigo (+) ) and
+		 ( b.codcli = d.codcli  ) and
+		 ( b.codsuc = d.codsuc  ) and
+			b.ubisuc=f.codubi(+) and
+			b.idtipooficina=g.idtipooficina(+)
+      group by 
+      a.codcli ,   
+         b.codsuc ,
+         a.nomcli ,   
+         b.nomsuc,   
+         b.dirsuc ,   
+         c.codigo ,   
+         c.nombre,
+         b.cenintid  ,
+			f.nomdst,
+			f.codpos,
+      g.descripcion,
+		a.censo
+  order by a.codcli,b.codsuc" )
+group(level=1 header.height=0 trailer.height=0 by=("vtatabcli_codcli" , "vtasuccli_codsuc" ) header.color="536870912" trailer.color="536870912" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="329" y="8" height="56" width="411" html.valueishtml="0"  name=vtasuccli_codsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Raz$$HEX1$$f300$$ENDHEX$$n Social" border="6" color="0" x="750" y="8" height="56" width="1541" html.valueishtml="0"  name=vtatabcli_razon_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="2299" y="8" height="56" width="1079" html.valueishtml="0"  name=vtasuccli_sucursal_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="3387" y="8" height="56" width="1152" html.valueishtml="0"  name=vtasuccli_direccion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cod Edificio" border="6" color="0" x="5929" y="8" height="56" width="274" html.valueishtml="0"  name=edificio_cod_edificio_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Edificio" border="6" color="0" x="6213" y="8" height="56" width="837" html.valueishtml="0"  name=edificio_edificio_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Pop" border="6" color="0" x="7058" y="8" height="56" width="910" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cod Cliente" border="6" color="0" x="9" y="8" height="56" width="311" html.valueishtml="0"  name=vtatabcli_codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Proyecto" border="6" color="0" x="7977" y="8" height="56" width="498" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="4549" y="8" height="56" width="910" html.valueishtml="0"  name=obj_99581420 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Postal" border="6" color="0" x="5467" y="8" height="56" width="453" html.valueishtml="0"  name=obj_99586848 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Oficina" border="6" color="0" x="8485" y="8" height="56" width="841" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Censado" border="6" color="0" x="9335" y="8" height="56" width="375" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="750" y="0" height="52" width="1541" format="[general]" html.valueishtml="0"  name=vtatabcli_razon visible="1" edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="9" y="0" height="52" width="311" format="[general]" html.valueishtml="0"  name=vtatabcli_codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="0" x="329" y="0" height="52" width="411" format="[general]" html.valueishtml="0"  name=vtasuccli_codsuc visible="1" edit.limit=5 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2299" y="0" height="52" width="1079" format="[general]" html.valueishtml="0"  name=vtasuccli_sucursal visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="7058" y="0" height="52" width="910" format="[general]" html.valueishtml="0"  name=vtasuccli_pop visible="1" dddw.name=dddw_g_tabceninx_subnodo dddw.displaycolumn=nombre dddw.datacolumn=id dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3387" y="0" height="52" width="1152" format="[general]" html.valueishtml="0"  name=vtasuccli_direccion visible="1" edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="5929" y="0" height="52" width="274" format="[general]" html.valueishtml="0"  name=edificio_cod_edificio visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="6213" y="0" height="52" width="837" format="[general]" html.valueishtml="0"  name=edificio_edificio visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="7977" y="0" height="52" width="498" format="[general]" html.valueishtml="0"  name=compute_0003 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="4549" y="0" height="52" width="910" format="[general]" html.valueishtml="0"  name=vtatabdst_nomdst visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="5467" y="0" height="52" width="453" format="[general]" html.valueishtml="0"  name=vtatabdst_codpos visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="8485" y="0" height="52" width="841" format="[general]" html.valueishtml="0"  name=tipooficina_descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="2" tabsequence=32766 border="0" color="0" x="9335" y="0" height="52" width="375" format="[general]" html.valueishtml="0"  name=vtatabcli_censo visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
