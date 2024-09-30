@@ -1,0 +1,126 @@
+HA$PBExportHeader$d_rep_lead.srd
+$PBExportComments$ultimo-edwin
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=656 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=396 color="536870912"  height.autosize=yes)
+table(column=(type=char(50) updatewhereclause=yes name=lead_descripcionlead dbname="lead.descripcionlead" )
+ column=(type=char(50) updatewhereclause=yes name=estadolead_estadolead dbname="estadolead.estadolead" )
+ column=(type=datetime updatewhereclause=yes name=fechacreacionlead dbname="lead.fechacreacionlead" )
+ column=(type=char(30) updatewhereclause=yes name=lead_usuariocreacionlead dbname="lead.usuariocreacionlead" )
+ column=(type=char(8) updatewhereclause=yes name=vtaclicobprod_codigocliente dbname="vtaclicobprod.codigocliente" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_cliente dbname="vtatabcli.cliente" )
+ column=(type=char(120) updatewhereclause=yes name=vtaclicobprod_direccion dbname="vtaclicobprod.direccion" )
+ column=(type=char(10) updatewhereclause=yes name=vtaclicobprod_codubi dbname="vtaclicobprod.codubi" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabdst_distrito dbname="vtatabdst.distrito" )
+ column=(type=char(25) updatewhereclause=yes name=cxcdefevainf_resultadoevaluacion dbname="cxcdefevainf.resultadoevaluacion" )
+ column=(type=datetime updatewhereclause=yes name=fechaactivacioncreditos dbname="v_cxcvtatabrefinf_max.fechaactivacioncreditos" )
+ column=(type=char(80) updatewhereclause=yes name=v_cxcvtatabrefinf_max_observacionevaluac dbname="v_cxcvtatabrefinf_max.observacionevaluacion" )
+ column=(type=char(1) updatewhereclause=yes name=vtaclicobprod_flgventa dbname="vtaclicobprod.flgventa" values="	1/	0" )
+ column=(type=char(50) updatewhereclause=yes name=productolead_descripcion dbname="productolead.descripcion" )
+ column=(type=char(40) updatewhereclause=yes name=vm_contacto_nomcnt dbname="vm_contacto.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=vm_contacto_carcnt dbname="vm_contacto.carcnt" )
+ column=(type=char(50) updatewhereclause=yes name=vm_medio_numcomcli dbname="vm_medio.numcomcli" )
+ column=(type=char(60) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=char(50) updatewhereclause=yes name=vtaclicobprod_obsventa dbname="vtaclicobprod.obsventa" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtaclicobprod_diasinstal dbname="vtaclicobprod.diasinstal" )
+ column=(type=number updatewhereclause=yes name=telef_fija dbname="telef_fija" values="	1/	0" )
+ column=(type=number updatewhereclause=yes name=internet dbname="internet" values="	1/	0" )
+ column=(type=number updatewhereclause=yes name=datos dbname="datos" )
+ retrieve="select a.observacion descripcionlead,g.descripcion estadolead,
+a.fecusu fechacreacionlead,a.codusu usuariocreacionlead,
+b.codcli codigocliente,f.nomcli cliente,b.dircli direccion,
+b.codubi,c.nomdst distrito,e.desceva resultadoevaluacion,d.fecact fechaactivacioncreditos,
+d.obscli observacionevaluacion,
+b.flgventa,
+h.descripcion,
+i.nomcnt,
+i.carcnt,
+j.numcomcli,
+k.nomect,
+b.obsventa,
+b.diasinstal,
+sum(decode(m.tipsrv,'0004', 1, 0)) Telef_Fija,
+sum(decode(m.tipsrv,'0005', 1, 0)) Internet,
+sum(decode(m.tipsrv,'0006', 1, 0)) Datos
+from 
+lead a, 
+vtaclicobprod b,
+vtatabdst c,
+V_cxcvtatabrefinf_MAX d,
+cxcdefevainf e,
+vtatabcli f,
+estadolead g, 
+productolead h,
+Vm_CONTACTO i,
+vm_medio j , 
+vtatabect k, 
+v_servicio_x_cliente m
+where  
+a.codlead=b.codlead
+and b.codubi=c.codubi
+and b.codcli=d.codcli(+)
+and d.estcli(+)='02'
+and d.estevaluacion(+)=3
+and d.calreg=e.codava(+)
+and b.codcli=f.codcli
+and a.estlead=g.estlead(+)
+and b.codprodlead = h.codprodlead
+and i.codcli(+)=f.codcli
+and j.codcli(+)=f.codcli
+and k.codect = f.codect
+and m.codcli(+) = f.codcli
+and a.codlead=:acodlead
+group by a.observacion ,g.descripcion , a.fecusu, a.codusu, b.codcli ,f.nomcli ,b.dircli, b.codubi,c.nomdst ,e.desceva ,
+d.fecact, d.obscli, b.flgventa, h.descripcion, i.nomcnt, i.carcnt, j.numcomcli, k.nomect, b.obsventa, b.diasinstal" arguments=(("acodlead", number)) )
+group(level=1 header.height=8 trailer.height=0 by=("lead_descripcionlead" , "estadolead_estadolead" , "lead_usuariocreacionlead" ) header.color="536870912" trailer.color="536870912" )
+groupbox(band=detail text=""border="4" color="0" x="14" y="4" height="388" width="4914"  name=gb_1  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+bitmap(band=header filename="I:\logotipo1.bmp" x="96" y="32" height="244" width="882" border="0"  name=p_1 )
+column(band=header id=1 alignment="0" tabsequence=32766 border="0" color="0" x="475" y="364" height="76" width="1591" format="[general]"  name=lead_descripcionlead edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header id=2 alignment="0" tabsequence=32766 border="0" color="0" x="2491" y="364" height="76" width="613" format="[general]"  name=estadolead_estadolead edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Descripcion" border="0" color="0" x="101" y="364" height="56" width="343"  name=t_1  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Estado" border="0" color="0" x="2231" y="364" height="56" width="238"  name=t_2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header id=4 alignment="0" tabsequence=32766 border="0" color="0" x="649" y="468" height="76" width="951" format="[general]"  name=lead_usuariocreacionlead edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header id=3 alignment="0" tabsequence=32766 border="0" color="0" x="2491" y="468" height="76" width="489" format="dd/mm/yyyy"  name=fechacreacionlead edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Usuario de Creacion" border="0" color="0" x="105" y="468" height="56" width="526"  name=t_4  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Fecha de Creacion" border="0" color="0" x="1920" y="468" height="56" width="544"  name=asasd  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="REPORTE DE LEADS" border="0" color="0" x="1765" y="72" height="72" width="1225"  name=t_17  font.face="Arial" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Codigo" border="0" color="0" x="165" y="592" height="56" width="201"  name=t_5  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text=" Cliente" border="0" color="0" x="375" y="592" height="56" width="882"  name=t_6  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Consultor" border="0" color="0" x="1262" y="592" height="56" width="549"  name=t_16  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Act.Cr$$HEX1$$e900$$ENDHEX$$ditos" border="0" color="0" x="1819" y="592" height="56" width="315"  name=t_11  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Result. Cr$$HEX1$$e900$$ENDHEX$$ditos" border="0" color="0" x="2139" y="592" height="56" width="421"  name=t_10  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Ventas" border="0" color="0" x="3205" y="592" height="56" width="183"  name=t_8  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Dias Inst." border="0" color="0" x="3986" y="592" height="56" width="238"  name=t_19  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Producto" border="0" color="0" x="4229" y="592" height="56" width="690"  name=t_3  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Observaci$$HEX1$$f300$$ENDHEX$$n Cr$$HEX1$$e900$$ENDHEX$$ditos" border="0" color="0" x="2569" y="592" height="56" width="626"  name=t_12  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=header alignment="2" text="Observaci$$HEX1$$f300$$ENDHEX$$n Ventas" border="0" color="0" x="3392" y="592" height="56" width="590"  name=t_18  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+compute(band=detail alignment="2" expression="cumulativeSum( 1 for all )"border="0" color="0" x="18" y="16" height="56" width="133" format="[GENERAL]"  name=compute_1  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="165" y="16" height="56" width="192" format="[general]"  name=vtaclicobprod_codigocliente edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="375" y="16" height="56" width="882" format="[general]"  name=vtatabcli_cliente height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="1271" y="16" height="56" width="544" format="[general]"  name=vtatabect_nomect edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="2" tabsequence=32766 border="0" color="0" x="2139" y="16" height="56" width="402" format="[general]"  name=cxcdefevainf_resultadoevaluacion edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="0" x="3209" y="16" height="56" width="165" format="[general]"  name=vtaclicobprod_flgventa checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=yes checkbox.threed=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="0" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="2" tabsequence=32766 border="0" color="0" x="4009" y="16" height="56" width="142" format="[general]"  name=vtaclicobprod_diasinstal edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="4247" y="16" height="56" width="667" format="[general]"  name=productolead_descripcion edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=0 border="0" color="0" x="1838" y="16" height="56" width="283"  name=fechaactivacioncreditos  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Direccion" border="0" color="0" x="1271" y="168" height="44" width="306"  name=t_7  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="3003" y="304" height="56" width="407" format="[general]"  name=vm_medio_numcomcli edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Contacto" border="0" color="0" x="2583" y="168" height="44" width="407"  name=t_13  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=detail alignment="0" text="Cargo" border="0" color="0" x="2583" y="236" height="44" width="407"  name=t_14  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=detail alignment="0" text="Telefono" border="0" color="0" x="2583" y="304" height="44" width="407"  name=t_15  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=detail alignment="0" text="Distrito" border="0" color="0" x="1271" y="304" height="44" width="306"  name=t_9  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1591" y="168" height="116" width="695" format="[general]"  name=vtaclicobprod_direccion height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="1591" y="304" height="56" width="521" format="[general]"  name=vtatabdst_distrito height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="3003" y="236" height="56" width="521" format="[general]"  name=vm_contacto_carcnt edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="3003" y="168" height="56" width="882" format="[general]"  name=vm_contacto_nomcnt edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Telefonia Fija" border="0" color="0" x="4224" y="168" height="56" width="480"  name=t_20  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+text(band=detail alignment="0" text="Internet Dedicado" border="0" color="0" x="4224" y="236" height="56" width="480"  name=t_21  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=21 alignment="2" tabsequence=0 border="0" color="0" x="4718" y="168" height="56" width="155"  name=telef_fija checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=yes checkbox.threed=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=22 alignment="2" tabsequence=0 border="0" color="0" x="4718" y="236" height="56" width="155"  name=internet checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=yes checkbox.threed=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=0 border="0" color="0" x="2574" y="16" height="140" width="622"  name=v_cxcvtatabrefinf_max_observacionevaluac  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="3401" y="16" height="140" width="590" format="[general]"  name=vtaclicobprod_obsventa edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

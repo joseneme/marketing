@@ -1,0 +1,104 @@
+HA$PBExportHeader$d_vtaclicobprod.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=char(120) update=yes updatewhereclause=yes name=direccion dbname="vtaclicobprod.dircli" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="vtatabdst.nomdst" )
+ column=(type=char(150) updatewhereclause=yes name=cliente dbname="vtatabcli.nomcli" )
+ column=(type=char(8) update=yes updatewhereclause=yes key=yes name=codigo_cliente dbname="vtaclicobprod.codcli" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=distrito dbname="vtaclicobprod.codubi" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=codigo_lead dbname="vtaclicobprod.codlead" )
+ column=(type=char(3) updatewhereclause=yes name=tipo_documento dbname="vtatabcli.tipdide" )
+ column=(type=char(15) updatewhereclause=yes name=documento dbname="vtatabcli.ntdide" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ventas dbname="vtaclicobprod.flgventa" initial="0" values="	1/	0" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=observaciones_venta dbname="vtaclicobprod.obsventa" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=dias_instalaciones dbname="vtaclicobprod.diasinstal" )
+ column=(type=char(40) updatewhereclause=yes name=segmento dbname="vtatabseg.segmento" )
+ column=(type=char(60) updatewhereclause=yes name=consultor dbname="vtatabect.consultor" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=producto dbname="vtaclicobprod.codprodlead" )
+ column=(type=number updatewhereclause=yes name=telef_fija dbname="telef_fija" values="	1/	0" )
+ column=(type=number updatewhereclause=yes name=internet dbname="internet" values="	1/	0" )
+ column=(type=number updatewhereclause=yes name=datos dbname="datos" values="	1/	0" )
+ retrieve="  SELECT ~"VTACLICOBPROD~".~"DIRCLI~",   
+         ~"VTATABDST~".~"NOMDST~",   
+         ~"VTATABCLI~".~"NOMCLI~",   
+         ~"VTACLICOBPROD~".~"CODCLI~",   
+         ~"VTACLICOBPROD~".~"CODUBI~",   
+         ~"VTACLICOBPROD~".~"CODLEAD~",   
+         ~"VTATABCLI~".~"TIPDIDE~",   
+         ~"VTATABCLI~".~"NTDIDE~",   
+         ~"VTACLICOBPROD~".~"FLGVENTA~",   
+         ~"VTACLICOBPROD~".~"OBSVENTA~",   
+         ~"VTACLICOBPROD~".~"DIASINSTAL~",
+         vtatabseg.dscseg segmento,
+         vtatabect.nomect consultor, 			
+			~"VTACLICOBPROD~".~"CODPRODLEAD~" codprodlead,
+			sum(decode(f.tipsrv,'0004', 1, 0)) Telef_Fija,
+			sum(decode(f.tipsrv,'0005', 1, 0)) Internet,
+			sum(decode(f.tipsrv,'0006', 1, 0)) Datos
+    FROM ~"VTACLICOBPROD~",   
+         ~"VTATABCLI~",   
+         ~"VTATABDST~",
+			vtatabseg  ,
+			vtatabect,
+		v_servicio_x_cliente f
+   WHERE ( ~"VTACLICOBPROD~".~"CODCLI~" = ~"VTATABCLI~".~"CODCLI~" ) and  
+         ( ~"VTACLICOBPROD~".~"CODUBI~" = ~"VTATABDST~".~"CODUBI~" ) and  
+		( f.codcli(+) = ~"VTATABCLI~".~"CODCLI~" ) and
+         ( ~"VTACLICOBPROD~".~"CODLEAD~" = :acodlead ) and
+         vtatabcli.codseg=vtatabseg.codseg and
+			vtatabcli.codect=vtatabect.codect
+group by ~"VTACLICOBPROD~".~"DIRCLI~",   
+         ~"VTATABDST~".~"NOMDST~",   
+         ~"VTATABCLI~".~"NOMCLI~",   
+         ~"VTACLICOBPROD~".~"CODCLI~",   
+         ~"VTACLICOBPROD~".~"CODUBI~",   
+         ~"VTACLICOBPROD~".~"CODLEAD~",   
+         ~"VTATABCLI~".~"TIPDIDE~",   
+         ~"VTATABCLI~".~"NTDIDE~",   
+         ~"VTACLICOBPROD~".~"FLGVENTA~",   
+         ~"VTACLICOBPROD~".~"OBSVENTA~",   
+         ~"VTACLICOBPROD~".~"DIASINSTAL~",
+         vtatabseg.dscseg ,
+         vtatabect.nomect , 			
+			~"VTACLICOBPROD~".~"CODPRODLEAD~" 
+
+    
+" update="VTACLICOBPROD" updatewhere=0 updatekeyinplace=no arguments=(("acodlead", number)) )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo Cliente" border="6" color="0" x="197" y="8" height="56" width="416"  name=codigo_cliente_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="2866" y="8" height="56" width="745"  name=direccion_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cliente" border="6" color="0" x="622" y="8" height="56" width="1312"  name=cliente_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Documento" border="6" color="0" x="1943" y="8" height="56" width="507"  name=tipo_documento_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Documento" border="6" color="0" x="2459" y="8" height="56" width="398"  name=documento_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="3621" y="8" height="56" width="654"  name=distrito_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Observaciones Ventas" border="6" color="0" x="6843" y="8" height="56" width="859"  name=observaciones_venta_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dias de Instalaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="7712" y="8" height="56" width="517"  name=dias_instalaciones_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ventas" border="6" color="0" x="5833" y="8" height="56" width="224"  name=ventas_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Segmento" border="6" color="0" x="4283" y="8" height="56" width="681"  name=obj_6563998  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Consultor" border="6" color="0" x="4974" y="8" height="56" width="850"  name=t_1  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Producto" border="6" color="0" x="6066" y="8" height="56" width="768"  name=obj_93260281  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="" border="6" color="0" x="9" y="8" height="56" width="178"  name=t_2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Telf. Fija" border="6" color="0" x="8238" y="8" height="56" width="233"  name=t_3  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Internet" border="6" color="0" x="8480" y="8" height="56" width="229"  name=t_4  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=detail alignment="2" expression="cumulativeSum( 1 for all )"border="0" color="0" x="9" y="8" height="60" width="178" format="[GENERAL]"  name=compute_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=10 border="0" color="0" x="197" y="4" height="60" width="416" format="[general]"  name=codigo_cliente edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=20 border="0" color="0" x="2866" y="4" height="60" width="745" format="[general]"  name=direccion edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="622" y="4" height="60" width="1312" format="[general]"  name=cliente edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1943" y="4" height="60" width="507" format="[general]"  name=tipo_documento dddw.name=dddw_tipdid dddw.displaycolumn=abrdid dddw.datacolumn=tipdide dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="2459" y="4" height="60" width="398" format="[general]"  name=documento edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=60 border="0" color="0" x="6843" y="4" height="60" width="859" format="[general]"  name=observaciones_venta edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=70 border="0" color="0" x="7712" y="4" height="60" width="517" format="[general]"  name=dias_instalaciones edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=30 border="0" color="0" x="3621" y="4" height="60" width="654" format="[general]"  name=distrito dddw.name=dddw_tabdst_dst_lima dddw.displaycolumn=vtatabdst_nomdst dddw.datacolumn=vtatabdst_codubi dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="2" tabsequence=40 border="0" color="0" x="5833" y="4" height="60" width="224" format="[general]"  name=ventas checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="4283" y="4" height="60" width="681" format="[general]"  name=segmento edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="4974" y="4" height="60" width="850" format="[general]"  name=consultor edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=50 border="0" color="0" x="6066" y="4" height="60" width="768" format="[general]"  name=producto dddw.name=dddw_productolead dddw.displaycolumn=descripcion dddw.datacolumn=codprodlead dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="2" tabsequence=32766 border="0" color="0" x="8238" y="4" height="60" width="233" format="[general]"  name=telef_fija checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="2" tabsequence=32766 border="0" color="0" x="8480" y="4" height="60" width="229" format="[general]"  name=internet checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Datos" border="6" color="0" x="8718" y="8" height="56" width="229"  name=t_5 visible="1~t0"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=17 alignment="2" tabsequence=32766 border="0" color="0" x="8718" y="4" height="60" width="229" format="[general]"  name=datos visible="1~t0" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

@@ -1,0 +1,130 @@
+HA$PBExportHeader$d_rep_auditoria_sucursales.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=4 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no  crosstab.dynamic = yes grid.lines=1 grid.columnmove=no selected.mouse=no )
+header[1](height=428 color="536870912" )
+header[2](height=68 color="536870912" )
+summary(height=88 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(20) updatewhereclause=yes name=compute_0002 dbname="compute_0002" )
+ column=(type=number updatewhereclause=yes name=resultado dbname="resultado" )
+ retrieve="SELECT 'TIPO_SUCURSAL', DECODE(DECODE(trim(tipsuc),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.tipsuc,null,0,'',0,1) tipsuc 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.tipsuc,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(tipsuc),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+UNION ALL
+SELECT 'TIPO_VIA', DECODE(DECODE(trim(tipviap),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.tipviap,null,0,'',0,1) tipviap 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.tipviap,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(tipviap),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'NOMBRE_VIA', DECODE(DECODE(trim(nomvia),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.nomvia,null,0,'',0,1) nomvia 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.nomvia,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(nomvia),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'NUMERO', DECODE(DECODE(trim(numvia),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.numvia,null,0,'',0,1) numvia 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.numvia,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(numvia),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'INTERIOR', DECODE(DECODE(trim(interior),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.interior,null,0,'',0,1) interior 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.interior,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(interior),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'URBANIZACION', DECODE(DECODE(trim(nomurb),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.nomurb,null,0,'',0,1) nomurb 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.nomurb,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(nomurb),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'DISTRITO', DECODE(DECODE(trim(nomdst),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(c.nomdst,null,0,'',0,1) nomdst 
+FROM VTATABCLI a, vtasuccli b, v_ubicaciones c 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1 and b.ubisuc = c.codubi and c.codubi <> '0000000000'
+GROUP BY A.CODCLI, decode(c.nomdst,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(nomdst),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'PROVINCIA', DECODE(DECODE(trim(nompvc),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(c.nompvc,null,0,'',0,1) nompvc 
+FROM VTATABCLI a, vtasuccli b, v_ubicaciones c 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1 and b.ubisuc = c.codubi and c.codubi <> '0000000000'
+GROUP BY A.CODCLI, decode(c.nompvc,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(nompvc),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'CIUDAD', DECODE(DECODE(trim(nomest),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(c.nomest,null,0,'',0,1) nomest 
+FROM VTATABCLI a, vtasuccli b, v_ubicaciones c 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1 and b.ubisuc = c.codubi and c.codubi <> '0000000000'
+GROUP BY A.CODCLI, decode(c.nomest,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(nomest),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'REFERENCIA', DECODE(DECODE(trim(referencia),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.referencia,null,0,'',0,1) referencia 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.referencia,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(referencia),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'COORD_X', DECODE(DECODE(trim(coordx),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.coordx,null,0,'',0,1) coordx 
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.coordx,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(coordx),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'COORD_Y', DECODE(DECODE(trim(coordy),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(b.coordy,null,0,'',0,1) coordy
+FROM VTATABCLI a, vtasuccli b 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and a.idestado = 1
+GROUP BY A.CODCLI, decode(b.coordy,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(coordy),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'EDIFICIO', DECODE(DECODE(trim(nombre),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(c.nombre,null,0,'',0,1) nombre 
+FROM VTATABCLI a, vtasuccli b, edificio c 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and b.codedi = c.codigo(+) and a.idestado = 1  
+GROUP BY A.CODCLI, decode(c.nombre,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(nombre),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'PISO_EDI', DECODE(DECODE(trim(pisos),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(c.pisos,null,0,'',0,1) pisos 
+FROM VTATABCLI a, vtasuccli b, edificio c 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and b.codedi = c.codigo(+)  and a.idestado = 1
+GROUP BY A.CODCLI, decode(c.pisos,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(pisos),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')
+union all
+SELECT 'OFICINA_EDI', DECODE(DECODE(trim(idtipooficina),NULL,0,0,0,1),1,'POBLADO','NO POBLADO'), COUNT (*) RESULTADO FROM
+(SELECT A.CODCLI,decode(c.idtipooficina,null,0,'',0,1) idtipooficina 
+FROM VTATABCLI a, vtasuccli b, edificio c 
+WHERE b.TIPSUC = '0001' and a.codcli = b.codcli and a.tipper = 'J' and b.codedi = c.codigo(+) and a.idestado = 1
+GROUP BY A.CODCLI, decode(c.idtipooficina,null,0,'',0,1) 
+order by 1) GROUP BY DECODE(DECODE(trim(idtipooficina),NULL,0,0,0,1),1,'POBLADO','NO POBLADO')"  sort="compute_0002 A " )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="4" height="76" width="471" format="[general]" html.valueishtml="0"  name=compute_0002 visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="2" expression="sum(resultado for all )"border="0" color="33554432" x="489" y="4" height="76" width="448" format="#,##0" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="2" text="@compute_0001" border="4" color="134217856" x="489" y="4" height="56" width="448" html.valueishtml="0"  name=resultado_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+compute(band=summary alignment="2" expression="~"~""border="0" color="134217856" x="9" y="4" height="76" width="471" format="[general]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="33554432" x="489" y="4" height="76" width="448" format="#,##0" html.valueishtml="0"  name=resultado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0 crosstab.repeat=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="percent(  resultado  for all)"border="0" color="8388608" x="946" y="4" height="76" width="293" format="0.0%" html.valueishtml="0"  name=compute_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+text(band=header[2] alignment="2" text="%" border="4" color="134217856" x="946" y="4" height="56" width="293" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+bitmap(band=header[1] filename="I:\iconos\logotipo1.bmp" x="9" y="24" height="236" width="873" border="0"  name=p_1 visible="1" )
+text(band=header[1] alignment="2" text="M$$HEX1$$f300$$ENDHEX$$dulo de Marketing" border="0" color="0" x="9" y="288" height="56" width="759" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=foreground alignment="2" text="Auditoria de Campos - Sucursal  y Cobertura" border="0" color="0" x="1349" y="156" height="80" width="1573" html.valueishtml="0"  name=t_2 visible="1"  slideup=allabove  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+compute(band=foreground alignment="1" expression="'Pag. ' + page() + ' de ' + pageCount()"border="0" color="0" x="3058" y="40" height="56" width="814" format="[general]" html.valueishtml="0"  name=compute_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=foreground alignment="1" expression="today()"border="0" color="0" x="3561" y="108" height="56" width="311" format="dd/mm/yyyy" html.valueishtml="0"  name=compute_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=foreground alignment="1" expression="today()"border="0" color="0" x="3561" y="180" height="56" width="311" format="hh:mm:ss" html.valueishtml="0"  name=compute_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+ crosstab(band = foreground  crosstabonly = yes 
+ columns = "compute_0001" rows = "compute_0002" values = "sum(resultado for crosstab)" sourcenames = "compute_0001, compute_0002, resultado")htmltable(border="0" cellpadding="1" cellspacing="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

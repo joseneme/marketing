@@ -1,0 +1,18 @@
+HA$PBExportHeader$d_mnt_reporte_ficha.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=768 color="536870912"  height.autosize=yes)
+table(column=(type=char(2) updatewhereclause=yes name=campo dbname="campo" )
+ retrieve="  SELECT '01' Campo
+  FROM ~"DUAL~"   
+" arguments=(("as_codcli", string),("an_idfic", number)) )
+report(band=detail dataobject="dw_identificacion_necesidades" x="23" y="184" height="120" width="4645" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_codcli"),(" an_idfic ")) trail_footer = yes  name=dw_3 visible="1"  slideup=allabove )
+report(band=detail dataobject="d_foot_reporte" x="23" y="608" height="136" width="4645" border="0"  height.autosize=yes criteria="" trail_footer = yes  name=dw_6 visible="1"  slideup=allabove )
+report(band=detail dataobject="d_necesidad_cliente" x="23" y="316" height="136" width="4645" border="0"  height.autosize=yes criteria="" nest_arguments=((" an_idfic ")) trail_footer = yes  name=dw_4 visible="1"  slideup=allabove )
+report(band=detail dataobject="dw_gastos_telecomunica" x="23" y="464" height="136" width="4645" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_codcli ")) trail_footer = yes  name=dw_5 visible="1"  slideup=allabove )
+report(band=detail dataobject="dw_sucursales_negocio" x="23" y="140" height="40" width="4645" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_codcli ")) trail_footer = yes  name=dw_2 visible="1"  slideup=allabove )
+report(band=detail dataobject="dw_identificacion_cliente" x="23" y="0" height="136" width="4645" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_codcli "),(" an_idfic ")) trail_footer = yes  name=dw_1 visible="1"  slideup=directlyabove )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
