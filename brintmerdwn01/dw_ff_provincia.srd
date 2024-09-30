@@ -1,0 +1,50 @@
+HA$PBExportHeader$dw_ff_provincia.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=484 color="536870912" )
+table(column=(type=char(3) update=yes updatewhereclause=yes key=yes name=codpai dbname="vtatabpvc.codpai" )
+ column=(type=char(3) update=yes updatewhereclause=yes key=yes name=codest dbname="vtatabpvc.codest" )
+ column=(type=char(3) update=yes updatewhereclause=yes key=yes name=codpvc dbname="vtatabpvc.codpvc" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=nompvc dbname="vtatabpvc.nompvc" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=codusu dbname="vtatabpvc.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="vtatabpvc.fecusu" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=abrev dbname="vtatabpvc.abrev" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=codmunicipio dbname="vtatabpvc.codmunicipio" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idlocalidad dbname="vtatabpvc.idlocalidad" )
+ column=(type=char(80) updatewhereclause=yes name=nompai dbname="vtatabpai.nompai" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="vtatabest.nomest" )
+ retrieve="  SELECT ~"VTATABPVC~".~"CODPAI~",   
+         ~"VTATABPVC~".~"CODEST~",   
+         ~"VTATABPVC~".~"CODPVC~",   
+         ~"VTATABPVC~".~"NOMPVC~",   
+         ~"VTATABPVC~".~"CODUSU~",   
+         ~"VTATABPVC~".~"FECUSU~",   
+         ~"VTATABPVC~".~"ABREV~",   
+         ~"VTATABPVC~".~"CODMUNICIPIO~",   
+         ~"VTATABPVC~".~"IDLOCALIDAD~",   
+         ~"VTATABPAI~".~"NOMPAI~",   
+         ~"VTATABEST~".~"NOMEST~"  
+    FROM ~"VTATABPVC~",   
+         ~"VTATABEST~",   
+         ~"VTATABPAI~"  
+   WHERE ( vtatabpvc.codpai = vtatabest.codpai (+)) and  
+         ( vtatabpvc.codest = vtatabest.codest (+)) and  
+         ( vtatabpai.codpai (+) = vtatabest.codpai)    
+" update="VTATABPVC" updatewhere=0 updatekeyinplace=no )
+groupbox(band=detail text=""border="5" color="0" x="37" y="32" height="416" width="2322"  name=gb_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Abreviatura:" border="0" color="0" x="73" y="352" height="56" width="302" html.valueishtml="0"  name=abrev_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=40 border="5" color="0" x="407" y="352" height="56" width="174" format="[general]" html.valueishtml="0"  name=abrev visible="1" edit.limit=3 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="407" y="260" height="56" width="174" format="[general]" html.valueishtml="0"  name=codpvc visible="1" edit.limit=3 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="5" color="0" x="613" y="260" height="56" width="1125" format="[general]" html.valueishtml="0"  name=nompvc visible="1" edit.limit=40 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Provincia:" border="0" color="0" x="73" y="260" height="56" width="302" html.valueishtml="0"  name=nompvc_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Pa$$HEX1$$ed00$$ENDHEX$$s:" border="0" color="0" x="73" y="76" height="56" width="302" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="5" color="0" x="407" y="76" height="56" width="174" format="[general]" html.valueishtml="0"  name=codpai visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Estado:" border="0" color="0" x="73" y="168" height="56" width="302" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="407" y="168" height="56" width="174" format="[general]" html.valueishtml="0"  name=codest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="0" x="613" y="168" height="56" width="1125" format="[general]" html.valueishtml="0"  name=nomest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="0" x="613" y="76" height="56" width="1125" format="[general]" html.valueishtml="0"  name=nompai visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+bitmap(band=detail filename="I:\Iconos\Buscar_2.bmp" x="1769" y="76" height="68" width="78" border="6"  name=p_buscar  tag="Buscar" visible="1" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

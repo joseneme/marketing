@@ -1,0 +1,39 @@
+HA$PBExportHeader$dw_gr_contratista.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idcontratista dbname="contratistas.idcontratista" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=tipo dbname="contratistas.tipo" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=contratista dbname="contratistas.contratista" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=ddd dbname="contratistas.ddd" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=telefono dbname="contratistas.telefono" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estado dbname="contratistas.estado" initial="1" values="	1/	0" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=codusu dbname="contratistas.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="contratistas.fecusu" )
+ retrieve="  SELECT ~"CONTRATISTAS~".~"IDCONTRATISTA~",   
+         ~"CONTRATISTAS~".~"TIPO~",   
+         ~"CONTRATISTAS~".~"CONTRATISTA~",   
+         ~"CONTRATISTAS~".~"DDD~",   
+         ~"CONTRATISTAS~".~"TELEFONO~",   
+         ~"CONTRATISTAS~".~"ESTADO~",   
+         ~"CONTRATISTAS~".~"CODUSU~",   
+         ~"CONTRATISTAS~".~"FECUSU~"  
+    FROM ~"CONTRATISTAS~"   
+" update="CONTRATISTAS" updatewhere=0 updatekeyinplace=no )
+text(band=header alignment="2" text="Contratista" border="6" color="0" x="786" y="8" height="56" width="1024" html.valueishtml="0"  name=contratista_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="DDD" border="6" color="0" x="1819" y="8" height="56" width="251" html.valueishtml="0"  name=ddd_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tel$$HEX1$$e900$$ENDHEX$$fono" border="6" color="0" x="2080" y="8" height="56" width="768" html.valueishtml="0"  name=telefono_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="St." border="6" color="0" x="9" y="8" height="56" width="73" html.valueishtml="0"  name=estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Idcontratista" border="6" color="0" x="91" y="8" height="56" width="338" html.valueishtml="0"  name=idcontratista_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo" border="6" color="0" x="439" y="8" height="56" width="338" html.valueishtml="0"  name=tipo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="91" y="4" height="56" width="338" format="[general]" html.valueishtml="0"  name=idcontratista visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="439" y="4" height="56" width="338" format="[general]" html.valueishtml="0"  name=tipo visible="1" edit.limit=3 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="0" color="0" x="786" y="4" height="56" width="1024" format="[general]" html.valueishtml="0"  name=contratista visible="1" edit.limit=100 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="0" x="1819" y="4" height="56" width="251" format="[general]" html.valueishtml="0"  name=ddd visible="1" edit.limit=4 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=50 border="0" color="0" x="2080" y="4" height="56" width="768" format="[general]" html.valueishtml="0"  name=telefono visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=10 border="0" color="0" x="9" y="4" height="56" width="73" format="[general]" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

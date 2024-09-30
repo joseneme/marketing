@@ -1,0 +1,170 @@
+HA$PBExportHeader$dw_ff_edificio.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1372 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=codigo dbname="edificio.codigo" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=nombre dbname="edificio.nombre" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="edificio.tipviap" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="edificio.nomvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="edificio.numvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=nomurb dbname="edificio.nomurb" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="edificio.codubi" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codzona dbname="edificio.codzona" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=pisos dbname="edificio.pisos" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=administrador dbname="edificio.administrador" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=telefono dbname="edificio.telefono" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="edificio.fecusu" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=codusu dbname="edificio.codusu" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=pop dbname="edificio.pop" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idtipooficina dbname="edificio.idtipooficina" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=nroemp dbname="edificio.nroemp" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codect dbname="edificio.codect" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=on_net dbname="edificio.on_net" values="Cableado	1/Cableado	0" )
+ column=(type=char(1000) update=yes updatewhereclause=yes name=observacion dbname="edificio.observacion" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordx dbname="edificio.coordx" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordy dbname="edificio.coordy" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flgupd dbname="edificio.flgupd" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idtipcab dbname="edificio.idtipcab" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_usuario dbname="edificio.flg_usuario" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=inmueble dbname="edificio.inmueble" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=id_constructora dbname="edificio.id_constructora" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=id_incorporadora dbname="edificio.id_incorporadora" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=id_administradora dbname="edificio.id_administradora" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=idclf dbname="edificio.idclf" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idestatus dbname="edificio.idestatus" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=complemento dbname="edificio.complemento" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=telefono_adm dbname="edificio.telefono_adm" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idoperador1 dbname="edificio.idoperador1" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idoperador2 dbname="edificio.idoperador2" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idoperador3 dbname="edificio.idoperador3" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecini dbname="edificio.fecini" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecfin dbname="edificio.fecfin" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idcatedi dbname="edificio.idcatedi" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=codpos dbname="edificio.codpos" )
+ column=(type=char(126) updatewhereclause=yes name=distrito_desc dbname="v_ubicaciones.distrito_desc" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idactivacion dbname="edificio.idactivacion" )
+ column=(type=char(6) updatewhereclause=yes name=comp_int dbname="comp_int" )
+ retrieve="  SELECT ~"EDIFICIO~".~"CODIGO~",   
+         ~"EDIFICIO~".~"NOMBRE~",   
+         ~"EDIFICIO~".~"TIPVIAP~",   
+         ~"EDIFICIO~".~"NOMVIA~",   
+         ~"EDIFICIO~".~"NUMVIA~",   
+         ~"EDIFICIO~".~"NOMURB~",   
+         ~"EDIFICIO~".~"CODUBI~",   
+         ~"EDIFICIO~".~"CODZONA~",   
+         ~"EDIFICIO~".~"PISOS~",   
+         ~"EDIFICIO~".~"ADMINISTRADOR~",   
+         ~"EDIFICIO~".~"TELEFONO~",   
+         ~"EDIFICIO~".~"FECUSU~",   
+         ~"EDIFICIO~".~"CODUSU~",   
+         ~"EDIFICIO~".~"POP~",   
+         ~"EDIFICIO~".~"IDTIPOOFICINA~",   
+         ~"EDIFICIO~".~"NROEMP~",   
+         ~"EDIFICIO~".~"CODECT~",   
+         ~"EDIFICIO~".~"ON_NET~",   
+         ~"EDIFICIO~".~"OBSERVACION~",   
+         ~"EDIFICIO~".~"COORDX~",   
+         ~"EDIFICIO~".~"COORDY~",   
+         ~"EDIFICIO~".~"FLGUPD~",   
+         ~"EDIFICIO~".~"IDTIPCAB~",   
+         ~"EDIFICIO~".~"FLG_USUARIO~",   
+         ~"EDIFICIO~".~"INMUEBLE~",   
+         ~"EDIFICIO~".~"ID_CONSTRUCTORA~",   
+         ~"EDIFICIO~".~"ID_INCORPORADORA~",   
+         ~"EDIFICIO~".~"ID_ADMINISTRADORA~",   
+         ~"EDIFICIO~".~"IDCLF~",   
+         ~"EDIFICIO~".~"IDESTATUS~",   
+         ~"EDIFICIO~".~"COMPLEMENTO~",   
+         ~"EDIFICIO~".~"TELEFONO_ADM~",   
+         ~"EDIFICIO~".~"IDOPERADOR1~",   
+         ~"EDIFICIO~".~"IDOPERADOR2~",   
+         ~"EDIFICIO~".~"IDOPERADOR3~",   
+         ~"EDIFICIO~".~"FECINI~",   
+         ~"EDIFICIO~".~"FECFIN~",   
+         ~"EDIFICIO~".~"IDCATEDI~",   
+         ~"EDIFICIO~".~"CODPOS~",   
+         ~"V_UBICACIONES~".~"DISTRITO_DESC~",   
+         ~"EDIFICIO~".~"IDACTIVACION~",
+			decode(trim(pq_constantes.F_GET_CFG), 'BRA', 'Compl.', 'PER', 'Int.') comp_int  
+    FROM ~"EDIFICIO~",   
+         ~"V_UBICACIONES~"  
+   WHERE ( edificio.codubi = v_ubicaciones.codubi (+))    
+" update="EDIFICIO" updatewhere=0 updatekeyinplace=no )
+groupbox(band=detail text="Direcci$$HEX1$$f300$$ENDHEX$$n"border="5" color="0" x="23" y="356" height="468" width="2441"  name=gb_3  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Caracter$$HEX1$$ed00$$ENDHEX$$sticas"border="5" color="0" x="23" y="828" height="356" width="2441"  name=gb_4  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Observaciones"border="5" color="0" x="23" y="1188" height="168" width="2441"  name=gb_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Datos Generales"border="5" color="0" x="23" y="16" height="320" width="2441"  name=gb_5  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Vigencia del Edificio"border="5" color="0" x="2501" y="20" height="320" width="521"  name=gb_6  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Nombre:" border="0" color="0" x="37" y="164" height="56" width="334"  name=nombre_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Administrador:" border="0" color="0" x="37" y="240" height="56" width="334"  name=administrador_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Inmueble" border="0" color="0" x="37" y="424" height="56" width="334"  name=inmueble_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="1" tabsequence=32766 border="5" color="0" x="398" y="424" height="56" width="681" format="[general]"  name=inmueble editmask.mask="##########" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="398" y="164" height="56" width="1303" format="[general]"  name=nombre edit.limit=50 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Telf. Admin." border="0" color="0" x="1765" y="240" height="56" width="270"  name=t_3  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Inicio" border="0" color="0" x="2528" y="104" height="56" width="128"  name=t_7  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Codigo:" border="0" color="0" x="37" y="88" height="56" width="334"  name=codigo_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="0" x="398" y="88" height="56" width="421" format="[general]"  name=codigo edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="St. Ativacao:" border="0" color="0" x="846" y="88" height="56" width="302"  name=t_6  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Cod. Postal" border="0" color="0" x="1710" y="428" height="56" width="247"  name=t_10  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=10 alignment="0" tabsequence=30 border="5" color="0" x="398" y="240" height="56" width="1303" format="[general]"  name=administrador edit.limit=100 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+bitmap(band=detail filename="I:\Iconos\Buscar_2.bmp" x="1106" y="420" height="68" width="78" border="6"  name=p_buscar  tag="Buscar" )
+column(band=detail id=32 alignment="0" tabsequence=40 border="5" color="0" x="2048" y="240" height="56" width="366" format="[general]"  name=telefono_adm edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Fin" border="0" color="0" x="2528" y="240" height="56" width="128"  name=t_8  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Coordenadas"border="5" color="0" x="3072" y="20" height="320" width="521"  name=gb_7  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=36 alignment="0" tabsequence=220 border="5" color="0" x="2688" y="104" height="56" width="288" format="[shortdate]"  name=fecini edit.name="DD/MM/YYYY HH:MM:SS" editmask.mask="DD/MM/YYYY" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=37 alignment="0" tabsequence=230 border="5" color="0" x="2688" y="240" height="56" width="288" format="[shortdate]"  name=fecfin edit.name="DD/MM/YYYY HH:MM:SS" editmask.mask="DD/MM/YYYY" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="1" text="Y:" border="0" color="0" x="3067" y="240" height="56" width="82"  name=t_12  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="1" text="X:" border="0" color="0" x="3067" y="104" height="56" width="82"  name=t_11  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=20 alignment="0" tabsequence=240 border="5" color="0" x="3182" y="104" height="56" width="384" format="[general]"  name=coordx edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=21 alignment="0" tabsequence=250 border="5" color="0" x="3182" y="240" height="56" width="384" format="[general]"  name=coordy edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=39 alignment="0" tabsequence=50 border="5" color="0" x="1984" y="428" height="56" width="462" format="[general]"  name=codpos edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=41 alignment="1" tabsequence=10 border="5" color="0" x="1175" y="88" height="56" width="526" format="[general]"  name=idactivacion dddw.name=dddw_flg_usuario dddw.displaycolumn=descripcion dddw.datacolumn=idactivacion dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Tipo V$$HEX1$$ed00$$ENDHEX$$a:" border="0" color="0" x="37" y="504" height="56" width="334"  name=tipviap_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=3 alignment="0" tabsequence=60 border="5" color="0" x="398" y="504" height="56" width="453" format="[general]"  name=tipviap dddw.name=dddw_tipviap dddw.displaycolumn=desvia dddw.datacolumn=codvia dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=4 alignment="0" tabsequence=70 border="5" color="0" x="1051" y="504" height="56" width="1394" format="[general]"  name=nomvia edit.limit=60 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="N$$HEX1$$fa00$$ENDHEX$$mero:" border="0" color="0" x="37" y="584" height="56" width="334"  name=numvia_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=80 border="5" color="0" x="398" y="584" height="56" width="453" format="[general]"  name=numvia edit.limit=50 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+groupbox(band=detail text="Contratistas"border="5" color="0" x="2501" y="356" height="316" width="1093"  name=gb_2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=26 alignment="1" tabsequence=260 border="5" color="0" x="2885" y="424" height="56" width="681" format="[general]"  name=id_constructora dddw.name=dddw_contratista dddw.displaycolumn=contratista dddw.datacolumn=idcontratista dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="1" text="Constructora" border="0" color="0" x="2523" y="424" height="56" width="343"  name=id_constructora_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Incorporadora" border="0" color="0" x="2523" y="504" height="56" width="343"  name=id_incorporadora_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="1" tabsequence=270 border="5" color="0" x="2885" y="504" height="56" width="681" format="[general]"  name=id_incorporadora dddw.name=dddw_contratista dddw.displaycolumn=contratista dddw.datacolumn=idcontratista dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="1" text="Administradora" border="0" color="0" x="2523" y="584" height="56" width="343"  name=id_administradora_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="1" tabsequence=280 border="5" color="0" x="2885" y="584" height="56" width="681" format="[general]"  name=id_administradora dddw.name=dddw_contratista dddw.displaycolumn=contratista dddw.datacolumn=idcontratista dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Distrito (F9):" border="0" color="0" x="37" y="748" height="56" width="334"  name=codubi_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=90 border="5" color="0" x="398" y="748" height="56" width="453" format="[general]"  name=codubi edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=40 alignment="0" tabsequence=32766 border="5" color="0" x="878" y="748" height="56" width="1568" format="[general]"  name=distrito_desc edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="1" text="Nro. Empresas:" border="0" color="0" x="567" y="960" height="56" width="366"  name=nroemp_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="1" tabsequence=150 border="5" color="0" x="951" y="960" height="56" width="137" format="[general]"  name=nroemp editmask.mask="########" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=18 alignment="0" tabsequence=180 border="0" color="0" x="1115" y="1032" height="56" width="352" format="[general]"  name=on_net checkbox.text="Cableado" checkbox.on="1" checkbox.off="0" checkbox.lefttext=yes checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="0" text="Potencial" border="0" color="0" x="1115" y="960" height="56" width="279"  name=t_9  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Telefono:" border="0" color="0" x="1115" y="888" height="56" width="279"  name=telefono_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tipo Oficina:" border="0" color="0" x="1115" y="1104" height="56" width="279"  name=idtipooficina_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=130 border="5" color="0" x="1417" y="888" height="56" width="681" format="[general]"  name=telefono edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=38 alignment="0" tabsequence=160 border="5" color="0" x="1417" y="960" height="56" width="681" format="[general]"  name=idcatedi dddw.name=dddw_categoria_edificio dddw.displaycolumn=descripcion dddw.datacolumn=idcatedi dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=15 alignment="1" tabsequence=200 border="5" color="0" x="1417" y="1104" height="56" width="681" format="[general]"  name=idtipooficina dddw.name=dddw_tipoedificio dddw.displaycolumn=descripcion dddw.datacolumn=codtipedi dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=23 alignment="1" tabsequence=120 border="5" color="0" x="407" y="888" height="56" width="681" format="[general]"  name=idtipcab dddw.name=dddw_vtatabtipcab dddw.displaycolumn=nombre dddw.datacolumn=idtipcab dddw.percentwidth=180 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=9 alignment="1" tabsequence=140 border="5" color="0" x="407" y="960" height="56" width="137" format="[general]"  name=pisos editmask.mask="########" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=14 alignment="1" tabsequence=170 border="5" color="0" x="407" y="1032" height="56" width="681" format="[general]"  name=pop dddw.name=dddw_pop_ventas_br dddw.displaycolumn=direccion dddw.datacolumn=codubired dddw.percentwidth=250 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=29 alignment="0" tabsequence=190 border="5" color="0" x="407" y="1104" height="56" width="681" format="[general]"  name=idclf dddw.name=dddw_calificacion_visual dddw.displaycolumn=calificacion dddw.datacolumn=idclf dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Tipo Cableado:" border="0" color="0" x="46" y="888" height="56" width="334"  name=idtipcab_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Pisos:" border="0" color="0" x="46" y="960" height="56" width="334"  name=pisos_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Pop:" border="0" color="0" x="46" y="1032" height="56" width="334"  name=pop_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=33 alignment="0" tabsequence=290 border="5" color="0" x="2885" y="900" height="56" width="681" format="[general]"  name=idoperador1 dddw.name=dddw_operador_telecom dddw.displaycolumn=operador dddw.datacolumn=idoperador dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=34 alignment="0" tabsequence=300 border="5" color="0" x="2885" y="984" height="56" width="681" format="[general]"  name=idoperador2 dddw.name=dddw_operador_telecom dddw.displaycolumn=operador dddw.datacolumn=idoperador dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=35 alignment="0" tabsequence=310 border="5" color="0" x="2885" y="1068" height="56" width="681" format="[general]"  name=idoperador3 dddw.name=dddw_operador_telecom dddw.displaycolumn=operador dddw.datacolumn=idoperador dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="1" text="3)" border="0" color="0" x="2523" y="1068" height="56" width="343"  name=t_operador3  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="1" text="2)" border="0" color="0" x="2523" y="984" height="56" width="343"  name=t_operador2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="1" text="1)" border="0" color="0" x="2523" y="900" height="56" width="343"  name=t_operador1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Proveedores de Telecomunicaciones"border="5" color="0" x="2501" y="828" height="316" width="1093"  name=gb_operador  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Idclf:" border="0" color="0" x="46" y="1104" height="56" width="334"  name=idclf_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=210 border="5" color="0" x="46" y="1252" height="84" width="2391" format="[general]"  name=observacion edit.limit=1000 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=6 alignment="0" tabsequence=110 border="5" color="0" x="393" y="660" height="56" width="1376" format="[general]"  name=nomurb edit.limit=50 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=detail alignment="0" text="Urbanizaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="37" y="660" height="56" width="334"  name=nomurb_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="V$$HEX1$$ed00$$ENDHEX$$a" border="0" color="0" x="873" y="504" height="56" width="155"  name=nomvia_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=31 alignment="0" tabsequence=100 border="5" color="0" x="1051" y="580" height="56" width="718" format="[general]"  name=complemento edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=42 alignment="0" tabsequence=32766 border="0" color="0" x="873" y="580" height="56" width="160" format="[general]"  name=comp_int edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

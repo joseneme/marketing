@@ -1,0 +1,71 @@
+HA$PBExportHeader$dw_ff_inmueble.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=608 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idinmueble dbname="inmueble.idinmueble" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=nombre dbname="inmueble.nombre" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="inmueble.tipviap" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="inmueble.nomvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="inmueble.numvia" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=codpos dbname="inmueble.codpos" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=complemento dbname="inmueble.complemento" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordx dbname="inmueble.coordx" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordy dbname="inmueble.coordy" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=codusu dbname="inmueble.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="inmueble.fecusu" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="inmueble.codubi" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=num_seq dbname="inmueble.num_seq" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estado dbname="inmueble.estado" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=nompvc dbname="v_ubicaciones.nompvc" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(80) updatewhereclause=yes name=nompai dbname="v_ubicaciones.nompai" )
+ column=(type=char(126) updatewhereclause=yes name=distrito_desc dbname="v_ubicaciones.distrito_desc" )
+ column=(type=char(11) updatewhereclause=yes name=comp_int dbname="comp_int" )
+ retrieve="  SELECT ~"INMUEBLE~".~"IDINMUEBLE~",   
+         ~"INMUEBLE~".~"NOMBRE~",   
+         ~"INMUEBLE~".~"TIPVIAP~",   
+         ~"INMUEBLE~".~"NOMVIA~",   
+         ~"INMUEBLE~".~"NUMVIA~",   
+         ~"INMUEBLE~".~"CODPOS~",   
+         ~"INMUEBLE~".~"COMPLEMENTO~",   
+         ~"INMUEBLE~".~"COORDX~",   
+         ~"INMUEBLE~".~"COORDY~",   
+         ~"INMUEBLE~".~"CODUSU~",   
+         ~"INMUEBLE~".~"FECUSU~",   
+         ~"INMUEBLE~".~"CODUBI~",   
+         ~"INMUEBLE~".~"NUM_SEQ~",   
+         ~"INMUEBLE~".~"ESTADO~",   
+         ~"V_UBICACIONES~".~"NOMDST~",   
+         ~"V_UBICACIONES~".~"NOMPVC~",   
+         ~"V_UBICACIONES~".~"NOMEST~",   
+         ~"V_UBICACIONES~".~"NOMPAI~",   
+         ~"V_UBICACIONES~".~"DISTRITO_DESC~",
+			decode(trim(pq_constantes.F_GET_CFG), 'BRA', 'Complemento', 'PER', 'Interior') comp_int 
+    FROM ~"INMUEBLE~",   
+         ~"V_UBICACIONES~"  
+   WHERE ( inmueble.codubi = v_ubicaciones.codubi (+))    
+" update="INMUEBLE" updatewhere=0 updatekeyinplace=no )
+groupbox(band=detail text=""border="5" color="0" x="18" y="20" height="512" width="2546"  name=gb_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="5" color="0" x="1285" y="248" height="56" width="1239" format="[general]"  name=nomvia edit.limit=60 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Inmueble" border="0" color="0" x="37" y="56" height="56" width="270"  name=idinmueble_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Nombre" border="0" color="0" x="37" y="152" height="56" width="270"  name=nombre_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Tipo V$$HEX1$$ed00$$ENDHEX$$a" border="0" color="0" x="37" y="248" height="56" width="270"  name=tipviap_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="N$$HEX1$$fa00$$ENDHEX$$mero" border="0" color="0" x="37" y="344" height="56" width="270"  name=numvia_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="334" y="152" height="56" width="1129" format="[general]"  name=nombre edit.limit=120 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="0" x="334" y="56" height="56" width="631" format="[general]"  name=idinmueble edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="0" text="Nombre V$$HEX1$$ed00$$ENDHEX$$a" border="0" color="0" x="978" y="248" height="56" width="297"  name=nomvia_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="5" color="0" x="334" y="344" height="56" width="626" format="[general]"  name=numvia edit.limit=50 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="5" color="0" x="334" y="248" height="56" width="626" format="[general]"  name=tipviap dddw.name=dddw_tipviap dddw.displaycolumn=desvia dddw.datacolumn=codvia dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Cod. Postal" border="0" color="0" x="1755" y="56" height="56" width="247"  name=codpos_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=60 border="5" color="0" x="2016" y="56" height="56" width="512" format="[general]"  name=codpos edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="1499" y="56" height="56" width="238" format="[general]"  name=estado edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Distrito(F9)" border="0" color="0" x="37" y="440" height="56" width="274"  name=codubi_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=70 border="5" color="0" x="334" y="440" height="56" width="544" format="[general]"  name=codubi edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="5" color="0" x="905" y="440" height="56" width="1618" format="[general]"  name=distrito_desc edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=7 alignment="0" tabsequence=50 border="5" color="0" x="1285" y="344" height="56" width="718" format="[general]"  name=complemento edit.limit=40 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="0" tabsequence=0 border="0" color="0" x="974" y="344" height="56" width="279"  name=comp_int  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

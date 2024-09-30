@@ -1,0 +1,124 @@
+HA$PBExportHeader$dw_gr_contacto_marketing.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes name=codcnt dbname="vtatabcntcli.codcnt" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="vtatabcntcli.codubi" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=tipdide dbname="vtatabcntcli.tipdide" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="vtatabcntcli.codcli" )
+ column=(type=char(2) updatewhereclause=yes name=tipcnt dbname="vtatabcntcli_tip.tipcnt" )
+ column=(type=char(80) update=yes updatewhereclause=yes name=nomcnt dbname="vtatabcntcli.nomcnt" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=nidcnt dbname="vtatabcntcli.nidcnt" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=dircnt dbname="vtatabcntcli.dircnt" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=carcnt dbname="vtatabcntcli.carcnt" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=codusu dbname="vtatabcntcli.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="vtatabcntcli.fecusu" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=decisor dbname="vtatabcntcli.decisor" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=carcli dbname="vtatabcntcli.carcli" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codtipdes dbname="vtatabcntcli.codtipdes" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codarea dbname="vtatabcntcli.codarea" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codjerar dbname="vtatabcntcli.codjerar" values="	1/	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estado dbname="vtatabcntcli.estado" values="	1/	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idvantive dbname="vtatabcntcli.idvantive" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idestatus dbname="vtatabcntcli.idestatus" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=password dbname="vtatabcntcli.password" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="vtatabcntcli.tipviap" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="vtatabcntcli.nomvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="vtatabcntcli.numvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numurb dbname="vtatabcntcli.numurb" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=interior dbname="vtatabcntcli.interior" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=codpos dbname="vtatabcntcli.codpos" )
+ column=(type=char(126) updatewhereclause=yes name=v_ubicaciones_distrito_desc dbname="distrito_desc" )
+ column=(type=char(60) updatewhereclause=yes name=descripcion dbname="cargoxcontacto.descripcion" )
+ column=(type=char(50) updatewhereclause=yes name=tipoactualizacion_descripcion dbname="tipoactualizacion.descripcion" )
+ column=(type=char(10) updatewhereclause=yes name=codcntsap dbname="vtatabcntcli.codcntsap" )
+ retrieve="  SELECT ~"VTATABCNTCLI~".~"CODCNT~",   
+         ~"VTATABCNTCLI~".~"CODUBI~",   
+         ~"VTATABCNTCLI~".~"TIPDIDE~",   
+         ~"VTATABCNTCLI~".~"CODCLI~",   
+         ~"VTATABCNTCLI_TIP~".~"TIPCNT~",   
+         ~"VTATABCNTCLI~".~"NOMCNT~",   
+         ~"VTATABCNTCLI~".~"NIDCNT~",   
+         ~"VTATABCNTCLI~".~"DIRCNT~",   
+         ~"VTATABCNTCLI~".~"CARCNT~",   
+         ~"VTATABCNTCLI~".~"CODUSU~",   
+         ~"VTATABCNTCLI~".~"FECUSU~",   
+         ~"VTATABCNTCLI~".~"DECISOR~",   
+         ~"VTATABCNTCLI~".~"CARCLI~",   
+         ~"VTATABCNTCLI~".~"CODTIPDES~",   
+         ~"VTATABCNTCLI~".~"CODAREA~",   
+         ~"VTATABCNTCLI~".~"CODJERAR~",   
+         ~"VTATABCNTCLI~".~"ESTADO~",   
+         ~"VTATABCNTCLI~".~"IDVANTIVE~",   
+         ~"VTATABCNTCLI~".~"IDESTATUS~",   
+         ~"VTATABCNTCLI~".~"PASSWORD~",   
+         ~"VTATABCNTCLI~".~"TIPVIAP~",   
+         ~"VTATABCNTCLI~".~"NOMVIA~",   
+         ~"VTATABCNTCLI~".~"NUMVIA~",   
+         ~"VTATABCNTCLI~".~"NUMURB~",   
+         ~"VTATABCNTCLI~".~"INTERIOR~",   
+         ~"VTATABCNTCLI~".~"CODPOS~",  
+         (select distrito_desc from v_ubicaciones where codubi = ~"VTATABCNTCLI~".~"CODUBI~" ) DISTRITO_DESC, 
+         ~"CARGOXCONTACTO~".~"DESCRIPCION~",
+         ~"TIPOACTUALIZACION~".~"DESCRIPCION~",
+		~"VTATABCNTCLI~".~"CODCNTSAP~"
+    FROM ~"VTATABCNTCLI~",   
+         ~"CARGOXCONTACTO~",
+         ~"TIPOACTUALIZACION~",
+		~"VTATABCNTCLI_TIP~"
+    WHERE ( ~"VTATABCNTCLI~".~"CODCLI~" = :as_codcli ) and
+          ( ~"VTATABCNTCLI~".~"ESTADO~" = 1 ) and
+          (~"VTATABCNTCLI~".~"IDTIPACT~" = ~"TIPOACTUALIZACION~".~"IDTIPACT~" (+) ) and
+          (~"TIPOACTUALIZACION~".~"VISIBLE~" = 1 OR ~"TIPOACTUALIZACION~".~"VISIBLE~" is null ) and
+          ( ~"VTATABCNTCLI~".~"CARCLI~" = ~"CARGOXCONTACTO~".~"CODCARGO~" (+) )
+		and ~"VTATABCNTCLI~".~"CODCNT~" = ~"VTATABCNTCLI_TIP~".~"CODCNT~"
+		and ~"VTATABCNTCLI_TIP~".~"ACTIVO~" = 1
+          
+" arguments=(("as_codcli", string))  sort="codcnt A estado D " )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="7470" y="4" height="56" width="1134" html.valueishtml="0"  name=obj_7369531 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Calificaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="8613" y="4" height="56" width="667" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Act." border="6" color="0" x="9" y="4" height="56" width="105" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fidelizacion" border="6" color="0" x="123" y="4" height="56" width="343" html.valueishtml="0"  name=codjerar_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="C. Directo Ventas" border="6" color="0" x="475" y="4" height="56" width="485" html.valueishtml="0"  name=tipoactualizacion_descripcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Contacto" border="6" color="0" x="969" y="4" height="56" width="247" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Area" border="6" color="0" x="1778" y="4" height="56" width="686" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre del Contacto" border="6" color="0" x="2473" y="4" height="56" width="855" html.valueishtml="0"  name=obj_9460703 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo" border="6" color="0" x="3337" y="4" height="56" width="800" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo Espec$$HEX1$$ed00$$ENDHEX$$fico" border="6" color="0" x="4146" y="4" height="56" width="795" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Decisor" border="6" color="0" x="5344" y="4" height="56" width="334" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Docto" border="6" color="0" x="5687" y="4" height="56" width="402" html.valueishtml="0"  name=obj_9485656 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="# Docto" border="6" color="0" x="6098" y="4" height="56" width="334" html.valueishtml="0"  name=obj_9478609 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="6441" y="4" height="56" width="1019" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo" border="6" color="0" x="4951" y="4" height="56" width="384" html.valueishtml="0"  name=vtatabcntcli_tip_tipcnt_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo Contacto SAP" border="6" color="0" x="1225" y="4" height="56" width="544" html.valueishtml="0"  name=vtatabcntcli_codcntsap_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="5687" y="0" height="56" width="402" format="[general]" html.valueishtml="0"  name=tipdide visible="1" dddw.name=dddw_tipdoc dddw.displaycolumn=dscdid dddw.datacolumn=tipdide dddw.percentwidth=250 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="2473" y="0" height="56" width="855" format="[general]" html.valueishtml="0"  name=nomcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="6098" y="0" height="56" width="334" format="[general]" html.valueishtml="0"  name=nidcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="6441" y="0" height="56" width="1019" format="[general]" html.valueishtml="0"  name=dircnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="3337" y="0" height="56" width="800" format="[general]" html.valueishtml="0"  name=carcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="5344" y="0" height="56" width="334" format="[general]" html.valueishtml="0"  name=decisor visible="1" dddw.name=dddw_tipo_decisor dddw.displaycolumn=descripcion dddw.datacolumn=codtipdes dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="8613" y="0" height="56" width="667" format="[general]" html.valueishtml="0"  name=idestatus visible="1" dddw.name=dddw_estatus_calificacion dddw.displaycolumn=calificacion dddw.datacolumn=idestatus dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=27 alignment="0" tabsequence=32766 border="0" color="0" x="7470" y="0" height="56" width="1134" format="[general]" html.valueishtml="0"  name=v_ubicaciones_distrito_desc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="0" color="0" x="4146" y="0" height="56" width="795" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="2" tabsequence=32766 border="0" color="0" x="9" y="0" height="56" width="105" format="[general]" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="2" tabsequence=32766 border="0" color="0" x="123" y="0" height="56" width="343" format="[general]" html.valueishtml="0"  name=codjerar visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=29 alignment="0" tabsequence=32766 border="0" color="0" x="475" y="0" height="56" width="485" format="[general]" html.valueishtml="0"  name=tipoactualizacion_descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="969" y="0" height="56" width="247" format="[general]" html.valueishtml="0"  name=codcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="1778" y="0" height="56" width="686" format="[general]" html.valueishtml="0"  name=codarea visible="1" dddw.name=dddw_area_contacto dddw.displaycolumn=descripcion dddw.datacolumn=codarea dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="0" x="4951" y="0" height="56" width="384" format="[general]" html.valueishtml="0"  name=tipcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=30 alignment="2" tabsequence=32766 border="0" color="0" x="1225" y="0" height="56" width="544" format="[general]" html.valueishtml="0"  name=codcntsap visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+
+sparse(names="tipdide	nomcnt	nidcnt	dircnt	carcnt	decisor	idestatus	v_ubicaciones_distrito_desc	descripcion	estado	codjerar	tipoactualizacion_descripcion	codcnt	codarea")htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 
