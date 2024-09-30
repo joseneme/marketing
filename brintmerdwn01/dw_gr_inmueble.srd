@@ -1,0 +1,79 @@
+HA$PBExportHeader$dw_gr_inmueble.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes name=idinmueble dbname="inmueble.idinmueble" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=nombre dbname="inmueble.nombre" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="inmueble.tipviap" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="inmueble.nomvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="inmueble.numvia" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=codpos dbname="inmueble.codpos" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=complemento dbname="inmueble.complemento" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordx dbname="inmueble.coordx" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordy dbname="inmueble.coordy" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=codusu dbname="inmueble.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="inmueble.fecusu" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="inmueble.codubi" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=num_seq dbname="inmueble.num_seq" )
+ column=(type=char(3) updatewhereclause=yes name=v_ubicaciones_codpai dbname="v_ubicaciones.codpai" )
+ column=(type=char(3) updatewhereclause=yes name=v_ubicaciones_codest dbname="v_ubicaciones.codest" )
+ column=(type=char(80) updatewhereclause=yes name=nompai dbname="v_ubicaciones.nompai" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(10) updatewhereclause=yes name=v_ubicaciones_codubi dbname="v_ubicaciones.codubi" )
+ column=(type=char(3) updatewhereclause=yes name=v_ubicaciones_codpvc dbname="v_ubicaciones.codpvc" )
+ column=(type=char(3) updatewhereclause=yes name=v_ubicaciones_coddst dbname="v_ubicaciones.coddst" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=nompvc dbname="v_ubicaciones.nompvc" )
+ retrieve="  SELECT ~"INMUEBLE~".~"IDINMUEBLE~",   
+         ~"INMUEBLE~".~"NOMBRE~",   
+         ~"INMUEBLE~".~"TIPVIAP~",   
+         ~"INMUEBLE~".~"NOMVIA~",   
+         ~"INMUEBLE~".~"NUMVIA~",   
+         ~"INMUEBLE~".~"CODPOS~",   
+         ~"INMUEBLE~".~"COMPLEMENTO~",   
+         ~"INMUEBLE~".~"COORDX~",   
+         ~"INMUEBLE~".~"COORDY~",   
+         ~"INMUEBLE~".~"CODUSU~",   
+         ~"INMUEBLE~".~"FECUSU~",   
+         ~"INMUEBLE~".~"CODUBI~",   
+         ~"INMUEBLE~".~"NUM_SEQ~",   
+         ~"V_UBICACIONES~".~"CODPAI~",   
+         ~"V_UBICACIONES~".~"CODEST~",   
+         ~"V_UBICACIONES~".~"NOMPAI~",   
+         ~"V_UBICACIONES~".~"NOMEST~",   
+         ~"V_UBICACIONES~".~"CODUBI~",   
+         ~"V_UBICACIONES~".~"CODPVC~",   
+         ~"V_UBICACIONES~".~"CODDST~",   
+         ~"V_UBICACIONES~".~"NOMDST~",   
+         ~"V_UBICACIONES~".~"NOMPVC~"  
+    FROM ~"INMUEBLE~",   
+         ~"V_UBICACIONES~"  
+   WHERE ( ~"INMUEBLE~".~"CODUBI~" = ~"V_UBICACIONES~".~"CODUBI~" )    
+" )
+text(band=header alignment="2" text="Inmueble" border="6" color="0" x="9" y="8" height="56" width="247" html.valueishtml="0"  name=idinmueble_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo V$$HEX1$$ed00$$ENDHEX$$a" border="6" color="0" x="1129" y="8" height="56" width="425" html.valueishtml="0"  name=tipviap_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre V$$HEX1$$ed00$$ENDHEX$$a" border="6" color="0" x="1563" y="8" height="56" width="768" html.valueishtml="0"  name=nomvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="N$$HEX1$$fa00$$ENDHEX$$mero" border="6" color="0" x="2341" y="8" height="56" width="247" html.valueishtml="0"  name=numvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Complemento" border="6" color="0" x="2597" y="8" height="56" width="425" html.valueishtml="0"  name=complemento_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre Inmueble" border="6" color="0" x="265" y="8" height="56" width="855" html.valueishtml="0"  name=nombre_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="CEP" border="6" color="0" x="3031" y="8" height="56" width="334" html.valueishtml="0"  name=codpos_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Pa$$HEX1$$ed00$$ENDHEX$$s" border="6" color="0" x="4914" y="8" height="56" width="503" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="4402" y="4" height="56" width="503" html.valueishtml="0"  name=obj_155368668 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Provincia" border="6" color="0" x="3886" y="8" height="56" width="507" html.valueishtml="0"  name=obj_155367346 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="3374" y="8" height="56" width="503" html.valueishtml="0"  name=obj_155365133 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="9" y="0" height="56" width="247" format="[general]" html.valueishtml="0"  name=idinmueble visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1129" y="0" height="56" width="425" format="[general]" html.valueishtml="0"  name=tipviap visible="1" dddw.name=dddw_tipviap dddw.displaycolumn=desvia dddw.datacolumn=codvia dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1563" y="0" height="56" width="768" format="[general]" html.valueishtml="0"  name=nomvia visible="1" edit.limit=60 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2341" y="0" height="56" width="247" format="[general]" html.valueishtml="0"  name=numvia visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="2597" y="0" height="56" width="425" format="[general]" html.valueishtml="0"  name=complemento visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="265" y="0" height="56" width="855" format="[general]" html.valueishtml="0"  name=nombre visible="1" edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3031" y="0" height="56" width="334" format="[general]" html.valueishtml="0"  name=codpos visible="1" edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="4914" y="0" height="56" width="503" format="[general]" html.valueishtml="0"  name=nompai visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="4402" y="0" height="56" width="503" format="[general]" html.valueishtml="0"  name=nomest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="3886" y="0" height="56" width="507" format="[general]" html.valueishtml="0"  name=nompvc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="0" tabsequence=32766 border="0" color="0" x="3374" y="0" height="56" width="503" format="[general]" html.valueishtml="0"  name=nomdst visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

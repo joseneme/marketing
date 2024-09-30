@@ -1,0 +1,75 @@
+HA$PBExportHeader$dw_gr_servicio_x_cliente.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=inssrv_codinssrv dbname="inssrv.codinssrv" )
+ column=(type=char(20) updatewhereclause=yes name=inssrv_numero dbname="inssrv.numero" )
+ column=(type=char(10) updatewhereclause=yes name=codsuc dbname="inssrv.codsuc" )
+ column=(type=char(100) updatewhereclause=yes name=nombre_sucursal dbname="inssrv.descripcion" )
+ column=(type=char(100) updatewhereclause=yes name=direccion dbname="inssrv.direccion" )
+ column=(type=char(126) updatewhereclause=yes name=distrito_desc dbname="v_ubicaciones.distrito_desc" )
+ column=(type=char(100) updatewhereclause=yes name=tipo_inssrv dbname="tipo_inssrv" )
+ column=(type=char(100) updatewhereclause=yes name=estado_inssrv dbname="estado_inssrv" )
+ column=(type=char(5) updatewhereclause=yes name=inssrv_codsrv dbname="inssrv.codsrv" )
+ column=(type=char(50) updatewhereclause=yes name=dscsrv dbname="tystabsrv.dscsrv" )
+ column=(type=decimal(2) updatewhereclause=yes name=bw dbname="inssrv.bw" )
+ column=(type=decimal(0) updatewhereclause=yes name=idproducto dbname="tystabsrv.idproducto" )
+ column=(type=char(100) updatewhereclause=yes name=descripcion dbname="producto.descripcion" )
+ column=(type=datetime updatewhereclause=yes name=fecini dbname="inssrv.fecini" )
+ column=(type=datetime updatewhereclause=yes name=fecactsrv dbname="inssrv.fecactsrv" )
+ column=(type=datetime updatewhereclause=yes name=fecfin dbname="inssrv.fecfin" )
+ column=(type=char(10) updatewhereclause=yes name=numslc dbname="inssrv.numslc" )
+ retrieve="select a.codinssrv, a.numero, 
+       a.codsuc, a.descripcion, a.direccion, dst.distrito_desc,
+       (select descripcion from tipinssrv where tipinssrv = a.tipinssrv ) Tipo_Inssrv,
+       (select descripcion from estinssrv where estinssrv = a.estinssrv ) Estado_Inssrv,        
+       a.codsrv, srv.dscsrv, a.bw, srv.idproducto, prd.descripcion, 
+       a.fecini, a.fecactsrv, a.fecfin, a.numslc
+from inssrv a,
+     tystabsrv srv,
+     v_ubicaciones dst,
+     producto prd
+where a.codsrv = srv.codsrv and
+      a.codubi = dst.codubi and
+      srv.idproducto = prd.idproducto and
+      a.codcli = :as_codcli
+" arguments=(("as_codcli", string))  sort="nombre_sucursal A dscsrv A " )
+text(band=header alignment="2" text="Servicio" border="6" color="0" x="901" y="8" height="56" width="1047" html.valueishtml="0"  name=dscsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="1957" y="8" height="56" width="402" html.valueishtml="0"  name=codsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre de la Sucursal" border="6" color="0" x="2368" y="8" height="56" width="1029" html.valueishtml="0"  name=nombre_sucursal_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="3406" y="8" height="56" width="1280" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="4695" y="8" height="56" width="859" html.valueishtml="0"  name=distrito_desc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Inicio" border="6" color="0" x="5563" y="8" height="56" width="379" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Activaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="5952" y="8" height="56" width="334" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fin" border="6" color="0" x="6295" y="8" height="56" width="338" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ancho Banda" border="6" color="0" x="6642" y="8" height="56" width="306" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Tipo" border="6" color="0" x="7301" y="8" height="56" width="325" html.valueishtml="0"  name=tipo_inssrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Estado" border="6" color="0" x="6958" y="8" height="56" width="334" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Idprod" border="6" color="0" x="7634" y="8" height="56" width="210" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Item" border="6" color="0" x="9" y="8" height="56" width="146" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="SID" border="6" color="0" x="165" y="8" height="56" width="270" html.valueishtml="0"  name=inssrv_codinssrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="N$$HEX1$$fa00$$ENDHEX$$mero" border="6" color="0" x="443" y="8" height="56" width="448" html.valueishtml="0"  name=inssrv_numero_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Producto" border="6" color="0" x="7854" y="8" height="56" width="1275" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="0" text="Proyecto Origen" border="6" color="0" x="9138" y="8" height="56" width="366" html.valueishtml="0"  name=numslc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2368" y="4" height="56" width="1029" format="[general]" html.valueishtml="0"  name=nombre_sucursal visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3406" y="4" height="56" width="1280" format="[general]" html.valueishtml="0"  name=direccion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4695" y="4" height="56" width="859" format="[general]" html.valueishtml="0"  name=distrito_desc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="2" tabsequence=32766 border="0" color="0" x="5563" y="4" height="56" width="379" format="dd/mm/yyyy" html.valueishtml="0"  name=fecini visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="2" tabsequence=32766 border="0" color="0" x="5952" y="4" height="56" width="334" format="dd/mm/yyyy" html.valueishtml="0"  name=fecactsrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="2" tabsequence=32766 border="0" color="0" x="6295" y="4" height="56" width="338" format="dd/mm/yyyy" html.valueishtml="0"  name=fecfin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="0" color="0" x="6642" y="4" height="56" width="306" format="[general]" html.valueishtml="0"  name=bw visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="7301" y="4" height="56" width="325" format="[general]" html.valueishtml="0"  name=tipo_inssrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="6958" y="4" height="56" width="334" format="[general]" html.valueishtml="0"  name=estado_inssrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="0" x="7634" y="4" height="56" width="210" format="[general]" html.valueishtml="0"  name=idproducto visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="7854" y="4" height="56" width="1275" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="2" tabsequence=32766 border="0" color="0" x="9138" y="0" height="56" width="366" format="[general]" html.valueishtml="0"  name=numslc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="146" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="165" y="4" height="56" width="270" format="[general]" html.valueishtml="0"  name=inssrv_codinssrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="443" y="4" height="56" width="448" format="[general]" html.valueishtml="0"  name=inssrv_numero visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="901" y="4" height="56" width="1047" format="[general]" html.valueishtml="0"  name=dscsrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="0" x="1957" y="4" height="56" width="402" format="[general]" html.valueishtml="0"  name=codsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

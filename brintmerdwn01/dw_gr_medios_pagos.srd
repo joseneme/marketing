@@ -1,0 +1,68 @@
+HA$PBExportHeader$dw_gr_medios_pagos.srd
+$PBExportComments$sucursales de cliente de comercial m$$HEX1$$e100$$ENDHEX$$s las l$$HEX1$$ed00$$ENDHEX$$neas telef$$HEX1$$f300$$ENDHEX$$nicas
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 grid.columnmove=no selected.mouse=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=number update=yes updatewhereclause=yes key=yes name=idforpago dbname="vtaxforpag.idforpago" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="vtaxforpag.codcli" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=idtipforpag dbname="vtaxforpag.idtipforpag" )
+ column=(type=char(100) updatewhereclause=yes name=descripcion dbname="cxctipforpag.descripcion" )
+ column=(type=char(25) update=yes updatewhereclause=yes name=numero dbname="vtaxforpag.numero" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=sucursal dbname="vtaxforpag.sucursal" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=codban dbname="vtaxforpag.codban" )
+ column=(type=char(40) updatewhereclause=yes name=nomban dbname="tabban.nomban" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=tipo dbname="vtaxforpag.tipo" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fec_vcto dbname="vtaxforpag.fec_vcto" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=nom_titular_tarj dbname="vtaxforpag.nom_titular_tarj" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=rut dbname="vtaxforpag.rut" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=dv dbname="vtaxforpag.dv" )
+ retrieve="SELECT a.idforpago,
+		 a.codcli,
+		 a.idtipforpag,
+		 b.descripcion,  
+		 a.numero,
+		 a.sucursal,  
+		 a.codban,  
+		 c.nomban,
+		 a.tipo,
+		 a.fec_vcto,  
+		 a.nom_titular_tarj,
+		 a.rut,
+		 a.dv
+FROM VTAXFORPAG   a,
+     cxctipforpag b,
+     tabban       c
+WHERE a.codcli 	  =:as_codcli     AND
+      a.idtipforpag = b.idtipforpag AND
+      a.codban	     = c.codban" update="VTAXFORPAG" updatewhere=0 updatekeyinplace=no arguments=(("as_codcli", string)) )
+text(band=header alignment="2" text="Item" border="6" color="0" x="9" y="8" height="56" width="133" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codcli" border="6" color="0" x="151" y="8" height="56" width="270" html.valueishtml="0"  name=vtaxforpag_codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Idtipforpag" border="6" color="0" x="430" y="8" height="56" width="274" html.valueishtml="0"  name=vtaxforpag_idtipforpag_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Descripcion" border="6" color="0" x="713" y="8" height="56" width="1330" html.valueishtml="0"  name=cxctipforpag_descripcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Numero" border="6" color="0" x="2053" y="8" height="56" width="791" html.valueishtml="0"  name=vtaxforpag_numero_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="2853" y="8" height="56" width="1522" html.valueishtml="0"  name=vtaxforpag_sucursal_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Codban" border="6" color="0" x="4384" y="8" height="56" width="283" html.valueishtml="0"  name=vtaxforpag_codban_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Nomban" border="6" color="0" x="4677" y="8" height="56" width="1271" html.valueishtml="0"  name=tabban_nomban_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Tipo" border="6" color="0" x="5957" y="8" height="56" width="407" html.valueishtml="0"  name=vtaxforpag_tipo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Fec Vcto" border="6" color="0" x="6373" y="8" height="56" width="512" html.valueishtml="0"  name=vtaxforpag_fec_vcto_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Titular Tarjeta" border="6" color="0" x="6894" y="8" height="56" width="1591" html.valueishtml="0"  name=vtaxforpag_nom_titular_tarj_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217750" )
+text(band=header alignment="2" text="Rut" border="6" color="0" x="8494" y="8" height="56" width="357" html.valueishtml="0"  name=vtaxforpag_rut_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Dv" border="6" color="0" x="8859" y="8" height="56" width="101" html.valueishtml="0"  name=vtaxforpag_dv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="133" format="[general]" html.valueishtml="0"  name=obj_44866432 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="713" y="0" height="76" width="1330" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="0" x="2053" y="0" height="76" width="791" format="[general]" html.valueishtml="0"  name=numero visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="2853" y="0" height="76" width="1522" format="[general]" html.valueishtml="0"  name=sucursal visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="0" x="4384" y="0" height="76" width="283" format="[general]" html.valueishtml="0"  name=codban visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="4677" y="0" height="76" width="1271" format="[general]" html.valueishtml="0"  name=nomban visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="2" tabsequence=32766 border="0" color="0" x="5957" y="0" height="76" width="407" format="[general]" html.valueishtml="0"  name=tipo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="2" tabsequence=32766 border="0" color="0" x="6373" y="0" height="76" width="512" format="[shortdate] [time]" html.valueishtml="0"  name=fec_vcto visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="0" x="151" y="0" height="76" width="270" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="0" x="430" y="0" height="76" width="274" format="[general]" html.valueishtml="0"  name=idtipforpag visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="6894" y="0" height="76" width="1591" format="[general]" html.valueishtml="0"  name=nom_titular_tarj visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="0" x="8494" y="0" height="76" width="357" format="[general]" html.valueishtml="0"  name=rut visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="0" x="8859" y="0" height="76" width="101" format="[general]" html.valueishtml="0"  name=dv visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
