@@ -1,0 +1,93 @@
+HA$PBExportHeader$dw_reporte_pop_potenciales.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(120) updatewhereclause=yes name=vtatabcli_dircli dbname="vtatabcli.dircli" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_idtipooficina dbname="vtatabcli.idtipooficina" )
+ column=(type=char(50) updatewhereclause=yes name=tipooficina_descripcion dbname="tipooficina.descripcion" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_codzona dbname="vtatabcli.codzona" )
+ column=(type=char(50) updatewhereclause=yes name=zona_dsczona dbname="zona.dsczona" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_pop dbname="vtatabcli.pop" )
+ column=(type=char(100) updatewhereclause=yes name=v_pop_descripcion dbname="v_pop.descripcion" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabcli_telefono1 dbname="vtatabcli.telefono1" )
+ column=(type=char(40) updatewhereclause=yes name=v_contacto_nomcnt dbname="v_contacto.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=v_contacto_carcnt dbname="v_contacto.carcnt" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabsecmark_dscsecmark dbname="vtatabsecmark.dscsecmark" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabsegmark_dscsegmark dbname="vtatabsegmark.dscsegmark" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabgirmark_dscgirmark dbname="vtatabgirmark.dscgirmark" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_numsucur dbname="vtatabcli.numsucur" )
+ retrieve="SELECT a.codcli, 
+   a.nomcli, 
+   a.dircli, 
+   a.idtipooficina, 
+   g.descripcion, 
+   a.codzona, 
+   f.dsczona, 
+   a.pop,
+   j.descripcion, 
+   a.telefono1, 
+   h.nomcnt, 
+   h.carcnt, 
+   c.nomect, 
+   b.dscsecmark, 
+   d.dscsegmark, 
+   e.dscgirmark,
+   a.numsucur 
+FROM  vtatabcli a, 
+   vtatabsecmark b, 
+   vtatabect c, 
+   vtatabsegmark d, 
+   vtatabgirmark e, 
+   zona f, 
+   tipooficina g, 
+   v_contacto h,
+   v_servicio_x_cliente i,
+   v_pop j
+WHERE a.pop = :an_pop AND
+   not exists (select * from v_servicio_x_cliente where a.codcli = v_servicio_x_cliente.codcli) AND
+   a.codsecmark = b.codsecmark (+) AND 
+   a.codect = c.codect AND 
+   a.codsegmark = d.codsegmark (+) AND 
+   a.codgirmark = e.codgirmark (+) AND 
+   a.codzona = f.codzona (+) AND 
+   a.idtipooficina = g.idtipooficina (+)AND 
+   a.codcli = h.codcli (+) AND 
+	a.pop = j.pop" arguments=(("an_pop", number)) )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="0" color="0" x="9" y="8" height="56" width="247"  name=vtatabcli_codcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre Cliente" border="0" color="0" x="265" y="8" height="56" width="1458"  name=vtatabcli_nomcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="1733" y="8" height="56" width="1120"  name=vtatabcli_dircli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n Oficina" border="0" color="0" x="2862" y="8" height="56" width="1024"  name=tipooficina_descripcion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Zona de Venta" border="0" color="0" x="3895" y="8" height="56" width="1221"  name=zona_dsczona_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Pop" border="0" color="0" x="5125" y="8" height="56" width="329"  name=vtatabcli_pop_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tel$$HEX1$$e900$$ENDHEX$$fono" border="0" color="0" x="6729" y="8" height="56" width="1399"  name=vtatabcli_telefono1_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Contacto" border="0" color="0" x="8137" y="8" height="56" width="1125"  name=v_contacto_nomcnt_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo Contacto" border="0" color="0" x="9271" y="8" height="56" width="1125"  name=v_contacto_carcnt_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ejecutivo de Venta" border="0" color="0" x="10405" y="8" height="56" width="1125"  name=vtatabect_nomect_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Sector" border="0" color="0" x="11538" y="8" height="56" width="1399"  name=vtatabsecmark_dscsecmark_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Segmento" border="0" color="0" x="12946" y="8" height="56" width="1399"  name=vtatabsegmark_dscsegmark_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Giro" border="0" color="0" x="14354" y="8" height="56" width="1399"  name=vtatabgirmark_dscgirmark_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Numero de Sucursales" border="0" color="0" x="15762" y="8" height="56" width="526"  name=vtatabcli_numsucur_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Descripci$$HEX1$$f300$$ENDHEX$$n POP" border="0" color="0" x="5463" y="8" height="56" width="1257"  name=obj_16363138  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="8" height="60" width="247" format="[general]"  name=vtatabcli_codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="265" y="8" height="60" width="1458" format="[general]"  name=vtatabcli_nomcli edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1733" y="8" height="60" width="1120" format="[general]"  name=vtatabcli_dircli edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2862" y="8" height="60" width="1024" format="[general]"  name=tipooficina_descripcion edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="3895" y="8" height="60" width="1221" format="[general]"  name=zona_dsczona edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="0" x="5125" y="8" height="60" width="329" format="[general]"  name=vtatabcli_pop edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="6729" y="8" height="60" width="1399" format="[general]"  name=vtatabcli_telefono1 edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="8137" y="8" height="60" width="1125" format="[general]"  name=v_contacto_nomcnt edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="9271" y="8" height="60" width="1125" format="[general]"  name=v_contacto_carcnt edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="10405" y="8" height="60" width="1125" format="[general]"  name=vtatabect_nomect edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="11538" y="8" height="60" width="1399" format="[general]"  name=vtatabsecmark_dscsecmark edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="12946" y="8" height="60" width="1399" format="[general]"  name=vtatabsegmark_dscsegmark edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="14354" y="8" height="60" width="1399" format="[general]"  name=vtatabgirmark_dscgirmark edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="1" tabsequence=32766 border="0" color="0" x="15762" y="8" height="60" width="526" format="[general]"  name=vtatabcli_numsucur edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="5463" y="8" height="60" width="1257" format="[general]"  name=v_pop_descripcion edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

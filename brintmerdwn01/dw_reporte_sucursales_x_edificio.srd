@@ -1,0 +1,159 @@
+HA$PBExportHeader$dw_reporte_sucursales_x_edificio.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=296 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=64 color="536870912" )
+detail(height=48 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=edificio_codigo dbname="edificio.codigo" )
+ column=(type=char(50) updatewhereclause=yes name=edificio_nombre dbname="edificio.nombre" )
+ column=(type=char(238) updatewhereclause=yes name=compute_0003 dbname="compute_0003" )
+ column=(type=char(50) updatewhereclause=yes name=zona_dsczona dbname="zona.dsczona" )
+ column=(type=decimal(0) updatewhereclause=yes name=edificio_pop dbname="edificio.pop" )
+ column=(type=char(100) updatewhereclause=yes name=v_pop_descripcion dbname="v_pop.descripcion" )
+ column=(type=decimal(0) updatewhereclause=yes name=edificio_on_net dbname="edificio.on_net" values="	1/	0" )
+ column=(type=char(50) updatewhereclause=yes name=tipoedificio_descripcion dbname="tipoedificio.descripcion" )
+ column=(type=decimal(0) updatewhereclause=yes name=edificio_pisos dbname="edificio.pisos" )
+ column=(type=decimal(0) updatewhereclause=yes name=edificio_nroemp dbname="edificio.nroemp" )
+ column=(type=char(100) updatewhereclause=yes name=edificio_administrador dbname="edificio.administrador" )
+ column=(type=char(50) updatewhereclause=yes name=edificio_telefono dbname="edificio.telefono" )
+ column=(type=decimal(5) updatewhereclause=yes name=edificio_coordx dbname="edificio.coordx" )
+ column=(type=decimal(5) updatewhereclause=yes name=edificio_coordy dbname="edificio.coordy" )
+ column=(type=char(1000) updatewhereclause=yes name=edificio_observacion dbname="edificio.observacion" )
+ column=(type=char(8) updatewhereclause=yes name=compute_0016 dbname="compute_0016" )
+ column=(type=char(4) updatewhereclause=yes name=vtasuccli_tipsuc dbname="vtasuccli.tipsuc" )
+ column=(type=char(60) updatewhereclause=yes name=vtatipsuc_dsctipsuc dbname="vtatipsuc.dsctipsuc" )
+ column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(120) updatewhereclause=yes name=vtasuccli_dirsuc dbname="vtasuccli.dirsuc" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabdst_nomdst dbname="vtatabdst.nomdst" )
+ column=(type=char(50) updatewhereclause=yes name=zona_dsczona_1 dbname="zona.dsczona" )
+ column=(type=char(100) updatewhereclause=yes name=v_pop_descripcion_2 dbname="v_pop.descripcion" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtasuccli_on_net dbname="vtasuccli.on_net" values="	1/	0" )
+ column=(type=char(60) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabsegmark_dscsegmark dbname="vtatabsegmark.dscsegmark" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabsecmark_dscsecmark dbname="vtatabsecmark.dscsecmark" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabgirmark_dscgirmark dbname="vtatabgirmark.dscgirmark" )
+ retrieve="select a.codigo,
+       a.nombre,
+       d.desvia||'  '||a.nomvia||'  '||a.numvia||'  '||a.nomurb||'  '||b.nomdst,
+       c.dsczona,
+       a.pop,
+       f.descripcion,
+       a.on_net,
+       e.descripcion,
+       a.pisos,
+       a.nroemp,
+       a.administrador,
+       a.telefono,
+       a.coordx,
+       a.coordy,
+       a.observacion, 
+       'Sucursal',     
+       b1.tipsuc, 
+       m1.DSCTIPSUC, 
+         a1.codcli,
+       a1.nomcli,
+       b1.dirsuc,
+       c1.nomdst,
+       i1.dsczona,
+       k1.descripcion,
+       b1.on_net,
+       d1.nomect,
+       e1.dscsegmark,
+       f1.dscsecmark,
+       g1.dscgirmark
+from edificio a,
+     vtatabdst b,
+     zona c,
+     pertipvia d,
+     tipoedificio e,
+     v_pop f,     
+     vtatabcli a1,
+     vtasuccli b1,
+     vtatabdst c1,
+     vtatabect d1,
+     vtatabsegmark e1,
+     vtatabsecmark f1,
+     vtatabgirmark g1,
+     zona i1,
+     v_pop k1,
+     vtatipsuc m1
+where a.codigo =:an_codedi AND
+      a.codubi = b.codubi(+) AND
+      a.codzona = c.codzona(+) AND
+      a.tipviap = d.codvia(+) AND
+      a.pop  = f.pop(+) AND
+      a.idtipooficina = e.codtipedi (+) AND
+      a.codigo=b1.codedi  AND
+      b1.tipsuc = m1.tipsuc and
+      a1.codcli = b1.codcli AND
+      b1.ubisuc = c1.codubi(+) AND
+      b1.codzona = i1.codzona (+) AND 
+      a1.codect = d1.codect(+) AND 
+      a1.codsegmark = e1.codsegmark (+) AND
+      a1.codsecmark = f1.codsecmark (+) AND 
+      a1.codgirmark = g1.codgirmark (+) AND 
+      b1.cenintid = k1.pop (+) and
+		(a1.idestado = 1 OR  
+        a1.idestado is null) " arguments=(("an_codedi", number)) )
+group(level=1 header.height=676 trailer.height=0 by=("edificio_codigo" ) header.color="536870912" trailer.color="536870912" )
+bitmap(band=header filename="I:\logotipo1.bmp" x="23" y="12" height="252" width="882" border="0"  name=p_1 visible="1" )
+compute(band=header alignment="1" expression="today()"border="0" color="0" x="4183" y="64" height="48" width="480" format="dd/mm/yyyy hh:mm am/pm" html.valueishtml="0"  name=date_1 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Reporte de Edificios Verticales" border="0" color="0" x="1527" y="124" height="80" width="1504" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header.1 alignment="2" text="Item" border="6" color="0" x="64" y="516" height="40" width="119" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Tipo" border="6" color="0" x="201" y="516" height="40" width="137" html.valueishtml="0"  name=vtasuccli_tipsuc_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Tipo de Sucursal" border="6" color="0" x="361" y="516" height="40" width="448" html.valueishtml="0"  name=vtatipsuc_dsctipsuc_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+line(band=header.1 x1="59" y1="660" x2="4795" y2="660"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="0" text="Sucursales:" border="0" color="8388608" x="37" y="604" height="48" width="549" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="6" color="0" x="827" y="516" height="40" width="151" html.valueishtml="0"  name=vtatabcli_codcli_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+groupbox(band=header.1 text="Edificio"border="2" color="0" x="421" y="12" height="476" width="3963"  name=gb_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header.1 id=3 alignment="0" tabsequence=32766 border="2" color="0" x="983" y="148" height="48" width="2373" format="[general]" html.valueishtml="0"  name=compute_0003 visible="1" edit.limit=238 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="C$$HEX1$$f300$$ENDHEX$$digo:" border="0" color="8388608" x="571" y="84" height="48" width="384" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=1 alignment="1" tabsequence=32766 border="2" color="0" x="983" y="84" height="48" width="329" format="[general]" html.valueishtml="0"  name=edificio_codigo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Nombre Edificio:" border="0" color="8388608" x="1349" y="84" height="48" width="407" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=2 alignment="0" tabsequence=32766 border="2" color="0" x="1778" y="84" height="48" width="1399" format="[general]" html.valueishtml="0"  name=edificio_nombre visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Direcci$$HEX1$$f300$$ENDHEX$$n:" border="0" color="8388608" x="571" y="148" height="48" width="384" html.valueishtml="0"  name=edificio_nomvia_t visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+text(band=header.1 alignment="0" text="Zona:" border="0" color="8388608" x="571" y="212" height="48" width="384" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=4 alignment="0" tabsequence=32766 border="2" color="0" x="983" y="212" height="48" width="626" format="[general]" html.valueishtml="0"  name=zona_dsczona visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Pop:" border="0" color="8388608" x="1650" y="212" height="48" width="183" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=5 alignment="1" tabsequence=32766 border="2" color="0" x="1856" y="212" height="48" width="238" format="[general]" html.valueishtml="0"  name=edificio_pop visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Pisos:" border="0" color="8388608" x="1646" y="276" height="48" width="187" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=9 alignment="1" tabsequence=32766 border="2" color="0" x="1856" y="276" height="48" width="238" format="[general]" html.valueishtml="0"  name=edificio_pisos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="N$$HEX1$$fa00$$ENDHEX$$m. Empresas:" border="0" color="8388608" x="2112" y="276" height="48" width="411" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header.1 id=10 alignment="1" tabsequence=32766 border="2" color="0" x="2537" y="276" height="48" width="265" format="[general]" html.valueishtml="0"  name=edificio_nroemp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Administrador:" border="0" color="8388608" x="571" y="340" height="48" width="384" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=11 alignment="0" tabsequence=32766 border="2" color="0" x="983" y="340" height="48" width="896" format="[general]" html.valueishtml="0"  name=edificio_administrador visible="1" edit.limit=100 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Coordenada X:" border="0" color="8388608" x="571" y="400" height="48" width="384" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=13 alignment="1" tabsequence=32766 border="2" color="0" x="983" y="400" height="48" width="329" format="[general]" html.valueishtml="0"  name=edificio_coordx visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Coordenada Y:" border="0" color="8388608" x="1349" y="400" height="48" width="384" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=14 alignment="1" tabsequence=32766 border="2" color="0" x="1774" y="400" height="48" width="329" format="[general]" html.valueishtml="0"  name=edificio_coordy visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Cableado" border="0" color="8388608" x="2839" y="212" height="48" width="242" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=7 alignment="2" tabsequence=32766 border="2" color="0" x="3099" y="212" height="52" width="78" format="[general]" html.valueishtml="0"  name=edificio_on_net visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Tel$$HEX1$$e900$$ENDHEX$$fono:" border="0" color="8388608" x="2839" y="276" height="48" width="242" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=12 alignment="0" tabsequence=32766 border="2" color="0" x="3099" y="276" height="48" width="686" format="[general]" html.valueishtml="0"  name=edificio_telefono visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="0" text="Tipo Edificio:" border="0" color="8388608" x="571" y="276" height="48" width="384" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215"  height.autosize=yes)
+column(band=header.1 id=8 alignment="0" tabsequence=32766 border="2" color="0" x="983" y="276" height="48" width="622" format="[general]" html.valueishtml="0"  name=tipoedificio_descripcion visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.1 alignment="2" text="Cliente" border="6" color="0" x="1001" y="516" height="40" width="1262" html.valueishtml="0"  name=vtatabcli_nomcli_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Distrito" border="6" color="0" x="2281" y="516" height="40" width="338" html.valueishtml="0"  name=vtatabdst_nomdst_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Zona de Venta" border="6" color="0" x="2633" y="516" height="40" width="343" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Cableado" border="6" color="0" x="2990" y="516" height="40" width="169" html.valueishtml="0"  name=vtasuccli_on_net_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Giro" border="6" color="0" x="4375" y="516" height="40" width="443" html.valueishtml="0"  name=vtatabgirmark_dscgirmark_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Consultor" border="6" color="0" x="3177" y="516" height="40" width="370" html.valueishtml="0"  name=vtatabect_nomect_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Segmento" border="6" color="0" x="3561" y="516" height="40" width="379" html.valueishtml="0"  name=vtatabsegmark_dscsegmark_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+text(band=header.1 alignment="2" text="Sector" border="6" color="0" x="3959" y="516" height="40" width="398" html.valueishtml="0"  name=vtatabsecmark_dscsecmark_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524"  height.autosize=yes)
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="69" y="4" height="40" width="119" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="197" y="4" height="40" width="146" format="[general]" html.valueishtml="0"  name=compute_0016 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="357" y="4" height="40" width="448" format="[general]" html.valueishtml="0"  name=vtatipsuc_dsctipsuc visible="1" edit.limit=60 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="823" y="4" height="40" width="165" format="[general]" html.valueishtml="0"  name=vtatabcli_codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="1001" y="4" height="40" width="1262" format="[general]" html.valueishtml="0"  name=vtatabcli_nomcli visible="1" edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="2277" y="4" height="40" width="338" format="[general]" html.valueishtml="0"  name=vtatabdst_nomdst visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="2633" y="4" height="40" width="343" format="[general]" html.valueishtml="0"  name=zona_dsczona_1 visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="2" tabsequence=32766 border="0" color="0" x="2990" y="0" height="48" width="169" format="[general]" html.valueishtml="0"  name=vtasuccli_on_net visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=29 alignment="0" tabsequence=32766 border="0" color="0" x="4375" y="4" height="40" width="443" format="[general]" html.valueishtml="0"  name=vtatabgirmark_dscgirmark visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=32766 border="0" color="0" x="3177" y="4" height="40" width="370" format="[general]" html.valueishtml="0"  name=vtatabect_nomect visible="1" edit.limit=60 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="0" tabsequence=32766 border="0" color="0" x="3561" y="4" height="40" width="379" format="[general]" html.valueishtml="0"  name=vtatabsegmark_dscsegmark visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="0" color="0" x="3959" y="4" height="40" width="398" format="[general]" html.valueishtml="0"  name=vtatabsecmark_dscsecmark visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=footer alignment="0" expression="'P$$HEX1$$e100$$ENDHEX$$gina ' + page() + ' de' + pageCount()"border="0" color="0" x="50" y="4" height="56" width="599" format="[general]" html.valueishtml="0"  name=page_1 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

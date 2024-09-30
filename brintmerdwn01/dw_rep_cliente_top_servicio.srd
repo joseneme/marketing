@@ -1,0 +1,342 @@
+HA$PBExportHeader$dw_rep_cliente_top_servicio.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=452 color="536870912" )
+summary(height=108 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=a_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(150) updatewhereclause=yes name=a_nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(8) updatewhereclause=yes name=tipper1 dbname="tipper1" )
+ column=(type=char(120) updatewhereclause=yes name=a_dircli dbname="vtatabcli.dircli" )
+ column=(type=char(20) updatewhereclause=yes name=a_codpos dbname="vtatabcli.codpos" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_codsegmark dbname="vtatabcli.codsegmark" )
+ column=(type=char(50) updatewhereclause=yes name=b_dscsegmark dbname="vtatabsegmark.dscsegmark" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_codsecmark dbname="vtatabcli.codsecmark" )
+ column=(type=char(50) updatewhereclause=yes name=c_dscsecmark dbname="vtatabsecmark.dscsecmark" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_codzona dbname="vtatabcli.codzona" )
+ column=(type=char(50) updatewhereclause=yes name=d_dsczona dbname="zona.dsczona" )
+ column=(type=char(8) updatewhereclause=yes name=a_codect dbname="vtatabcli.codect" )
+ column=(type=char(60) updatewhereclause=yes name=e_nomect dbname="vtatabect.nomect" )
+ column=(type=char(10) updatewhereclause=yes name=a_codubi dbname="vtatabcli.codubi" )
+ column=(type=char(40) updatewhereclause=yes name=f_nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=f_nompvc dbname="v_ubicaciones.nompvc" )
+ column=(type=char(40) updatewhereclause=yes name=f_nomest dbname="v_ubicaciones.nomest" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_gtsegmentationid dbname="vtatabcli.gtsegmentationid" )
+ column=(type=char(100) updatewhereclause=yes name=g_description dbname="gotomarket_segmentation.description" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_codtam dbname="vtatabcli.codtam" )
+ column=(type=char(40) updatewhereclause=yes name=h_dsctam dbname="vtatamanno.dsctam" )
+ column=(type=char(3) updatewhereclause=yes name=a_tipdide dbname="vtatabcli.tipdide" )
+ column=(type=char(10) updatewhereclause=yes name=i_abrdid dbname="vtatipdid.abrdid" )
+ column=(type=char(15) updatewhereclause=yes name=a_ntdide dbname="vtatabcli.ntdide" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_codcuenta dbname="vtatabcli.codcuenta" )
+ column=(type=char(50) updatewhereclause=yes name=j_dsccuenta dbname="asignacion_cuenta.dsccuenta" )
+ column=(type=char(3) updatewhereclause=yes name=a_codgirmark dbname="vtatabcli.codgirmark" )
+ column=(type=char(50) updatewhereclause=yes name=k_dscgirmark dbname="vtatabgirmark.dscgirmark" )
+ column=(type=char(2) updatewhereclause=yes name=a_tipviap dbname="vtatabcli.tipviap" )
+ column=(type=char(15) updatewhereclause=yes name=l_abrvia dbname="pertipvia.abrvia" )
+ column=(type=char(60) updatewhereclause=yes name=a_nomvia dbname="vtatabcli.nomvia" )
+ column=(type=char(50) updatewhereclause=yes name=a_numvia dbname="vtatabcli.numvia" )
+ column=(type=char(40) updatewhereclause=yes name=a_interior dbname="vtatabcli.interior" )
+ column=(type=char(50) updatewhereclause=yes name=a_nomurb dbname="vtatabcli.nomurb" )
+ column=(type=char(3) updatewhereclause=yes name=a_codpai dbname="vtatabcli.codpai" )
+ column=(type=char(80) updatewhereclause=yes name=m_nompai dbname="vtatabpai.nompai" )
+ column=(type=number updatewhereclause=yes name=n_annoactual dbname="vtatabcli.annoactual" )
+ column=(type=decimal(0) updatewhereclause=yes name=n_comput dbname="vtatabcli.comput" )
+ column=(type=decimal(0) updatewhereclause=yes name=n_numlin dbname="vtatabcli.numlin" )
+ column=(type=decimal(0) updatewhereclause=yes name=n_empleados dbname="vtatabcli.empleados" )
+ column=(type=decimal(2) updatewhereclause=yes name=n_ingreso dbname="vtatabcli.ingreso" )
+ column=(type=char(50) updatewhereclause=yes name=o_numcomcli dbname="vtatabcli.numcomcli" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_tipemp dbname="vtatabcli.tipemp" )
+ column=(type=char(50) updatewhereclause=yes name=p_desctipemp dbname="vtatabcli.desctipemp" )
+ column=(type=char(30) updatewhereclause=yes name=q_dsccnt dbname="vtatabcli.dsccnt" )
+ column=(type=char(80) updatewhereclause=yes name=q_nomcnt dbname="vtatabcli.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=q_carcnt dbname="vtatabcli.carcnt" )
+ column=(type=char(50) updatewhereclause=yes name=q_numcomcnt dbname="vtatabcli.numcomcnt" )
+ column=(type=char(30) updatewhereclause=yes name=q_dsccnt1 dbname="vtatabcli.dsccnt1" )
+ column=(type=char(80) updatewhereclause=yes name=q_nomcnt1 dbname="vtatabcli.nomcnt1" )
+ column=(type=char(40) updatewhereclause=yes name=q_carcnt1 dbname="vtatabcli.carcnt1" )
+ column=(type=char(50) updatewhereclause=yes name=q_numcomcnt1 dbname="vtatabcli.numcomcnt1" )
+ column=(type=char(4) updatewhereclause=yes name=tipsrv dbname="vtatabcli.tipsrv" )
+ column=(type=char(50) updatewhereclause=yes name=dsctipsrv dbname="vtatabcli.dsctipsrv" )
+ column=(type=number updatewhereclause=yes name=totalusd dbname="vtatabcli.totalusd" )
+ retrieve="select a.codcli,
+       a.nomcli,
+       a.nomabr,
+       decode(a.tipper,'J','Juridico','N','Natural')as tipper1, 
+       a.dircli, 
+       a.codpos, 
+       a.codsegmark,
+       b.dscsegmark,
+       a.codsecmark, 
+       c.dscsecmark,
+       a.codzona, 
+       d.dsczona,
+       a.codect,
+       e.nomect,
+       a.codubi,
+       f.nomdst,
+       f.nompvc,
+       f.nomest, 
+       a.gtsegmentationid,
+       g.description,
+       a.codtam, 
+       h.dsctam,
+       a.tipdide, 
+       i.abrdid,
+       a.ntdide, 
+       a.codcuenta,
+       j.dsccuenta,
+       a.codgirmark, 
+       k.dscgirmark,
+       a.tipviap,
+       l.abrvia,
+       a.nomvia, 
+       a.numvia, 
+       a.interior, 
+       a.nomurb, 
+       a.codpai,
+       m.nompai,
+       n.annoactual,
+       n.comput,
+       n.numlin,
+       n.empleados,
+       n.ingreso,
+       o.numcomcli,
+       a.tipemp,
+       p.desctipemp,
+       q.dsccnt,
+       q.nomcnt,
+       q.carcnt,
+       q.numcomcnt,
+       q.dsccnt1,
+       q.nomcnt1,
+       q.carcnt1,
+       q.numcomcnt1,
+       d1.tipsrv,
+       d1.dsctipsrv,
+       d1.totalusd
+  from vtatabcli a,
+       vtatabsegmark b,
+       vtatabsecmark c,
+       zona d,
+       vtatabect e,
+       v_ubicaciones f,
+       gotomarket_segmentation g,
+       vtatamanno h,
+       vtatipdid i,
+       asignacion_cuenta j,
+       vtatabgirmark k,
+       pertipvia l,
+       vtatabpai m,
+       (select y.codcli, z.annoactual, y.comput, y.numlin, y.empleados, y.ingreso
+          from (select codcli, anno, comput, numlin, empleados, ingreso
+                  from vtacliinganu) y,
+               (select max(anno) as annoactual, codcli
+                  from vtacliinganu
+                 group by codcli) z
+         where z.codcli = y.codcli
+           and z.annoactual = y.anno) n,
+       vm_medio o,
+       vtatipemp p,
+       (select z.codcli codcli,
+               z.CODCNT codcnt,
+               z.TIPCNT tipcnt,
+               z.NOMCNT nomcnt,
+               z.CARCNT carcnt,
+               z.DECISOR decisor,
+               z.CARCLI carcli,
+               z.dsccnt dsccnt,
+               b1.numcomcnt numcomcnt,
+               a1.codcli codcli1,
+               a1.CODCNT codcnt1,
+               a1.TIPCNT tipcnt1,
+               a1.NOMCNT nomcnt1,
+               a1.CARCNT carcnt1,
+               a1.DECISOR decisor1,
+               a1.CARCLI carcli1,
+               a1.dsccnt dsccnt1,
+               c1.numcomcnt numcomcnt1
+          from (select r.codcli,
+                       r.CODCNT ,
+                       r.TIPCNT ,
+                       r.NOMCNT ,
+                       r.CARCNT ,
+                       r.DECISOR ,
+                       r.CARCLI ,
+                       r.dsccnt
+                  from (SELECT s.codcli,
+                               s.CODCNT ,
+                               s.TIPCNT ,
+                               s.NOMCNT ,
+                               s.CARCNT ,
+                               s.DECISOR ,
+                               s.CARCLI ,
+                               t.dsccnt
+                          FROM VTATABCNTCLI s ,
+                               vtatipcnt t    
+                         WHERE s.tipcnt = t.tipcnt(+)
+                           and s.tipcnt = '02') r,
+                       (select codcli, max(codcnt) as maxcodcnt
+                          from vtatabcntcli 
+                         where tipcnt = '02'
+                         group by codcli) u
+                 where r.codcli = u.codcli
+                   and r.codcnt = u.maxcodcnt) z,
+               (select v.codcli,
+                       v.CODCNT ,
+                       v.TIPCNT ,
+                       v.NOMCNT ,
+                       v.CARCNT ,
+                       v.DECISOR ,
+                       v.CARCLI ,
+                       v.dsccnt
+                  from (SELECT w.codcli,
+                               w.CODCNT ,
+                               w.TIPCNT ,
+                               w.NOMCNT ,
+                               w.CARCNT ,
+                               w.DECISOR ,
+                               w.CARCLI ,
+                               x.dsccnt
+                          FROM VTATABCNTCLI w ,
+                               vtatipcnt x    
+                         WHERE w.tipcnt = x.tipcnt(+)
+                           and w.tipcnt = '04') v,
+                       (select codcli, max(codcnt) as maxcodcnt
+                          from vtatabcntcli 
+                         where tipcnt = '04'
+                         group by codcli) y
+                 where v.codcli = y.codcli
+                   and v.codcnt = y.maxcodcnt )  a1,
+               vtamedcomcnt b1,
+               vtamedcomcnt c1
+         where z.codcli = a1.codcli(+)
+           and z.codcnt = b1.codcnt(+)
+           and a1.codcnt = c1.codcnt(+)
+           and b1.idmedcom = '008'
+           and c1.idmedcom = '008') q,
+       (SELECT e1.CODCLI CODCLI,
+               f1.TIPSRV TIPSRV,
+               min(f1.DSCTIPSRV) DSCTIPSRV, 
+               sum(decode(e1.moneda_id, 1, f1.TOTITM/f1.tipcam, 2, f1.TOTITM)) TOTALUSD
+          FROM CXCTABFAC e1,
+               CXCDETFAC f1
+         WHERE (e1.FECEMI >= :afecini
+           and e1.FECEMI <= :afecfin)
+			  and (f1.tipsrv = :atipsrv)
+           and (e1.NUMSUT IS NOT NULL)
+           and (e1.estfac <> '06')
+           and e1.tipdoc in ('FAC', 'B/V', 'REC')
+           AND (rtrim(e1.NUMSUT) <> ' ')  
+           AND (e1.IDFAC = f1.IDFAC)
+           AND (f1.TIPSRV IS NOT NULL )
+         group by e1.codcli, f1.tipsrv
+         order by f1.tipsrv asc, TOTALUSD desc) d1
+ where a.codsegmark = b.codsegmark(+)
+   and a.codsecmark = c.codsecmark(+)
+   and a.codzona = d.codzona(+)
+   and a.codect = e.codect(+)
+   and a.codubi = f.codubi(+)
+   and a.gtsegmentationid = g.gtsegmentationid(+)
+   and a.codtam = h.codtam(+)
+   and a.tipdide = i.tipdide(+)
+   and a.codcuenta = j.codcuenta(+)
+   and a.codgirmark = k.codgirmark(+)
+   and a.tipviap = l.codvia(+)
+   and a.codpai = m.codpai(+)
+   and a.codcli = n.codcli(+)
+   and a.codcli = o.codcli(+)
+   and a.tipemp = p.idtipemp(+)
+   and a.codcli = q.codcli(+)   
+   and a.codcli = d1.codcli
+   and rownum <= :anumclientes" arguments=(("afecini", datetime),("afecfin", datetime),("anumclientes", number),("atipsrv", string)) )
+text(band=header alignment="2" text="Email" border="0" color="0" x="22606" y="392" height="56" width="654" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo Contacto T$$HEX1$$e900$$ENDHEX$$cnico" border="0" color="0" x="21810" y="392" height="56" width="786" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cliente" border="0" color="0" x="183" y="392" height="56" width="247" html.valueishtml="0"  name=codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Total (US$)" border="0" color="0" x="2510" y="392" height="56" width="338" html.valueishtml="0"  name=totalusd_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Raz$$HEX1$$f300$$ENDHEX$$n Social" border="0" color="0" x="439" y="392" height="56" width="1029" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre Comercial" border="0" color="0" x="1477" y="392" height="56" width="1024" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Persona" border="0" color="0" x="2857" y="392" height="56" width="206" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="3072" y="392" height="56" width="1408" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="CEP" border="0" color="0" x="6286" y="392" height="56" width="247" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Segmento de Venta" border="0" color="0" x="8590" y="392" height="56" width="1143" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Sector de Negocio" border="0" color="0" x="9742" y="392" height="56" width="1152" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Zona" border="0" color="0" x="12178" y="392" height="56" width="498" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ejecutivo" border="0" color="0" x="7054" y="392" height="56" width="846" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="0" color="0" x="4489" y="392" height="56" width="590" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Provincia" border="0" color="0" x="5088" y="392" height="56" width="590" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="0" color="0" x="5687" y="392" height="56" width="590" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="GoTo Market Segmentation" border="0" color="0" x="7909" y="392" height="56" width="672" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tama$$HEX1$$f100$$ENDHEX$$o" border="0" color="0" x="13193" y="392" height="56" width="416" html.valueishtml="0"  name=t_17 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Docto" border="0" color="0" x="13618" y="392" height="56" width="238" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Documento" border="0" color="0" x="13865" y="392" height="56" width="421" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Asignaci$$HEX1$$f300$$ENDHEX$$n Cuenta" border="0" color="0" x="11584" y="392" height="56" width="585" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Giro de Negocio" border="0" color="0" x="10903" y="392" height="56" width="672" html.valueishtml="0"  name=t_21 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo V$$HEX1$$ed00$$ENDHEX$$a" border="0" color="0" x="14295" y="392" height="56" width="242" html.valueishtml="0"  name=t_22 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="V$$HEX1$$ed00$$ENDHEX$$a" border="0" color="0" x="14546" y="392" height="56" width="850" html.valueishtml="0"  name=t_23 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="N$$HEX1$$fa00$$ENDHEX$$mero" border="0" color="0" x="15406" y="392" height="56" width="334" html.valueishtml="0"  name=t_24 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Complemento" border="0" color="0" x="15749" y="392" height="56" width="329" html.valueishtml="0"  name=t_25 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Urbanizaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="16087" y="392" height="56" width="677" html.valueishtml="0"  name=t_26 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Pa$$HEX1$$ed00$$ENDHEX$$s" border="0" color="0" x="6542" y="392" height="56" width="503" html.valueishtml="0"  name=t_27 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="A$$HEX1$$f100$$ENDHEX$$o" border="0" color="0" x="16773" y="392" height="56" width="242" html.valueishtml="0"  name=t_28 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="PCs" border="0" color="0" x="17024" y="392" height="56" width="160" html.valueishtml="0"  name=t_29 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="L$$HEX1$$ed00$$ENDHEX$$neas" border="0" color="0" x="17193" y="392" height="56" width="160" html.valueishtml="0"  name=t_30 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Empleados" border="0" color="0" x="17362" y="392" height="56" width="247" html.valueishtml="0"  name=t_31 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ingreso" border="0" color="0" x="17618" y="392" height="56" width="329" html.valueishtml="0"  name=t_32 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Medio de Comunicaci$$HEX1$$f300$$ENDHEX$$n" border="0" color="0" x="17957" y="392" height="56" width="681" html.valueishtml="0"  name=t_33 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Empresa" border="0" color="0" x="12686" y="392" height="56" width="498" html.valueishtml="0"  name=t_34 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Contacto Administrativo" border="0" color="0" x="18647" y="392" height="56" width="846" html.valueishtml="0"  name=t_35 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo Contacto Administrativo" border="0" color="0" x="19502" y="392" height="56" width="763" html.valueishtml="0"  name=t_36 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Email" border="0" color="0" x="20274" y="392" height="56" width="626" html.valueishtml="0"  name=t_37 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Contacto T$$HEX1$$e900$$ENDHEX$$cnico" border="0" color="0" x="20910" y="392" height="56" width="891" html.valueishtml="0"  name=t_38 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=header alignment="2" expression="~"Top ~" + string( anumclientes) +~" Clientes~""border="0" color="0" x="1682" y="68" height="100" width="2098" format="[GENERAL]" html.valueishtml="0"  name=compute_3 visible="1"  font.face="Arial" font.height="-16" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+column(band=header id=55 alignment="2" tabsequence=32766 border="0" color="0" x="1582" y="192" height="100" width="2299" format="[general]" html.valueishtml="0"  name=dsctipsrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-16" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+column(band=detail id=56 alignment="1" tabsequence=32766 border="0" color="0" x="2510" y="4" height="56" width="338" format="[general]" html.valueishtml="0"  name=totalusd visible="1" editmask.mask="###,###.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="439" y="4" height="56" width="1029" format="[general]" html.valueishtml="0"  name=a_nomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1477" y="4" height="56" width="1024" format="[general]" html.valueishtml="0"  name=a_nomabr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2857" y="4" height="56" width="206" format="[general]" html.valueishtml="0"  name=tipper1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3072" y="4" height="56" width="1408" format="[general]" html.valueishtml="0"  name=a_dircli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="6286" y="4" height="56" width="247" format="[general]" html.valueishtml="0"  name=a_codpos visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="8590" y="4" height="56" width="1143" format="[general]" html.valueishtml="0"  name=b_dscsegmark visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="9742" y="4" height="56" width="1152" format="[general]" html.valueishtml="0"  name=c_dscsecmark visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="12178" y="4" height="56" width="498" format="[general]" html.valueishtml="0"  name=d_dsczona visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="7054" y="4" height="56" width="846" format="[general]" html.valueishtml="0"  name=e_nomect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="4489" y="4" height="56" width="590" format="[general]" html.valueishtml="0"  name=f_nomdst visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="5088" y="4" height="56" width="590" format="[general]" html.valueishtml="0"  name=f_nompvc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="5687" y="4" height="56" width="590" format="[general]" html.valueishtml="0"  name=f_nomest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="7909" y="4" height="56" width="672" format="[general]" html.valueishtml="0"  name=g_description visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="13193" y="4" height="56" width="416" format="[general]" html.valueishtml="0"  name=h_dsctam visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="13618" y="4" height="56" width="238" format="[general]" html.valueishtml="0"  name=i_abrdid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="1" tabsequence=32766 border="0" color="0" x="13865" y="4" height="56" width="421" format="[general]" html.valueishtml="0"  name=a_ntdide visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="0" tabsequence=32766 border="0" color="0" x="11584" y="4" height="56" width="585" format="[general]" html.valueishtml="0"  name=j_dsccuenta visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=29 alignment="0" tabsequence=32766 border="0" color="0" x="10903" y="4" height="56" width="672" format="[general]" html.valueishtml="0"  name=k_dscgirmark visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=31 alignment="0" tabsequence=32766 border="0" color="0" x="14295" y="4" height="56" width="242" format="[general]" html.valueishtml="0"  name=l_abrvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=32 alignment="0" tabsequence=32766 border="0" color="0" x="14546" y="4" height="56" width="850" format="[general]" html.valueishtml="0"  name=a_nomvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=33 alignment="0" tabsequence=32766 border="0" color="0" x="15406" y="4" height="56" width="334" format="[general]" html.valueishtml="0"  name=a_numvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="0" color="0" x="15749" y="4" height="56" width="329" format="[general]" html.valueishtml="0"  name=a_interior visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=35 alignment="0" tabsequence=32766 border="0" color="0" x="16087" y="4" height="56" width="677" format="[general]" html.valueishtml="0"  name=a_nomurb visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=37 alignment="0" tabsequence=32766 border="0" color="0" x="6542" y="4" height="56" width="503" format="[general]" html.valueishtml="0"  name=m_nompai visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=43 alignment="0" tabsequence=32766 border="0" color="0" x="17957" y="4" height="56" width="681" format="[general]" html.valueishtml="0"  name=o_numcomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=45 alignment="0" tabsequence=32766 border="0" color="0" x="12686" y="4" height="56" width="498" format="[general]" html.valueishtml="0"  name=p_desctipemp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=47 alignment="0" tabsequence=32766 border="0" color="0" x="18647" y="4" height="56" width="846" format="[general]" html.valueishtml="0"  name=q_nomcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=48 alignment="0" tabsequence=32766 border="0" color="0" x="19502" y="4" height="56" width="763" format="[general]" html.valueishtml="0"  name=q_carcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=49 alignment="0" tabsequence=32766 border="0" color="0" x="20274" y="4" height="56" width="626" format="[general]" html.valueishtml="0"  name=q_numcomcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=51 alignment="0" tabsequence=32766 border="0" color="0" x="20910" y="4" height="56" width="891" format="[general]" html.valueishtml="0"  name=q_nomcnt1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=52 alignment="0" tabsequence=32766 border="0" color="0" x="21810" y="4" height="56" width="786" format="[general]" html.valueishtml="0"  name=q_carcnt1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=53 alignment="0" tabsequence=32766 border="0" color="0" x="22606" y="4" height="56" width="654" format="[general]" html.valueishtml="0"  name=q_numcomcnt1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="183" y="4" height="56" width="247" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="165" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=38 alignment="1" tabsequence=32766 border="0" color="0" x="16773" y="4" height="56" width="242" format="[general]" html.valueishtml="0"  name=n_annoactual visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=39 alignment="1" tabsequence=32766 border="0" color="0" x="17024" y="4" height="56" width="160" format="[general]" html.valueishtml="0"  name=n_comput visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=40 alignment="1" tabsequence=32766 border="0" color="0" x="17193" y="4" height="56" width="160" format="[general]" html.valueishtml="0"  name=n_numlin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=41 alignment="1" tabsequence=32766 border="0" color="0" x="17362" y="4" height="56" width="247" format="[general]" html.valueishtml="0"  name=n_empleados visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=42 alignment="1" tabsequence=32766 border="0" color="0" x="17618" y="4" height="56" width="329" format="[general]" html.valueishtml="0"  name=n_ingreso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="1" expression="cumulativeSum(  totalusd  for all )"border="0" color="0" x="2487" y="28" height="68" width="375" format="[GENERAL]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+line(band=summary x1="2491" y1="8" x2="2862" y2="8"  name=l_1 visible="1" pen.style="0" pen.width="9" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=summary alignment="1" text="Total" border="0" color="0" x="2322" y="28" height="64" width="146" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="12639424" )
+text(band=foreground alignment="2" text=" Inteligencia de Mercados" border="2" color="0" x="201" y="260" height="56" width="677" html.valueishtml="0"  name=t_39 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+bitmap(band=foreground filename="I:\logotipo1.bmp" x="201" y="16" height="224" width="690" border="2"  name=p_1 visible="1" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

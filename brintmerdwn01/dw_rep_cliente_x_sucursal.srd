@@ -1,0 +1,93 @@
+HA$PBExportHeader$dw_rep_cliente_x_sucursal.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=376 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(15) updatewhereclause=yes name=vtatabcli_ntdide dbname="vtatabcli.ntdide" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_codsegmark dbname="vtatabcli.codsegmark" )
+ column=(type=char(60) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=char(10) updatewhereclause=yes name=vtasuccli_codsuc dbname="vtasuccli.codsuc" )
+ column=(type=char(50) updatewhereclause=yes name=vtasuccli_nomsuc dbname="vtasuccli.nomsuc" )
+ column=(type=char(120) updatewhereclause=yes name=vtasuccli_dirsuc dbname="vtasuccli.dirsuc" )
+ column=(type=char(4) updatewhereclause=yes name=vtasuccli_tipsuc dbname="vtasuccli.tipsuc" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtasucinganu_empleados dbname="vtasucinganu.empleados" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtasuccli_idestatus dbname="vtasuccli.idestatus" )
+ column=(type=datetime updatewhereclause=yes name=vtasuccli_fecultact dbname="vtasuccli.fecultact" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_flg_actual dbname="vtatabcli.flg_actual" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtasuccli_flg_usuario dbname="vtasuccli.flg_usuario" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtasuccli_flg_prospecto dbname="vtasuccli.flg_prospecto" values="	1/	0" )
+ column=(type=char(3) updatewhereclause=yes name=vtatabcli_tipdide dbname="vtatabcli.tipdide" )
+ retrieve="  SELECT ~"VTATABCLI~".~"CODCLI~",   
+         ~"VTATABCLI~".~"NOMCLI~",   
+         ~"VTATABCLI~".~"NTDIDE~",   
+         ~"VTATABCLI~".~"CODSEGMARK~",   
+         ~"VTATABECT~".~"NOMECT~",   
+         ~"VTASUCCLI~".~"CODSUC~",   
+         ~"VTASUCCLI~".~"NOMSUC~",   
+         ~"VTASUCCLI~".~"DIRSUC~",   
+         ~"VTASUCCLI~".~"TIPSUC~",   
+         ~"VTASUCINGANU~".~"EMPLEADOS~",   
+         ~"VTASUCCLI~".~"IDESTATUS~",   
+         ~"VTASUCCLI~".~"FECULTACT~",   
+         ~"VTATABCLI~".~"FLG_ACTUAL~",   
+         ~"VTASUCCLI~".~"FLG_USUARIO~",   
+         ~"VTASUCCLI~".~"FLG_PROSPECTO~"  ,
+			~"VTATABCLI~".~"TIPDIDE~"
+    FROM ~"VTASUCCLI~",   
+         ~"VTASUCINGANU~",   
+         ~"VTATABCLI~",   
+         ~"VTATABECT~",
+			(select max(anno) anno, codsuc
+            from vtasucinganu
+           group by codsuc) b  
+   WHERE ( vtasuccli.codsuc = vtasucinganu.codsuc (+)) and  
+         ( ~"VTATABCLI~".~"CODCLI~" = ~"VTASUCCLI~".~"CODCLI~" ) and  
+         ( ~"VTATABCLI~".~"CODECT~" = ~"VTATABECT~".~"CODECT~" ) and   
+			vtasucinganu.codsuc = b.codsuc						and
+			( codsegmark like :asegmark							or
+			  :asegmark=-1 ) 											and
+			decode(:asituacion, 1,flg_actual, 2, vtasuccli.flg_usuario,3, vtasuccli.flg_prospecto)=1 and
+			( vtasuccli.nomvia like :anomvia						or
+			  :anomvia = '*')											and
+			( vtasuccli.numvia like :anumvia						or
+			  :anumvia = '*')
+   ORDER BY ~"VTATABCLI~".~"NOMCLI~", ~"VTATABCLI~".~"CODSEGMARK~", ~"VTASUCCLI~".~"NOMSUC~"" arguments=(("asegmark", number),("asituacion", number),("anomvia", string),("anumvia", string)) )
+group(level=1 header.height=348 trailer.height=0 by=("vtatabcli_codcli" , "vtatabcli_nomcli" ) header.color="536870912" trailer.color="536870912" )
+text(band=header alignment="2" text="Sucursales por Cliente" border="0" color="0" x="1614" y="100" height="100" width="1646" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-16" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=header.1 alignment="1" text="Cliente" border="6" color="0" x="41" y="40" height="64" width="658" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=header.1 id=1 alignment="0" tabsequence=32766 border="0" color="0" x="731" y="40" height="64" width="265" format="[general]" html.valueishtml="0"  name=vtatabcli_codcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header.1 id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1029" y="40" height="64" width="1984" format="[general]" html.valueishtml="0"  name=vtatabcli_nomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header.1 id=3 alignment="0" tabsequence=32766 border="0" color="0" x="3031" y="40" height="64" width="407" format="[general]~tf_str_mascara_ntdide( vtatabcli_tipdide )" html.valueishtml="0"  name=vtatabcli_ntdide visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=header.1 x1="23" y1="8" x2="6240" y2="8"  name=l_1 visible="1" pen.style="0" pen.width="14" pen.color="80269524"  background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="1" text="Segmento de Mercado" border="6" color="0" x="41" y="124" height="64" width="658" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=header.1 id=4 alignment="0" tabsequence=32766 border="0" color="0" x="731" y="124" height="64" width="745" format="[general]" html.valueishtml="0"  name=vtatabcli_codsegmark visible="1" dddw.name=dddw_segmark dddw.displaycolumn=dscsegmark dddw.datacolumn=codsegmark dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="1" text="Ejecutivo de Cuenta" border="6" color="0" x="1509" y="124" height="64" width="658" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=header.1 id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2199" y="124" height="64" width="2281" format="[general]" html.valueishtml="0"  name=vtatabect_nomect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header.1 alignment="2" text="Sucursal" border="6" color="0" x="18" y="224" height="112" width="302" html.valueishtml="0"  name=vtasuccli_codsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="Nombre deSucursal" border="6" color="0" x="338" y="224" height="112" width="1673" html.valueishtml="0"  name=vtasuccli_nomsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="2030" y="224" height="112" width="1961" html.valueishtml="0"  name=vtasuccli_dirsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="Tipo deSucursal" border="6" color="0" x="4005" y="224" height="112" width="590" html.valueishtml="0"  name=vtasuccli_tipsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="EstatusCalificaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="4923" y="224" height="112" width="498" html.valueishtml="0"  name=vtasuccli_idestatus_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="Prospecto" border="6" color="0" x="6286" y="224" height="112" width="238" html.valueishtml="0"  name=vtasuccli_flg_prospecto_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="Usuario" border="6" color="0" x="6025" y="224" height="112" width="242" html.valueishtml="0"  name=vtasuccli_flg_usuario_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="Cliente" border="6" color="0" x="5769" y="224" height="112" width="238" html.valueishtml="0"  name=vtatabcli_flg_actual_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="UltimaActualizaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="5440" y="224" height="112" width="306" html.valueishtml="0"  name=vtasuccli_fecultact_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header.1 alignment="2" text="#Empleados" border="6" color="0" x="4617" y="224" height="112" width="283" html.valueishtml="0"  name=vtasucinganu_empleados_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=6 alignment="2" tabsequence=32766 border="0" color="0" x="27" y="4" height="56" width="283" format="[general]" html.valueishtml="0"  name=vtasuccli_codsuc visible="1" edit.limit=5 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="2021" y="4" height="56" width="1961" format="[general]" html.valueishtml="0"  name=vtasuccli_dirsuc visible="1" edit.limit=120 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="3995" y="4" height="56" width="590" format="[general]" html.valueishtml="0"  name=vtasuccli_tipsuc visible="1" dddw.name=dddw_vtatipsuc dddw.displaycolumn=nomabr dddw.datacolumn=tipsuc dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="0" color="0" x="4914" y="4" height="56" width="498" format="[general]" html.valueishtml="0"  name=vtasuccli_idestatus visible="1" dddw.name=dddw_estatus_calificacion dddw.displaycolumn=calificacion dddw.datacolumn=idestatus dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="2" tabsequence=32766 border="0" color="0" x="6277" y="4" height="56" width="238" format="[general]" html.valueishtml="0"  name=vtasuccli_flg_prospecto visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="2" tabsequence=32766 border="0" color="0" x="6016" y="4" height="56" width="242" format="[general]" html.valueishtml="0"  name=vtasuccli_flg_usuario visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="0" x="5760" y="4" height="56" width="238" format="[general]" html.valueishtml="0"  name=vtatabcli_flg_actual visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="5431" y="4" height="56" width="306" format="[shortdate] [time]" html.valueishtml="0"  name=vtasuccli_fecultact visible="1" edit.name="DD/MM/YYYY HH:MM:SS" editmask.mask="DD/MM/YYYY" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="1" tabsequence=32766 border="0" color="0" x="4622" y="4" height="56" width="256" format="[general]" html.valueishtml="0"  name=vtasucinganu_empleados visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="325" y="4" height="56" width="1678" format="[general]" html.valueishtml="0"  name=vtasuccli_nomsuc visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+bitmap(band=foreground filename="I:\logotipo1.bmp" x="18" y="16" height="224" width="690" border="2"  name=p_1 visible="1" )
+text(band=foreground alignment="2" text=" Inteligencia de Mercados" border="2" color="0" x="32" y="260" height="56" width="677" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

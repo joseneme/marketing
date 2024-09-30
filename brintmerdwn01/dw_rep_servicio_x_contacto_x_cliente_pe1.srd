@@ -1,0 +1,177 @@
+HA$PBExportHeader$dw_rep_servicio_x_contacto_x_cliente_pe1.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 1 print.margin.left = 30 print.margin.right = 30 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 8 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=348 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=116 color="536870912" )
+detail(height=56 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(150) updatewhereclause=yes name=a_nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(120) updatewhereclause=yes name=vtatabcli_dircli dbname="vtatabcli.dircli" )
+ column=(type=char(2) updatewhereclause=yes name=a_tipviap dbname="vtatabcli.tipviap" )
+ column=(type=char(60) updatewhereclause=yes name=a_nomvia dbname="vtatabcli.nomvia" )
+ column=(type=char(50) updatewhereclause=yes name=a_numvia dbname="vtatabcli.numvia" )
+ column=(type=char(50) updatewhereclause=yes name=a_nomurb dbname="vtatabcli.nomurb" )
+ column=(type=char(80) updatewhereclause=yes name=v_contacto_nomcnt dbname="v_contacto.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=v_contacto_carcnt dbname="v_contacto.carcnt" )
+ column=(type=char(50) updatewhereclause=yes name=v_medio_numcomcli dbname="v_medio.numcomcli" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabsegmark_dscsegmark dbname="vtatabsegmark.dscsegmark" )
+ column=(type=char(50) updatewhereclause=yes name=v_servicio_x_cliente_servicio dbname="v_servicio_x_cliente.servicio" )
+ column=(type=char(40) updatewhereclause=yes name=f_nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(20) updatewhereclause=yes name=a_codpos dbname="vtatabcli.codpos" )
+ column=(type=char(40) updatewhereclause=yes name=f_nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(80) updatewhereclause=yes name=g_nompai dbname="vtatabpai.nompai" )
+ column=(type=char(30) updatewhereclause=yes name=user dbname="vtatabcli.user" )
+ column=(type=char(0) updatewhereclause=yes name=persona dbname="persona" )
+ column=(type=char(50) updatewhereclause=yes name=vtamedcomcli_numcomcli dbname="vtamedcomcli.numcomcli" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabgirmark_dscgirmark dbname="vtatabgirmark.dscgirmark" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabsecmark_dscsecmark dbname="vtatabsecmark.dscsecmark" )
+ column=(type=char(50) updatewhereclause=yes name=l_desctipemp dbname="vtatipemp.desctipemp" )
+ column=(type=char(50) updatewhereclause=yes name=m_nombre dbname="grupoecon.nombre" )
+ column=(type=char(50) updatewhereclause=yes name=n_dsccuenta dbname="asignacion_cuenta.dsccuenta" )
+ column=(type=number updatewhereclause=yes name=o_annoactual dbname="vtatabcli.annoactual" )
+ column=(type=decimal(0) updatewhereclause=yes name=o_comput dbname="vtatabcli.comput" )
+ column=(type=decimal(0) updatewhereclause=yes name=o_numlin dbname="vtatabcli.numlin" )
+ column=(type=decimal(0) updatewhereclause=yes name=o_empleados dbname="vtatabcli.empleados" )
+ column=(type=decimal(2) updatewhereclause=yes name=o_ingreso dbname="vtatabcli.ingreso" )
+ retrieve="select a.codcli, 
+       a.nomcli,
+       a.nomabr, 
+       a.dircli,
+       a.TIPVIAP,
+       a.NOMVIA,
+       a.NUMVIA,
+       a.NOMURB,
+       c.nomcnt, 
+       c.carcnt, 
+       b.numcomcli,
+       d.dscsegmark,
+       e.servicio,
+		 f.nomdst,
+       a.codpos,
+		 f.nomest,
+       g.nompai,
+		 user, 
+		 decode(:as_tipper,'J','Jur$$HEX1$$ed00$$ENDHEX$$dicos','N','Naturales','*',' ') Persona,
+		 h.NUMCOMCLI,
+		 j.dscgirmark,
+		 k.dscsecmark,
+       l.desctipemp,
+       m.nombre,
+       n.dsccuenta,
+       o.annoactual,
+       o.comput,
+       o.numlin,
+       o.empleados,
+       o.ingreso
+  from vtatabcli a,
+       v_medio b,
+       v_contacto c,
+       vtatabsegmark d, 
+       v_servicio_x_cliente e,
+  		 v_ubicaciones f,
+	 	 vtatabpai g,
+		 vtamedcomcli h,
+		 vtatabgirmark j,
+		 vtatabsecmark k,
+       vtatipemp l,
+       grupoecon m,
+       asignacion_cuenta n,
+       (select   y.codcli, z.annoactual, y.comput, y.numlin, y.empleados, y.ingreso
+          from   (select codcli, anno, comput, numlin, empleados, ingreso
+                    from vtacliinganu
+                   order by anno asc) y,
+                 (select max(anno) as annoactual, codcli
+                    from vtacliinganu
+                   group by codcli) z
+         where   z.codcli = y.codcli
+           and   z.annoactual = y.anno) o
+ where (e.tipper = :as_tipper OR :as_tipper='*') and
+		 (e.tipsrv = :as_tipsrv OR :as_tipsrv='*') and
+		 a.codcli=b.codcli(+) and
+       a.codcli=c.codcli(+) and
+       a.codsegmark=d.codsegmark(+) and
+       e.codcli=a.codcli and
+		 a.codpai=g.codpai(+) and
+  		 a.codubi=f.codubi(+) and
+		 a.codcli=h.codcli(+) and
+		 a.codgirmark=j.codgirmark(+) and
+		 a.codsecmark=k.codsecmark(+) and
+       a.tipemp = l.idtipemp(+) and
+       a.idgrupo = m.idgrupo(+) and
+       a.codcuenta = n.codcuenta(+) and
+		 a.codcli=o.codcli(+) and
+		decode(:ai_tipper, 1,flg_actual, 2, flg_usuario, 3, flg_prospecto, 4, 1) = 1 and
+		 h.idmedcom(+)='008'
+ order by d.dscsegmark,
+			e.servicio,
+			a.nomcli
+" arguments=(("ai_tipper", number),("as_tipsrv", string),("as_servicio", string),("as_tipper", string)) )
+group(level=1 header.height=68 trailer.height=0 by=("v_servicio_x_cliente_servicio" ) header.color="536870912" trailer.color="536870912" )
+group(level=2 header.height=52 trailer.height=0 by=("vtatabsegmark_dscsegmark" ) header.color="536870912" trailer.color="536870912" )
+bitmap(band=header filename="I:\firstcom_logotipo_blanco.bmp" x="50" y="24" height="244" width="805" border="0"  name=p_1 visible="1" )
+compute(band=header alignment="1" expression="today()"border="0" color="0" x="4178" y="44" height="48" width="997" format="mm/dd/yyyy hh:mm am/pm" html.valueishtml="0"  name=date_1 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header alignment="0" expression="'Reporte de Clientes ' + persona + case(   ai_tipper when 1 then ' Activos' when 2 then ' Usuarios' when 3 then ' Prospectos' else ' ')"border="0" color="0" x="864" y="44" height="80" width="3237" format="[GENERAL]" html.valueishtml="0"  name=compute_3 visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header alignment="0" expression="'Servicio: ' +    as_servicio "border="0" color="0" x="864" y="132" height="80" width="3237" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1~tif( as_servicio='', 0,1)"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header.1 id=13 alignment="0" tabsequence=32766 border="0" color="0" x="119" y="4" height="60" width="1399" format="[general]" html.valueishtml="0"  name=v_servicio_x_cliente_servicio visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header.2 alignment="0" text="Segmento :" border="0" color="0" x="128" y="4" height="40" width="197" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=header.2 id=12 alignment="0" tabsequence=32766 border="0" color="0" x="347" y="4" height="40" width="1152" format="[general]" html.valueishtml="0"  name=vtatabsegmark_dscsegmark visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="getrow()"border="6" color="0" x="9" y="4" height="40" width="101" format="[GENERAL]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="128" y="4" height="40" width="174" format="[general]" html.valueishtml="0"  name=vtatabcli_codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="306" y="4" height="40" width="1015" format="[general]" html.valueishtml="0"  name=vtatabcli_nomcli visible="1" edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1339" y="4" height="40" width="846" format="[general]" html.valueishtml="0"  name=a_nomabr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2203" y="4" height="40" width="773" format="[general]" html.valueishtml="0"  name=vtatabcli_dircli visible="1" edit.limit=60 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2994" y="4" height="40" width="137" format="[general]" html.valueishtml="0"  name=a_tipviap visible="1" dddw.name=dddw_tipviap dddw.displaycolumn=abrvia dddw.datacolumn=codvia dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3131" y="4" height="40" width="521" format="[general]" html.valueishtml="0"  name=a_nomvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="0" x="3666" y="4" height="40" width="151" format="[general]" html.valueishtml="0"  name=a_numvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="3831" y="4" height="40" width="681" format="[general]" html.valueishtml="0"  name=a_nomurb visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="4521" y="4" height="40" width="494" format="[general]" html.valueishtml="0"  name=f_nomdst visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="5033" y="4" height="40" width="224" format="[general]" html.valueishtml="0"  name=f_nomest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="5294" y="4" height="40" width="210" format="[general]" html.valueishtml="0"  name=a_codpos visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="5518" y="4" height="40" width="352" format="[general]" html.valueishtml="0"  name=g_nompai visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="5883" y="4" height="40" width="667" format="[general]" html.valueishtml="0"  name=v_contacto_nomcnt visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="6565" y="4" height="40" width="571" format="[general]" html.valueishtml="0"  name=v_contacto_carcnt visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="7150" y="4" height="40" width="256" format="[general]" html.valueishtml="0"  name=vtamedcomcli_numcomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="7419" y="4" height="40" width="562" format="[general]" html.valueishtml="0"  name=v_medio_numcomcli visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="0" tabsequence=32766 border="0" color="0" x="7995" y="4" height="40" width="562" format="[general]" html.valueishtml="0"  name=vtatabgirmark_dscgirmark visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="8571" y="4" height="40" width="562" format="[general]" html.valueishtml="0"  name=vtatabsecmark_dscsecmark visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="9147" y="4" height="40" width="503" format="[general]" html.valueishtml="0"  name=n_dsccuenta visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="1" tabsequence=32766 border="0" color="0" x="9664" y="4" height="40" width="128" format="[general]" html.valueishtml="0"  name=o_annoactual visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="1" tabsequence=32766 border="0" color="0" x="9806" y="4" height="40" width="160" format="[general]" html.valueishtml="0"  name=o_comput visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="1" tabsequence=32766 border="0" color="0" x="9979" y="4" height="40" width="151" format="[general]" html.valueishtml="0"  name=o_numlin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=29 alignment="1" tabsequence=32766 border="0" color="0" x="10144" y="4" height="40" width="183" format="[general]" html.valueishtml="0"  name=o_empleados visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=30 alignment="1" tabsequence=32766 border="0" color="0" x="10341" y="4" height="40" width="229" format="[general]" html.valueishtml="0"  name=o_ingreso visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="10583" y="4" height="40" width="503" format="[general]" html.valueishtml="0"  name=l_desctipemp visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="11099" y="4" height="40" width="503" format="[general]" html.valueishtml="0"  name=m_nombre visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=footer alignment="0" text="dw_rep_servicio_x_contacto_x_cliente_pe1" border="0" color="0" x="18" y="16" height="40" width="649" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=footer id=18 alignment="0" tabsequence=32766 border="0" color="0" x="18" y="68" height="40" width="539" format="[general]" html.valueishtml="0"  name=user visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=footer alignment="1" expression="'P$$HEX1$$e100$$ENDHEX$$g. ' + page() + ' de ' + pageCount()"border="0" color="0" x="4553" y="60" height="48" width="622" format="[general]" html.valueishtml="0"  name=page_1 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="C$$HEX1$$f300$$ENDHEX$$digo" border="6" color="0" x="119" y="300" height="40" width="174" html.valueishtml="0"  name=vtatabcli_codcli_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Nombre / Empresa" border="6" color="0" x="306" y="300" height="40" width="1015" html.valueishtml="0"  name=vtatabcli_nomcli_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Nombre Comercial" border="6" color="0" x="1335" y="300" height="40" width="846" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="2194" y="300" height="40" width="773" html.valueishtml="0"  name=vtatabcli_dircli_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tipo V$$HEX1$$ed00$$ENDHEX$$a" border="6" color="0" x="2981" y="300" height="40" width="137" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="V$$HEX1$$ed00$$ENDHEX$$a" border="6" color="0" x="3131" y="300" height="40" width="521" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="N$$HEX1$$fa00$$ENDHEX$$mero" border="6" color="0" x="3666" y="300" height="40" width="151" html.valueishtml="0"  name=t_22 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Urbanizaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="3831" y="300" height="40" width="677" html.valueishtml="0"  name=t_21 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="4521" y="300" height="40" width="494" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="5033" y="300" height="40" width="247" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="CEP" border="6" color="0" x="5294" y="300" height="40" width="210" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Pa$$HEX1$$ed00$$ENDHEX$$s" border="6" color="0" x="5518" y="300" height="40" width="352" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Contacto" border="6" color="0" x="5883" y="300" height="40" width="667" html.valueishtml="0"  name=v_contacto_nomcnt_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Cargo" border="6" color="0" x="6565" y="300" height="40" width="571" html.valueishtml="0"  name=v_contacto_carcnt_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tel$$HEX1$$e900$$ENDHEX$$fono" border="6" color="0" x="7150" y="300" height="40" width="256" html.valueishtml="0"  name=v_medio_numcomcli_t visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Correo" border="6" color="0" x="7419" y="300" height="40" width="562" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Giro" border="6" color="0" x="7995" y="300" height="40" width="562" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Sector" border="6" color="0" x="8571" y="300" height="40" width="562" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Asignaci$$HEX1$$f300$$ENDHEX$$n Cuenta" border="6" color="0" x="9147" y="300" height="40" width="503" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="A$$HEX1$$f100$$ENDHEX$$o" border="6" color="0" x="9664" y="300" height="40" width="128" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="PC's" border="6" color="0" x="9806" y="300" height="40" width="160" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="L$$HEX1$$ed00$$ENDHEX$$neas" border="6" color="0" x="9979" y="300" height="40" width="151" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-6" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Empleados" border="6" color="0" x="10144" y="300" height="40" width="183" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ingreso" border="6" color="0" x="10341" y="300" height="40" width="229" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Tama$$HEX1$$f100$$ENDHEX$$o" border="6" color="0" x="10583" y="300" height="40" width="503" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Corporaci$$HEX1$$f300$$ENDHEX$$n" border="6" color="0" x="11099" y="300" height="40" width="503" html.valueishtml="0"  name=t_17 visible="1"  font.face="Arial" font.height="-6" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

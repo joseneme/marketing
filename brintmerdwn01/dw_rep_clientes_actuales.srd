@@ -1,0 +1,82 @@
+HA$PBExportHeader$dw_rep_clientes_actuales.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=480 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(30) updatewhereclause=yes name=vtatipdid_dscdid dbname="vtatipdid.dscdid" )
+ column=(type=char(15) updatewhereclause=yes name=vtatabcli_ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(120) updatewhereclause=yes name=vtatabcli_dircli dbname="vtatabcli.dircli" )
+ column=(type=char(40) updatewhereclause=yes name=v_ubicaciones_nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=v_ubicaciones_nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(20) updatewhereclause=yes name=vtatabcli_codpos dbname="vtatabcli.codpos" )
+ column=(type=char(8) updatewhereclause=yes name=vtatabect_codect dbname="vtatabect.codect" )
+ column=(type=char(60) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_flg_actual dbname="vtatabcli.flg_actual" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_flg_usuario dbname="vtatabcli.flg_usuario" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcli_flg_prospecto dbname="vtatabcli.flg_prospecto" values="	1/	0" )
+ column=(type=char(3) updatewhereclause=yes name=vtatabcli_tipdide dbname="vtatabcli.tipdide" )
+ retrieve="select a.codcli, 
+       a.nomcli,
+       f.dscdid,       
+	    a.ntdide,       
+	    a.dircli,
+       b.nomdst,
+       b.nomest,
+       a.codpos,
+       c.codect,
+       c.nomect, 
+       a.flg_actual,
+       a.flg_usuario,
+       a.flg_prospecto,
+		 a.tipdide
+from vtatabcli a,
+     vtatipdid f,
+     v_ubicaciones b,
+     vtatabect c
+where (a.tipo_entidad = 1) and
+	    (a.idestado = 1 or a.idestado is null) and
+    	(a.tipdide = f.tipdide(+) ) and
+      (a.codubi = b.codubi(+) ) and
+      (a.codect = c.codect )	   
+" )
+text(band=header alignment="2" text="Codigo" border="6" color="0" x="5" y="368" height="96" width="261"  name=vtatabcli_codcli_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Raz$$HEX1$$f300$$ENDHEX$$n Social" border="6" color="0" x="288" y="368" height="96" width="1646"  name=vtatabcli_nomcli_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo de 
+Documento" border="6" color="0" x="1947" y="368" height="96" width="315"  name=vtatipdid_dscdid_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Numero de 
+Documento" border="6" color="0" x="2277" y="368" height="96" width="375"  name=vtatabcli_ntdide_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Direcci$$HEX1$$f300$$ENDHEX$$n " border="6" color="0" x="2674" y="368" height="96" width="1321"  name=vtatabcli_dircli_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="4009" y="368" height="96" width="722"  name=v_ubicaciones_nomdst_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="4750" y="368" height="96" width="581"  name=v_ubicaciones_nomest_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="CEP" border="6" color="0" x="5358" y="368" height="96" width="338"  name=vtatabcli_codpos_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ejecutivo de Cuenta" border="6" color="0" x="5719" y="368" height="96" width="663"  name=vtatabect_nomect_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cliente
+Actual" border="6" color="0" x="6400" y="368" height="96" width="210"  name=vtatabcli_flg_actual_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cliente
+Usuario" border="6" color="0" x="6629" y="368" height="96" width="210"  name=vtatabcli_flg_usuario_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cliente
+Prospecto" border="6" color="0" x="6862" y="368" height="96" width="210"  name=vtatabcli_flg_prospecto_t  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Reporte de Clientes Actuales" border="0" color="0" x="1906" y="96" height="80" width="1006"  name=t_1  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'Page ' + page() + ' of ' + pageCount()"border="0" color="0" x="3895" y="184" height="52" width="507" format="[general]"  name=page_1  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header alignment="0" expression="today()"border="0" color="0" x="3895" y="108" height="52" width="466" format="dd/mm/yyyy"  name=date_1  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="5" y="4" height="76" width="261" format="[general]"  name=vtatabcli_codcli edit.limit=8 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="288" y="4" height="76" width="1646" format="[general]"  name=vtatabcli_nomcli edit.limit=150 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="0" x="1947" y="4" height="76" width="315" format="[general]"  name=vtatipdid_dscdid edit.limit=30 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2277" y="4" height="76" width="375" format="[general]~tf_str_mascara_ntdide( vtatabcli_tipdide )"  name=vtatabcli_ntdide edit.limit=15 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2674" y="4" height="76" width="1321" format="[general]"  name=vtatabcli_dircli edit.limit=120 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4009" y="4" height="76" width="722" format="[general]"  name=v_ubicaciones_nomdst edit.limit=40 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="4750" y="4" height="76" width="581" format="[general]"  name=v_ubicaciones_nomest edit.limit=40 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="2" tabsequence=32766 border="0" color="0" x="5358" y="4" height="76" width="338" format="[general]"  name=vtatabcli_codpos edit.limit=20 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="5719" y="4" height="76" width="663" format="[general]"  name=vtatabect_nomect edit.limit=60 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="2" tabsequence=32766 border="0" color="0" x="6400" y="4" height="76" width="210" format="[general]"  name=vtatabcli_flg_actual checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="0" x="6629" y="4" height="76" width="210" format="[general]"  name=vtatabcli_flg_usuario checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="0" x="6862" y="4" height="76" width="210" format="[general]"  name=vtatabcli_flg_prospecto checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+bitmap(band=foreground filename="I:\logotipo1.bmp" x="18" y="16" height="224" width="773" border="0"  name=p_1 )
+text(band=foreground alignment="2" text=" Inteligencia de Mercado" border="0" color="0" x="32" y="260" height="56" width="681"  name=t_5  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+column(band=detail id=14 alignment="0" tabsequence=0 border="0" color="0" x="7072" y="0" height="48" width="55"  name=vtatabcli_tipdide  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
