@@ -1,0 +1,55 @@
+﻿$PBExportHeader$dw_buscli_caja_terminal.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(3) updatewhereclause=yes name=tipdide dbname="vtatabcli.tipdide" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(150) updatewhereclause=yes name=nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(60) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=char(8) updatewhereclause=yes name=mktcajaxcliente_colorzona dbname="mktcajaxcliente.colorzona" )
+ column=(type=decimal(5) updatewhereclause=yes name=compute_0008 dbname="compute_0008" )
+ retrieve="  SELECT ~"A~".~"CODCLI~",   
+         ~"A~".~"NOMCLI~",   
+         ~"A~".~"TIPDIDE~",   
+         ~"A~".~"NTDIDE~",   
+         ~"A~".~"NOMABR~",   
+         ~"B~".~"NOMECT~",
+         ~"C~".~"COLORZONA~",
+         MIN(~"C~".~"METROS~")
+    FROM ~"VTATABCLI~" ~"A~",   
+         ~"VTATABECT~" ~"B~",
+         ~"MKTCAJAXCLIENTE~" ~"C~"  
+   WHERE ( ~"A~".~"CODECT~" = ~"B~".~"CODECT~" (+))
+   AND (~"C~".~"CODCLI~" = ~"A~".~"CODCLI~")
+   GROUP BY ~"A~".~"CODCLI~",   
+         ~"A~".~"NOMCLI~",   
+         ~"A~".~"TIPDIDE~",   
+         ~"A~".~"NTDIDE~",   
+         ~"A~".~"NOMABR~",   
+         ~"B~".~"NOMECT~",
+         ~"C~".~"COLORZONA~"
+ 
+"  sort="compute_0008 A " )
+text(band=header alignment="2" text="N°" border="0" color="0" x="9" y="8" height="56" width="146" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Código" border="0" color="0" x="165" y="8" height="56" width="238" html.valueishtml="0"  name=codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="TipDoc" border="0" color="0" x="411" y="8" height="56" width="197" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="N° Doc." border="0" color="0" x="617" y="8" height="56" width="242" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre" border="0" color="0" x="869" y="8" height="56" width="1221" html.valueishtml="0"  name=nomcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Abreviado" border="0" color="0" x="2098" y="8" height="56" width="1097" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Consultor" border="0" color="0" x="3205" y="8" height="56" width="699" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distancia Mínima" border="0" color="0" x="3913" y="8" height="56" width="462" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="146" format="" html.valueishtml="0"  name=obj_30658224 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="165" y="4" height="56" width="238" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="869" y="4" height="56" width="1221" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="0" x="617" y="4" height="56" width="242" format="[general]" html.valueishtml="0"  name=ntdide visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="0" x="411" y="4" height="56" width="197" format="[general]" html.valueishtml="0"  name=tipdide visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2098" y="4" height="56" width="1097" format="[general]" html.valueishtml="0"  name=nomabr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3205" y="4" height="56" width="699" format="[general]" html.valueishtml="0"  name=vtatabect_nomect visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="2" tabsequence=32766 border="0" color="0" x="3913" y="4" height="56" width="462" format="[general]" html.valueishtml="0"  name=compute_0008 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

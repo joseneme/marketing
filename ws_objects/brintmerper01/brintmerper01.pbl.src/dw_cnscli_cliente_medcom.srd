@@ -1,0 +1,24 @@
+﻿$PBExportHeader$dw_cnscli_cliente_medcom.srd
+$PBExportComments$original de sigconhis01.pbl
+release 7;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtamedcomcli.codcli" )
+ column=(type=char(30) updatewhereclause=yes name=vtatabmedcom_medcom dbname="vtatabmedcom.medcom" )
+ column=(type=char(50) updatewhereclause=yes name=numcomcli dbname="vtamedcomcli.numcomcli" )
+ retrieve="  SELECT ~"VTAMEDCOMCLI~".~"CODCLI~" CODCLI,   
+			~"VTATABMEDCOM~".~"MEDCOM~" MEDCOM,
+         ~"VTAMEDCOMCLI~".~"NUMCOMCLI~" NUMCOMCLI  
+    FROM ~"VTAMEDCOMCLI~",
+			~"VTATABMEDCOM~"
+   WHERE ~"VTAMEDCOMCLI~".~"CODCLI~" = :sa_codcli
+	  AND ~"VTAMEDCOMCLI~".~"IDMEDCOM~"=~"VTATABMEDCOM~".~"IDMEDCOM~"" arguments=(("sa_codcli", string)) )
+text(band=header alignment="2" text="Descripción" border="0" color="0" x="494" y="8" height="56" width="699"  name=numcomcli_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Medio Comunicación" border="0" color="0" x="9" y="8" height="56" width="475"  name=obj_5312088  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="494" y="4" height="56" width="699" format="[general]"  name=numcomcli edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="56" width="475" format="[general]"  name=vtatabmedcom_medcom edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

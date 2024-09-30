@@ -1,0 +1,111 @@
+﻿$PBExportHeader$dw_cnscli_factura_det.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no )
+header(height=0 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=348 color="536870912" )
+table(column=(type=char(10) update=yes updatewhereclause=yes name=idfac dbname="cxcdetfac.idfac" dbalias=".idfac" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=numitm dbname="cxcdetfac.numitm" dbalias=".numitm" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=codequ dbname="cxcdetfac.codequ" dbalias=".codequ" )
+ column=(type=char(1000) update=yes updatewhereclause=yes name=desitm dbname="cxcdetfac.desitm" dbalias=".desitm" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=canitm dbname="cxcdetfac.canitm" dbalias=".canitm" initial="0" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=preuni dbname="cxcdetfac.preuni" dbalias=".preuni" initial="0" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=dscitm dbname="cxcdetfac.dscitm" dbalias=".dscitm" initial="0" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=igvitm dbname="cxcdetfac.igvitm" dbalias=".igvitm" initial="0" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=totitm dbname="cxcdetfac.totitm" dbalias=".totitm" initial="0" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=tipsrv dbname="cxcdetfac.tipsrv" dbalias=".tipsrv" )
+ column=(type=char(5) update=yes updatewhereclause=yes name=codsrv dbname="cxcdetfac.codsrv" dbalias=".codsrv" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=numpsp dbname="cxcdetfac.numpsp" dbalias=".numpsp" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=idopc dbname="cxcdetfac.idopc" dbalias=".idopc" )
+ column=(type=char(5) update=yes updatewhereclause=yes name=idaddpsp dbname="cxcdetfac.idaddpsp" dbalias=".idaddpsp" )
+ column=(type=char(5) update=yes updatewhereclause=yes name=numpto dbname="cxcdetfac.numpto" dbalias=".numpto" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=tipdet dbname="cxcdetfac.tipdet" dbalias=".tipdet" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=pctpag dbname="cxcdetfac.pctpag" dbalias=".pctpag" initial="100" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecinifac dbname="cxcdetfac.fecinifac" dbalias=".fecinifac" )
+ column=(type=datetime update=yes updatewhereclause=yes name=feccorfac dbname="cxcdetfac.feccorfac" dbalias=".feccorfac" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=dias dbname="cxcdetfac.dias" dbalias=".dias" initial="0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numport dbname="cxcdetfac.numport" dbalias=".numport" initial="0" )
+ column=(type=decimal(4) update=yes updatewhereclause=yes name=valafe dbname="cxcdetfac.valafe" dbalias=".valafe" initial="0" )
+ column=(type=decimal(3) update=yes updatewhereclause=yes name=tipcam dbname="cxcdetfac.tipcam" dbalias=".tipcam" initial="1" )
+ column=(type=char(500) updatewhereclause=yes name=tystabsrv_dscsrv dbname="tystabsrv.dscsrv" dbalias=".dscsrv" )
+ column=(type=char(80) updatewhereclause=yes name=vtatabequ_dscequ dbname="vtatabequ.dscequ" dbalias=".dscequ" )
+ retrieve="  SELECT ~"CXCDETFAC~".~"IDFAC~",   
+         ~"CXCDETFAC~".~"NUMITM~",  
+         ~"CXCDETFAC~".~"CODEQU~",   
+         ~"CXCDETFAC~".~"DESITM~",   
+         ~"CXCDETFAC~".~"CANITM~",   
+         ~"CXCDETFAC~".~"PREUNI~",   
+         ~"CXCDETFAC~".~"DSCITM~",   
+         ~"CXCDETFAC~".~"IGVITM~",   
+         ~"CXCDETFAC~".~"TOTITM~",   
+         ~"CXCDETFAC~".~"TIPSRV~",   
+         ~"CXCDETFAC~".~"CODSRV~",   
+         ~"CXCDETFAC~".~"NUMPSP~",   
+         ~"CXCDETFAC~".~"IDOPC~",   
+         ~"CXCDETFAC~".~"IDADDPSP~",   
+         ~"CXCDETFAC~".~"NUMPTO~",   
+         ~"CXCDETFAC~".~"TIPDET~",   
+         ~"CXCDETFAC~".~"PCTPAG~",   
+         ~"CXCDETFAC~".~"FECINIFAC~",   
+         ~"CXCDETFAC~".~"FECCORFAC~",   
+         ~"CXCDETFAC~".~"DIAS~",   
+         ~"CXCDETFAC~".~"NUMPORT~",   
+         ~"CXCDETFAC~".~"VALAFE~",   
+         ~"CXCDETFAC~".~"TIPCAM~",   
+         ~"TYSTABSRV~".~"DSCSRV~",   
+         ~"VTATABEQU~".~"DSCEQU~"  
+    FROM ~"CXCDETFAC~",   
+         ~"TYSTABSRV~",   
+         ~"VTATABEQU~"  
+   WHERE ( ~"CXCDETFAC~".~"CODSRV~" = ~"TYSTABSRV~".~"CODSRV~" (+)) and  
+         ( ~"CXCDETFAC~".~"CODEQU~" = ~"VTATABEQU~".~"CODEQU~" (+)) and  
+         ( ( ~"CXCDETFAC~".~"IDFAC~" = :aIdFac ) )   
+ORDER BY ~"CXCDETFAC~".~"NUMITM~" ASC   
+" arguments=(("aIdFac", string)) )
+line(band=detail x1="9" y1="340" x2="2939" y2="340"  name=l_1 visible="1" pen.style="0" pen.width="9" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="IGV" border="0" color="0" x="2519" y="200" height="44" width="78" html.valueishtml="0"  name=igvitm_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="5" color="0" x="2619" y="84" height="44" width="306" format="#,##0.00" html.valueishtml="0"  name=dscitm visible="1" edit.name="###,###.00" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=22 alignment="1" tabsequence=32766 border="5" color="0" x="2619" y="144" height="44" width="306" format="0.00" html.valueishtml="0"  name=valafe visible="1" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="5" color="0" x="2619" y="200" height="44" width="306" format="#,##0.00" html.valueishtml="0"  name=igvitm visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="5" color="0" x="2619" y="260" height="44" width="306" format="#,##0.00" html.valueishtml="0"  name=totitm visible="1" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Descuento" border="0" color="0" x="2368" y="84" height="44" width="233" html.valueishtml="0"  name=dscitm_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Valor Venta" border="0" color="0" x="2363" y="144" height="44" width="238" html.valueishtml="0"  name=valafe_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Total Item" border="0" color="0" x="2377" y="260" height="44" width="224" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="1" tabsequence=32766 border="5" color="0" x="2062" y="84" height="44" width="114" format="0" html.valueishtml="0"  name=numport visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="5" color="0" x="2062" y="144" height="44" width="274" format="dd/mm/yyyy" html.valueishtml="0"  name=fecinifac visible="1" editmask.mask="dd/mm/yyyy" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="5" color="0" x="2062" y="200" height="44" width="274" format="dd/mm/yyyy" html.valueishtml="0"  name=feccorfac visible="1" editmask.mask="dd/mm/yyyy" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="1" tabsequence=32766 border="5" color="0" x="2062" y="260" height="44" width="114" format="0" html.valueishtml="0"  name=dias visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Puertos" border="0" color="0" x="1815" y="84" height="44" width="229" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Desde" border="0" color="0" x="1851" y="144" height="44" width="192" html.valueishtml="0"  name=fecinifac_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Hasta" border="0" color="0" x="1870" y="200" height="44" width="174" html.valueishtml="0"  name=feccorfac_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Dias" border="0" color="0" x="1906" y="260" height="44" width="137" html.valueishtml="0"  name=dias_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="1477" y="16" height="44" width="1458" format="[general]" html.valueishtml="0"  name=desitm visible="1" edit.limit=100 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.vscrollbar=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="5" color="0" x="1477" y="144" height="44" width="297" format="#,##0.00" html.valueishtml="0"  name=preuni visible="1" edit.name="###,###.00" editmask.mask="###,###.00" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="5" color="0" x="1477" y="200" height="44" width="187" format="0" html.valueishtml="0"  name=canitm visible="1" edit.name="#####" editmask.mask="#####" editmask.focusrectangle=no  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="1" tabsequence=32766 border="5" color="0" x="1477" y="260" height="44" width="146" format="0" html.valueishtml="0"  name=pctpag visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Desc. Item" border="0" color="0" x="1202" y="16" height="44" width="251" html.valueishtml="0"  name=desitm_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Precio Unit." border="0" color="0" x="1221" y="144" height="44" width="233" html.valueishtml="0"  name=preuni_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Cantidad" border="0" color="0" x="1193" y="200" height="44" width="261" html.valueishtml="0"  name=canitm_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="% Pago" border="0" color="0" x="1234" y="260" height="44" width="219" html.valueishtml="0"  name=pctpag_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="2" color="0" x="306" y="16" height="44" width="119" format="[general]" html.valueishtml="0"  name=numitm visible="1" edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="5" color="0" x="306" y="84" height="44" width="626" format="[general]" html.valueishtml="0"  name=tipdet visible="1" dddw.name=dddw_tabtipdet dddw.displaycolumn=destip dddw.datacolumn=codtip dddw.percentwidth=100 dddw.lines=4 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="0" x="306" y="144" height="44" width="882" format="[general]" html.valueishtml="0"  name=tipsrv visible="1" dddw.name=dddw_tipsrv dddw.displaycolumn=dsctipsrv dddw.datacolumn=tipsrv dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.vscrollbar=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="5" color="0" x="306" y="200" height="44" width="882" format="[general]" html.valueishtml="0"  name=tystabsrv_dscsrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="5" color="0" x="306" y="260" height="44" width="882" format="[general]" html.valueishtml="0"  name=vtatabequ_dscequ visible="1" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="N° Item" border="0" color="0" x="37" y="16" height="44" width="247" html.valueishtml="0"  name=numitm_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Tipo Detalle" border="0" color="0" x="37" y="84" height="44" width="247" html.valueishtml="0"  name=tipdet_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Tipo Servicio" border="0" color="0" x="37" y="144" height="44" width="247" html.valueishtml="0"  name=tipsrv_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Servicio" border="0" color="0" x="37" y="200" height="44" width="247" html.valueishtml="0"  name=codsrv_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Equipo" border="0" color="0" x="37" y="260" height="44" width="247" html.valueishtml="0"  name=codequ_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 

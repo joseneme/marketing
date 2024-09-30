@@ -1,0 +1,26 @@
+﻿$PBExportHeader$d_rep_auditoria_nuevos_registros.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=424 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=272 color="536870912"  height.autosize=yes)
+table(column=(type=char(0) updatewhereclause=yes name=compute_0001 dbname="compute_0001" )
+ retrieve="  SELECT ''  
+    FROM ~"DUAL~"   
+" arguments=(("ad_fecini", date),("ad_fecfin", date),("as_tipper", string)) )
+bitmap(band=header filename="I:\iconos\firstcom_logotipo_blanco.bmp" x="27" y="24" height="216" width="713" border="0"  name=p_logo visible="1" )
+text(band=header alignment="2" text="Módulo de MI" border="0" color="0" x="27" y="264" height="56" width="736" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=header alignment="2" text="Auditoria" border="0" color="0" x="27" y="344" height="56" width="736" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15793151" )
+compute(band=header alignment="0" expression="~"Fecha:~"+today()"border="0" color="0" x="2775" y="32" height="56" width="590" format="[GENERAL]" html.valueishtml="0"  name=compute_6 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header alignment="0" expression="'Página ' + page() + ' de ' + pageCount()"border="0" color="0" x="2775" y="112" height="56" width="590" format="[GENERAL]" html.valueishtml="0"  name=compute_5 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="AUDITORIA DE NUEVOS REGISTROS" border="0" color="33554432" x="1175" y="192" height="76" width="1051" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="de:" border="0" color="0" x="1257" y="280" height="56" width="91" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="ld_fecini" border="0" color="0" x="1394" y="280" height="56" width="274" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="hasta:" border="0" color="0" x="1687" y="280" height="56" width="174" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="ld_fecfin" border="0" color="0" x="1888" y="280" height="56" width="306" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+report(band=detail dataobject="d_rep_auditoria_c" x="539" y="40" height="76" width="3049" border="0"  height.autosize=yes criteria="" nest_arguments=((" ad_fecini "),(" ad_fecfin "),(" as_tipper ")) trail_footer = yes  name=dw_1 visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_rep_auditoria_d1" x="539" y="116" height="76" width="3049" border="0"  height.autosize=yes criteria="" nest_arguments=((" ad_fecini "),(" ad_fecfin "),(" as_tipper ")) trail_footer = yes  name=dw_2 visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_rep_auditoria_d2" x="539" y="192" height="76" width="3049" border="0"  height.autosize=yes criteria="" nest_arguments=((" ad_fecini "),(" ad_fecfin "),(" as_tipper ")) trail_footer = yes  name=dw_3 visible="1"  slideup=directlyabove )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

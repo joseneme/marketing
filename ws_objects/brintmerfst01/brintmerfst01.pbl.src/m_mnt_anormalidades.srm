@@ -1,0 +1,449 @@
+﻿$PBExportHeader$m_mnt_anormalidades.srm
+forward
+global type m_mnt_anormalidades from m_mnt_std
+end type
+type m_asignarpri from menu within m_funciones
+end type
+type m_creargrupotelefonico from menu within m_funciones
+end type
+type m_desactivar from menu within m_funciones
+end type
+type m_activar from menu within m_funciones
+end type
+type m_funciones from m_mnt_std`m_funciones within m_mnt_anormalidades
+m_asignarpri m_asignarpri
+m_creargrupotelefonico m_creargrupotelefonico
+m_desactivar m_desactivar
+m_activar m_activar
+end type
+end forward
+
+global type m_mnt_anormalidades from m_mnt_std
+end type
+global m_mnt_anormalidades m_mnt_anormalidades
+
+on m_mnt_anormalidades.create
+m_mnt_anormalidades=this
+call super::create
+end on
+
+on m_mnt_anormalidades.destroy
+call super::destroy
+end on
+
+event clicked;call super::clicked;ParentWindow.TriggerEvent("ue_menu_reserva")
+end event
+
+type m_archivo from m_mnt_std`m_archivo within m_mnt_anormalidades
+end type
+
+on m_archivo.create
+call super::create
+end on
+
+on m_archivo.destroy
+call super::destroy
+end on
+
+type m_abrir from m_mnt_std`m_abrir within m_archivo
+end type
+
+on m_abrir.create
+call super::create
+end on
+
+on m_abrir.destroy
+call super::destroy
+end on
+
+type m_grabar from m_mnt_std`m_grabar within m_archivo
+end type
+
+on m_grabar.create
+call super::create
+end on
+
+on m_grabar.destroy
+call super::destroy
+end on
+
+type m_nuevo from m_mnt_std`m_nuevo within m_archivo
+end type
+
+on m_nuevo.create
+call super::create
+end on
+
+on m_nuevo.destroy
+call super::destroy
+end on
+
+type m_borrar from m_mnt_std`m_borrar within m_archivo
+end type
+
+on m_borrar.create
+call super::create
+end on
+
+on m_borrar.destroy
+call super::destroy
+end on
+
+type m_1232 from m_mnt_std`m_1232 within m_archivo
+end type
+
+on m_1232.create
+call super::create
+end on
+
+on m_1232.destroy
+call super::destroy
+end on
+
+type m_buscar from m_mnt_std`m_buscar within m_archivo
+end type
+
+on m_buscar.create
+call super::create
+end on
+
+on m_buscar.destroy
+call super::destroy
+end on
+
+type m_refrescar from m_mnt_std`m_refrescar within m_archivo
+end type
+
+on m_refrescar.create
+call super::create
+end on
+
+on m_refrescar.destroy
+call super::destroy
+end on
+
+type m_1000 from m_mnt_std`m_1000 within m_archivo
+end type
+
+on m_1000.create
+call super::create
+end on
+
+on m_1000.destroy
+call super::destroy
+end on
+
+type m_imprimir from m_mnt_std`m_imprimir within m_archivo
+end type
+
+on m_imprimir.create
+call super::create
+end on
+
+on m_imprimir.destroy
+call super::destroy
+end on
+
+type m_exportar from m_mnt_std`m_exportar within m_archivo
+end type
+
+on m_exportar.create
+call super::create
+end on
+
+on m_exportar.destroy
+call super::destroy
+end on
+
+type m_exportar_excel from m_mnt_std`m_exportar_excel within m_exportar
+end type
+
+on m_exportar_excel.create
+call super::create
+end on
+
+on m_exportar_excel.destroy
+call super::destroy
+end on
+
+type m_exportar_psr from m_mnt_std`m_exportar_psr within m_exportar
+end type
+
+on m_exportar_psr.create
+call super::create
+end on
+
+on m_exportar_psr.destroy
+call super::destroy
+end on
+
+type m_exportar_clipboard from m_mnt_std`m_exportar_clipboard within m_exportar
+end type
+
+on m_exportar_clipboard.create
+call super::create
+end on
+
+on m_exportar_clipboard.destroy
+call super::destroy
+end on
+
+type m_exportar_otro from m_mnt_std`m_exportar_otro within m_exportar
+end type
+
+on m_exportar_otro.create
+call super::create
+end on
+
+on m_exportar_otro.destroy
+call super::destroy
+end on
+
+type m_1001 from m_mnt_std`m_1001 within m_archivo
+end type
+
+on m_1001.create
+call super::create
+end on
+
+on m_1001.destroy
+call super::destroy
+end on
+
+type m_cerrar from m_mnt_std`m_cerrar within m_archivo
+end type
+
+on m_cerrar.create
+call super::create
+end on
+
+on m_cerrar.destroy
+call super::destroy
+end on
+
+type m_funciones from m_mnt_std`m_funciones within m_mnt_anormalidades
+m_asignarpri m_asignarpri
+m_creargrupotelefonico m_creargrupotelefonico
+m_desactivar m_desactivar
+m_activar m_activar
+end type
+
+on m_funciones.create
+call super::create
+this.m_asignarpri=create m_asignarpri
+this.m_creargrupotelefonico=create m_creargrupotelefonico
+this.m_desactivar=create m_desactivar
+this.m_activar=create m_activar
+this.Item[UpperBound(this.Item)+1]=this.m_asignarpri
+this.Item[UpperBound(this.Item)+1]=this.m_creargrupotelefonico
+this.Item[UpperBound(this.Item)+1]=this.m_desactivar
+this.Item[UpperBound(this.Item)+1]=this.m_activar
+end on
+
+on m_funciones.destroy
+call super::destroy
+destroy(this.m_asignarpri)
+destroy(this.m_creargrupotelefonico)
+destroy(this.m_desactivar)
+destroy(this.m_activar)
+end on
+
+type m_insertar_detalle from m_mnt_std`m_insertar_detalle within m_funciones
+end type
+
+on m_insertar_detalle.create
+call super::create
+this.visible = false
+this.text = "Insertar Detalles~tCtrl+Ins"
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_insertar_detalle.destroy
+call super::destroy
+end on
+
+type m_suprimir_detalle from m_mnt_std`m_suprimir_detalle within m_funciones
+end type
+
+on m_suprimir_detalle.create
+call super::create
+this.visible = false
+this.enabled = false
+this.toolbaritemvisible = false
+end on
+
+on m_suprimir_detalle.destroy
+call super::destroy
+end on
+
+type m_sep_insertar_suprimir from m_mnt_std`m_sep_insertar_suprimir within m_funciones
+end type
+
+on m_sep_insertar_suprimir.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_sep_insertar_suprimir.destroy
+call super::destroy
+end on
+
+type m_ordenar from m_mnt_std`m_ordenar within m_funciones
+end type
+
+on m_ordenar.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_ordenar.destroy
+call super::destroy
+end on
+
+type m_filtrar from m_mnt_std`m_filtrar within m_funciones
+end type
+
+on m_filtrar.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_filtrar.destroy
+call super::destroy
+end on
+
+type m_sep12 from m_mnt_std`m_sep12 within m_funciones
+end type
+
+on m_sep12.create
+call super::create
+this.toolbaritemvisible = false
+end on
+
+on m_sep12.destroy
+call super::destroy
+end on
+
+type m_ayuda from m_mnt_std`m_ayuda within m_mnt_anormalidades
+end type
+
+on m_ayuda.create
+call super::create
+end on
+
+on m_ayuda.destroy
+call super::destroy
+end on
+
+type m_contenidodelaaplicacion from m_mnt_std`m_contenidodelaaplicacion within m_ayuda
+end type
+
+on m_contenidodelaaplicacion.create
+call super::create
+end on
+
+on m_contenidodelaaplicacion.destroy
+call super::destroy
+end on
+
+type m_usogeneraldeaplicaciones from m_mnt_std`m_usogeneraldeaplicaciones within m_ayuda
+end type
+
+on m_usogeneraldeaplicaciones.create
+call super::create
+end on
+
+on m_usogeneraldeaplicaciones.destroy
+call super::destroy
+end on
+
+type m_glosario from m_mnt_std`m_glosario within m_ayuda
+end type
+
+on m_glosario.create
+call super::create
+end on
+
+on m_glosario.destroy
+call super::destroy
+end on
+
+type m_acercade from m_mnt_std`m_acercade within m_ayuda
+end type
+
+on m_acercade.create
+call super::create
+end on
+
+on m_acercade.destroy
+call super::destroy
+end on
+
+type m_asignarpri from menu within m_funciones
+event clicked ( )
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_nuevo")
+end event
+
+on m_asignarpri.create
+call super::create
+this.text = "Insertar"
+end on
+
+on m_asignarpri.destroy
+call super::destroy
+end on
+
+type m_creargrupotelefonico from menu within m_funciones
+event clicked ( )
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_borrar")
+end event
+
+on m_creargrupotelefonico.create
+call super::create
+this.visible = false
+this.text = "Eliminar"
+this.enabled = false
+end on
+
+on m_creargrupotelefonico.destroy
+call super::destroy
+end on
+
+type m_desactivar from menu within m_funciones
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_desactivar")
+end event
+
+on m_desactivar.create
+call super::create
+this.text = "Desactivar"
+end on
+
+on m_desactivar.destroy
+call super::destroy
+end on
+
+type m_activar from menu within m_funciones
+end type
+
+on m_activar.create
+call super::create
+this.text = "Activar"
+end on
+
+on m_activar.destroy
+call super::destroy
+end on
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_activar")
+end event
+

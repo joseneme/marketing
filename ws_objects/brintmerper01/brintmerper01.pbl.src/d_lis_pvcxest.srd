@@ -1,0 +1,44 @@
+﻿$PBExportHeader$d_lis_pvcxest.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(3) update=yes updatewhereclause=yes key=yes name=codpai dbname="vtatabpvc.codpai" )
+ column=(type=char(3) update=yes updatewhereclause=yes key=yes name=codest dbname="vtatabpvc.codest" )
+ column=(type=char(3) update=yes updatewhereclause=yes key=yes name=codpvc dbname="vtatabpvc.codpvc" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=nompvc dbname="vtatabpvc.nompvc" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=abrev dbname="vtatabpvc.abrev" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=codmunicipio dbname="vtatabpvc.codmunicipio" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idlocalidad dbname="vtatabpvc.idlocalidad" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="vtatabest.nomest" )
+ column=(type=char(80) updatewhereclause=yes name=nompai dbname="vtatabpai.nompai" )
+ retrieve="  SELECT ~"VTATABPVC~".~"CODPAI~",   
+         ~"VTATABPVC~".~"CODEST~",   
+         ~"VTATABPVC~".~"CODPVC~",   
+         ~"VTATABPVC~".~"NOMPVC~",   
+         ~"VTATABPVC~".~"ABREV~",   
+         ~"VTATABPVC~".~"CODMUNICIPIO~",   
+         ~"VTATABPVC~".~"IDLOCALIDAD~",   
+         ~"VTATABEST~".~"NOMEST~",   
+         ~"VTATABPAI~".~"NOMPAI~"  
+    FROM ~"VTATABPVC~",   
+         ~"VTATABPAI~",   
+         ~"VTATABEST~"  
+   WHERE ( ~"VTATABPAI~".~"CODPAI~" = ~"VTATABEST~".~"CODPAI~" ) and  
+         ( ~"VTATABEST~".~"CODEST~" = ~"VTATABPVC~".~"CODEST~" ) and  
+         ( ~"VTATABPVC~".~"CODPAI~" = ~"VTATABEST~".~"CODPAI~" ) and  
+         ( ( ~"VTATABPVC~".~"CODPAI~" = :as_codpai ) AND  
+         ( ~"VTATABPVC~".~"CODEST~" = :as_codest ) )    
+" update="VTATABPVC" updatewhere=0 updatekeyinplace=no arguments=(("as_codpai", string),("as_codest", string))  sort="nompai A nomest A nompvc A " )
+text(band=header alignment="1" text="" border="6" color="33554432" x="9" y="8" height="56" width="105" html.valueishtml="0"  name=fila_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Provincia" border="6" color="0" x="123" y="8" height="56" width="1001" html.valueishtml="0"  name=nompvc_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Código" border="6" color="0" x="1134" y="8" height="56" width="251" html.valueishtml="0"  name=codpvc_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Abreviatura" border="6" color="0" x="1394" y="8" height="56" width="334" html.valueishtml="0"  name=abrev_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="0" tabsequence=10 border="0" color="0" x="123" y="4" height="56" width="1001" format="[general]" html.valueishtml="0"  name=nompvc visible="1" edit.limit=40 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="105" format="[GENERAL]" html.valueishtml="0"  name=fila visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+column(band=detail id=5 alignment="2" tabsequence=30 border="0" color="0" x="1394" y="4" height="56" width="334" format="[general]" html.valueishtml="0"  name=abrev visible="1" edit.limit=3 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="2" tabsequence=20 border="0" color="0" x="1134" y="4" height="56" width="251" format="[general]" html.valueishtml="0"  name=codpvc visible="1" edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

@@ -1,0 +1,59 @@
+﻿$PBExportHeader$d_buscar_direccion_completa_cli.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=char(16) update=yes updatewhereclause=yes name=tipo dbname="tipo" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="vtatabcli.tipviap" )
+ column=(type=char(15) updatewhereclause=yes name=abrvia dbname="pertipvia.abrvia" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="vtatabcli.nomvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="vtatabcli.numvia" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=interior dbname="vtatabcli.interior" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=nomurb dbname="vtatabcli.nomurb" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="vtatabcli.codubi" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=nompvc dbname="v_ubicaciones.nompvc" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(120) updatewhereclause=yes name=dircli dbname="vtatabcli.dircli" )
+ retrieve="select 'DIR DOMICILIARIA' tipo, a.codcli, a.tipviap, c.abrvia, a.nomvia, a.numvia, a.interior, a.nomurb, 
+a.codubi, b.nomdst, b.nompvc, b.nomest, a.dircli
+from vtatabcli a,
+     v_ubicaciones b,
+     pertipvia c 
+where a.codcli = :as_codcli and
+      a.codubi = b.codubi and
+      a.tipviap = c.codvia 
+union
+select 'SEDE',  a.codcli, a.tipviap, c.abrvia, a.nomvia, a.numvia, a.interior, a.nomurb, 
+a.ubisuc, b.nomdst, b.nompvc, b.nomest, a.dirsuc
+from vtasuccli a,
+     v_ubicaciones b,
+     pertipvia c 
+where a.codcli = :as_codcli and
+      a.ubisuc = b.codubi and
+      a.tipviap = c.codvia " arguments=(("as_codcli", string)) )
+text(band=header alignment="2" text="Tipo" border="6" color="0" x="9" y="8" height="56" width="416" html.valueishtml="0"  name=tipo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Via" border="6" color="0" x="4777" y="8" height="56" width="1047" html.valueishtml="0"  name=nomvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Número Vía" border="6" color="0" x="5833" y="8" height="56" width="430" html.valueishtml="0"  name=numvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Interior" border="6" color="0" x="6272" y="8" height="56" width="869" html.valueishtml="0"  name=interior_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Urbanización" border="6" color="0" x="7150" y="8" height="56" width="695" html.valueishtml="0"  name=nomurb_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Via" border="6" color="0" x="4549" y="8" height="56" width="219" html.valueishtml="0"  name=obj_11188848 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dirección Completa" border="6" color="0" x="434" y="8" height="56" width="1349" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="1792" y="8" height="56" width="910" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Provincia" border="6" color="0" x="2711" y="8" height="56" width="910" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="3630" y="8" height="56" width="910" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="0" color="0" x="9" y="4" height="72" width="416" format="[general]" html.valueishtml="0"  name=tipo visible="1" edit.limit=16 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="0" x="4549" y="4" height="72" width="219" format="[general]" html.valueishtml="0"  name=abrvia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=20 border="0" color="0" x="4777" y="4" height="72" width="1047" format="[general]" html.valueishtml="0"  name=nomvia visible="1" edit.limit=60 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=30 border="0" color="0" x="5833" y="4" height="72" width="430" format="[general]" html.valueishtml="0"  name=numvia visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=40 border="0" color="0" x="6272" y="4" height="72" width="869" format="[general]" html.valueishtml="0"  name=interior visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=50 border="0" color="0" x="7150" y="4" height="72" width="695" format="[general]" html.valueishtml="0"  name=nomurb visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="434" y="4" height="72" width="1349" format="[general]" html.valueishtml="0"  name=dircli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="1792" y="4" height="72" width="910" format="[general]" html.valueishtml="0"  name=nomdst visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="2711" y="4" height="72" width="910" format="[general]" html.valueishtml="0"  name=nompvc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="3630" y="4" height="72" width="910" format="[general]" html.valueishtml="0"  name=nomest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

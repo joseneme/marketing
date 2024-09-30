@@ -1,0 +1,70 @@
+﻿$PBExportHeader$d_gen_proveedor_servicio.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=88 color="536870912" )
+summary(height=72 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="proveedor_servicio.codcli" )
+ column=(type=decimal(0) updatewhereclause=yes name=idoperador dbname="proveedor_servicio.idoperador" )
+ column=(type=decimal(0) updatewhereclause=yes name=idproductomkt dbname="proveedor_servicio.idproductomkt" )
+ column=(type=datetime updatewhereclause=yes name=fechafin dbname="proveedor_servicio.fechafin" )
+ column=(type=decimal(0) updatewhereclause=yes name=banwid dbname="proveedor_servicio.banwid" )
+ column=(type=decimal(2) updatewhereclause=yes name=cr_moneda_local dbname="proveedor_servicio.cr_moneda_local" )
+ column=(type=decimal(2) updatewhereclause=yes name=cr_moneda_ext dbname="proveedor_servicio.cr_moneda_ext" )
+ column=(type=datetime updatewhereclause=yes name=fecultact dbname="proveedor_servicio.fecultact" )
+ column=(type=char(50) updatewhereclause=yes name=codultact dbname="proveedor_servicio.codultact" )
+ column=(type=datetime updatewhereclause=yes name=fecusu dbname="proveedor_servicio.fecusu" )
+ column=(type=char(50) updatewhereclause=yes name=codusu dbname="proveedor_servicio.codusu" )
+ column=(type=decimal(0) updatewhereclause=yes name=idsede dbname="proveedor_servicio.idsede" )
+ column=(type=decimal(0) updatewhereclause=yes name=numpuertas dbname="proveedor_servicio.numpuertas" )
+ column=(type=decimal(0) updatewhereclause=yes name=numlin dbname="proveedor_servicio.numlin" )
+ column=(type=decimal(0) updatewhereclause=yes name=numpris dbname="proveedor_servicio.numpris" )
+ retrieve="  SELECT ~"PROVEEDOR_SERVICIO~".~"CODCLI~",   
+         ~"PROVEEDOR_SERVICIO~".~"IDOPERADOR~",   
+         ~"PROVEEDOR_SERVICIO~".~"IDPRODUCTOMKT~",   
+         ~"PROVEEDOR_SERVICIO~".~"FECHAFIN~",   
+         ~"PROVEEDOR_SERVICIO~".~"BANWID~",   
+         ~"PROVEEDOR_SERVICIO~".~"CR_MONEDA_LOCAL~",   
+         ~"PROVEEDOR_SERVICIO~".~"CR_MONEDA_EXT~",   
+         ~"PROVEEDOR_SERVICIO~".~"FECULTACT~",   
+         ~"PROVEEDOR_SERVICIO~".~"CODULTACT~",   
+         ~"PROVEEDOR_SERVICIO~".~"FECUSU~",   
+         ~"PROVEEDOR_SERVICIO~".~"CODUSU~",
+         ~"PROVEEDOR_SERVICIO~".~"IDSEDE~",
+         ~"PROVEEDOR_SERVICIO~".~"NUMPUERTAS~",
+         ~"PROVEEDOR_SERVICIO~".~"NUMLIN~",
+         ~"PROVEEDOR_SERVICIO~".~"NUMPRIS~"
+
+    FROM ~"PROVEEDOR_SERVICIO~"  
+   WHERE ~"PROVEEDOR_SERVICIO~".~"CODCLI~" = :as_codcli    
+" arguments=(("as_codcli", string)) )
+text(band=header alignment="2" text="Producto Marketing" border="6" color="0" x="9" y="8" height="72" width="690" html.valueishtml="0"  name=idproductomkt_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Sede" border="6" color="0" x="709" y="8" height="72" width="329" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Proveedor Telecom" border="6" color="0" x="1047" y="8" height="72" width="558" html.valueishtml="0"  name=idoperador_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="# Lineas" border="6" color="0" x="1614" y="8" height="72" width="229" html.valueishtml="0"  name=numlin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="# Pris" border="6" color="0" x="1851" y="8" height="72" width="219" html.valueishtml="0"  name=numpris_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="# Puertas" border="6" color="0" x="2080" y="8" height="72" width="229" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Banwid" border="6" color="0" x="2318" y="8" height="72" width="329" html.valueishtml="0"  name=banwid_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Gasto Potencial" border="6" color="0" x="2656" y="8" height="72" width="425" html.valueishtml="0"  name=cr_moneda_ext_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Finalización Contrato" border="6" color="0" x="3090" y="8" height="72" width="494" html.valueishtml="0"  name=fechafin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fecha Generación" border="6" color="0" x="3593" y="8" height="72" width="498" html.valueishtml="0"  name=fecusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Usuario Generación" border="6" color="0" x="4101" y="8" height="72" width="457" html.valueishtml="0"  name=codusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="56" width="690" format="[general]" html.valueishtml="0"  name=idproductomkt visible="1" dddw.name=dddw_producto_marketing dddw.displaycolumn=descripcion dddw.datacolumn=idproductomkt dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="709" y="4" height="56" width="329" format="[general]" html.valueishtml="0"  name=idsede visible="1" dddw.name=dddw_tiposede dddw.displaycolumn=dscsede dddw.datacolumn=idsede dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1047" y="4" height="56" width="558" format="[general]" html.valueishtml="0"  name=idoperador visible="1" dddw.name=dddw_operador_telecom dddw.displaycolumn=operador dddw.datacolumn=idoperador dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="1614" y="4" height="56" width="229" format="[general]" html.valueishtml="0"  name=numlin visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="1851" y="4" height="56" width="219" format="[general]" html.valueishtml="0"  name=numpris visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="0" x="2080" y="4" height="56" width="229" format="[general]" html.valueishtml="0"  name=numpuertas visible="1" editmask.mask="####" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="0" x="2318" y="4" height="56" width="329" format="[general]" html.valueishtml="0"  name=banwid visible="1" dddw.name=dddw_ancho_banda_marketing dddw.displaycolumn=descripcion dddw.datacolumn=banwid dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="0" x="2661" y="4" height="56" width="421" format="##,###,###,###.00" html.valueishtml="0"  name=cr_moneda_ext visible="1" editmask.mask="##,###,###,###.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="0" x="3090" y="4" height="56" width="494" format="dd/mm/yyyy" html.valueishtml="0"  name=fechafin visible="1" editmask.mask="dd/mm/yyyy" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="3593" y="4" height="56" width="498" format="[shortdate] [time]" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="4101" y="4" height="56" width="457" format="[general]" html.valueishtml="0"  name=codusu visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+line(band=footer x1="1961" y1="316" x2="2098" y2="316"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=footer x1="1271" y1="384" x2="1408" y2="384"  name=l_2 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=footer x1="2825" y1="248" x2="2962" y2="248"  name=l_3 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=summary alignment="2" text="TOTAL" border="0" color="0" x="2318" y="8" height="56" width="329" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+compute(band=summary alignment="1" expression="sum(  cr_moneda_ext  for all )"border="0" color="0" x="2656" y="8" height="56" width="425" format="##,###,###,###.00" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

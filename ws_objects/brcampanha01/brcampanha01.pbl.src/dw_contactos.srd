@@ -1,0 +1,98 @@
+﻿$PBExportHeader$dw_contactos.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=28 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes key=yes name=codcnt dbname="contacto_temporal.codcnt" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="contacto_temporal.codcli" )
+ column=(type=char(80) update=yes updatewhereclause=yes name=nomcnt dbname="contacto_temporal.nomcnt" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=dircnt dbname="contacto_temporal.dircnt" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="contacto_temporal.codubi" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=tipdide dbname="contacto_temporal.tipdide" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=nidcnt dbname="contacto_temporal.nidcnt" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipcnt dbname="contacto_temporal.tipcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=carcli dbname="contacto_temporal.carcli" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=carcnt dbname="contacto_temporal.carcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codtipdes dbname="contacto_temporal.codtipdes" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codarea dbname="contacto_temporal.codarea" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=decisor dbname="contacto_temporal.decisor" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idvantive dbname="contacto_temporal.idvantive" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagnombre dbname="contacto_temporal.flagnombre" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagarea dbname="contacto_temporal.flagarea" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagdireccion dbname="contacto_temporal.flagdireccion" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagcargo dbname="contacto_temporal.flagcargo" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagdecisor dbname="contacto_temporal.flagdecisor" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagmigracion dbname="contacto_temporal.flagmigracion" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flagtipcnt dbname="contacto_temporal.flagtipcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idinstancia dbname="contacto_temporal.idinstancia" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idregistro1 dbname="contacto_temporal.idregistro1" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idregistro2 dbname="contacto_temporal.idregistro2" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idregistro3 dbname="contacto_temporal.idregistro3" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=codusu dbname="contacto_temporal.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="contacto_temporal.fecusu" )
+ retrieve="  SELECT ~"CONTACTO_TEMPORAL~".~"CODCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"CODCLI~",   
+         ~"CONTACTO_TEMPORAL~".~"NOMCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"DIRCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"CODUBI~",   
+         ~"CONTACTO_TEMPORAL~".~"TIPDIDE~",   
+         ~"CONTACTO_TEMPORAL~".~"NIDCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"TIPCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"CARCLI~",   
+         ~"CONTACTO_TEMPORAL~".~"CARCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"CODTIPDES~",   
+         ~"CONTACTO_TEMPORAL~".~"CODAREA~",   
+         ~"CONTACTO_TEMPORAL~".~"DECISOR~",   
+         ~"CONTACTO_TEMPORAL~".~"IDVANTIVE~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGNOMBRE~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGAREA~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGDIRECCION~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGCARGO~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGDECISOR~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGMIGRACION~",   
+         ~"CONTACTO_TEMPORAL~".~"FLAGTIPCNT~",   
+         ~"CONTACTO_TEMPORAL~".~"IDINSTANCIA~",   
+         ~"CONTACTO_TEMPORAL~".~"IDREGISTRO1~",   
+         ~"CONTACTO_TEMPORAL~".~"IDREGISTRO2~",   
+         ~"CONTACTO_TEMPORAL~".~"IDREGISTRO3~",   
+         ~"CONTACTO_TEMPORAL~".~"CODUSU~",   
+         ~"CONTACTO_TEMPORAL~".~"FECUSU~"  
+    FROM ~"CONTACTO_TEMPORAL~" 
+    WHERE ~"CONTACTO_TEMPORAL~".~"CODCLI~" = :codcli  
+" update="CONTACTO_TEMPORAL" updatewhere=0 updatekeyinplace=yes arguments=(("codcli", string)) )
+text(band=header alignment="2" text="Codcnt" border="0" color="0" x="9" y="8" height="56" width="247"  name=codcnt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codcli" border="0" color="0" x="265" y="8" height="56" width="247"  name=codcli_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nomcnt" border="0" color="0" x="521" y="8" height="56" width="2222"  name=nomcnt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dircnt" border="0" color="0" x="2752" y="8" height="56" width="3319"  name=dircnt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codubi" border="0" color="0" x="6080" y="8" height="56" width="302"  name=codubi_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipdide" border="0" color="0" x="6391" y="8" height="56" width="187"  name=tipdide_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nidcnt" border="0" color="0" x="6587" y="8" height="56" width="439"  name=nidcnt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipcnt" border="0" color="0" x="7035" y="8" height="56" width="160"  name=tipcnt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Carcli" border="0" color="0" x="7205" y="8" height="56" width="329"  name=carcli_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Carcnt" border="0" color="0" x="7543" y="8" height="56" width="1125"  name=carcnt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codtipdes" border="0" color="0" x="8677" y="8" height="56" width="329"  name=codtipdes_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codarea" border="0" color="0" x="9015" y="8" height="56" width="329"  name=codarea_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Decisor" border="0" color="0" x="9353" y="8" height="56" width="329"  name=decisor_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Idvantive" border="0" color="0" x="9691" y="8" height="56" width="329"  name=idvantive_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codusu" border="0" color="0" x="10030" y="8" height="56" width="1399"  name=codusu_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fecusu" border="0" color="0" x="11438" y="8" height="56" width="603"  name=fecusu_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="0" color="0" x="9" y="8" height="56" width="247" format="[general]"  name=codcnt edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="265" y="8" height="56" width="247" format="[general]"  name=codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="0" color="0" x="521" y="8" height="56" width="2222" format="[general]"  name=nomcnt edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="0" x="2752" y="8" height="56" width="3319" format="[general]"  name=dircnt edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=50 border="0" color="0" x="6080" y="8" height="56" width="302" format="[general]"  name=codubi edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=60 border="0" color="0" x="6391" y="8" height="56" width="187" format="[general]"  name=tipdide edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=70 border="0" color="0" x="6587" y="8" height="56" width="439" format="[general]"  name=nidcnt edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=80 border="0" color="0" x="7035" y="8" height="56" width="160" format="[general]"  name=tipcnt edit.limit=2 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="1" tabsequence=90 border="0" color="0" x="7205" y="8" height="56" width="329" format="[general]"  name=carcli edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=100 border="0" color="0" x="7543" y="8" height="56" width="1125" format="[general]"  name=carcnt edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="1" tabsequence=110 border="0" color="0" x="8677" y="8" height="56" width="329" format="[general]"  name=codtipdes edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="1" tabsequence=120 border="0" color="0" x="9015" y="8" height="56" width="329" format="[general]"  name=codarea edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=130 border="0" color="0" x="9353" y="8" height="56" width="329" format="[general]"  name=decisor edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="1" tabsequence=140 border="0" color="0" x="9691" y="8" height="56" width="329" format="[general]"  name=idvantive edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=150 border="0" color="0" x="10030" y="8" height="56" width="1399" format="[general]"  name=codusu edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="0" tabsequence=160 border="0" color="0" x="11438" y="8" height="56" width="603" format="[shortdate] [time]"  name=fecusu edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

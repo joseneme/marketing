@@ -1,0 +1,102 @@
+﻿$PBExportHeader$dw_gr_sucursal_marketing.srd
+$PBExportComments$sucursales de cliente de comercial más las líneas telefónicas
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="vtasuccli.codcli" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codsuc dbname="vtasuccli.codsuc" )
+ column=(type=char(100) update=yes updatewhereclause=yes name=nomsuc dbname="vtasuccli.nomsuc" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=dpto dbname="vtasuccli.ubisuc" initial="0000000011" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=cenintid dbname="vtasuccli.cenintid" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=cobert dbname="vtasuccli.cobert" values="Si	1/No	2/Sin Definir	0/" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="vtasuccli.tipviap" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="vtasuccli.nomvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="vtasuccli.numvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=nomurb dbname="vtasuccli.nomurb" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=interior dbname="vtasuccli.interior" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estado dbname="vtasuccli.estado" initial="1" values="	1/	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codedi dbname="vtasuccli.codedi" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordy dbname="vtasuccli.coordy" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=coordx dbname="vtasuccli.coordx" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codzona dbname="vtasuccli.codzona" )
+ column=(type=char(103) updatewhereclause=yes name=v_zona_dsczona_completo dbname="v_zona.dsczona_completo" )
+ column=(type=char(200) update=yes updatewhereclause=yes name=referencia dbname="vtasuccli.referencia" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=on_net dbname="vtasuccli.on_net" values="	1/	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idtipooficina dbname="vtasuccli.idtipooficina" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=censo dbname="vtasuccli.censo" values="	1/	0" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=tipsuc dbname="vtasuccli.tipsuc" initial="0002" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=nompvc dbname="nompvc" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="nomest" )
+ column=(type=char(50) updatewhereclause=yes name=nombre dbname="nombre" )
+ retrieve="  SELECT ~"VTASUCCLI~".~"CODCLI~",   
+         ~"VTASUCCLI~".~"CODSUC~",   
+         ~"VTASUCCLI~".~"NOMSUC~",   
+         ~"VTASUCCLI~".~"UBISUC~",   
+         ~"VTASUCCLI~".~"CENINTID~",   
+         ~"VTASUCCLI~".~"COBERT~",   
+         ~"VTASUCCLI~".~"TIPVIAP~",   
+         ~"VTASUCCLI~".~"NOMVIA~",   
+         ~"VTASUCCLI~".~"NUMVIA~",   
+         ~"VTASUCCLI~".~"NOMURB~",   
+         ~"VTASUCCLI~".~"INTERIOR~",   
+         ~"VTASUCCLI~".~"ESTADO~",   
+         ~"VTASUCCLI~".~"CODEDI~",   
+         ~"VTASUCCLI~".~"COORDY~",   
+         ~"VTASUCCLI~".~"COORDX~",   
+         ~"VTASUCCLI~".~"CODZONA~",
+         ~"V_ZONA~".~"DSCZONA_COMPLETO~",
+         ~"VTASUCCLI~".~"REFERENCIA~",   
+         ~"VTASUCCLI~".~"ON_NET~",   
+         ~"VTASUCCLI~".~"IDTIPOOFICINA~",   
+         ~"VTASUCCLI~".~"CENSO~",   
+         ~"VTASUCCLI~".~"TIPSUC~",   
+         ( select nomdst from v_ubicaciones where codubi = VTASUCCLI.UBISUC) NOMDST,
+         ( select nompvc from v_ubicaciones where codubi = VTASUCCLI.UBISUC ) NOMPVC,
+         ( select nomest from v_ubicaciones where codubi = VTASUCCLI.UBISUC ) NOMEST, 
+         ( select nombre from edificio where codigo = VTASUCCLI.CODEDI ) NOMBRE  
+    FROM ~"VTASUCCLI~",
+         ~"V_ZONA~"  
+   WHERE (~"VTASUCCLI~".~"CODZONA~" = ~"V_ZONA~".~"CODZONA~"(+) ) AND
+         ( VTASUCCLI.CODCLI = :as_codcli ) " arguments=(("as_codcli", string)) )
+text(band=header alignment="2" text="Tipo Suc." border="6" color="0" x="517" y="8" height="56" width="238" html.valueishtml="0"  name=tipsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre" border="6" color="0" x="763" y="8" height="56" width="951" html.valueishtml="0"  name=nomsuc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tip. Vía" border="6" color="0" x="1897" y="8" height="56" width="242" html.valueishtml="0"  name=tipvia_p visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre Vía" border="6" color="0" x="2149" y="8" height="56" width="722" html.valueishtml="0"  name=nomvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Número" border="6" color="0" x="2880" y="8" height="56" width="320" html.valueishtml="0"  name=numvia_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Interior" border="6" color="0" x="3209" y="8" height="56" width="750" html.valueishtml="0"  name=interior_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Urbanización" border="6" color="0" x="3968" y="8" height="56" width="837" html.valueishtml="0"  name=nomurb_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Activo" border="6" color="0" x="1723" y="8" height="56" width="165" html.valueishtml="0"  name=estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="4814" y="8" height="56" width="718" html.valueishtml="0"  name=obj_13350187 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Item" border="6" color="0" x="9" y="8" height="56" width="133" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Sucursal" border="6" color="0" x="151" y="8" height="56" width="357" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Provicia / Ciudad" border="6" color="0" x="5541" y="8" height="56" width="713" html.valueishtml="0"  name=nompvc_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="6263" y="8" height="56" width="681" html.valueishtml="0"  name=obj_13354703 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Edificio" border="6" color="0" x="6953" y="8" height="56" width="855" html.valueishtml="0"  name=obj_12020843 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cobertura" border="6" color="0" x="7817" y="8" height="56" width="361" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="" border="6" color="0" x="8187" y="8" height="56" width="178" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Zona" border="6" color="0" x="8375" y="8" height="56" width="421" html.valueishtml="0"  name=v_zona_dsczona_completo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Censado" border="6" color="0" x="8805" y="8" height="56" width="251" html.valueishtml="0"  name=censo_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="133" format="[general]" html.valueishtml="0"  name=obj_44866432 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="2149" y="4" height="56" width="722" format="[general]" html.valueishtml="0"  name=nomvia visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="2880" y="4" height="56" width="320" format="[general]" html.valueishtml="0"  name=numvia visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="3968" y="4" height="56" width="837" format="[general]" html.valueishtml="0"  name=nomurb visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="3209" y="4" height="56" width="750" format="[general]" html.valueishtml="0"  name=interior visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1897" y="4" height="56" width="242" format="[general]" html.valueishtml="0"  name=tipviap visible="1" dddw.name=dddw_tipviap dddw.displaycolumn=abrvia dddw.datacolumn=codvia dddw.percentwidth=400 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="0" x="1723" y="4" height="56" width="165" format="[general]" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="7817" y="4" height="56" width="361" format="[general]" html.valueishtml="0"  name=cobert visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="8187" y="4" height="56" width="178" format="[general]" html.valueishtml="0"  name=cenintid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="763" y="4" height="56" width="951" format="" html.valueishtml="0"  name=nomsuc visible="1" edit.limit=50 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=32766 border="0" color="0" x="6953" y="4" height="56" width="855" format="[general]" html.valueishtml="0"  name=nombre visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="4814" y="4" height="56" width="718" format="[general]" html.valueishtml="0"  name=nomdst visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="6263" y="4" height="56" width="681" format="[general]" html.valueishtml="0"  name=nomest visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="517" y="4" height="56" width="238" format="[general]" html.valueishtml="0"  name=tipsuc visible="1" dddw.name=dddw_vtatipsuc dddw.displaycolumn=nomabr dddw.datacolumn=tipsuc dddw.percentwidth=380 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="0" x="151" y="4" height="56" width="357" format="[general]" html.valueishtml="0"  name=codsuc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=21 alignment="2" tabsequence=32766 border="0" color="0" x="8805" y="4" height="56" width="251" format="[general]" html.valueishtml="0"  name=censo visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="5541" y="4" height="56" width="713" format="[general]" html.valueishtml="0"  name=nompvc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="8375" y="0" height="56" width="421" format="[general]" html.valueishtml="0"  name=v_zona_dsczona_completo visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

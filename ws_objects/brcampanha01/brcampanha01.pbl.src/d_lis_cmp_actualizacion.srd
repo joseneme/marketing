@@ -1,0 +1,102 @@
+﻿$PBExportHeader$d_lis_cmp_actualizacion.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=132 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=idinstancia dbname="cliente_temporal.idinstancia" )
+ column=(type=char(100) updatewhereclause=yes name=descripcion dbname="instancia_campanha.descripcion" )
+ column=(type=char(80) updatewhereclause=yes name=estado dbname="estado" )
+ column=(type=char(8) updatewhereclause=yes name=codcli dbname="cliente_temporal.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="cliente_temporal.nomcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomabr dbname="cliente_temporal.nomabr" )
+ column=(type=char(3) updatewhereclause=yes name=tipdide dbname="cliente_temporal.tipdide" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="cliente_temporal.ntdide" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide_comp dbname="cliente_temporal.ntdide_comp" )
+ column=(type=char(120) updatewhereclause=yes name=dircli dbname="cliente_temporal.dircli" )
+ column=(type=char(10) updatewhereclause=yes name=codubi dbname="cliente_temporal.codubi" )
+ column=(type=char(126) updatewhereclause=yes name=distrito_desc dbname="v_ubicaciones.distrito_desc" )
+ column=(type=char(3) updatewhereclause=yes name=codgirmark dbname="cliente_temporal.codgirmark" )
+ column=(type=char(50) updatewhereclause=yes name=giro dbname="giro" )
+ column=(type=decimal(0) updatewhereclause=yes name=codsecmark dbname="cliente_temporal.codsecmark" )
+ column=(type=char(50) updatewhereclause=yes name=sector dbname="sector" )
+ column=(type=decimal(0) updatewhereclause=yes name=codsegmark dbname="cliente_temporal.codsegmark" )
+ column=(type=char(50) updatewhereclause=yes name=segvta dbname="segvta" )
+ column=(type=decimal(0) updatewhereclause=yes name=gtsegmentationid dbname="cliente_temporal.gtsegmentationid" )
+ column=(type=char(100) updatewhereclause=yes name=segmer dbname="segmer" )
+ column=(type=decimal(0) updatewhereclause=yes name=flagrazon dbname="cliente_temporal.flagrazon" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=flagdireccion dbname="cliente_temporal.flagdireccion" values="	1/	0" )
+ column=(type=decimal(0) updatewhereclause=yes name=flagdocumento dbname="cliente_temporal.flagdocumento" values="	1/	0" )
+ retrieve="select cli.idinstancia,
+       cmp.descripcion,
+       (select descripcion from cmp_estado where estado = cli.estado ) Estado,
+       cli.codcli,
+       cli.nomcli,
+       cli.nomabr,
+       cli.tipdide,
+       cli.ntdide,
+       cli.ntdide_comp,
+       cli.dircli,
+       cli.codubi,
+       dst.distrito_desc,
+       cli.codgirmark,
+       (select dscgirmark from vtatabgirmark where codsegmark = cli.codgirmark ) Giro,
+       cli.codsecmark,
+       (select dscsecmark from vtatabsecmark where codsecmark = cli.codsecmark ) Sector,
+       cli.codsegmark,
+       (select dscsegmark from vtatabsegmark where codsegmark = cli.codsegmark ) SegVta,
+       cli.gtsegmentationid,
+       (select description from gotomarket_segmentation where gtsegmentationid = cli.gtsegmentationid ) SegMer,
+       cli.flagrazon,
+       cli.flagdireccion,
+       cli.flagdocumento       
+from cliente_temporal cli,
+     v_ubicaciones dst,
+     instancia_campanha cmp
+where  cli.codubi = dst.codubi and
+       cli.idinstancia = cmp.idinstancia" )
+text(band=header alignment="2" text="Numero Doc
+(Raiz)" border="6" color="0" x="4919" y="8" height="112" width="443"  name=cliente_temporal_ntdide_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Número Doc
+(Complemento)" border="6" color="0" x="5371" y="8" height="112" width="407"  name=cliente_temporal_ntdide_comp_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dirección" border="6" color="0" x="5787" y="8" height="112" width="1435"  name=cliente_temporal_dircli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo 
+Documento" border="6" color="0" x="4526" y="8" height="112" width="384"  name=cliente_temporal_tipdide_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre Comercial" border="6" color="0" x="3323" y="8" height="112" width="1193"  name=cliente_temporal_nomabr_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="0" x="7232" y="8" height="112" width="1042"  name=v_ubicaciones_distrito_desc_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Giro" border="6" color="0" x="8283" y="8" height="112" width="613"  name=giro_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Flag
+Razon Social" border="6" color="0" x="11237" y="8" height="112" width="361"  name=cliente_temporal_flagrazon_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Flag
+Dirección" border="6" color="0" x="11607" y="8" height="112" width="366"  name=cliente_temporal_flagdireccion_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Flag
+Documento" border="6" color="0" x="11982" y="8" height="112" width="375"  name=cliente_temporal_flagdocumento_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Razon social" border="6" color="0" x="1934" y="8" height="112" width="1381"  name=cliente_temporal_nomcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codigo" border="6" color="0" x="1659" y="8" height="112" width="265"  name=cliente_temporal_codcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="1289" y="8" height="112" width="361"  name=estado_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Campaña" border="6" color="0" x="197" y="8" height="112" width="1083"  name=obj_6332685  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nro" border="6" color="0" x="9" y="8" height="112" width="178"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3323" y="8" height="76" width="1193" format="[general]"  name=nomabr edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="4526" y="8" height="76" width="384" format="[general]"  name=tipdide edit.limit=3 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="4919" y="8" height="76" width="443" format="[general]"  name=ntdide edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="5371" y="8" height="76" width="407" format="[general]"  name=ntdide_comp edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="5787" y="8" height="76" width="1435" format="[general]"  name=dircli edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="7232" y="8" height="76" width="1042" format="[general]"  name=distrito_desc edit.limit=126 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="8283" y="8" height="76" width="613" format="[general]"  name=giro edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="8905" y="8" height="76" width="878" format="[general]"  name=sector edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="9792" y="8" height="76" width="773" format="[general]"  name=segvta edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="10574" y="8" height="76" width="654" format="[general]"  name=segmer edit.limit=100 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1289" y="8" height="76" width="361" format="[general]"  name=estado edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="197" y="8" height="76" width="1083" format="[general]"  name=descripcion edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="8" height="76" width="178" format="[GENERAL]"  name=compute_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="0" x="1659" y="8" height="76" width="265" format="[general]"  name=codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="1934" y="8" height="76" width="1381" format="[general]"  name=nomcli edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="2" tabsequence=32766 border="0" color="0" x="11241" y="8" height="76" width="357" format="[general]"  name=flagrazon checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="2" tabsequence=32766 border="0" color="0" x="11611" y="8" height="76" width="361" format="[general]"  name=flagdireccion checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="2" tabsequence=32766 border="0" color="0" x="11986" y="8" height="76" width="370" format="[general]"  name=flagdocumento checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Sector" border="6" color="0" x="8905" y="8" height="112" width="878"  name=sector_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Segmento Venta" border="6" color="0" x="9792" y="8" height="112" width="773"  name=segvta_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Segmento Mercado" border="6" color="0" x="10574" y="8" height="112" width="654"  name=segmer_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

@@ -1,0 +1,74 @@
+﻿$PBExportHeader$dw_rep_cliente_flag.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=512 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcli_codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(30) updatewhereclause=yes name=vtatipdid_dscdid dbname="vtatipdid.dscdid" )
+ column=(type=char(15) updatewhereclause=yes name=vtatabcli_ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(120) updatewhereclause=yes name=vtatabcli_dircli dbname="vtatabcli.dircli" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabdst_nomdst dbname="vtatabdst.nomdst" )
+ column=(type=char(20) updatewhereclause=yes name=vtatabdst_codpos dbname="vtatabdst.codpos" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabest_nomest dbname="vtatabest.nomest" )
+ column=(type=char(80) updatewhereclause=yes name=v_contacto_nomcnt dbname="v_contacto.nomcnt" )
+ column=(type=char(40) updatewhereclause=yes name=v_contacto_carcnt dbname="v_contacto.carcnt" )
+ column=(type=char(50) updatewhereclause=yes name=vtatabcli_telefono1 dbname="vtatabcli.telefono1" )
+ column=(type=char(60) updatewhereclause=yes name=vtatabect_nomect dbname="vtatabect.nomect" )
+ column=(type=char(3) updatewhereclause=yes name=vtatabcli_tipdide dbname="vtatabcli.tipdide" )
+ retrieve="SELECT a.codcli,		
+		 a.nomcli,
+       f.dscdid,
+       a.ntdide,
+       a.dircli,
+       b.nomdst,
+       b.codpos,
+       d.nomest,
+		 c.nomcnt,
+		 c.carcnt,
+       a.telefono1,
+       e.nomect,
+		 a.tipdide
+FROM   VTATABCLI a,
+       VTATABDST b,
+		 v_contacto c,
+       vtatabest d,
+       vtatabect e,
+       vtatipdid f
+WHERE  a.codcli = c.codcli(+) AND
+		 a.codubi = b.codubi AND 
+       d.codest = b.codest(+) and
+       e.codect = a.codect(+) and
+       f.tipdide = a.tipdide and
+	decode(:an_situacion, 1,flg_actual, 2, flg_usuario,3, flg_prospecto)=1" arguments=(("an_situacion", number)) )
+text(band=header alignment="2" text="Código" border="6" color="33554432" x="9" y="460" height="44" width="215"  name=vtatabcli_codcli_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre del Cliente" border="6" color="33554432" x="233" y="460" height="44" width="1262"  name=vtatabcli_nomcli_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tip. Doc." border="6" color="33554432" x="1504" y="460" height="44" width="439"  name=vtatipdid_dscdid_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nro. Doc." border="6" color="33554432" x="1952" y="460" height="44" width="320"  name=vtatabcli_ntdide_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dirección" border="6" color="33554432" x="2281" y="460" height="44" width="1298"  name=vtatabcli_dircli_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito" border="6" color="33554432" x="3589" y="460" height="44" width="562"  name=vtatabdst_nomdst_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="CEP" border="6" color="33554432" x="4160" y="460" height="44" width="389"  name=vtatabdst_codpos_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Departamento" border="6" color="33554432" x="4558" y="460" height="44" width="443"  name=vtatabest_nomest_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre Contacto" border="6" color="33554432" x="5010" y="460" height="44" width="937"  name=v_contacto_nomcnt_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo Contacto" border="6" color="33554432" x="5957" y="460" height="44" width="622"  name=v_contacto_carcnt_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Ejecutivo de Cuenta" border="6" color="33554432" x="7077" y="460" height="44" width="1125"  name=vtatabect_nomect_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Telefono" border="6" color="33554432" x="6587" y="460" height="44" width="480"  name=vtatabcli_telefono1_t  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="8" height="56" width="215" format="[general]"  name=vtatabcli_codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="233" y="8" height="56" width="1262" format="[general]"  name=vtatabcli_nomcli edit.limit=150 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1504" y="8" height="56" width="439" format="[general]"  name=vtatipdid_dscdid edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1952" y="8" height="56" width="320" format="[general]~tf_str_mascara_ntdide( vtatabcli_tipdide )"  name=vtatabcli_ntdide edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2281" y="8" height="56" width="1298" format="[general]"  name=vtatabcli_dircli edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3589" y="8" height="56" width="562" format="[general]"  name=vtatabdst_nomdst edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="4160" y="8" height="56" width="389" format="[general]"  name=vtatabdst_codpos edit.limit=20 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="4558" y="8" height="56" width="443" format="[general]"  name=vtatabest_nomest edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="5010" y="8" height="56" width="937" format="[general]"  name=v_contacto_nomcnt edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="5957" y="8" height="56" width="622" format="[general]"  name=v_contacto_carcnt edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="7077" y="8" height="56" width="1125" format="[general]"  name=vtatabect_nomect edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="6587" y="8" height="56" width="480" format="[general]"  name=vtatabcli_telefono1 edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=foreground alignment="2" text="Reporte de Clientes con Servicio " border="0" color="33554432" x="2085" y="48" height="104" width="1723"  name=t_4  font.face="Arial" font.height="-14" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+bitmap(band=foreground filename="I:\logotipo1.bmp" x="18" y="16" height="208" width="713" border="0"  name=p_1 )
+text(band=foreground alignment="2" text=" Inteligencia de Mercado" border="0" color="0" x="23" y="236" height="56" width="704"  name=t_5  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

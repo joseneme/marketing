@@ -1,0 +1,28 @@
+﻿$PBExportHeader$f_abrir_archivo.srf
+global type f_abrir_archivo from function_object
+end type
+
+forward prototypes
+global function integer f_abrir_archivo (any al_handle, string as_archivo)
+end prototypes
+
+global function integer f_abrir_archivo (any al_handle, string as_archivo);string ls_directorio
+ulong  ll_handle
+long   ll_app
+
+// ABRIR ARCHIVO
+ll_handle 	  = Handle(this)
+ls_directorio = Mid (as_archivo, 1, len(as_archivo))
+ll_app 		  = ShellExecuteA (ll_handle, 'open', as_archivo, "", ls_directorio , 1)
+
+IF ll_app > 0 THEN 
+	RUN ("del "+as_archivo)
+ELSE
+	f_msg("Error al Abrir Archivo : "+as_archivo)
+END IF
+
+RETURN 1
+	
+
+end function
+

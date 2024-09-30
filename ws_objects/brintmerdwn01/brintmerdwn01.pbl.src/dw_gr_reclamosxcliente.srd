@@ -1,0 +1,101 @@
+﻿$PBExportHeader$dw_gr_reclamosxcliente.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=incidence_codincidence dbname="incidence.codincidence" )
+ column=(type=char(30) updatewhereclause=yes name=customerxincidence_service dbname="customerxincidence.service" )
+ column=(type=char(8) updatewhereclause=yes name=customerxincidence_customercode dbname="customerxincidence.customercode" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nomcli dbname="vtatabcli.nomcli" )
+ column=(type=decimal(0) updatewhereclause=yes name=v_incidence_maxseq_receiverdepartment dbname="v_incidence_maxseq.receiverdepartment" )
+ column=(type=char(4000) updatewhereclause=yes name=v_incidence_maxseq_observation dbname="v_incidence_maxseq.observation" )
+ column=(type=char(100) updatewhereclause=yes name=department_description dbname="department.description" )
+ column=(type=decimal(0) updatewhereclause=yes name=incidence_codtypeservice dbname="incidence.codtypeservice" )
+ column=(type=char(100) updatewhereclause=yes name=case_atention_description dbname="case_atention.description" )
+ column=(type=char(100) updatewhereclause=yes name=status_description dbname="status.description" )
+ column=(type=decimal(0) updatewhereclause=yes name=incidence_nticket dbname="incidence.nticket" )
+ column=(type=decimal(0) updatewhereclause=yes name=v_incidence_gen_receiverdepartment dbname="v_incidence_gen.receiverdepartment" )
+ column=(type=decimal(0) updatewhereclause=yes name=v_incidence_clo_receiverdepartment dbname="v_incidence_clo.receiverdepartment" )
+ column=(type=char(30) updatewhereclause=yes name=v_incidence_clo_userid dbname="v_incidence_clo.userid" )
+ column=(type=char(4000) updatewhereclause=yes name=v_incidence_clo_observation dbname="v_incidence_clo.observation" )
+ column=(type=char(30) updatewhereclause=yes name=responsible_atention_userid dbname="responsible_atention.userid" )
+ column=(type=char(100) updatewhereclause=yes name=tipo_apelacion_descripcion dbname="tipo_apelacion.descripcion" )
+ column=(type=datetime updatewhereclause=yes name=apelacionxinc_fecape dbname="apelacionxinc.fecape" )
+ column=(type=datetime updatewhereclause=yes name=apelacionxinc_fecusu dbname="apelacionxinc.fecusu" )
+ retrieve="  SELECT ~"INCIDENCE~".~"CODINCIDENCE~",   
+         ~"CUSTOMERXINCIDENCE~".~"SERVICE~",   
+         ~"CUSTOMERXINCIDENCE~".~"CUSTOMERCODE~",   
+         ~"VTATABCLI~".~"NOMCLI~",   
+         ~"V_INCIDENCE_MAXSEQ~".~"RECEIVERDEPARTMENT~",   
+         ~"V_INCIDENCE_MAXSEQ~".~"OBSERVATION~",   
+         ~"DEPARTMENT~".~"DESCRIPTION~",   
+         ~"INCIDENCE~".~"CODTYPESERVICE~",   
+         ~"CASE_ATENTION~".~"DESCRIPTION~",   
+         ~"STATUS~".~"DESCRIPTION~",   
+         ~"INCIDENCE~".~"NTICKET~",   
+         ~"V_INCIDENCE_GEN~".~"RECEIVERDEPARTMENT~",   
+         ~"V_INCIDENCE_CLO~".~"RECEIVERDEPARTMENT~",   
+         ~"V_INCIDENCE_CLO~".~"USERID~",   
+         ~"V_INCIDENCE_CLO~".~"OBSERVATION~",   
+         ~"RESPONSIBLE_ATENTION~".~"USERID~",   
+         ~"TIPO_APELACION~".~"DESCRIPCION~",   
+         ~"APELACIONXINC~".~"FECAPE~",   
+         ~"APELACIONXINC~".~"FECUSU~"  
+    FROM ~"APELACIONXINC~",   
+         ~"CASE_ATENTION~",   
+         ~"CUSTOMERXINCIDENCE~",   
+         ~"DEPARTMENT~",   
+         ~"INCIDENCE~",   
+         ~"RESPONSIBLE_ATENTION~",   
+         ~"STATUS~",   
+         ~"TIPO_APELACION~",   
+         ~"V_INCIDENCE_GEN~",   
+         ~"V_INCIDENCE_MAXSEQ~",   
+         ~"VTATABCLI~",   
+         ~"V_INCIDENCE_CLO~"  
+   WHERE  incidence.codincidence             = v_incidence_gen.codincidence        and
+       incidence.codincidence             = v_incidence_maxseq.codincidence        and
+       incidence.codincidence             = v_incidence_clo.codincidence           and
+       incidence.codincidence             = customerxincidence.codincidence        and
+       customerxincidence.customercode    = vtatabcli.codcli                       and
+       incidence.userresponsible          = responsible_atention.codresponsible(+) and
+       incidence.codstatus                = status.codstatus(+)                    and
+       v_incidence_gen.receiverdepartment = department.coddepartment(+)            and
+       v_incidence_maxseq.codcase         = case_atention.codcase(+)               and       
+       incidence.nticket                  > 0                                      and
+       incidence.codsubtype               = 1                                      and
+       incidence.nticket                  = apelacionxinc.recosi(+)                and
+       apelacionxinc.codtipape            = tipo_apelacion.codtipape(+)            and
+       customerxincidence.customercode    = :acodcli" arguments=(("acodcli", string)) )
+text(band=header alignment="2" text="N°" border="6" color="0" x="9" y="8" height="56" width="160" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cod. Incidencia" border="6" color="0" x="178" y="8" height="56" width="512" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo de Servicio" border="6" color="0" x="7259" y="8" height="56" width="512" html.valueishtml="0"  name=incidence_codtypeservice_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo de Caso" border="6" color="0" x="7781" y="8" height="56" width="855" html.valueishtml="0"  name=case_atention_description_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="6917" y="8" height="56" width="334" html.valueishtml="0"  name=status_description_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dpto de Cierre" border="6" color="0" x="8645" y="8" height="56" width="855" html.valueishtml="0"  name=v_incidence_clo_receiverdepartment_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Observación de Cierre" border="6" color="0" x="9509" y="8" height="56" width="1202" html.valueishtml="0"  name=v_incidence_clo_observation_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dpto de Registro" border="6" color="0" x="5536" y="8" height="56" width="421" html.valueishtml="0"  name=v_incidence_gen_receiverdepartment_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Cliente" border="6" color="0" x="699" y="8" height="56" width="334" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Nombre del Cliente" border="6" color="0" x="1042" y="8" height="56" width="1289" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Servicio" border="6" color="0" x="2341" y="8" height="56" width="855" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Departamento Máx. Secuencia" border="6" color="0" x="3205" y="8" height="56" width="855" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Observación Departamento Máx. Secuencia" border="6" color="0" x="4069" y="8" height="56" width="1458" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Departamento Registro" border="6" color="0" x="5966" y="8" height="56" width="942" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=detail alignment="0" expression="getrow()"border="0" color="0" x="9" y="8" height="56" width="160" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="1" tabsequence=32766 border="0" color="0" x="7259" y="8" height="56" width="512" format="[general]" html.valueishtml="0"  name=incidence_codtypeservice visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="7781" y="8" height="56" width="855" format="[general]" html.valueishtml="0"  name=case_atention_description visible="1" edit.limit=100 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="6917" y="8" height="56" width="334" format="[general]" html.valueishtml="0"  name=status_description visible="1" edit.limit=100 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+column(band=detail id=13 alignment="1" tabsequence=32766 border="0" color="0" x="8645" y="8" height="56" width="855" format="[general]" html.valueishtml="0"  name=v_incidence_clo_receiverdepartment visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="9509" y="8" height="56" width="1202" format="[general]" html.valueishtml="0"  name=v_incidence_clo_observation visible="1" edit.limit=4000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="1" tabsequence=32766 border="0" color="0" x="5536" y="8" height="56" width="421" format="[general]" html.valueishtml="0"  name=v_incidence_gen_receiverdepartment visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="178" y="8" height="56" width="512" format="[general]" html.valueishtml="0"  name=incidence_codincidence visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="699" y="8" height="56" width="334" format="[general]" html.valueishtml="0"  name=customerxincidence_customercode visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1042" y="8" height="56" width="1289" format="[general]" html.valueishtml="0"  name=vtatabcli_nomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="2341" y="8" height="56" width="855" format="[general]" html.valueishtml="0"  name=customerxincidence_service visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3205" y="8" height="56" width="855" format="[general]" html.valueishtml="0"  name=v_incidence_maxseq_receiverdepartment visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="4069" y="8" height="56" width="1458" format="[general]" html.valueishtml="0"  name=v_incidence_maxseq_observation visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="5966" y="8" height="56" width="942" format="[general]" html.valueishtml="0"  name=department_description visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

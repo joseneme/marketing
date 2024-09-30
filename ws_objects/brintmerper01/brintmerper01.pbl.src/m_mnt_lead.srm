@@ -1,0 +1,517 @@
+﻿$PBExportHeader$m_mnt_lead.srm
+forward
+global type m_mnt_lead from m_mnt_comun
+end type
+type m_cargardatosdesdearchivodbf from menu within m_funciones
+end type
+type m_verificardatosdesdearchivo from menu within m_funciones
+end type
+type m_transferiralead from menu within m_funciones
+end type
+type m_funciones from m_mnt_comun`m_funciones within m_mnt_lead
+m_cargardatosdesdearchivodbf m_cargardatosdesdearchivodbf
+m_verificardatosdesdearchivo m_verificardatosdesdearchivo
+m_transferiralead m_transferiralead
+end type
+end forward
+
+global type m_mnt_lead from m_mnt_comun
+end type
+global m_mnt_lead m_mnt_lead
+
+on m_mnt_lead.create
+m_mnt_lead=this
+call super::create
+this.text = "m_mnt_lead"
+end on
+
+on m_mnt_lead.destroy
+call super::destroy
+end on
+
+type m_archivo from m_mnt_comun`m_archivo within m_mnt_lead
+end type
+
+on m_archivo.create
+call super::create
+end on
+
+on m_archivo.destroy
+call super::destroy
+end on
+
+type m_abrir from m_mnt_comun`m_abrir within m_archivo
+end type
+
+on m_abrir.create
+call super::create
+end on
+
+on m_abrir.destroy
+call super::destroy
+end on
+
+type m_grabar from m_mnt_comun`m_grabar within m_archivo
+end type
+
+on m_grabar.create
+call super::create
+end on
+
+on m_grabar.destroy
+call super::destroy
+end on
+
+type m_nuevo from m_mnt_comun`m_nuevo within m_archivo
+end type
+
+on m_nuevo.create
+call super::create
+end on
+
+on m_nuevo.destroy
+call super::destroy
+end on
+
+type m_borrar from m_mnt_comun`m_borrar within m_archivo
+end type
+
+on m_borrar.create
+call super::create
+end on
+
+on m_borrar.destroy
+call super::destroy
+end on
+
+type m_1232 from m_mnt_comun`m_1232 within m_archivo
+end type
+
+on m_1232.create
+call super::create
+end on
+
+on m_1232.destroy
+call super::destroy
+end on
+
+type m_buscar from m_mnt_comun`m_buscar within m_archivo
+end type
+
+on m_buscar.create
+call super::create
+end on
+
+on m_buscar.destroy
+call super::destroy
+end on
+
+type m_refrescar from m_mnt_comun`m_refrescar within m_archivo
+end type
+
+on m_refrescar.create
+call super::create
+end on
+
+on m_refrescar.destroy
+call super::destroy
+end on
+
+type m_1000 from m_mnt_comun`m_1000 within m_archivo
+end type
+
+on m_1000.create
+call super::create
+end on
+
+on m_1000.destroy
+call super::destroy
+end on
+
+type m_imprimir from m_mnt_comun`m_imprimir within m_archivo
+end type
+
+on m_imprimir.create
+call super::create
+end on
+
+on m_imprimir.destroy
+call super::destroy
+end on
+
+type m_exportar from m_mnt_comun`m_exportar within m_archivo
+end type
+
+on m_exportar.create
+call super::create
+end on
+
+on m_exportar.destroy
+call super::destroy
+end on
+
+type m_exportar_excel from m_mnt_comun`m_exportar_excel within m_exportar
+end type
+
+on m_exportar_excel.create
+call super::create
+end on
+
+on m_exportar_excel.destroy
+call super::destroy
+end on
+
+type m_exportar_psr from m_mnt_comun`m_exportar_psr within m_exportar
+end type
+
+on m_exportar_psr.create
+call super::create
+end on
+
+on m_exportar_psr.destroy
+call super::destroy
+end on
+
+type m_exportar_otro from m_mnt_comun`m_exportar_otro within m_exportar
+end type
+
+on m_exportar_otro.create
+call super::create
+end on
+
+on m_exportar_otro.destroy
+call super::destroy
+end on
+
+type m_sep270478 from m_mnt_comun`m_sep270478 within m_exportar
+end type
+
+on m_sep270478.create
+call super::create
+end on
+
+on m_sep270478.destroy
+call super::destroy
+end on
+
+type m_exportar_clipboard from m_mnt_comun`m_exportar_clipboard within m_exportar
+end type
+
+on m_exportar_clipboard.create
+call super::create
+end on
+
+on m_exportar_clipboard.destroy
+call super::destroy
+end on
+
+type m_1001 from m_mnt_comun`m_1001 within m_archivo
+end type
+
+on m_1001.create
+call super::create
+end on
+
+on m_1001.destroy
+call super::destroy
+end on
+
+type m_cerrar from m_mnt_comun`m_cerrar within m_archivo
+end type
+
+on m_cerrar.create
+call super::create
+end on
+
+on m_cerrar.destroy
+call super::destroy
+end on
+
+type m_edicion from m_mnt_comun`m_edicion within m_mnt_lead
+end type
+
+on m_edicion.create
+call super::create
+end on
+
+on m_edicion.destroy
+call super::destroy
+end on
+
+type m_cortar from m_mnt_comun`m_cortar within m_edicion
+end type
+
+on m_cortar.create
+call super::create
+end on
+
+on m_cortar.destroy
+call super::destroy
+end on
+
+type m_copiar from m_mnt_comun`m_copiar within m_edicion
+end type
+
+on m_copiar.create
+call super::create
+end on
+
+on m_copiar.destroy
+call super::destroy
+end on
+
+type m_pegar from m_mnt_comun`m_pegar within m_edicion
+end type
+
+on m_pegar.create
+call super::create
+end on
+
+on m_pegar.destroy
+call super::destroy
+end on
+
+type m_sep_sep from m_mnt_comun`m_sep_sep within m_edicion
+end type
+
+on m_sep_sep.create
+call super::create
+end on
+
+on m_sep_sep.destroy
+call super::destroy
+end on
+
+type m_primero from m_mnt_comun`m_primero within m_edicion
+end type
+
+on m_primero.create
+call super::create
+end on
+
+on m_primero.destroy
+call super::destroy
+end on
+
+type m_anterior from m_mnt_comun`m_anterior within m_edicion
+end type
+
+on m_anterior.create
+call super::create
+end on
+
+on m_anterior.destroy
+call super::destroy
+end on
+
+type m_siguiente from m_mnt_comun`m_siguiente within m_edicion
+end type
+
+on m_siguiente.create
+call super::create
+end on
+
+on m_siguiente.destroy
+call super::destroy
+end on
+
+type m_ultimo from m_mnt_comun`m_ultimo within m_edicion
+end type
+
+on m_ultimo.create
+call super::create
+end on
+
+on m_ultimo.destroy
+call super::destroy
+end on
+
+type m_sep_insertar_suprimir from m_mnt_comun`m_sep_insertar_suprimir within m_edicion
+end type
+
+on m_sep_insertar_suprimir.create
+call super::create
+end on
+
+on m_sep_insertar_suprimir.destroy
+call super::destroy
+end on
+
+type m_insertar_detalle from m_mnt_comun`m_insertar_detalle within m_edicion
+end type
+
+on m_insertar_detalle.create
+call super::create
+end on
+
+on m_insertar_detalle.destroy
+call super::destroy
+end on
+
+type m_suprimir_detalle from m_mnt_comun`m_suprimir_detalle within m_edicion
+end type
+
+on m_suprimir_detalle.create
+call super::create
+end on
+
+on m_suprimir_detalle.destroy
+call super::destroy
+end on
+
+type m_funciones from m_mnt_comun`m_funciones within m_mnt_lead
+m_cargardatosdesdearchivodbf m_cargardatosdesdearchivodbf
+m_verificardatosdesdearchivo m_verificardatosdesdearchivo
+m_transferiralead m_transferiralead
+end type
+
+on m_funciones.create
+call super::create
+this.m_cargardatosdesdearchivodbf=create m_cargardatosdesdearchivodbf
+this.m_verificardatosdesdearchivo=create m_verificardatosdesdearchivo
+this.m_transferiralead=create m_transferiralead
+this.Item[UpperBound(this.Item)+1]=this.m_cargardatosdesdearchivodbf
+this.Item[UpperBound(this.Item)+1]=this.m_verificardatosdesdearchivo
+this.Item[UpperBound(this.Item)+1]=this.m_transferiralead
+end on
+
+on m_funciones.destroy
+call super::destroy
+destroy(this.m_cargardatosdesdearchivodbf)
+destroy(this.m_verificardatosdesdearchivo)
+destroy(this.m_transferiralead)
+end on
+
+type m_ordenar from m_mnt_comun`m_ordenar within m_funciones
+end type
+
+on m_ordenar.create
+call super::create
+end on
+
+on m_ordenar.destroy
+call super::destroy
+end on
+
+type m_filtrar from m_mnt_comun`m_filtrar within m_funciones
+end type
+
+on m_filtrar.create
+call super::create
+end on
+
+on m_filtrar.destroy
+call super::destroy
+end on
+
+type m_sep12 from m_mnt_comun`m_sep12 within m_funciones
+end type
+
+on m_sep12.create
+call super::create
+end on
+
+on m_sep12.destroy
+call super::destroy
+end on
+
+type m_ayuda from m_mnt_comun`m_ayuda within m_mnt_lead
+end type
+
+on m_ayuda.create
+call super::create
+end on
+
+on m_ayuda.destroy
+call super::destroy
+end on
+
+type m_contenidodelaaplicacion from m_mnt_comun`m_contenidodelaaplicacion within m_ayuda
+end type
+
+on m_contenidodelaaplicacion.create
+call super::create
+end on
+
+on m_contenidodelaaplicacion.destroy
+call super::destroy
+end on
+
+type m_usogeneraldeaplicaciones from m_mnt_comun`m_usogeneraldeaplicaciones within m_ayuda
+end type
+
+on m_usogeneraldeaplicaciones.create
+call super::create
+end on
+
+on m_usogeneraldeaplicaciones.destroy
+call super::destroy
+end on
+
+type m_glosario from m_mnt_comun`m_glosario within m_ayuda
+end type
+
+on m_glosario.create
+call super::create
+end on
+
+on m_glosario.destroy
+call super::destroy
+end on
+
+type m_acercade from m_mnt_comun`m_acercade within m_ayuda
+end type
+
+on m_acercade.create
+call super::create
+end on
+
+on m_acercade.destroy
+call super::destroy
+end on
+
+type m_cargardatosdesdearchivodbf from menu within m_funciones
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_cargardbf")
+end event
+
+on m_cargardatosdesdearchivodbf.create
+call super::create
+this.text = "Cargar Datos desde Archivo (.DBF)"
+end on
+
+on m_cargardatosdesdearchivodbf.destroy
+call super::destroy
+end on
+
+type m_verificardatosdesdearchivo from menu within m_funciones
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_verificardbf")
+end event
+
+on m_verificardatosdesdearchivo.create
+call super::create
+this.text = "Verificar Datos desde Archivo"
+end on
+
+on m_verificardatosdesdearchivo.destroy
+call super::destroy
+end on
+
+type m_transferiralead from menu within m_funciones
+end type
+
+event clicked;ParentWindow.TriggerEvent("ue_menu_transferirlead")
+end event
+
+on m_transferiralead.create
+call super::create
+this.text = "Transferir a Lead"
+end on
+
+on m_transferiralead.destroy
+call super::destroy
+end on
+

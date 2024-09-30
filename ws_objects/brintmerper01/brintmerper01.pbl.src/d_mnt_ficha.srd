@@ -1,0 +1,49 @@
+﻿$PBExportHeader$d_mnt_ficha.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=67108864 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=792 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idficha dbname="vtatabficha.idficha" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="vtatabficha.codcli" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codect dbname="vtatabficha.codect" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=idestneg dbname="vtatabficha.idestneg" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(30) updatewhereclause=yes key=yes name=codusu dbname="vtatabficha.codusu" )
+ column=(type=datetime updatewhereclause=yes name=fecusu dbname="vtatabficha.fecusu" )
+ column=(type=char(30) updatewhereclause=yes name=usumod dbname="vtatabficha.usumod" )
+ column=(type=datetime updatewhereclause=yes name=fecmod dbname="vtatabficha.fecmod" )
+ retrieve="SELECT A.IDFICHA,
+       A.CODCLI,
+       A.CODECT,
+       A.IDESTNEG,
+       B.NOMCLI,
+       A.CODUSU,
+       A.FECUSU,
+       A.USUMOD,
+       A.FECMOD
+FROM VTATABFICHA A,
+     VTATABCLI B
+WHERE  A.CODCLI = B.CODCLI and
+       A.IDFICHA = :an_idficha" update="VTATABFICHA" updatewhere=0 updatekeyinplace=no arguments=(("an_idficha", number)) )
+groupbox(band=detail text="Ficha de Cliente"border="5" color="8388608" x="55" y="32" height="704" width="2670"  name=gb_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+groupbox(band=detail text=""border="5" color="134217856" x="1079" y="296" height="400" width="1550"  name=gb_2 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="N° Ficha :" border="0" color="33554432" x="123" y="120" height="56" width="329" html.valueishtml="0"  name=vtatabficha_idficha_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Ejecutivo :" border="0" color="8388608" x="901" y="120" height="56" width="320" html.valueishtml="0"  name=vtatabficha_codect_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="5" color="33554432" x="1243" y="116" height="56" width="1358" format="[general]" html.valueishtml="0"  name=codect visible="1" dddw.name=dddw_tabect_usu dddw.displaycolumn=nomect dddw.datacolumn=codect dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Cliente (F9) :" border="0" color="8388608" x="123" y="204" height="56" width="329" html.valueishtml="0"  name=vtatabficha_codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="5" color="33554432" x="901" y="204" height="56" width="1714" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Est. Negocio :" border="0" color="8388608" x="123" y="288" height="56" width="329" html.valueishtml="0"  name=vtatabficha_idcoyuntura_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=10 border="5" color="33554432" x="494" y="120" height="56" width="343" format="[general]" html.valueishtml="0"  name=idficha visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=30 border="5" color="33554432" x="494" y="204" height="56" width="343" format="[general]" html.valueishtml="0"  name=codcli visible="1" editmask.mask="########" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=50 border="5" color="33554432" x="494" y="288" height="56" width="521" format="[general]" html.valueishtml="0"  name=idestneg visible="1" dddw.name=ddd_estado_negocio dddw.displaycolumn=dscestneg dddw.datacolumn=idestneg dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Usuario Generacion :" border="0" color="134217856" x="1138" y="332" height="56" width="503" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Fecha Generacion :" border="0" color="134217856" x="1138" y="424" height="56" width="503" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Usuario Modificacion :" border="0" color="134217856" x="1138" y="516" height="56" width="503" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=detail alignment="0" text="Ultima Modificacion :" border="0" color="134217856" x="1138" y="608" height="56" width="503" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="5" color="33554432" x="1701" y="332" height="56" width="823" format="[general]" html.valueishtml="0"  name=codusu visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="5" color="33554432" x="1701" y="420" height="56" width="823" format="[shortdate] [time]" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="5" color="33554432" x="1701" y="516" height="56" width="823" format="[general]" html.valueishtml="0"  name=usumod visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="5" color="33554432" x="1701" y="608" height="56" width="823" format="[shortdate] [time]" html.valueishtml="0"  name=fecmod visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

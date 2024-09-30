@@ -1,0 +1,12 @@
+﻿Save Format v3.0(19990112)
+@begin Libraries
+ "brintmerfst01.pbl" "";
+@end;
+@begin Objects 
+ "d_mnt_solution.srd" "brintmerfst01.pbl";
+ "d_mnt_solution_tree.srd" "brintmerfst01.pbl";
+ "f_abrir_archivo.srf" "brintmerfst01.pbl";
+ "m_mnt_anormalidades.srm" "brintmerfst01.pbl";
+ "w_mnt_solution.srw" "brintmerfst01.pbl";
+ "w_mnt_solution_tree.srw" "brintmerfst01.pbl";
+@end;

@@ -1,0 +1,64 @@
+﻿$PBExportHeader$d_lis_proveedor_servicio_internet.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes name=codcli dbname="proveedor_servicio.codcli" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idoperador dbname="proveedor_servicio.idoperador" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idproductomkt dbname="proveedor_servicio.idproductomkt" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fechafin dbname="proveedor_servicio.fechafin" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=banwid dbname="proveedor_servicio.banwid" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idsede dbname="proveedor_servicio.idsede" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numlin dbname="proveedor_servicio.numlin" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numpuertas dbname="proveedor_servicio.numpuertas" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idrango dbname="proveedor_servicio.idrango" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numpris dbname="proveedor_servicio.numpris" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fechafin dbname="proveedor_servicio.fechafin" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecultact dbname="proveedor_servicio.fecultact" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=cr_moneda_ext dbname="proveedor_servicio.cr_moneda_ext" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idprvsrv dbname="proveedor_servicio.idprvsrv" )
+ column=(type=char(1) updatewhereclause=yes name=flag dbname="flag" values="	1/	0" )
+ retrieve="  SELECT ~"PROVEEDOR_SERVICIO~".~"CODCLI~",   
+         ~"PROVEEDOR_SERVICIO~".~"IDOPERADOR~",   
+         ~"PROVEEDOR_SERVICIO~".~"IDPRODUCTOMKT~",   
+         ~"PROVEEDOR_SERVICIO~".~"FECHAFIN~",   
+         ~"PROVEEDOR_SERVICIO~".~"BANWID~",   
+         ~"PROVEEDOR_SERVICIO~".~"IDSEDE~",   
+         ~"PROVEEDOR_SERVICIO~".~"NUMLIN~",
+        	~"PROVEEDOR_SERVICIO~".~"NUMPUERTAS~",
+         ~"PROVEEDOR_SERVICIO~".~"IDRANGO~",
+         ~"PROVEEDOR_SERVICIO~".~"NUMPRIS~",
+         ~"PROVEEDOR_SERVICIO~".~"FECHAFIN~",
+         ~"PROVEEDOR_SERVICIO~".~"FECULTACT~",
+         ~"PROVEEDOR_SERVICIO~".~"CR_MONEDA_EXT~",
+         ~"PROVEEDOR_SERVICIO~".~"IDPRVSRV~",
+         '0' flag
+    FROM ~"PROVEEDOR_SERVICIO~"  where  ~"PROVEEDOR_SERVICIO~".~"CODCLI~" = :as_codcli 
+and  ~"PROVEEDOR_SERVICIO~".~"IDPRODUCTOMKT~" = :an_idproductomkt 
+" update="PROVEEDOR_SERVICIO" updatewhere=0 updatekeyinplace=no arguments=(("as_codcli", string),("an_idproductomkt", number))  sort="idsede A idproductomkt A idoperador A " )
+text(band=header alignment="2" text="" border="6" color="33554432" x="9" y="8" height="56" width="105" html.valueishtml="0"  name=fila_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="U. Geografica" border="6" color="0" x="251" y="8" height="56" width="347" html.valueishtml="0"  name=idsede_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Servicio" border="6" color="33554432" x="608" y="8" height="56" width="887" html.valueishtml="0"  name=idproductomkt_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Proveedor" border="6" color="33554432" x="1504" y="8" height="56" width="750" html.valueishtml="0"  name=idoperador_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="US$ (Mensual)" border="6" color="33554432" x="2263" y="8" height="56" width="379" html.valueishtml="0"  name=cr_moneda_ext_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="# Puertas" border="6" color="0" x="2651" y="8" height="56" width="384" html.valueishtml="0"  name=numpuertas_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Banwid" border="6" color="33554432" x="3045" y="8" height="56" width="407" html.valueishtml="0"  name=banwid_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Fecha fin de Contrato" border="6" color="0" x="3461" y="8" height="56" width="512" html.valueishtml="0"  name=fechafin_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Ultima Actualizacion" border="6" color="0" x="3982" y="8" height="56" width="466" html.valueishtml="0"  name=fecultact_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Flag" border="6" color="0" x="123" y="8" height="56" width="119" html.valueishtml="0"  name=flag_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="2" text="Idprvsrv" border="6" color="0" x="4457" y="8" height="56" width="283" html.valueishtml="0"  name=idprvsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="105" format="[GENERAL]" html.valueishtml="0"  name=fila visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="251" y="0" height="56" width="347" format="[general]" html.valueishtml="0"  name=idsede visible="1" dddw.name=dddw_tiposede dddw.displaycolumn=dscsede dddw.datacolumn=idsede dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="608" y="0" height="56" width="887" format="[general]" html.valueishtml="0"  name=idproductomkt visible="1" dddw.name=dddw_producto_marketing dddw.displaycolumn=descripcion dddw.datacolumn=idproductomkt dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="1504" y="0" height="56" width="750" format="[general]" html.valueishtml="0"  name=idoperador visible="1" dddw.name=dddw_operador_telecom dddw.displaycolumn=operador dddw.datacolumn=idoperador dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="1" tabsequence=32766 border="0" color="33554432" x="2263" y="0" height="56" width="379" format="##,###,###,###.00" html.valueishtml="0"  name=cr_moneda_ext visible="1" editmask.mask="##,###,###,###.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="2" tabsequence=32766 border="0" color="33554432" x="2651" y="0" height="56" width="384" format="[general]" html.valueishtml="0"  name=numpuertas visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="33554432" x="3045" y="0" height="56" width="407" format="[general]" html.valueishtml="0"  name=banwid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="2" tabsequence=32766 border="0" color="33554432" x="3461" y="0" height="56" width="512" format="dd/mm/yyyy" html.valueishtml="0"  name=fechafin visible="1" editmask.mask="dd/mm/yyyy" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="2" tabsequence=32766 border="0" color="33554432" x="3982" y="0" height="56" width="466" format="[shortdate] [time]" html.valueishtml="0"  name=fecultact visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="4457" y="0" height="56" width="283" format="[general]" html.valueishtml="0"  name=idprvsrv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="2" tabsequence=10 border="0" color="0" x="123" y="0" height="56" width="119" format="[general]" html.valueishtml="0"  name=flag visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

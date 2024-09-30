@@ -1,0 +1,53 @@
+﻿$PBExportHeader$dw_sucursales_negocio.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=104 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=48 color="536870912" )
+table(column=(type=char(120) updatewhereclause=yes name=dirsuc dbname="vtasuccli.dirsuc" )
+ column=(type=char(40) updatewhereclause=yes name=nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=nompvc dbname="v_ubicaciones.nompvc" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(4) updatewhereclause=yes name=ddd1 dbname="vtasuccli.ddd1" )
+ column=(type=char(50) updatewhereclause=yes name=telefono1 dbname="vtasuccli.telefono1" )
+ column=(type=char(4) updatewhereclause=yes name=ddd2 dbname="vtasuccli.ddd2" )
+ column=(type=char(50) updatewhereclause=yes name=telefono2 dbname="vtasuccli.telefono2" )
+ retrieve="SELECT A.DIRSUC , B.NOMDST, B.NOMPVC, B.NOMEST, A.DDD1, A.TELEFONO1, A.DDD2, A.TELEFONO2   
+FROM VTASUCCLI A,
+     V_UBICACIONES B
+WHERE  A.UBISUC = B.CODUBI
+AND A.CODCLI = :as_codcli
+
+UNION 
+
+SELECT 
+	   '' DIRSUC,
+	   '' NOMDST, 
+	   '' NOMPVC, 
+	   '' NOMEST, 
+	   '' DDD1, 
+	   '' TELEFONO1, 
+	   '' DDD2, 
+	   '' TELEFONO2 
+FROM 
+DUAL" arguments=(("as_codcli", string)) )
+text(band=header alignment="2" text="#" border="2" color="0" x="37" y="56" height="44" width="128" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="2.1 Sucursales del Negocio" border="2" color="0" x="37" y="8" height="44" width="4457" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-7" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217745" )
+text(band=header alignment="0" text="Distrito" border="2" color="0" x="1792" y="56" height="44" width="622" html.valueishtml="0"  name=v_ubicaciones_nomdst_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="Provincia" border="2" color="0" x="2418" y="56" height="44" width="421" html.valueishtml="0"  name=v_ubicaciones_nompvc_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="Departamento" border="2" color="0" x="2843" y="56" height="44" width="448" html.valueishtml="0"  name=v_ubicaciones_nomest_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="Telefono1" border="2" color="0" x="3296" y="56" height="44" width="475" html.valueishtml="0"  name=vtasuccli_telefono1_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="Telefono2" border="2" color="0" x="3776" y="56" height="44" width="718" html.valueishtml="0"  name=vtasuccli_telefono2_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+text(band=header alignment="0" text="Dirección " border="2" color="0" x="169" y="56" height="44" width="1618" html.valueishtml="0"  name=vtasuccli_dirsuc_t visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="2" color="33554432" x="2418" y="0" height="44" width="421" format="[general]" html.valueishtml="0"  name=nompvc visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="2" color="33554432" x="2843" y="0" height="44" width="448" format="[general]" html.valueishtml="0"  name=nomest visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="2" color="33554432" x="3296" y="0" height="44" width="114" format="[general]" html.valueishtml="0"  name=ddd1 visible="1" edit.limit=4 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="2" color="33554432" x="3415" y="0" height="44" width="357" format="[general]" html.valueishtml="0"  name=telefono1 visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="2" color="33554432" x="3776" y="0" height="44" width="105" format="[general]" html.valueishtml="0"  name=ddd2 visible="1" edit.limit=4 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="2" color="33554432" x="3886" y="0" height="44" width="608" format="[general]" html.valueishtml="0"  name=telefono2 visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="2" color="33554432" x="1792" y="0" height="44" width="622" format="[general]" html.valueishtml="0"  name=nomdst visible="1" edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="2" color="33554432" x="169" y="0" height="44" width="1618" format="[general]" html.valueishtml="0"  name=dirsuc visible="1" edit.limit=120 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="getrow()"border="2" color="0" x="37" y="0" height="44" width="128" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

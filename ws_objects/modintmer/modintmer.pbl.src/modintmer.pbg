@@ -1,0 +1,9 @@
+﻿Save Format v3.0(19990112)
+@begin Libraries
+ "modintmer.pbl" "";
+@end;
+@begin Objects 
+ "modintmer.sra" "modintmer.pbl";
+ "m_menu_intmer.srm" "modintmer.pbl";
+ "w_main_intmer.srw" "modintmer.pbl";
+@end;

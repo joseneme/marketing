@@ -1,0 +1,291 @@
+﻿$PBExportHeader$dw_ff_cliente_marketing_cusbra.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1196 color="536870912" )
+table(column=(type=number updatewhereclause=yes name=sucursales dbname="sucursales" )
+ column=(type=char(8) update=yes updatewhereclause=yes key=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=codgir dbname="vtatabcli.codgir" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="vtatabcli.codubi" initial="0000000011" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipcli dbname="vtatabcli.tipcli" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=tipdide dbname="vtatabcli.tipdide" initial="001" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codect dbname="vtatabcli.codect" initial="00000000" )
+ column=(type=char(60) updatewhereclause=yes name=nomect_am dbname="nomect_am" )
+ column=(type=char(60) updatewhereclause=yes name=nomect_ag dbname="nomect_ag" )
+ column=(type=char(60) updatewhereclause=yes name=nomect_at dbname="nomect_at" )
+ column=(type=char(60) updatewhereclause=yes name=nomect_mn dbname="nomect_mn" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=codclf dbname="vtatabcli.codclf" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=dircli dbname="vtatabcli.dircli" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=ntdide dbname="vtatabcli.ntdide" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecins dbname="vtatabcli.fecins" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=usuario dbname="vtatabcli.usuario" )
+ column=(type=char(500) update=yes updatewhereclause=yes name=obscli dbname="vtatabcli.obscli" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codant dbname="vtatabcli.codant" )
+ column=(type=datetime update=yes updatewhereclause=yes name=feccie dbname="vtatabcli.feccie" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numemp dbname="vtatabcli.numemp" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="vtatabcli.fecusu" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=telctr dbname="vtatabcli.telctr" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codseg dbname="vtatabcli.codseg" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codsec dbname="vtatabcli.codsec" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=tipper dbname="vtatabcli.tipper" initial="J" values="Corporativo	J/Residencial	N/" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codecttel dbname="vtatabcli.codecttel" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=reserv dbname="vtatabcli.reserv" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flgvip dbname="vtatabcli.flgvip" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numsucur dbname="vtatabcli.numsucur" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codcob dbname="vtatabcli.codcob" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=codgirmark dbname="vtatabcli.codgirmark" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codsecmark dbname="vtatabcli.codsecmark" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codsegmark dbname="vtatabcli.codsegmark" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=tipemp dbname="vtatabcli.tipemp" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=codpai dbname="vtatabcli.codpai" )
+ column=(type=char(80) updatewhereclause=yes name=desc_pais dbname="desc_pais" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=tipvia dbname="vtatabcli.tipvia" )
+ column=(type=char(60) update=yes updatewhereclause=yes name=nomvia dbname="vtatabcli.nomvia" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=nombre dbname="vtatabcli.nombre" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=apepat dbname="vtatabcli.apepat" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=apmat dbname="vtatabcli.apmat" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idgrupo dbname="vtatabcli.idgrupo" )
+ column=(type=char(50) updatewhereclause=yes name=desc_grupoecon dbname="desc_grupoecon" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numvia dbname="vtatabcli.numvia" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=nomurb dbname="vtatabcli.nomurb" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=telefono1 dbname="vtatabcli.telefono1" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=telefono2 dbname="vtatabcli.telefono2" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idtipooficina dbname="vtatabcli.idtipooficina" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idcategoria dbname="vtatabcli.idcategoria" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=interior dbname="vtatabcli.interior" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numsucpro dbname="vtatabcli.numsucpro" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=numsucint dbname="vtatabcli.numsucint" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idsolicitud dbname="vtatabcli.idsolicitud" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codclipadre dbname="vtatabcli.codclipadre" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=tipviap dbname="vtatabcli.tipviap" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=vtatabcli_mail dbname="vtatabcli.mail" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=vtatabcli_web dbname="vtatabcli.web" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=vtatabcli_flgpg dbname="vtatabcli.flgpg" values="	1/	0" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codectmnt dbname="vtatabcli.codectmnt" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=flgof dbname="vtatabcli.flgof" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idestado dbname="vtatabcli.idestado" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=ntdideant dbname="vtatabcli.ntdideant" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codzona dbname="vtatabcli.codzona" )
+ column=(type=char(50) updatewhereclause=yes name=desc_zona dbname="desc_zona" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idctg dbname="vtatabcli.idctg" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codcli_of dbname="vtatabcli.codcli_of" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=diaspago dbname="vtatabcli.diaspago" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=vtatabcli_codedificio dbname="vtatabcli.codedificio" )
+ column=(type=char(200) update=yes updatewhereclause=yes name=referencia dbname="vtatabcli.referencia" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=pop dbname="vtatabcli.pop" )
+ column=(type=char(200) updatewhereclause=yes name=direccion_pop dbname="direccion_pop" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=on_net dbname="vtatabcli.on_net" values="Cableado	1/Cableado	0" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=vtatabcli_coordx dbname="vtatabcli.coordx" )
+ column=(type=decimal(5) update=yes updatewhereclause=yes name=vtatabcli_coordy dbname="vtatabcli.coordy" )
+ column=(type=char(6) update=yes updatewhereclause=yes name=codcta dbname="vtatabcli.codcta" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=censo dbname="vtatabcli.censo" values="Censado	1/Censado	0" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codsocio dbname="vtatabcli.codsocio" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=flg_reg dbname="vtatabcli.flg_reg" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=gtsegmentationid dbname="vtatabcli.gtsegmentationid" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=industrysectorid dbname="vtatabcli.industrysectorid" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idjurisdiccion dbname="vtatabcli.idjurisdiccion" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idtipocontribuyente dbname="vtatabcli.idtipocontribuyente" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codcuenta dbname="vtatabcli.codcuenta" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codtam dbname="vtatabcli.codtam" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idtiproc dbname="vtatabcli.idtiproc" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=codper dbname="vtatabcli.codper" )
+ column=(type=number update=yes updatewhereclause=yes name=numvencidas dbname="vtatabcli.numvencidas" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_actual dbname="vtatabcli.flg_actual" values="Cliente	1/Cliente	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_usuario dbname="vtatabcli.flg_usuario" values="Usuario	1/Usuario	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_prospecto dbname="vtatabcli.flg_prospecto" values="Prospecto	1/Prospecto	0" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=iddecision dbname="vtatabcli.iddecision" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idinmueble dbname="vtatabcli.idinmueble" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idestatus dbname="vtatabcli.idestatus" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=ie dbname="vtatabcli.ie" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=im dbname="vtatabcli.im" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=ntdide_comp dbname="vtatabcli.ntdide_comp" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=tipo_entidad dbname="vtatabcli.tipo_entidad" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codsucpadre dbname="vtatabcli.codsucpadre" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=codpos dbname="vtatabcli.codpos" )
+ column=(type=char(40) updatewhereclause=yes name=v_ubicaciones_nomdst dbname="nomdst" )
+ column=(type=char(40) updatewhereclause=yes name=v_ubicaciones_nompvc dbname="nompvc" )
+ column=(type=char(40) updatewhereclause=yes name=v_ubicaciones_nomest dbname="nomest" )
+ column=(type=char(50) updatewhereclause=yes name=edificio_nombre dbname="nombre" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_servicio dbname="vtatabcli.flg_servicio" values="Con Servicio	1/Con Servicio	0" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idae dbname="vtatabcli.idae" )
+ column=(type=char(111) updatewhereclause=yes name=desc_ae dbname="desc_ae" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idnatjur dbname="vtatabcli.idnatjur" )
+ column=(type=char(141) updatewhereclause=yes name=desc_natjur dbname="desc_natjur" )
+ retrieve="    SELECT (f_sucursalescliente(~"VTATABCLI~".~"CODCLI~")) sucursales,   
+         ~"VTATABCLI~".~"CODCLI~",   
+         ~"VTATABCLI~".~"CODGIR~",   
+         ~"VTATABCLI~".~"CODUBI~",   
+         ~"VTATABCLI~".~"TIPCLI~",   
+         ~"VTATABCLI~".~"TIPDIDE~",   
+         ~"VTATABCLI~".~"CODECT~",
+         (select nomect from vtatabect where codect = ~"VTATABCLI~".~"CODECT~" ) NOMECT_AM,   
+         (select nomect from vtatabect where codect = ~"VTATABCLI~".~"CODSOCIO~" ) NOMECT_AG,   
+         (select nomect from vtatabect where codect = ~"VTATABCLI~".~"CODECTTEL~" ) NOMECT_AT,
+         (select nomect from vtatabect where codect =  ~"VTATABCLI~".~"CODECTMNT~" ) NOMECT_MN,
+         ~"VTATABCLI~".~"CODCLF~",   
+         ~"VTATABCLI~".~"NOMCLI~",   
+         ~"VTATABCLI~".~"NOMABR~",   
+         ~"VTATABCLI~".~"DIRCLI~",   
+         ~"VTATABCLI~".~"NTDIDE~",   
+         ~"VTATABCLI~".~"FECINS~",   
+         ~"VTATABCLI~".~"USUARIO~",   
+         ~"VTATABCLI~".~"OBSCLI~",   
+         ~"VTATABCLI~".~"CODANT~",   
+         ~"VTATABCLI~".~"FECCIE~",   
+         ~"VTATABCLI~".~"NUMEMP~",   
+         ~"VTATABCLI~".~"FECUSU~",   
+         ~"VTATABCLI~".~"TELCTR~",   
+         ~"VTATABCLI~".~"CODSEG~",   
+         ~"VTATABCLI~".~"CODSEC~",   
+         ~"VTATABCLI~".~"TIPPER~",   
+         ~"VTATABCLI~".~"CODECTTEL~",   
+         ~"VTATABCLI~".~"RESERV~",   
+         ~"VTATABCLI~".~"FLGVIP~",   
+         ~"VTATABCLI~".~"NUMSUCUR~",   
+         ~"VTATABCLI~".~"CODCOB~",   
+         ~"VTATABCLI~".~"CODGIRMARK~",   
+         ~"VTATABCLI~".~"CODSECMARK~",   
+         ~"VTATABCLI~".~"CODSEGMARK~",   
+         ~"VTATABCLI~".~"TIPEMP~",   
+         ~"VTATABCLI~".~"CODPAI~", 
+        (select nompai from vtatabpai where codpai = ~"VTATABCLI~".~"CODPAI~") DESC_PAIS,  
+         ~"VTATABCLI~".~"TIPVIA~",   
+         ~"VTATABCLI~".~"NOMVIA~",   
+         ~"VTATABCLI~".~"NOMBRE~",   
+         ~"VTATABCLI~".~"APEPAT~",   
+         ~"VTATABCLI~".~"APMAT~",   
+         ~"VTATABCLI~".~"IDGRUPO~",   
+         (select nombre from grupoecon where idgrupo = ~"VTATABCLI~".~"IDGRUPO~" ) DESC_GRUPOECON,
+         ~"VTATABCLI~".~"NUMVIA~",   
+         ~"VTATABCLI~".~"NOMURB~",   
+         ~"VTATABCLI~".~"TELEFONO1~",   
+         ~"VTATABCLI~".~"TELEFONO2~",   
+         ~"VTATABCLI~".~"IDTIPOOFICINA~",   
+         ~"VTATABCLI~".~"IDCATEGORIA~",   
+         ~"VTATABCLI~".~"INTERIOR~",   
+         ~"VTATABCLI~".~"NUMSUCPRO~",   
+         ~"VTATABCLI~".~"NUMSUCINT~",   
+         ~"VTATABCLI~".~"IDSOLICITUD~",   
+         ~"VTATABCLI~".~"CODCLIPADRE~",   
+         ~"VTATABCLI~".~"TIPVIAP~",   
+         ~"VTATABCLI~".~"MAIL~",   
+         ~"VTATABCLI~".~"WEB~",   
+         ~"VTATABCLI~".~"FLGPG~",   
+         ~"VTATABCLI~".~"CODECTMNT~",   
+         ~"VTATABCLI~".~"FLGOF~",   
+         ~"VTATABCLI~".~"IDESTADO~",   
+         ~"VTATABCLI~".~"NTDIDEANT~",   
+         ~"VTATABCLI~".~"CODZONA~",   
+         (select DSCZONA from zona where codzona = ~"VTATABCLI~".~"CODZONA~") DESC_ZONA,
+         ~"VTATABCLI~".~"IDCTG~",   
+         ~"VTATABCLI~".~"CODCLI_OF~",   
+         ~"VTATABCLI~".~"DIASPAGO~",   
+         ~"VTATABCLI~".~"CODEDIFICIO~",   
+         ~"VTATABCLI~".~"REFERENCIA~",   
+         ~"VTATABCLI~".~"POP~",   
+         (select direccion from v_pop_ventas where codubired = ~"VTATABCLI~".~"POP~") direccion_pop,
+         ~"VTATABCLI~".~"ON_NET~",   
+         ~"VTATABCLI~".~"COORDX~",   
+         ~"VTATABCLI~".~"COORDY~",   
+         ~"VTATABCLI~".~"CODCTA~",   
+         ~"VTATABCLI~".~"CENSO~",   
+         ~"VTATABCLI~".~"CODSOCIO~",   
+         ~"VTATABCLI~".~"FLG_REG~",   
+         ~"VTATABCLI~".~"GTSEGMENTATIONID~",   
+         ~"VTATABCLI~".~"INDUSTRYSECTORID~",   
+         ~"VTATABCLI~".~"IDJURISDICCION~",   
+         ~"VTATABCLI~".~"IDTIPOCONTRIBUYENTE~",   
+         ~"VTATABCLI~".~"CODCUENTA~",   
+         ~"VTATABCLI~".~"CODTAM~",   
+         ~"VTATABCLI~".~"IDTIPROC~",   
+         ~"VTATABCLI~".~"CODPER~",   
+         ~"VTATABCLI~".~"NUMVENCIDAS~",   
+         ~"VTATABCLI~".~"FLG_ACTUAL~",   
+         ~"VTATABCLI~".~"FLG_USUARIO~",   
+         ~"VTATABCLI~".~"FLG_PROSPECTO~",   
+         ~"VTATABCLI~".~"IDDECISION~",   
+         ~"VTATABCLI~".~"IDINMUEBLE~",   
+         ~"VTATABCLI~".~"IDESTATUS~",   
+         ~"VTATABCLI~".~"IE~",   
+         ~"VTATABCLI~".~"IM~",   
+         ~"VTATABCLI~".~"NTDIDE_COMP~",   
+         ~"VTATABCLI~".~"TIPO_ENTIDAD~",   
+         ~"VTATABCLI~".~"CODSUCPADRE~",   
+         ~"VTATABCLI~".~"CODPOS~",  
+         ( select nomdst from v_ubicaciones where codubi = VTATABCLI.CODUBI ) NOMDST,
+         ( select nompvc from v_ubicaciones where codubi = VTATABCLI.CODUBI ) NOMPVC,
+         ( select nomest from v_ubicaciones where codubi = VTATABCLI.CODUBI ) NOMEST, 
+         ( select nombre from edificio where codigo = VTATABCLI.CODEDIFICIO ) NOMBRE,
+         ~"VTATABCLI~".~"FLG_SERVICIO~",
+         ~"VTATABCLI~".~"IDAE~",
+         ( select cnae||' '||descripcion from actividad_economica where idae = ~"VTATABCLI~".~"IDAE~" ) Desc_ae,         
+         ~"VTATABCLI~".~"IDNATJUR~",
+         ( select idnatjur||' '||descripcion  from naturaleza_juridica where idnatjur = ~"VTATABCLI~".~"IDNATJUR~" ) Desc_natjur
+    FROM ~"VTATABCLI~" 
+   WHERE VTATABCLI.CODCLI = :as_codcli" update="VTATABCLI" updatewhere=0 updatekeyinplace=no arguments=(("as_codcli", string))  sort="codcli D " )
+groupbox(band=detail text="Sucursales"border="5" color="8388608" x="2290" y="40" height="428" width="969"  name=gb_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+groupbox(band=detail text=""border="5" color="0" x="59" y="496" height="660" width="3200"  name=gb_2 visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=51 alignment="0" tabsequence=32766 border="5" color="0" x="567" y="532" height="56" width="617" format="[general]" html.valueishtml="0"  name=idcategoria visible="1" dddw.name=dddw_categoria dddw.displaycolumn=descripcion dddw.datacolumn=idcategoria dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Tipo Empresa / Pais" border="0" color="0" x="96" y="608" height="56" width="443" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Grupo Económico" border="0" color="0" x="96" y="684" height="56" width="443" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Zona Venta" border="0" color="0" x="96" y="760" height="56" width="443" html.valueishtml="0"  name=t_30 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Segmento Venta." border="0" color="0" x="96" y="836" height="56" width="443" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Giro Negocio" border="0" color="0" x="96" y="912" height="56" width="443" html.valueishtml="0"  name=codgir_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Sector Negocio" border="0" color="0" x="96" y="988" height="56" width="443" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Categoría" border="0" color="0" x="96" y="532" height="56" width="443" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+groupbox(band=detail text="Ejecutivo/ Agente/ Integrador"border="5" color="8388608" x="59" y="40" height="424" width="2167"  name=gb_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Ejecutivo de Telefonía" border="0" color="0" x="96" y="288" height="56" width="535" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Ejecutivo Mantenimiento" border="0" color="0" x="96" y="376" height="56" width="535" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Sucursales:" border="0" color="0" x="2322" y="112" height="56" width="471" html.valueishtml="0"  name=t_22 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="En la ciudad:" border="0" color="0" x="2322" y="200" height="56" width="471" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="En otras Ciudades:" border="0" color="0" x="2322" y="288" height="56" width="471" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="En el exterior:" border="0" color="0" x="2322" y="376" height="56" width="471" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="5" color="0" x="2821" y="112" height="56" width="224" format="[general]" html.valueishtml="0"  name=sucursales visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=31 alignment="1" tabsequence=130 border="5" color="0" x="2821" y="200" height="56" width="229" format="[general]" html.valueishtml="0"  name=numsucur visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=53 alignment="1" tabsequence=150 border="5" color="0" x="2821" y="288" height="56" width="229" format="[general]" html.valueishtml="0"  name=numsucpro visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=54 alignment="1" tabsequence=170 border="5" color="0" x="2821" y="376" height="56" width="233" format="[general]" html.valueishtml="0"  name=numsucint visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Ejecutivo Cuenta" border="0" color="0" x="96" y="112" height="56" width="535" html.valueishtml="0"  name=codect_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Integrador/Agente " border="0" color="0" x="96" y="200" height="56" width="535" html.valueishtml="0"  name=t_24 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=36 alignment="0" tabsequence=10 border="5" color="0" x="567" y="608" height="56" width="379" format="[general]" html.valueishtml="0"  name=tipemp visible="1" dddw.name=dddw_tipo_empresa dddw.displaycolumn=desctipemp dddw.datacolumn=idtipemp dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="5" color="0" x="658" y="200" height="56" width="1426" format="[general]" html.valueishtml="0"  name=nomect_ag visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="2103" y="196" height="60" width="87" vtextalign="0" htextalign="0"  name=b_codsocio visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="5" color="0" x="658" y="112" height="56" width="1426" format="[general]" html.valueishtml="0"  name=nomect_am visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="2103" y="108" height="60" width="87" vtextalign="0" htextalign="0"  name=b_codect visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="0" x="658" y="288" height="56" width="1426" format="[general]" html.valueishtml="0"  name=nomect_at visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="2103" y="284" height="60" width="87" vtextalign="0" htextalign="0"  name=b_codecttel visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="0" x="658" y="376" height="56" width="1426" format="[general]" html.valueishtml="0"  name=nomect_mn visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="2103" y="372" height="60" width="87" vtextalign="0" htextalign="0"  name=b_codectmnt visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=38 alignment="0" tabsequence=32766 border="5" color="0" x="965" y="608" height="56" width="553" format="[general]" html.valueishtml="0"  name=desc_pais visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=78 alignment="0" tabsequence=50 border="0" color="0" x="96" y="1064" height="56" width="553" format="[general]" html.valueishtml="0"  name=censo visible="1" checkbox.text="Censado" checkbox.on="1" checkbox.off="0" checkbox.lefttext=yes checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=74 alignment="2" tabsequence=60 border="0" color="0" x="718" y="1064" height="56" width="389" format="[general]" html.valueishtml="0"  name=on_net visible="1" checkbox.text="Cableado" checkbox.on="1" checkbox.off="0" checkbox.lefttext=yes checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=106 alignment="0" tabsequence=70 border="0" color="0" x="1138" y="1064" height="56" width="443" format="[general]" html.valueishtml="0"  name=flg_servicio visible="1" checkbox.text="Con Servicio" checkbox.on="1" checkbox.off="0" checkbox.lefttext=yes checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=73 alignment="0" tabsequence=32766 border="5" color="0" x="2176" y="608" height="56" width="946" format="[general]" html.valueishtml="0"  name=direccion_pop visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="3141" y="604" height="60" width="87" vtextalign="0" htextalign="0"  name=b_pop visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=110 alignment="0" tabsequence=32766 border="5" color="0" x="2176" y="1072" height="56" width="1051" format="[general]" html.valueishtml="0"  name=desc_natjur visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=108 alignment="0" tabsequence=32766 border="5" color="0" x="2176" y="996" height="56" width="1051" format="[general]" html.valueishtml="0"  name=desc_ae visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=86 alignment="0" tabsequence=180 border="5" color="0" x="2176" y="916" height="56" width="1051" format="[general]" html.valueishtml="0"  name=codtam visible="1" dddw.name=ddd_tamanno_corp dddw.displaycolumn=dsctam dddw.datacolumn=codtam dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=85 alignment="0" tabsequence=160 border="5" color="0" x="2176" y="840" height="56" width="1051" format="[general]" html.valueishtml="0"  name=codcuenta visible="1" dddw.name=ddd_asignacion_cuenta_corp dddw.displaycolumn=dsccuenta dddw.datacolumn=codcuenta dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=81 alignment="0" tabsequence=140 border="5" color="0" x="2176" y="764" height="56" width="1051" format="[general]" html.valueishtml="0"  name=gtsegmentationid visible="1" dddw.name=ddd_gotosegmentation_corp dddw.displaycolumn=description dddw.datacolumn=gtsegmentationid dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=93 alignment="0" tabsequence=90 border="5" color="0" x="2176" y="688" height="56" width="1051" format="[general]" html.valueishtml="0"  name=iddecision visible="1" dddw.name=dddw_centro_decision dddw.displaycolumn=decision dddw.datacolumn=iddecision dddw.percentwidth=150 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=95 alignment="0" tabsequence=32766 border="5" color="0" x="2176" y="532" height="56" width="1051" format="[general]" html.valueishtml="0"  name=idestatus visible="1" dddw.name=dddw_estatus_calificacion dddw.displaycolumn=calificacion dddw.datacolumn=idestatus dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Calificación" border="0" color="0" x="1682" y="532" height="56" width="466" html.valueishtml="0"  name=t_43 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="0" text="POP" border="0" color="0" x="1682" y="608" height="56" width="466" html.valueishtml="0"  name=t_23 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Centro Decisión" border="0" color="0" x="1682" y="688" height="56" width="466" html.valueishtml="0"  name=t_42 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Segmento Mercado" border="0" color="0" x="1682" y="764" height="56" width="466" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=detail alignment="0" text="Tipo Cuenta " border="0" color="0" x="1682" y="840" height="56" width="466" html.valueishtml="0"  name=t_28 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="0" text="Tamaño" border="0" color="0" x="1682" y="916" height="56" width="466" html.valueishtml="0"  name=t_44 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Actividad Económica" border="0" color="0" x="1682" y="992" height="56" width="466" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="Naturaleza Juridica" border="0" color="0" x="1682" y="1068" height="56" width="466" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=34 alignment="0" tabsequence=120 border="5" color="0" x="567" y="988" height="56" width="1047" format="[general]" html.valueishtml="0"  name=codsecmark visible="1" dddw.name=dddw_secmark dddw.displaycolumn=dscsecmark dddw.datacolumn=codsecmark dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=33 alignment="0" tabsequence=110 border="5" color="0" x="567" y="912" height="56" width="1047" format="[general]" html.valueishtml="0"  name=codgirmark visible="1" dddw.name=dddw_girmark dddw.displaycolumn=dscgirmark dddw.datacolumn=codgirmark dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=35 alignment="0" tabsequence=100 border="5" color="0" x="567" y="836" height="56" width="1047" format="[general]" html.valueishtml="0"  name=codsegmark visible="1" dddw.name=dddw_segmark dddw.displaycolumn=dscsegmark dddw.datacolumn=codsegmark dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="1531" y="756" height="60" width="87" vtextalign="0" htextalign="0"  name=b_zona visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="1531" y="680" height="60" width="87" vtextalign="0" htextalign="0"  name=b_grupoecon visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+button(band=detail text="..."filename=""action="0" border="0" color="0" x="1531" y="604" height="60" width="87" vtextalign="0" htextalign="0"  name=b_pais visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=66 alignment="0" tabsequence=32766 border="5" color="0" x="567" y="760" height="56" width="951" format="[general]" html.valueishtml="0"  name=desc_zona visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=45 alignment="0" tabsequence=32766 border="5" color="0" x="567" y="684" height="56" width="951" format="[general]" html.valueishtml="0"  name=desc_grupoecon visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

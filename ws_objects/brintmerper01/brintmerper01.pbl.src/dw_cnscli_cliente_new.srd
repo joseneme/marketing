@@ -1,0 +1,168 @@
+﻿$PBExportHeader$dw_cnscli_cliente_new.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=4 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1112 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="vtatabcli.nomcli" )
+ column=(type=char(150) updatewhereclause=yes name=nomabr dbname="vtatabcli.nomabr" )
+ column=(type=char(120) updatewhereclause=yes name=dircli dbname="vtatabcli.dircli" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="vtatabcli.ntdide" )
+ column=(type=char(500) updatewhereclause=yes name=obscli dbname="vtatabcli.obscli" )
+ column=(type=char(30) updatewhereclause=yes name=vtatabcli_ie dbname="vtatabcli.ie" )
+ column=(type=char(30) updatewhereclause=yes name=vtatabcli_im dbname="vtatabcli.im" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide_comp dbname="vtatabcli.ntdide_comp" )
+ column=(type=char(50) updatewhereclause=yes name=dscgirmark dbname="vtatabgirmark.dscgirmark" )
+ column=(type=char(30) updatewhereclause=yes name=dsctipcli dbname="vtatipcli.dsctipcli" )
+ column=(type=char(10) updatewhereclause=yes name=abrdid dbname="vtatipdid.abrdid" )
+ column=(type=char(60) updatewhereclause=yes name=nomect dbname="vtatabect.nomect" )
+ column=(type=char(126) updatewhereclause=yes name=nomdst dbname="v_ubicaciones.nomdst" )
+ column=(type=char(80) updatewhereclause=yes name=nompai dbname="v_ubicaciones.nompai" )
+ column=(type=char(40) updatewhereclause=yes name=nomest dbname="v_ubicaciones.nomest" )
+ column=(type=char(60) updatewhereclause=yes name=nomintage dbname="vtatabect.nomintage" )
+ column=(type=char(60) updatewhereclause=yes name=nomectmnt dbname="vtatabect.nomectmnt" )
+ column=(type=char(50) updatewhereclause=yes name=dscsecmark dbname="vtatabsecmark.dscsecmark" )
+ column=(type=char(50) updatewhereclause=yes name=dscsegmark dbname="vtatabsegmark.dscsegmark" )
+ column=(type=char(1) updatewhereclause=yes name=tipper dbname="vtatabcli.tipper" values="Residencial	N/Corporativo	J/" )
+ column=(type=char(50) updatewhereclause=yes name=desctipemp dbname="vtatipemp.desctipemp" )
+ column=(type=char(50) updatewhereclause=yes name=grpeco dbname="grupoecon.grpeco" )
+ column=(type=char(50) updatewhereclause=yes name=mail dbname="vtatabcli.mail" )
+ column=(type=char(50) updatewhereclause=yes name=web dbname="vtatabcli.web" )
+ column=(type=char(50) updatewhereclause=yes name=a_tipact dbname="vtatabcli.tipact" )
+ column=(type=char(30) updatewhereclause=yes name=cxcusucli_usucxc dbname="cxcusucli.usucxc" )
+ column=(type=datetime updatewhereclause=yes name=fecact dbname="vtatabcli.fecact" )
+ column=(type=decimal(0) updatewhereclause=yes name=cus_codcategory dbname="customer_atention.codcategory" )
+ column=(type=char(100) updatewhereclause=yes name=usu_nombre dbname="usuarioope.nombre" )
+ column=(type=char(100) updatewhereclause=yes name=cat_categoria dbname="customer_category.categoria" )
+ retrieve="SELECT 
+    vtatabcli.codcli codcli, 
+    vtatabcli.nomcli nomcli,   
+    vtatabcli.nomabr nomabr,   
+    vtatabcli.dircli dircli,   
+    vtatabcli.ntdide ntdide,   
+    vtatabcli.obscli obscli,   
+    vtatabcli.ie ie,
+    vtatabcli.im im,
+	 vtatabcli.ntdide_comp ntdide_comp,
+    vtatabgirmark.dscgirmark dscgirmark,
+    vtatipcli.dsctipcli dsctipcli,   
+    vtatipdid.abrdid abrdid,   
+    vtatabect_a.nomect nomect,  
+    v_ubicaciones.distrito_desc nomdst,    
+    v_ubicaciones.nompai nompai,
+    v_ubicaciones.nomest nomest,
+    vtatabect_b.nomect nomintage,   
+    vtatabect_c.nomect nomectmnt,  
+    vtatabsecmark.dscsecmark dscsecmark,   
+    vtatabsegmark.dscsegmark dscsegmark,   
+    vtatabcli.tipper tipper,
+    vtatipemp.desctipemp desctipemp,   
+    grupoecon.nombre grpeco,
+    vtatabcli.mail mail,   
+    vtatabcli.web web,
+    a.descripcion tipact,   
+    cxcusucli.usucxc,
+    a.fecha fecact,
+    cus.codcategory,
+    usu.nombre,
+    cat.description categoria
+FROM 
+    vtatabcli,   
+    v_ubicaciones,   
+    vtatabect vtatabect_a,   
+    vtatabgirmark,
+    vtatipcli,   
+    vtatipdid,   
+    vtatabect vtatabect_b,   
+    vtatabect vtatabect_c,   
+    vtatabsecmark,   
+    vtatabsegmark,   
+    vtatipemp,   
+    grupoecon,
+    cxcusucli, customer_atention cus, customer_category cat,usuarioope usu,
+	(select clienteactualizacion.codcli, tipoactualizacion.descripcion, b.fecha 
+		from tipoactualizacion,
+			 clienteactualizacion,
+			 ( select max(fecha) fecha from clienteactualizacion where codcli =:acodcli) b
+		where tipoactualizacion.idtipact (+) = clienteactualizacion.idtipact and
+			  clienteactualizacion.fecha = b.fecha and
+			  clienteactualizacion.codcli =:acodcli) a  
+WHERE 
+    ( vtatabcli.codsocio = vtatabect_b.codect (+)) and  
+    ( vtatabcli.codubi = v_ubicaciones.codubi(+)) and  
+    ( vtatabcli.codect  = vtatabect_a.codect (+)) and
+    ( vtatabcli.codectmnt  = vtatabect_c.codect (+)) and
+    ( vtatabcli.codgirmark = vtatabgirmark.codgirmark (+)) and  
+    ( vtatabcli.codsegmark = vtatabsegmark.codsegmark (+)) and  
+    ( vtatabcli.codsecmark = vtatabsecmark.codsecmark (+)) and  
+    ( vtatabcli.tipcli = vtatipcli.tipcli (+)) and  
+    ( vtatabcli.tipdide = vtatipdid.tipdide) and  
+    ( vtatabcli.tipemp = vtatipemp.idtipemp (+)) and  
+    ( vtatabcli.idgrupo = grupoecon.idgrupo (+)) and  
+    ( cxcusucli.codcli (+) = vtatabcli.codcli) and
+    ( a.codcli (+) = vtatabcli.codcli) and
+    ( vtatabcli.codcli = cus.customercode ) and
+    ( cus.codcategory = cat.codcategory (+) ) and
+    ( cus.codccareuser = usu.usuario (+) ) and
+	( VTATABCLI.CODCLI = :acodcli)" arguments=(("aCodCli", string)) )
+groupbox(band=detail text="Actualización"border="5" color="0" x="1605" y="860" height="224" width="1271"  name=gb_4  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="553648127" )
+groupbox(band=detail text="Observación"border="5" color="0" x="27" y="860" height="224" width="1536"  name=gb_3  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+groupbox(band=detail text="Datos Basicos"border="5" color="0" x="14" y="12" height="840" width="2866"  name=gb_1  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Tipo Persona" border="0" color="0" x="855" y="56" height="56" width="288"  name=t_5  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=21 alignment="0" tabsequence=32766 border="5" color="0" x="1161" y="60" height="44" width="379" format="[general]"  name=tipper ddlb.limit=0 ddlb.allowedit=no ddlb.case=any  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Segmento Negocio" border="0" color="0" x="1701" y="60" height="56" width="411"  name=t_4  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="60" height="44" width="704" format="[general]"  name=dscsegmark edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="5" color="0" x="526" y="196" height="44" width="407" format="[general]"  name=ntdide edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="5" color="0" x="955" y="196" height="48" width="585" format="[general]"  name=ntdide_comp edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Documento" border="0" color="0" x="59" y="196" height="56" width="256"  name=vtatabcli_tipdide_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="196" height="44" width="160" format="[general]"  name=abrdid edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Giro Negocio" border="0" color="0" x="1810" y="196" height="56" width="306"  name=vtatabcli_codgir_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="196" height="44" width="704" format="[general]"  name=dscgirmark edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Razón Social" border="0" color="0" x="27" y="264" height="56" width="288"  name=vtatabcli_nomcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="343" y="264" height="44" width="1198" format="[general]"  name=nomcli edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Tipo Empresa" border="0" color="0" x="1755" y="264" height="56" width="361"  name=t_6  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="264" height="44" width="704" format="[general]"  name=desctipemp edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Abreviado" border="0" color="0" x="59" y="332" height="56" width="256"  name=t_1  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="332" height="44" width="1198" format="[general]"  name=nomabr edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Grupo Económico" border="0" color="0" x="1728" y="332" height="56" width="389"  name=t_7  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="332" height="44" width="704" format="[general]"  name=grpeco edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Dirección" border="0" color="0" x="59" y="400" height="56" width="247"  name=vtatabcli_dircli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="400" height="44" width="1193" format="[general]"  name=dircli edit.limit=60 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Categoría" border="0" color="0" x="1755" y="400" height="56" width="361"  name=t_13  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Distrito" border="0" color="0" x="59" y="468" height="56" width="256"  name=vtatabcli_codubi_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="468" height="44" width="1193" format="[general]"  name=nomdst edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Ejecutivo Datos" border="0" color="0" x="1778" y="468" height="56" width="338"  name=vtatabcli_codect_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="468" height="44" width="704" format="[general]"  name=nomect edit.limit=40 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="País" border="0" color="0" x="919" y="536" height="56" width="101"  name=t_11  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="5" color="0" x="1047" y="536" height="44" width="489" format="[general]"  name=nompai edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Ciudad" border="0" color="0" x="165" y="536" height="56" width="151"  name=t_10  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="536" height="44" width="553" format="[general]"  name=nomest edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Integrador/Agente" border="0" color="0" x="1719" y="536" height="56" width="398"  name=t_2  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="536" height="44" width="704" format="[general]"  name=nomintage edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="E-mail" border="0" color="0" x="59" y="604" height="56" width="256"  name=t_8  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="604" height="44" width="1193" format="[general]"  name=mail edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Web" border="0" color="0" x="59" y="672" height="56" width="256"  name=t_9  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="672" height="44" width="1193" format="[general]"  name=web edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Gestor de Cobranza" border="0" color="0" x="1650" y="672" height="56" width="466"  name=t_16  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=27 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="672" height="44" width="704" format="[general]"  name=cxcusucli_usucxc edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="IE:" border="0" color="0" x="933" y="740" height="56" width="73"  name=t_18  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="5" color="0" x="1033" y="740" height="44" width="503" format="[general]"  name=vtatabcli_ie edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="IM:" border="0" color="0" x="59" y="740" height="56" width="256"  name=t_17  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="5" color="0" x="343" y="740" height="44" width="503" format="[general]"  name=vtatabcli_im edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Fecha" border="0" color="0" x="2373" y="956" height="56" width="137"  name=t_15  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=28 alignment="2" tabsequence=32766 border="5" color="0" x="2533" y="952" height="56" width="306" format="[shortdate] [time]"  name=fecact edit.name="DD/MM/YYYY HH:MM:SS" editmask.mask="DD/MM/YYYY" editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=6 alignment="0" tabsequence=30 border="5" color="0" x="69" y="932" height="124" width="1467" format="[general]"  name=obscli edit.limit=500 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.vscrollbar=yes edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Código" border="0" color="0" x="59" y="128" height="56" width="256"  name=vtatabcli_codcli_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="2" tabsequence=10 border="5" color="0" x="343" y="128" height="44" width="325" format="[general]"  name=codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Sector Negocio" border="0" color="0" x="1778" y="128" height="56" width="338"  name=t_3  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="5" color="0" x="2135" y="128" height="44" width="704" format="[general]"  name=dscsecmark edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="5" color="0" x="1166" y="128" height="44" width="375" format="[general]"  name=dsctipcli edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Tipo Cliente" border="0" color="0" x="891" y="128" height="56" width="251"  name=vtatabcli_tipcli_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Tipo Act." border="0" color="0" x="1618" y="952" height="56" width="206"  name=t_14  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=26 alignment="0" tabsequence=32766 border="5" color="0" x="1847" y="952" height="56" width="498" format="[general]"  name=a_tipact edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=31 alignment="0" tabsequence=0 border="5" color="255" x="2130" y="396" height="56" width="709"  name=cat_categoria  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=detail alignment="1" text="Ejecutivo Mnt. Cuentas" border="0" color="8388608" x="1545" y="604" height="56" width="571"  name=t_12  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=30 alignment="0" tabsequence=0 border="5" color="8388608" x="2135" y="600" height="56" width="704"  name=usu_nombre  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

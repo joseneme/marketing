@@ -1,0 +1,91 @@
+﻿$PBExportHeader$dw_cargar_vtadetlote_cnt.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes name=codcnt dbname="vtadetlote_cnt.codcnt" dbalias="DET.codcnt" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=nombre dbname="vtadetlote_cnt.nombre" dbalias="DET.nombre" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=apepat dbname="vtadetlote_cnt.apepat" dbalias="DET.apepat" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=apemat dbname="vtadetlote_cnt.apemat" dbalias="DET.apemat" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=dircnt dbname="vtadetlote_cnt.dircnt" dbalias="DET.dircnt" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="vtadetlote_cnt.codubi" dbalias="DET.codubi" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=nomdst dbname="vtadetlote_cnt.nomdst" dbalias="DET.nomdst" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=tipcnt dbname="vtadetlote_cnt.tipcnt" dbalias="DET.tipcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=codarea dbname="vtadetlote_cnt.codarea" dbalias="DET.codarea" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=carcli dbname="vtadetlote_cnt.carcli" dbalias="DET.carcli" )
+ column=(type=char(40) update=yes updatewhereclause=yes name=carcnt dbname="vtadetlote_cnt.carcnt" dbalias="DET.carcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=activo dbname="vtadetlote_cnt.activo" dbalias="DET.activo" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=idmedcom dbname="vtadetlote_cnt.idmedcom" dbalias="DET.idmedcom" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=numcomcnt dbname="vtadetlote_cnt.numcomcnt" dbalias="DET.numcomcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idlote dbname="vtadetlote_cnt.idlote" dbalias="DET.idlote" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=iddet dbname="vtadetlote_cnt.iddet" dbalias="DET.iddet" )
+ column=(type=char(2000) update=yes updatewhereclause=yes name=trama dbname="vtadetlote_cnt.trama" dbalias="DET.trama" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=estado dbname="vtadetlote_cnt.estado" dbalias="DET.estado" )
+ retrieve="SELECT DET.CODCNT,
+		 DET.NOMBRE,
+		 DET.APEPAT,
+		 DET.APEMAT,
+		 DET.DIRCNT,
+		 DET.CODUBI,
+		 DET.NOMDST,
+		 DET.TIPCNT,
+		 DET.CODAREA,
+		 DET.CARCLI,
+		 DET.CARCNT,
+		 DET.ACTIVO,
+		 DET.IDMEDCOM,
+		 DET.NUMCOMCNT,
+		 DET.IDLOTE,
+		 DET.IDDET,
+		 DET.TRAMA,
+		 DET.ESTADO
+  FROM VTADETLOTE_CNT DET" update="VTADETLOTE_CNT" updatewhere=0 updatekeyinplace=yes )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="9" y="0" height="76" width="224" html.valueishtml="0"  name=codcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="247" y="0" height="76" width="407" html.valueishtml="0"  name=nombre visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=0 border="0" color="0" x="667" y="0" height="76" width="430" html.valueishtml="0"  name=apepat visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=0 border="0" color="0" x="1111" y="0" height="76" width="357" html.valueishtml="0"  name=apemat visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=0 border="0" color="0" x="1481" y="0" height="76" width="937" html.valueishtml="0"  name=dircnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=0 border="0" color="0" x="2432" y="0" height="76" width="311" html.valueishtml="0"  name=codubi visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=0 border="0" color="0" x="2757" y="0" height="76" width="466" html.valueishtml="0"  name=nomdst visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=0 border="0" color="0" x="3237" y="0" height="76" width="457" html.valueishtml="0"  name=tipcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=0 border="0" color="0" x="3707" y="0" height="76" width="512" html.valueishtml="0"  name=codarea visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=0 border="0" color="0" x="4233" y="0" height="76" width="485" html.valueishtml="0"  name=carcli visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=0 border="0" color="0" x="4731" y="0" height="76" width="274" html.valueishtml="0"  name=carcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=0 border="0" color="0" x="5019" y="0" height="76" width="192" html.valueishtml="0"  name=activo visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="0" tabsequence=0 border="0" color="0" x="5225" y="0" height="76" width="87" html.valueishtml="0"  name=idmedcom visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="0" tabsequence=0 border="0" color="0" x="5326" y="0" height="76" width="457" html.valueishtml="0"  name=numcomcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=15 alignment="0" tabsequence=0 border="0" color="0" x="5797" y="0" height="76" width="210" html.valueishtml="0"  name=idlote visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="0" tabsequence=0 border="0" color="0" x="6021" y="0" height="76" width="265" html.valueishtml="0"  name=iddet visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="0" tabsequence=0 border="0" color="0" x="6299" y="0" height="76" width="1093" html.valueishtml="0"  name=trama visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=0 border="0" color="0" x="7406" y="0" height="76" width="105" html.valueishtml="0"  name=estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Codcnt" border="6" color="0" x="5" y="12" height="52" width="229" html.valueishtml="0"  name=codcnt_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Nombre" border="6" color="0" x="242" y="12" height="52" width="411" html.valueishtml="0"  name=nombre_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Apepat" border="6" color="0" x="663" y="12" height="52" width="434" html.valueishtml="0"  name=apepat_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Apemat" border="6" color="0" x="1106" y="12" height="52" width="361" html.valueishtml="0"  name=apemat_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Dircnt" border="6" color="0" x="1477" y="12" height="52" width="942" html.valueishtml="0"  name=dircnt_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Codubi" border="6" color="0" x="2427" y="12" height="52" width="315" html.valueishtml="0"  name=codubi_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Nomdst" border="6" color="0" x="2752" y="12" height="52" width="471" html.valueishtml="0"  name=nomdst_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Tipcnt" border="6" color="0" x="3232" y="12" height="52" width="462" html.valueishtml="0"  name=tipcnt_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Codarea" border="6" color="0" x="3703" y="12" height="52" width="517" html.valueishtml="0"  name=codarea_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Carcli" border="6" color="0" x="4229" y="12" height="52" width="489" html.valueishtml="0"  name=carcli_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Carcnt" border="6" color="0" x="4727" y="12" height="52" width="279" html.valueishtml="0"  name=carcnt_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Activo" border="6" color="0" x="5015" y="12" height="52" width="197" html.valueishtml="0"  name=activo_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Idmedcom" border="6" color="0" x="5221" y="12" height="52" width="91" html.valueishtml="0"  name=idmedcom_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Numcomcnt" border="6" color="0" x="5321" y="12" height="52" width="462" html.valueishtml="0"  name=numcomcnt_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Idlote" border="6" color="0" x="5792" y="12" height="52" width="215" html.valueishtml="0"  name=idlote_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Iddet" border="6" color="0" x="6016" y="12" height="52" width="270" html.valueishtml="0"  name=iddet_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Trama" border="6" color="0" x="6295" y="12" height="52" width="1097" html.valueishtml="0"  name=trama_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="7401" y="12" height="52" width="110" html.valueishtml="0"  name=estado_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 

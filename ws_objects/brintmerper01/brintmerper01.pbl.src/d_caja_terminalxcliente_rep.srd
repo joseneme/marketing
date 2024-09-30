@@ -1,0 +1,86 @@
+﻿$PBExportHeader$d_caja_terminalxcliente_rep.srd
+$PBExportComments$Copiado sin moidificaciones de SGA PERU
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(200) updatewhereclause=yes name=mktcaja_terminal_direccion dbname="mktcaja_terminal.direccion" )
+ column=(type=char(8) updatewhereclause=yes name=mktcaja_terminal_codigo_caja dbname="mktcaja_terminal.codigo_caja" )
+ column=(type=char(8) updatewhereclause=yes name=mktcajaxcliente_codigo_cliente dbname="mktcajaxcliente.codigo_cliente" )
+ column=(type=decimal(5) updatewhereclause=yes name=mktcaja_terminal_coordy dbname="mktcaja_terminal.coordy" )
+ column=(type=decimal(5) updatewhereclause=yes name=mktcaja_terminal_coordx dbname="mktcaja_terminal.coordx" )
+ column=(type=decimal(5) updatewhereclause=yes name=mktcaja_terminal_coordext dbname="mktcaja_terminal.coordext" )
+ column=(type=decimal(0) updatewhereclause=yes name=mktcaja_terminal_numero_fibra dbname="mktcaja_terminal.numero_fibra" )
+ column=(type=char(8) updatewhereclause=yes name=mktcaja_terminal_tipo_caja dbname="mktcaja_terminal.tipo_caja" )
+ column=(type=char(60) updatewhereclause=yes name=mktcaja_terminal_nombre_via dbname="mktcaja_terminal.nombre_via" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabdst_distrito dbname="vtatabdst.distrito" )
+ column=(type=char(2) updatewhereclause=yes name=mktcaja_terminal_tip_via dbname="mktcaja_terminal.tip_via" )
+ column=(type=char(20) updatewhereclause=yes name=mktcaja_terminal_codigo_pop dbname="mktcaja_terminal.codigo_pop" )
+ column=(type=char(50) updatewhereclause=yes name=mktcaja_terminal_numero_via dbname="mktcaja_terminal.numero_via" )
+ column=(type=decimal(5) updatewhereclause=yes name=mktcajaxcliente_metros dbname="mktcajaxcliente.metros" )
+ column=(type=char(8) updatewhereclause=yes name=mktcajaxcliente_zona dbname="mktcajaxcliente.zona" )
+ column=(type=char(15) updatewhereclause=yes name=pertipvia_tipo_via dbname="pertipvia.tipo_via" )
+ column=(type=char(150) updatewhereclause=yes name=vtatabcli_nombre_cliente dbname="vtatabcli.nombre_cliente" )
+ column=(type=char(8) updatewhereclause=yes name=vtatabcli_codigo_cliente dbname="vtatabcli.codigo_cliente" )
+ retrieve="  SELECT ~"MKTCAJA_TERMINAL~".~"DIRCAJA~" DIRECCION,   
+         ~"MKTCAJA_TERMINAL~".~"CODCAJA~" CODIGO_CAJA,   
+         ~"MKTCAJAXCLIENTE~".~"CODCLI~" CODIGO_CLIENTE,   
+         ~"MKTCAJA_TERMINAL~".~"COORDY~" COORDY,   
+         ~"MKTCAJA_TERMINAL~".~"COORDX~" COORDX,   
+         ~"MKTCAJA_TERMINAL~".~"COORDEXT~" COORDEXT,   
+         ~"MKTCAJA_TERMINAL~".~"NUMPARFIBRA~" NUMERO_FIBRA,   
+         ~"MKTCAJA_TERMINAL~".~"TIPOCAJA~" TIPO_CAJA,   
+         ~"MKTCAJA_TERMINAL~".~"NOMVIA~" NOMBRE_VIA,   
+         ~"VTATABDST~".~"NOMDST~" DISTRITO,   
+         ~"MKTCAJA_TERMINAL~".~"TIPVIAP~" TIP_VIA,   
+         ~"MKTCAJA_TERMINAL~".~"CODPOP~" CODIGO_POP,   
+         ~"MKTCAJA_TERMINAL~".~"NUMVIA~" NUMERO_VIA,   
+         ~"MKTCAJAXCLIENTE~".~"METROS~" METROS,   
+         ~"MKTCAJAXCLIENTE~".~"COLORZONA~" ZONA,   
+         ~"PERTIPVIA~".~"ABRVIA~" TIPO_VIA,
+			~"VTATABCLI~".~"NOMCLI~" NOMBRE_CLIENTE,
+			~"VTATABCLI~".~"CODCLI~" CODIGO_CLIENTE
+    FROM ~"MKTCAJA_TERMINAL~",   
+         ~"MKTCAJAXCLIENTE~",   
+         ~"VTATABDST~",   
+         ~"PERTIPVIA~",
+			~"VTATABCLI~"  
+   WHERE ( ~"MKTCAJA_TERMINAL~".~"CODCAJA~" = ~"MKTCAJAXCLIENTE~".~"CODCAJA~" ) and  
+         ( ~"MKTCAJA_TERMINAL~".~"CODUBI~" = ~"VTATABDST~".~"CODUBI~" ) and  
+         ( ~"MKTCAJA_TERMINAL~".~"TIPVIAP~" = ~"PERTIPVIA~".~"CODVIA~" ) and  
+			( ~"VTATABCLI~".~"CODCLI~" = ~"MKTCAJAXCLIENTE~".~"CODCLI~" ) and
+         ( ( ~"MKTCAJAXCLIENTE~".~"CODCLI~" = :as_codcli ) )    
+" arguments=(("as_codcli", string))  sort="mktcajaxcliente_metros A " )
+text(band=header alignment="2" text="Coord. Y" border="0" color="0" x="6757" y="8" height="56" width="439" html.valueishtml="0"  name=mktcaja_terminal_coordy_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Metros" border="0" color="0" x="6016" y="8" height="56" width="315" html.valueishtml="0"  name=mktcajaxcliente_metros_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Coord. X" border="0" color="0" x="6341" y="8" height="56" width="407" html.valueishtml="0"  name=mktcaja_terminal_coordx_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Direccion" border="0" color="0" x="2743" y="8" height="56" width="1367" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Cod. Caja" border="0" color="0" x="1915" y="8" height="56" width="265" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Fibra" border="0" color="0" x="5714" y="8" height="56" width="293" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Tipo Caja" border="0" color="0" x="2190" y="8" height="56" width="261" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Via" border="0" color="0" x="4325" y="8" height="56" width="599" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Distrito" border="0" color="0" x="5152" y="8" height="56" width="553" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Número" border="0" color="0" x="4933" y="8" height="56" width="210" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Zona" border="0" color="0" x="2459" y="8" height="56" width="274" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Tipo Via" border="0" color="0" x="4119" y="8" height="56" width="197" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Cliente" border="0" color="0" x="503" y="8" height="56" width="1403" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Cod. Cliente" border="0" color="0" x="183" y="8" height="56" width="311" html.valueishtml="0"  name=obj_111239031 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+column(band=detail id=14 alignment="2" tabsequence=32766 border="0" color="33554432" x="6016" y="4" height="56" width="315" format="[general]" html.valueishtml="0"  name=mktcajaxcliente_metros visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="33554432" x="6757" y="4" height="56" width="439" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_coordy visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="33554432" x="6341" y="4" height="56" width="407" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_coordx visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="2743" y="4" height="56" width="1367" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_direccion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="1915" y="4" height="56" width="265" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_codigo_caja visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="33554432" x="5714" y="4" height="56" width="293" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_numero_fibra visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="2" tabsequence=32766 border="0" color="33554432" x="2190" y="4" height="56" width="261" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_tipo_caja visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="4325" y="4" height="56" width="599" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_nombre_via visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="33554432" x="5152" y="4" height="56" width="553" format="[general]" html.valueishtml="0"  name=vtatabdst_distrito visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="2" tabsequence=32766 border="0" color="33554432" x="4933" y="4" height="56" width="210" format="[general]" html.valueishtml="0"  name=mktcaja_terminal_numero_via visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="33554432" x="2459" y="4" height="56" width="274" format="[general]" html.valueishtml="0"  name=mktcajaxcliente_zona visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="2" tabsequence=32766 border="0" color="33554432" x="4119" y="4" height="56" width="197" format="[general]" html.valueishtml="0"  name=pertipvia_tipo_via visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="33554432" x="503" y="4" height="56" width="1403" format="[general]" html.valueishtml="0"  name=vtatabcli_nombre_cliente visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="1" tabsequence=32766 border="0" color="33554432" x="183" y="4" height="56" width="311" format="[general]" html.valueishtml="0"  name=vtatabcli_codigo_cliente visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="165" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="80269524~tcase(  mktcajaxcliente_zona when 'AMBAR' then RGB(255,255,0) when 'ROJO' then rgb(255,0,0) when 'VERDE' then RGB(0,255,0) else rgb(0,0,255) )" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

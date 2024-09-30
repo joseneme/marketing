@@ -1,0 +1,76 @@
+﻿$PBExportHeader$dw_cargar_vtadetlote_cli.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(15) update=yes updatewhereclause=yes name=ntdide dbname="vtadetlote_cli.ntdide" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ntdide_comp dbname="vtadetlote_cli.ntdide_comp" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=nomcli dbname="vtadetlote_cli.nomcli" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=codect dbname="vtadetlote_cli.codect" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=ntdidepadre dbname="vtadetlote_cli.ntdidepadre" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ntdidepadre_comp dbname="vtadetlote_cli.ntdidepadre_comp" )
+ column=(type=number update=yes updatewhereclause=yes name=gtsegmentationid dbname="vtadetlote_cli.gtsegmentationid" )
+ column=(type=number update=yes updatewhereclause=yes key=yes name=iddet dbname="vtadetlote_cli.iddet" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codcli dbname="vtadetlote_cli.codcli" )
+ column=(type=number update=yes updatewhereclause=yes name=codseg dbname="vtadetlote_cli.codseg" initial="0" )
+ column=(type=number update=yes updatewhereclause=yes name=flgpg dbname="vtadetlote_cli.flgpg" initial="0" )
+ column=(type=number update=yes updatewhereclause=yes name=flgact dbname="vtadetlote_cli.flgact" initial="1" )
+ column=(type=number update=yes updatewhereclause=yes name=flg_servicio dbname="vtadetlote_cli.flg_servicio" initial="0" )
+ column=(type=number update=yes updatewhereclause=yes name=flg_clientecorp dbname="vtadetlote_cli.flg_clientecorp" initial="0" )
+ column=(type=char(120) update=yes updatewhereclause=yes name=dircli dbname="vtadetlote_cli.dircli" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=codubi dbname="vtadetlote_cli.codubi" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=tipdide dbname="vtadetlote_cli.tipdide" )
+ column=(type=number update=yes updatewhereclause=yes key=yes name=idlote dbname="vtadetlote_cli.idlote" )
+ column=(type=number update=yes updatewhereclause=yes name=estado dbname="vtadetlote_cli.estado" )
+ retrieve="  SELECT ~"SALES~".~"VTADETLOTE_CLI~".~"NTDIDE~", 
+		~"SALES~".~"VTADETLOTE_CLI~".~"NTDIDE_COMP~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"NOMCLI~",    
+         ~"SALES~".~"VTADETLOTE_CLI~".~"CODECT~",     
+		~"SALES~".~"VTADETLOTE_CLI~".~"NTDIDEPADRE~", 
+		~"SALES~".~"VTADETLOTE_CLI~".~"NTDIDEPADRE_COMP~",
+		~"SALES~".~"VTADETLOTE_CLI~".~"GTSEGMENTATIONID~",
+		~"SALES~".~"VTADETLOTE_CLI~".~"IDDET~",
+		~"SALES~".~"VTADETLOTE_CLI~".~"CODCLI~",    
+         ~"SALES~".~"VTADETLOTE_CLI~".~"CODSEG~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"FLGPG~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"FLGACT~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"FLG_SERVICIO~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"FLG_CLIENTECORP~",
+         ~"SALES~".~"VTADETLOTE_CLI~".~"DIRCLI~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"CODUBI~",   
+         ~"SALES~".~"VTADETLOTE_CLI~".~"TIPDIDE~",
+		~"SALES~".~"VTADETLOTE_CLI~".~"IDLOTE~",
+		~"SALES~".~"VTADETLOTE_CLI~".~"ESTADO~"
+    FROM ~"SALES~".~"VTADETLOTE_CLI~"   
+" update="SALES.VTADETLOTE_CLI" updatewhere=0 updatekeyinplace=yes )
+text(band=header alignment="0" text="Nomcli" border="6" color="0" x="617" y="4" height="56" width="1097" html.valueishtml="0"  name=nomcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="0" text="Codect" border="6" color="0" x="1723" y="4" height="56" width="210" html.valueishtml="0"  name=codect_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="0" text="Ntdide" border="6" color="0" x="9" y="4" height="56" width="219" html.valueishtml="0"  name=ntdide_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="0" text="Gtsegmentationid" border="6" color="0" x="2747" y="4" height="56" width="498" html.valueishtml="0"  name=gtsegmentationid_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Ntdide Comp" border="6" color="0" x="238" y="4" height="56" width="370" html.valueishtml="0"  name=ntdide_comp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Ntdidepadre Comp" border="6" color="0" x="2286" y="4" height="56" width="453" html.valueishtml="0"  name=ntdidepadre_comp_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Ntdidepadre" border="6" color="0" x="1943" y="4" height="56" width="334" html.valueishtml="0"  name=ntdidepadre_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Idlote" border="6" color="0" x="3255" y="4" height="56" width="169" html.valueishtml="0"  name=idlote_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="3433" y="4" height="56" width="530" html.valueishtml="0"  name=estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="617" y="0" height="56" width="1097" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1723" y="0" height="56" width="210" format="[general]" html.valueishtml="0"  name=codect visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="0" height="56" width="219" format="[general]" html.valueishtml="0"  name=ntdide visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="2747" y="0" height="56" width="498" format="[general]" html.valueishtml="0"  name=gtsegmentationid visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="238" y="0" height="56" width="370" format="[general]" html.valueishtml="0"  name=ntdide_comp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="2286" y="0" height="56" width="453" format="[general]" html.valueishtml="0"  name=ntdidepadre_comp visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="1943" y="0" height="56" width="334" format="[general]" html.valueishtml="0"  name=ntdidepadre visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="3255" y="0" height="56" width="169" format="[general]" html.valueishtml="0"  name=idlote visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="3433" y="0" height="56" width="530" format="[general]" html.valueishtml="0"  name=estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(usetemplate="" headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0  template=(comment="" encoding="UTF-16LE" name="dw_cargar_vtadetlote_cli" xml="<?xml version=~"1.0~" encoding=~"UTF-16LE~" standalone=~"no~"?><dw_cargar_vtadetlote_cli><dw_cargar_vtadetlote_cli_row __pbband=~"detail~"><codcnt_1/><idact/><descripcion/><fecact/><flg_invitacion/><flg_asistencia/><nivel_satisfaccion/><idlote/><iddet/><trama/><estado/></dw_cargar_vtadetlote_cli_row></dw_cargar_vtadetlote_cli>"))
+import.xml(usetemplate="" )
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml( template=(comment="" name="dw_cargar_vtadetlote_cli" xhtml="﻿<form name=~"dw_cargar_vtadetlote_cli_dataForm~"><div class=~"dw_cargar_vtadetlote_cli_band_0~"><div class=~"dw_cargar_vtadetlote_cli_nomcli_t~">nomcli_t</div><div class=~"dw_cargar_vtadetlote_cli_vr1_0~"/><div class=~"dw_cargar_vtadetlote_cli_codect_t~">codect_t</div><div class=~"dw_cargar_vtadetlote_cli_vr2_0~"/><div class=~"dw_cargar_vtadetlote_cli_ntdide_t~">ntdide_t</div><div class=~"dw_cargar_vtadetlote_cli_gtsegmentationid_t~">gtsegmentationid_t</div><div class=~"dw_cargar_vtadetlote_cli_vr3_0~"/><div class=~"dw_cargar_vtadetlote_cli_ntdide_comp_t~">ntdide_comp_t</div><div class=~"dw_cargar_vtadetlote_cli_vr4_0~"/><div class=~"dw_cargar_vtadetlote_cli_ntdidepadre_comp_t~">ntdidepadre_comp_t</div><div class=~"dw_cargar_vtadetlote_cli_vr5_0~"/><div class=~"dw_cargar_vtadetlote_cli_ntdidepadre_t~">ntdidepadre_t</div><div class=~"dw_cargar_vtadetlote_cli_vr6_0~"/><div class=~"dw_cargar_vtadetlote_cli_idlote_t~">idlote_t</div><div class=~"dw_cargar_vtadetlote_cli_vr7_0~"/><div class=~"dw_cargar_vtadetlote_cli_estado_t~">estado_t</div><div class=~"dw_cargar_vtadetlote_cli_vr8_0~"/></div><div class=~"dw_cargar_vtadetlote_cli_detail_0~" __pbband=~"detail~"><input name=~"dw_cargar_vtadetlote_cli_nomcli~" type=~"text~" value=~"nomcli~"/><input name=~"dw_cargar_vtadetlote_cli_codect~" type=~"text~" value=~"codect~"/><input name=~"dw_cargar_vtadetlote_cli_ntdide~" type=~"text~" value=~"ntdide~"/><input name=~"dw_cargar_vtadetlote_cli_gtsegmentationid~" type=~"text~" value=~"gtsegmentationid~"/><input name=~"dw_cargar_vtadetlote_cli_ntdide_comp~" type=~"text~" value=~"ntdide_comp~"/><input name=~"dw_cargar_vtadetlote_cli_ntdidepadre_comp~" type=~"text~" value=~"ntdidepadre_comp~"/><input name=~"dw_cargar_vtadetlote_cli_ntdidepadre~" type=~"text~" value=~"ntdidepadre~"/><input name=~"dw_cargar_vtadetlote_cli_idlote~" type=~"text~" value=~"idlote~"/><input name=~"dw_cargar_vtadetlote_cli_estado~" type=~"text~" value=~"estado~"/></div></form>"))
+ 

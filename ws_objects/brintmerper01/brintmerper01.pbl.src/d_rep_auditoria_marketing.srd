@@ -1,0 +1,58 @@
+﻿$PBExportHeader$d_rep_auditoria_marketing.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=4 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no  crosstab.dynamic = yes grid.lines=1 grid.columnmove=no selected.mouse=no )
+header[1](height=392 color="536870912" )
+header[2](height=68 color="536870912" )
+summary(height=88 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(20) updatewhereclause=yes name=compute_0002 dbname="compute_0002" )
+ column=(type=number updatewhereclause=yes name=compute_0003 dbname="compute_0003" )
+ retrieve="select 'EJECUTIVO', DECODE(decode(codect,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codect,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'AMBITO_PAIS',DECODE(decode(tipemp,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(tipemp,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'PAIS',DECODE(decode(codpai,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codpai,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'GRUPO_ECONOMICO',DECODE(decode(idgrupo,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(idgrupo,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'SEGMENTO_VENTA',DECODE(decode(codsegmark,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codsegmark,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'SECTOR_TELMEX',DECODE(decode(codsecmark,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codsecmark,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'SUBSECTOR',DECODE(decode(codgirmark,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codgirmark,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'POP',DECODE(decode(pop,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(pop,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'TAMAÑO',DECODE(decode(codtam,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codtam,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'TIPO_EMPRESA',DECODE(decode(codcuenta,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(codcuenta,null,0,'',0,1),1,'POBLADO','NO POBLADO')
+union
+select 'ACTIVIDAD_ECONOMICA',DECODE(decode(IDAE,null,0,'',0,1),1,'POBLADO','NO POBLADO') ,count(*) from vtatabcli 
+where tipper = 'J' and idestado = 1 group by DECODE(decode(IDAE,null,0,'',0,1),1,'POBLADO','NO POBLADO') "  sort="compute_0002 A " )
+text(band=header[2] alignment="2" text="@compute_0001" border="4" color="134217856" x="448" y="4" height="56" width="613" html.valueishtml="0"  name=compute_0003_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+text(band=header[2] alignment="2" text="%" border="4" color="134217856" x="1070" y="4" height="56" width="347" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="4" height="76" width="430" format="[general]" html.valueishtml="0"  name=compute_0002 visible="1" edit.limit=10 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="0" x="448" y="4" height="76" width="613" format="#,##0" html.valueishtml="0"  name=compute_0003 visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0 crosstab.repeat=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="2" expression="percent(  compute_0003  for all)"border="0" color="8388608" x="1070" y="4" height="76" width="347" format="0.0%" html.valueishtml="0"  name=compute_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+compute(band=summary alignment="2" expression="sum(compute_0003 for all )"border="0" color="0" x="448" y="4" height="76" width="613" format="#,##0" html.valueishtml="0"  name=compute_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="1" expression="~"~""border="0" color="0" x="9" y="4" height="76" width="430" format="[general]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="33554431" )
+bitmap(band=header[1] filename="I:\iconos\logotipo1.bmp" x="9" y="24" height="236" width="873" border="0"  name=p_1 visible="1" )
+text(band=header[1] alignment="2" text="Módulo de Marketing" border="0" color="0" x="9" y="288" height="56" width="759" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+text(band=foreground alignment="2" text="Auditoria de Campos - Datos de Marketing" border="0" color="0" x="1454" y="156" height="80" width="1573" html.valueishtml="0"  name=t_2 visible="1"  slideup=allabove  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+compute(band=foreground alignment="1" expression="'Pag. ' + page() + ' de ' + pageCount()"border="0" color="0" x="3269" y="40" height="56" width="814" format="[general]" html.valueishtml="0"  name=compute_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=foreground alignment="1" expression="today()"border="0" color="0" x="3767" y="108" height="56" width="311" format="dd/mm/yyyy" html.valueishtml="0"  name=compute_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=foreground alignment="1" expression="today()"border="0" color="0" x="3767" y="180" height="56" width="311" format="hh:mm:ss" html.valueishtml="0"  name=compute_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+ crosstab(band = foreground  crosstabonly = yes 
+ columns = "compute_0001" rows = "compute_0002" values = "sum(compute_0003 for crosstab)" sourcenames = "compute_0001, compute_0002, compute_0003")htmltable(border="0" cellpadding="1" cellspacing="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

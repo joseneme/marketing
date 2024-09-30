@@ -1,0 +1,54 @@
+﻿$PBExportHeader$dw_rep_equipo.srd
+$PBExportComments$equipos comerciales~r~nd_lis_vtaequcom_com_br~r~nmodtys
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=452 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=24 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=char(200) updatewhereclause=yes name=dscequ dbname="vtaequcom.dscequ" )
+ column=(type=char(4) updatewhereclause=yes name=codequcom dbname="vtaequcom.codequcom" )
+ column=(type=decimal(2) updatewhereclause=yes name=cosequ dbname="vtaequcom.cosequ" )
+ column=(type=decimal(2) updatewhereclause=yes name=alq60 dbname="vtaequcom.alq60" )
+ column=(type=decimal(2) updatewhereclause=yes name=alq48 dbname="vtaequcom.alq48" )
+ column=(type=decimal(2) updatewhereclause=yes name=alq36 dbname="vtaequcom.alq36" )
+ column=(type=decimal(2) updatewhereclause=yes name=alq24 dbname="vtaequcom.alq24" )
+ column=(type=decimal(2) updatewhereclause=yes name=alq12 dbname="vtaequcom.alq12" )
+ column=(type=decimal(2) updatewhereclause=yes name=monvta dbname="vtaequcom.monvta" )
+ column=(type=decimal(0) updatewhereclause=yes name=activo dbname="vtaequcom.activo" initial="1" values="	1/	0" )
+ column=(type=decimal(2) updatewhereclause=yes name=prelista dbname="vtaequcom.prelista" )
+ column=(type=decimal(0) updatewhereclause=yes name=idmarcaequipo dbname="vtaequcom.idmarcaequipo" )
+ retrieve="  SELECT ~"A~".~"DSCEQU~",   
+         ~"A~".~"CODEQUCOM~",   
+         ~"A~".~"COSEQU~",   
+         ~"A~".~"ALQ60~",   
+         ~"A~".~"ALQ48~",   
+         ~"A~".~"ALQ36~",   
+         ~"A~".~"ALQ24~",   
+         ~"A~".~"ALQ12~",   
+         ~"A~".~"MONVTA~",   
+         ~"A~".~"ACTIVO~",   
+         ~"A~".~"PRELISTA~",   
+         ~"A~".~"IDMARCAEQUIPO~"  
+    FROM ~"VTAEQUCOM~" ~"A~"  
+   WHERE A.CODEQUCOM IS NOT NULL
+	  AND (A.CODEQUCOM LIKE :acodequ || '%' or :acodequ = '*')    
+	  AND (A.DSCEQU LIKE :adscequ || '%' or :adscequ = '*')
+	  AND (A.IDMARCAEQUIPO = :aidmarca or :aidmarca = -1)    
+" arguments=(("acodequ", string),("adscequ", string),("aidmarca", number))  sort="codequcom A " )
+text(band=header alignment="2" text="Marca de Equipo" border="0" color="0" x="535" y="392" height="56" width="585" html.valueishtml="0"  name=obj_3426487 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Descripción" border="0" color="0" x="1129" y="392" height="56" width="1600" html.valueishtml="0"  name=dscequ_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Equ.Comercial" border="0" color="0" x="197" y="392" height="56" width="329" html.valueishtml="0"  name=obj_7698505 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Item" border="0" color="0" x="9" y="392" height="56" width="178" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Activo" border="0" color="0" x="2738" y="392" height="56" width="192" html.valueishtml="0"  name=obj_17830697 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+compute(band=header alignment="1" expression="'Page ' + page() + ' of ' + pageCount()"border="0" color="33554432" x="2427" y="16" height="56" width="503" format="[GENERAL]" html.valueishtml="0"  name=compute_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15793151" )
+text(band=header alignment="2" text="LISTADO DE EQUIPOS" border="0" color="16711680" x="1125" y="140" height="100" width="1033" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-16" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="1129" y="4" height="60" width="1600" format="[general]" html.valueishtml="0"  name=dscequ visible="1" edit.limit=200 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="2" tabsequence=32766 border="0" color="0" x="2738" y="8" height="56" width="192" format="[general]" html.valueishtml="0"  name=activo visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="535" y="8" height="56" width="585" format="[general]" html.valueishtml="0"  name=idmarcaequipo visible="1" dddw.name=dddw_tipoequipo_br dddw.displaycolumn=descripcion dddw.datacolumn=idequipo dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="197" y="4" height="60" width="329" format="[general]" html.valueishtml="0"  name=codequcom visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="1" expression="getrow()"border="0" color="0" x="9" y="4" height="60" width="178" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=foreground alignment="2" text=" Inteligencia de Mercados" border="0" color="0" x="23" y="260" height="56" width="827" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12639424" )
+bitmap(band=foreground filename="I:\logotipo1.bmp" x="18" y="16" height="224" width="837" border="0"  name=p_1 visible="1" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

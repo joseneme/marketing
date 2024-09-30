@@ -1,0 +1,55 @@
+﻿$PBExportHeader$dw_rep_cliente_actual_juridico.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=4 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no  crosstab.dynamic = yes grid.lines=0 grid.columnmove=no selected.mouse=no )
+header[1](height=0 color="536870912" )
+header[2](height=60 color="536870912" )
+summary(height=68 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(20) updatewhereclause=yes name=codcli dbname="codcli" )
+ column=(type=char(20) updatewhereclause=yes name=nomcli dbname="nomcli" )
+ column=(type=char(20) updatewhereclause=yes name=ntdide dbname="ntdide" )
+ column=(type=datetime updatewhereclause=yes name=fecha dbname="fecha" )
+ column=(type=number updatewhereclause=yes name=dircli dbname="dircli" values="	1/	0" )
+ retrieve="select a.codcli,a.nomcli,b.ntdide, c.fecha,a.servicio, b.tipdide
+from 
+v_servicio_x_cliente a,
+vtatabcli b,
+(select max(fecha) fecha,codcli from clienteactualizacion where idtipact=:an_tipact group by codcli) c
+where a.tipper='J' 
+and a.codcli=b.codcli 
+and a.codcli=c.codcli(+)
+order by nomcli,fecha desc" arguments=(("an_tipact", number))  sort="codcli A nomcli A ntdide A fecha A " )
+group(level=1 header.height=0 trailer.height=84 by=("codcli" ) header.color="536870912" trailer.color="536870912" )
+group(level=2 header.height=0 trailer.height=84 by=("nomcli" ) header.color="536870912" trailer.color="536870912" )
+group(level=3 header.height=0 trailer.height=84 by=("ntdide" ) header.color="536870912" trailer.color="536870912" )
+text(band=header[1] alignment="0" text="Count Of Codcli" border="0" color="0" x="9" y="4" height="52" width="393"  name=t_1  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[1] alignment="0" text="Servicio" border="0" color="0" x="411" y="4" height="52" width="1207"  name=t_2  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="0" text="Codcli" border="0" color="0" x="9" y="4" height="52" width="393"  name=codcli_t  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="0" text="Nomcli" border="0" color="0" x="411" y="4" height="52" width="1207"  name=nomcli_t  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="0" text="Ntdide" border="0" color="0" x="1627" y="4" height="52" width="457"  name=ntdide_t  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="0" text="Fecha" border="0" color="0" x="2094" y="4" height="52" width="457"  name=fecha_t  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="0" text="@servicio" border="0" color="0" x="2560" y="4" height="52" width="786"  name=dircli_t  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header[2] alignment="0" text="Grand Total " border="0" color="0" x="3355" y="4" height="52" width="686"  name=grand_count_codcli_t  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="33554432" x="9" y="4" height="56" width="393" format="[general]"  name=codcli edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="411" y="4" height="56" width="1207" format="[general]"  name=nomcli edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="1627" y="4" height="56" width="457" format="[general]"  name=ntdide edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="33554432" x="2094" y="4" height="56" width="457" format="dd/mm/yyyy hh:mm"  name=fecha edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="33554432" x="2560" y="4" height="56" width="786" format="[general]"  name=dircli edit.limit=0 edit.case=any edit.autoselect=yes crosstab.repeat=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="2" expression="crosstabsum(1)"border="0" color="33554432" x="3355" y="4" height="56" width="686" format="[general]"  name=grand_count_codcli  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.3 alignment="1" expression="ntdide + ~" Total~""border="0" color="33554432" x="1627" y="4" height="56" width="457" format="[general]"  name=compute_1  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.3 alignment="2" expression="sum(dircli for group 3 )"border="0" color="33554432" x="2560" y="4" height="56" width="786" format="[general]"  name=compute_2  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.3 alignment="2" expression="sum(grand_count_codcli for group 3 )"border="0" color="33554432" x="3355" y="4" height="56" width="686" format="[general]"  name=compute_3  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.2 alignment="1" expression="nomcli + ~" Total~""border="0" color="33554432" x="411" y="4" height="56" width="1207" format="[general]"  name=compute_4  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.2 alignment="2" expression="sum(dircli for group 2 )"border="0" color="33554432" x="2560" y="4" height="56" width="786" format="[general]"  name=compute_5  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.2 alignment="2" expression="sum(grand_count_codcli for group 2 )"border="0" color="33554432" x="3355" y="4" height="56" width="686" format="[general]"  name=compute_6  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.1 alignment="1" expression="codcli + ~" Total~""border="0" color="33554432" x="9" y="4" height="56" width="393" format="[general]"  name=compute_7  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.1 alignment="2" expression="sum(dircli for group 1 )"border="0" color="33554432" x="2560" y="4" height="56" width="786" format="[general]"  name=compute_8  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=trailer.1 alignment="2" expression="sum(grand_count_codcli for group 1 )"border="0" color="33554432" x="3355" y="4" height="56" width="686" format="[general]"  name=compute_9  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=summary alignment="1" expression="~"Grand Total~""border="0" color="0" x="9" y="4" height="56" width="393" format="[general]"  name=compute_10  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="2" expression="sum(dircli for all )"border="0" color="33554432" x="2560" y="4" height="56" width="786" format="[general]"  name=compute_11  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=summary alignment="2" expression="sum(grand_count_codcli for all )"border="0" color="33554432" x="3355" y="4" height="56" width="686" format="[general]"  name=compute_12  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+ crosstab(band = foreground  crosstabonly = yes 
+ columns = "servicio" rows = "codcli, nomcli, ntdide, fecha" values = "count(codcli for crosstab)" sourcenames = "codcli, nomcli, ntdide, fecha, servicio, tipdide")
+sparse(names="codcli	nomcli	ntdide")htmltable(border="0" cellpadding="1" cellspacing="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )

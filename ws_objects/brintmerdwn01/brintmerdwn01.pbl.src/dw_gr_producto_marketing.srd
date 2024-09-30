@@ -1,0 +1,35 @@
+﻿$PBExportHeader$dw_gr_producto_marketing.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idproductomkt dbname="producto_marketing.idproductomkt" )
+ column=(type=char(80) update=yes updatewhereclause=yes name=descripcion dbname="producto_marketing.descripcion" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=tipsrv dbname="producto_marketing.tipsrv" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=estado dbname="producto_marketing.estado" values="	1/	0" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=codusu dbname="producto_marketing.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="producto_marketing.fecusu" )
+ retrieve="  SELECT ~"PRODUCTO_MARKETING~".~"IDPRODUCTOMKT~",   
+         ~"PRODUCTO_MARKETING~".~"DESCRIPCION~",   
+         ~"PRODUCTO_MARKETING~".~"TIPSRV~",   
+         ~"PRODUCTO_MARKETING~".~"ESTADO~",   
+         ~"PRODUCTO_MARKETING~".~"CODUSU~",   
+         ~"PRODUCTO_MARKETING~".~"FECUSU~"  
+    FROM ~"PRODUCTO_MARKETING~"   
+" update="PRODUCTO_MARKETING" updatewhere=1 updatekeyinplace=no )
+text(band=header alignment="2" text="Id" border="6" color="0" x="9" y="8" height="56" width="233" html.valueishtml="0"  name=idproductomkt_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Producto Marketing" border="6" color="0" x="251" y="8" height="56" width="1403" html.valueishtml="0"  name=descripcion_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo de Servicio" border="6" color="0" x="1664" y="8" height="56" width="823" html.valueishtml="0"  name=tipsrv_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="2496" y="8" height="56" width="261" html.valueishtml="0"  name=estado_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codusu" border="6" color="0" x="2766" y="8" height="56" width="521" html.valueishtml="0"  name=codusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fecusu" border="6" color="0" x="3296" y="8" height="56" width="526" html.valueishtml="0"  name=fecusu_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="9" y="8" height="76" width="233" format="[general]" html.valueishtml="0"  name=idproductomkt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="0" x="251" y="8" height="76" width="1403" format="[general]" html.valueishtml="0"  name=descripcion visible="1" edit.limit=80 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="0" x="1664" y="8" height="76" width="823" format="[general]" html.valueishtml="0"  name=tipsrv visible="1" dddw.name=dddw_tipsrv_act dddw.displaycolumn=dsctipsrv dddw.datacolumn=tipsrv dddw.percentwidth=120 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=30 border="0" color="0" x="2496" y="8" height="76" width="261" format="[general]" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=40 border="0" color="0" x="2766" y="8" height="76" width="521" format="[general]" html.valueishtml="0"  name=codusu visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=50 border="0" color="0" x="3296" y="8" height="76" width="526" format="[shortdate] [time]" html.valueishtml="0"  name=fecusu visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

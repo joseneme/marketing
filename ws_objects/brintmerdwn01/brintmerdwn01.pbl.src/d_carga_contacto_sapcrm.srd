@@ -1,0 +1,119 @@
+﻿$PBExportHeader$d_carga_contacto_sapcrm.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no grid.lines=0 )
+header(height=0 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=char(3830) updatewhereclause=yes name=datos dbname="datos" )
+ retrieve="Select 
+(d.Tipo_de_IC||'|'||
+d.Rol_IC||'|'||
+d.ID||'|'||
+d.Titulo||'|'||
+d.Titulo_academ||'|'||
+d.Nombre_de_pila||'|'||
+d.Apellidos||'|'||d.Sexo||'|'||
+d.Fecha_Nac||'|'||
+d.Nacionalidad||'|'||
+d.Idioma||'|'||
+d.Tipo_Contacto||'|'||
+d.Estatus||'|'||
+d.Fecha_Alta||'|'||
+d.Fecha_Baja||'|'||
+d.Jerarquia||'|'||
+d.Funcion||'|'||
+d.Detalle_de_funcion||'|'||
+d.Departamento_1||'|'||
+d.Departamento_2||'|'||
+d.Estandar||'|'||
+d.Pais||'|'||
+d.Region||'|'||
+d.Ciudad||'|'||
+d.Comuna||'|'||
+d.Calle_3||'|'||
+d.Tipo_de_via||'|'||
+d.Calle||'|'||
+d.Numero||'|'||
+d.Manzana||'|'||
+d.Lote||'|'||
+d.Tipo_de_edificio||'|'||
+d.Edificio||'|'||
+d.Piso||'|'||
+d.Tipo_de_Dependencia||'|'||
+d.Dependencia||'|'||
+d.Sala||'|'||
+d.Codigo_Postal||'|'||
+d.Calle_4||'|'||
+d.Longitud||'|'||
+d.Latitud||'|'||
+d.ID_Mapas||'|'||
+d.Direccion_antigua||'|'||
+d.Calle_5||'|'||
+d.Comentarios||'|'||
+d.Tipo_de_direccion||'|'||
+d.No_direccion_sistema_externo||'|'||
+d.Telefono_1||'|'||
+d.Telefono_2||'|'||
+d.Telefono_3||'|'||
+d.Telefono_movil_1||'|'||
+d.Telefono_movil_2||'|'||
+d.Fax_1||'|'||
+d.Fax_2||'|'||
+d.Fax_3||'|'||
+d.Telefono_personal_1||'|'||
+d.Telefono_personal_2||'|'||
+d.Correo_electronico||'|'||
+d.Fo_comunicación||'|'||
+d.NOTAS||'|'||
+d.ID_Vantive||'|'||
+d.ID_Billing||'|'||
+d.Numero_de_Cuentas_R3||'|'||
+d.Ex_Empresa_Vantive||'|'||
+d.ID_SGA_Chile||'|'||
+d.ID_Billing_Chile||'|'||
+d.ID_SAP_R3_Chile||'|'||
+d.ID_Legado_1||'|'||
+d.ID_Legado_2||'|'||
+d.ID_Legado_3||'|'||
+d.ID_Legado_4||'|'||
+d.ID_Legado_5||'|'||
+d.ID_Onyx||'|'||
+d.ID_Billing_Colombia||'|'||
+d.ID_SAP_R3_Colombia||'|'||
+d.ID_RR||'|'||
+d.ID_NGN||'|'||
+d.ID_E_Care||'|'||
+d.ID_LEGADO_1_1||'|'|| 
+d.ID_LEGADO_2_1||'|'||
+d.ID_SGA_Peru||'|'||
+d.ID_Billing_Peru||'|'||
+d.ID_SAP_R3_Peru||'|'||
+d.ID_LEGADO_1_2||'|'|| 
+d.ID_LEGADO_2_2||'|'|| 
+d.ID_LEGADO_3_2||'|'||  
+d.ID_LEGADO_4_2||'|'|| 
+d.ID_LEGADO_5_2||'|'||
+d.Tipo_de_relacion||'|'||
+d.IC_relacionado||'|'||
+d.Tipo_ID||'|'||
+d.tipo_nif||'|'||
+d.nif) datos
+From mkt_contacto_sap_cab c, mkt_contacto_sap_Det d
+Where c.idseqcntcab = d.idseqcntcab
+And c.idseqcntcab = :an_idseqcarga
+and d.validado = 1
+" arguments=(("an_idseqcarga", number)) )
+text(band=header alignment="0" text="Datos" border="0" color="0" x="5" y="4" height="76" width="4384" html.valueishtml="0"  name=datos_t visible="1"  font.face="Tahoma" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="76" width="4379" format="[general]" html.valueishtml="0"  name=datos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 

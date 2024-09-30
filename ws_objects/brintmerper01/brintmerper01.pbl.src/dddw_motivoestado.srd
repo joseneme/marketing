@@ -1,0 +1,17 @@
+﻿$PBExportHeader$dddw_motivoestado.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes key=yes name=id_motivo_modif dbname="motivo_modif.id_motivo_modif" )
+ column=(type=char(100) updatewhereclause=yes name=ds_motivo_modif dbname="motivo_modif.ds_motivo_modif" )
+ retrieve="  SELECT motivo_modif.id_motivo_modif,   
+         motivo_modif.ds_motivo_modif  
+    FROM  motivo_modif   
+  WHERE motivo_modif.estado = 1
+" update="motivo_modif" updatewhere=1 updatekeyinplace=no )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="14" y="0" height="56" width="594" html.valueishtml="0"  name=ds_motivo_modif visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Ds Motivo Modif" border="0" color="0" x="9" y="4" height="56" width="599" html.valueishtml="0"  name=ds_motivo_modif_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

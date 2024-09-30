@@ -1,0 +1,140 @@
+﻿$PBExportHeader$dw_buscli_caja_terminal_rep.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 selected.mouse=no )
+header(height=64 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=codcli dbname="vtatabcli.codcli" )
+ column=(type=char(150) updatewhereclause=yes name=a_nombre dbname="vtatabcli.nombre" )
+ column=(type=char(150) updatewhereclause=yes name=a_nombre_comercial dbname="vtatabcli.nombre_comercial" )
+ column=(type=char(10) updatewhereclause=yes name=d_tipo_documento dbname="vtatipdid.tipo_documento" )
+ column=(type=char(15) updatewhereclause=yes name=a_numero_documento dbname="vtatabcli.numero_documento" )
+ column=(type=char(120) updatewhereclause=yes name=a_direccion dbname="vtatabcli.direccion" )
+ column=(type=char(40) updatewhereclause=yes name=e_distrito dbname="vtatabdst.distrito" )
+ column=(type=char(50) updatewhereclause=yes name=a_telefono1 dbname="vtatabcli.telefono1" )
+ column=(type=char(50) updatewhereclause=yes name=a_telefono2 dbname="vtatabcli.telefono2" )
+ column=(type=char(100) updatewhereclause=yes name=f_gotomarket_segmentation dbname="gotomarket_segmentation.gotomarket_segmentation" )
+ column=(type=char(50) updatewhereclause=yes name=g_asignacion_cuenta dbname="asignacion_cuenta.asignacion_cuenta" )
+ column=(type=char(50) updatewhereclause=yes name=h_procedencia dbname="procedencia.procedencia" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_numero_empleado dbname="vtatabcli.numero_empleado" )
+ column=(type=decimal(0) updatewhereclause=yes name=i_empleados dbname="vtatabcli.empleados" )
+ column=(type=decimal(0) updatewhereclause=yes name=i_computadora dbname="vtatabcli.computadora" )
+ column=(type=decimal(0) updatewhereclause=yes name=i_numero_lineas dbname="vtatabcli.numero_lineas" )
+ column=(type=decimal(2) updatewhereclause=yes name=i_ingreso_dolares dbname="vtatabcli.ingreso_dolares" )
+ column=(type=char(40) updatewhereclause=yes name=j_tamano dbname="vtatabcli.tamano" )
+ column=(type=char(50) updatewhereclause=yes name=k_sector dbname="vtatabcli.sector" )
+ column=(type=char(50) updatewhereclause=yes name=l_giro dbname="vtatabcli.giro" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_num_sucursales_local dbname="vtatabcli.num_sucursales_local" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_num_sucursales_nac dbname="vtatabcli.num_sucursales_nac" )
+ column=(type=decimal(0) updatewhereclause=yes name=a_num_sucursales_internac dbname="vtatabcli.num_sucursales_internac" )
+ column=(type=char(80) updatewhereclause=yes name=m_pais dbname="vtatabcli.pais" )
+ column=(type=char(50) updatewhereclause=yes name=n_edificio dbname="vtatabcli.edificio" )
+ column=(type=char(60) updatewhereclause=yes name=b_consultor dbname="vtatabect.consultor" )
+ retrieve="  SELECT ~"A~".~"CODCLI~" CODCLI,   
+         ~"A~".~"NOMCLI~" NOMBRE,
+         ~"A~".~"NOMABR~" NOMBRE_COMERCIAL,   
+			   ~"D~".~"ABRDID~" TIPO_DOCUMENTO,         
+         ~"A~".~"NTDIDE~" NUMERO_DOCUMENTO,   
+         ~"A~".~"DIRCLI~" DIRECCION,
+         ~"E~".~"NOMDST~" DISTRITO,
+         ~"A~".~"TELEFONO1~" TELEFONO1,
+         ~"A~".~"TELEFONO2~" TELEFONO2,
+         ~"F~".~"DESCRIPTION~" GOTOMARKET_SEGMENTATION,
+         ~"G~".~"DSCCUENTA~" ASIGNACION_CUENTA,
+         ~"H~".~"DESCTIPROC~" PROCEDENCIA,
+         ~"A~".~"NUMEMP~" NUMERO_EMPLEADO,         
+         ~"I~".~"EMPLEADOS~" EMPLEADOS,
+         ~"I~".~"COMPUT~" COMPUTADORA,
+         ~"I~".~"NUMLIN~" NUMERO_LINEAS,
+         ~"I~".~"INGRESO~" INGRESO_DOLARES,
+         ~"J~".~"DSCTAM~" TAMANO,
+         ~"K~".~"DSCSECMARK~" SECTOR,
+         ~"L~".~"DSCGIRMARK~" GIRO,
+         ~"A~".~"NUMSUCUR~" NUM_SUCURSALES_LOCAL,                  
+         ~"A~".~"NUMSUCPRO~" NUM_SUCURSALES_NAC,        
+         ~"A~".~"NUMSUCINT~" NUM_SUCURSALES_INTERNAC,
+         ~"M~".~"NOMPAI~" PAIS,
+			~"N~".~"NOMBRE~" EDIFICIO,         
+         ~"B~".~"NOMECT~" CONSULTOR         
+    FROM ~"VTATABCLI~" ~"A~",   
+         ~"VTATABECT~" ~"B~",
+			~"VTATIPDID~" ~"D~",
+      ~"VTATABDST~" ~"E~",
+      ~"ASIGNACION_CUENTA~" ~"G~",
+      ~"PROCEDENCIA~" ~"H~",      
+      ~"GOTOMARKET_SEGMENTATION~" ~"F~",
+      (SELECT CODCLI,EMPLEADOS,COMPUT,NUMLIN,INGRESO FROM VTACLIINGANU
+      WHERE (CODCLI,ANNO) IN (SELECT CODCLI,MAX(ANNO) FROM VTACLIINGANU GROUP BY CODCLI)) ~"I~",
+      ~"VTATAMANNO~" ~"J~",
+      ~"VTATABSECMARK~" ~"K~",
+      ~"VTATABGIRMARK~" ~"L~",
+      ~"VTATABPAI~" ~"M~",
+		~"EDIFICIO~" ~"N~"
+   WHERE ( ~"A~".~"CODECT~" = ~"B~".~"CODECT~" (+))
+	AND (~"D~".~"TIPDIDE~" = ~"A~".~"TIPDIDE~"(+))
+ 	AND (~"A~".~"CODUBI~" = ~"E~".~"CODUBI~"(+))
+ 	AND (~"A~".~"GTSEGMENTATIONID~" = ~"F~".~"GTSEGMENTATIONID~"(+)) 
+ 	AND (~"A~".~"CODCUENTA~" = ~"G~".~"CODCUENTA~"(+))  
+ 	AND (~"A~".~"IDTIPROC~" = ~"H~".~"IDTIPROC~"(+))    
+  AND (~"A~".~"CODCLI~" = ~"I~".~"CODCLI~"(+))
+  AND (~"A~".~"CODTAM~" = ~"J~".~"CODTAM~"(+))
+  AND (~"A~".~"CODSECMARK~" = ~"K~".~"CODSECMARK~"(+))
+  AND (~"A~".~"CODGIRMARK~" = ~"L~".~"CODGIRMARK~"(+))
+  AND (~"A~".~"CODPAI~" = ~"M~".~"CODPAI~"(+))
+  AND (~"A~".~"CODEDIFICIO~" = ~"N~".~"CODIGO~" (+))
+" )
+text(band=header alignment="2" text="Consultor" border="0" color="0" x="15968" y="4" height="56" width="841" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Nombre o Razon Social" border="0" color="0" x="398" y="4" height="56" width="1353" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Razon Comercial" border="0" color="0" x="1760" y="4" height="56" width="1563" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Tipo Doc." border="0" color="0" x="3333" y="4" height="56" width="219" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Documento" border="0" color="0" x="3561" y="4" height="56" width="334" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Dirección" border="0" color="0" x="3904" y="4" height="56" width="960" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Distrito" border="0" color="0" x="4873" y="4" height="56" width="910" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Telefono 1" border="0" color="0" x="6770" y="4" height="56" width="439" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Telefono 2" border="0" color="0" x="7218" y="4" height="56" width="439" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Gotomarket Segmentation" border="0" color="0" x="7666" y="4" height="56" width="1047" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Asignacion Cuenta" border="0" color="0" x="8722" y="4" height="56" width="741" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Procedencia" border="0" color="0" x="9472" y="4" height="56" width="1143" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Empleado" border="0" color="0" x="10624" y="4" height="56" width="343" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Comp." border="0" color="0" x="10976" y="4" height="56" width="274" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Lineas" border="0" color="0" x="11259" y="4" height="56" width="288" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Ingreso ($)" border="0" color="0" x="11557" y="4" height="56" width="279" html.valueishtml="0"  name=t_16 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Tamaño" border="0" color="0" x="11845" y="4" height="56" width="229" html.valueishtml="0"  name=t_17 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Sector" border="0" color="0" x="12082" y="4" height="56" width="805" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Giro" border="0" color="0" x="12896" y="4" height="56" width="987" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Suc. Local" border="0" color="0" x="13893" y="4" height="56" width="462" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Suc. Nac." border="0" color="0" x="14363" y="4" height="56" width="343" html.valueishtml="0"  name=t_21 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Num. Suc. Int." border="0" color="0" x="14715" y="4" height="56" width="402" html.valueishtml="0"  name=t_22 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Pais" border="0" color="0" x="15127" y="4" height="56" width="832" html.valueishtml="0"  name=t_23 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Código" border="0" color="0" x="165" y="4" height="56" width="224" html.valueishtml="0"  name=codcli_t visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="N°" border="0" color="0" x="9" y="4" height="56" width="146" html.valueishtml="0"  name=t_24 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+text(band=header alignment="2" text="Edificio" border="0" color="0" x="5792" y="4" height="56" width="969" html.valueishtml="0"  name=obj_95408578 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="81324524" )
+compute(band=detail alignment="2" expression="getrow()"border="0" color="0" x="9" y="4" height="56" width="146" format="" html.valueishtml="0"  name=obj_30658224 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="165" y="4" height="56" width="224" format="[general]" html.valueishtml="0"  name=codcli visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="398" y="4" height="56" width="1353" format="[general]" html.valueishtml="0"  name=a_nombre visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1760" y="4" height="56" width="1563" format="[general]" html.valueishtml="0"  name=a_nombre_comercial visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="3333" y="4" height="56" width="219" format="[general]" html.valueishtml="0"  name=d_tipo_documento visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3561" y="4" height="56" width="334" format="[general]" html.valueishtml="0"  name=a_numero_documento visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3904" y="4" height="56" width="960" format="[general]" html.valueishtml="0"  name=a_direccion visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="4873" y="4" height="56" width="910" format="[general]" html.valueishtml="0"  name=e_distrito visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="6770" y="4" height="56" width="439" format="[general]" html.valueishtml="0"  name=a_telefono1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="7218" y="4" height="56" width="439" format="[general]" html.valueishtml="0"  name=a_telefono2 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="7666" y="4" height="56" width="1047" format="[general]" html.valueishtml="0"  name=f_gotomarket_segmentation visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="8722" y="4" height="56" width="741" format="[general]" html.valueishtml="0"  name=g_asignacion_cuenta visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="9472" y="4" height="56" width="1143" format="[general]" html.valueishtml="0"  name=h_procedencia visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="10624" y="4" height="56" width="343" format="[general]" html.valueishtml="0"  name=i_empleados visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="10976" y="4" height="56" width="274" format="[general]" html.valueishtml="0"  name=i_computadora visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="11259" y="4" height="56" width="288" format="[general]" html.valueishtml="0"  name=i_numero_lineas visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="11557" y="4" height="56" width="279" format="[general]" html.valueishtml="0"  name=i_ingreso_dolares visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="11845" y="4" height="56" width="229" format="[general]" html.valueishtml="0"  name=j_tamano visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="12082" y="4" height="56" width="805" format="[general]" html.valueishtml="0"  name=k_sector visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="12896" y="4" height="56" width="987" format="[general]" html.valueishtml="0"  name=l_giro visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=21 alignment="0" tabsequence=32766 border="0" color="0" x="13893" y="4" height="56" width="462" format="[general]" html.valueishtml="0"  name=a_num_sucursales_local visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="14363" y="4" height="56" width="343" format="[general]" html.valueishtml="0"  name=a_num_sucursales_nac visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="14715" y="4" height="56" width="402" format="[general]" html.valueishtml="0"  name=a_num_sucursales_internac visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="15127" y="4" height="56" width="832" format="[general]" html.valueishtml="0"  name=m_pais visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=26 alignment="0" tabsequence=32766 border="0" color="0" x="15968" y="4" height="56" width="841" format="[general]" html.valueishtml="0"  name=b_consultor visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="5792" y="4" height="56" width="969" format="[general]" html.valueishtml="0"  name=n_edificio visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

@@ -1,0 +1,55 @@
+﻿$PBExportHeader$d_fil_campanha_tmp.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=864 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=idinstancia dbname="cliente_temporal.idinstancia" )
+ column=(type=char(150) updatewhereclause=yes name=nomcli dbname="cliente_temporal.nomcli" )
+ column=(type=char(15) updatewhereclause=yes name=ntdide dbname="cliente_temporal.ntdide" )
+ column=(type=char(126) updatewhereclause=yes name=distrito_desc dbname="v_ubicaciones.distrito_desc" )
+ column=(type=decimal(0) updatewhereclause=yes name=codsecmark dbname="cliente_temporal.codsecmark" )
+ column=(type=decimal(0) updatewhereclause=yes name=codsegmark dbname="cliente_temporal.codsegmark" )
+ column=(type=char(3) updatewhereclause=yes name=codgirmark dbname="cliente_temporal.codgirmark" )
+ column=(type=number updatewhereclause=yes name=f_idinstancia dbname="cliente_temporal.f_idinstancia" values="Campanha	0/Campanha	1" )
+ column=(type=number updatewhereclause=yes name=f_nomcli dbname="cliente_temporal.f_nomcli" values="Razón Social	0/Razón Social	1" )
+ column=(type=number updatewhereclause=yes name=f_ntdide dbname="cliente_temporal.f_ntdide" values="Documento	0/Documento	1" )
+ column=(type=number updatewhereclause=yes name=f_nomdst dbname="cliente_temporal.f_nomdst" values="Distrito	0/Distrito	1" )
+ column=(type=number updatewhereclause=yes name=f_codsecmark dbname="cliente_temporal.f_codsecmark" values="Sector	0/Sector	1" )
+ column=(type=number updatewhereclause=yes name=f_codsegmark dbname="cliente_temporal.f_codsegmark" values="Segmento	0/Segmento	1" )
+ column=(type=number updatewhereclause=yes name=f_codgirmark dbname="cliente_temporal.f_codgirmark" values="Giro	0/Giro	1" )
+ retrieve="select cli.idinstancia,
+       cli.nomcli,
+       cli.ntdide,
+       dst.distrito_desc,
+       cli.codsecmark,
+       cli.codsegmark,
+       cli.codgirmark,
+       0 f_idinstancia ,
+		 0 f_nomcli ,
+		 0 f_ntdide ,
+		 0 f_nomdst ,
+		 0 f_codsecmark ,
+		 0 f_codsegmark ,
+		 0 f_codgirmark        
+from cliente_temporal cli,
+     v_ubicaciones dst
+where cli.codubi = dst.codubi   " )
+column(band=detail id=8 alignment="0" tabsequence=10 border="0" color="0" x="37" y="24" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_idinstancia visible="1" checkbox.text="Campanha" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=30 border="0" color="0" x="37" y="120" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_nomcli visible="1" checkbox.text="Razón Social" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="1" tabsequence=50 border="0" color="0" x="37" y="216" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_ntdide visible="1" checkbox.text="Documento" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=60 border="5" color="0" x="439" y="216" height="68" width="439" format="[general]" html.valueishtml="0"  name=ntdide visible="1" edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=90 border="0" color="0" x="37" y="408" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_codsecmark visible="1" checkbox.text="Sector" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=100 border="5" color="0" x="439" y="408" height="68" width="837" format="[general]" html.valueishtml="0"  name=codsecmark visible="1" dddw.name=ddd_tel_vtatabsecmark dddw.displaycolumn=dscsecmark dddw.datacolumn=codsecmark dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="1" tabsequence=110 border="0" color="0" x="37" y="504" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_codsegmark visible="1" checkbox.text="Segmento" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=120 border="5" color="0" x="439" y="504" height="68" width="837" format="[general]" html.valueishtml="0"  name=codsegmark visible="1" dddw.name=ddd_tel_vtatabsegmark dddw.displaycolumn=dscsegmark dddw.datacolumn=codsegmark dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=14 alignment="0" tabsequence=130 border="0" color="0" x="37" y="600" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_codgirmark visible="1" checkbox.text="Giro" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=140 border="5" color="0" x="439" y="600" height="68" width="837" format="[general]" html.valueishtml="0"  name=codgirmark visible="1" dddw.name=ddd_tel_vtatabgirmark dddw.displaycolumn=dscgirmark dddw.datacolumn=codgirmark dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=20 border="5" color="0" x="439" y="24" height="68" width="1120" format="[general]" html.valueishtml="0"  name=idinstancia visible="1" dddw.name=ddd_instancia dddw.displaycolumn=descripcion dddw.datacolumn=idinstancia dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+button(band=detail text="Aceptar"filename=""action="0" border="0" color="0" x="192" y="720" height="92" width="402" vtextalign="0" htextalign="0"  name=b_aceptar visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+button(band=detail text="Cancelar"filename=""action="0" border="0" color="0" x="741" y="720" height="92" width="393" vtextalign="0" htextalign="0"  name=b_cancelar visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="67108864" )
+column(band=detail id=2 alignment="0" tabsequence=40 border="5" color="0" x="439" y="120" height="68" width="1120" format="[general]" html.valueishtml="0"  name=nomcli visible="1" edit.limit=150 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=70 border="0" color="0" x="37" y="312" height="68" width="375" format="[general]" html.valueishtml="0"  name=f_nomdst visible="1" checkbox.text="Distrito" checkbox.on="0" checkbox.off="1" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=80 border="5" color="0" x="439" y="312" height="68" width="1120" format="[general]" html.valueishtml="0"  name=distrito_desc visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

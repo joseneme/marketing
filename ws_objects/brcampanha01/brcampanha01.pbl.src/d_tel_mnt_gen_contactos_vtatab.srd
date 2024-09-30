@@ -1,0 +1,78 @@
+﻿$PBExportHeader$d_tel_mnt_gen_contactos_vtatab.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=52 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=vtatabcntcli_codcnt dbname="vtatabcntcli.codcnt" )
+ column=(type=char(8) updatewhereclause=yes name=vtatabcntcli_codcli dbname="vtatabcntcli.codcli" )
+ column=(type=char(80) updatewhereclause=yes name=vtatabcntcli_nomcnt dbname="vtatabcntcli.nomcnt" )
+ column=(type=char(120) updatewhereclause=yes name=dircnt dbname="vtatabcntcli.dircnt" )
+ column=(type=char(10) updatewhereclause=yes name=vtatabcntcli_codubi dbname="vtatabcntcli.codubi" )
+ column=(type=char(3) updatewhereclause=yes name=vtatabcntcli_tipdide dbname="vtatabcntcli.tipdide" )
+ column=(type=char(15) updatewhereclause=yes name=vtatabcntcli_nidcnt dbname="vtatabcntcli.nidcnt" )
+ column=(type=char(2) updatewhereclause=yes name=vtatabcntcli_tipcnt dbname="vtatabcntcli.tipcnt" )
+ column=(type=decimal(0) updatewhereclause=yes name=carcli dbname="vtatabcntcli.carcli" )
+ column=(type=char(40) updatewhereclause=yes name=vtatabcntcli_carcnt dbname="vtatabcntcli.carcnt" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcntcli_codtipdes dbname="vtatabcntcli.codtipdes" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcntcli_codarea dbname="vtatabcntcli.codarea" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcntcli_decisor dbname="vtatabcntcli.decisor" )
+ column=(type=decimal(0) updatewhereclause=yes name=vtatabcntcli_idvantive dbname="vtatabcntcli.idvantive" )
+ column=(type=char(30) updatewhereclause=yes name=vtatabcntcli_codusu dbname="vtatabcntcli.codusu" )
+ column=(type=datetime updatewhereclause=yes name=vtatabcntcli_fecusu dbname="vtatabcntcli.fecusu" )
+ column=(type=decimal(0) updatewhereclause=yes name=estado dbname="vtatabcntcli.estado" values="	1/	0" )
+ column=(type=char(126) updatewhereclause=yes name=v_ubicaciones_distrito_desc dbname="v_ubicaciones.distrito_desc" )
+ column=(type=char(60) updatewhereclause=yes name=descripcion dbname="cargoxcontacto.descripcion" )
+ retrieve="  SELECT ~"VTATABCNTCLI~".~"CODCNT~",   
+         ~"VTATABCNTCLI~".~"CODCLI~",   
+         ~"VTATABCNTCLI~".~"NOMCNT~",   
+         ~"VTATABCNTCLI~".~"DIRCNT~",   
+         ~"VTATABCNTCLI~".~"CODUBI~",   
+         ~"VTATABCNTCLI~".~"TIPDIDE~",   
+         ~"VTATABCNTCLI~".~"NIDCNT~",   
+         ~"VTATABCNTCLI~".~"TIPCNT~",   
+         ~"VTATABCNTCLI~".~"CARCLI~",   
+         ~"VTATABCNTCLI~".~"CARCNT~",   
+         ~"VTATABCNTCLI~".~"CODTIPDES~",   
+         ~"VTATABCNTCLI~".~"CODAREA~",   
+         ~"VTATABCNTCLI~".~"DECISOR~",   
+         ~"VTATABCNTCLI~".~"IDVANTIVE~",   
+         ~"VTATABCNTCLI~".~"CODUSU~",   
+         ~"VTATABCNTCLI~".~"FECUSU~",
+			~"VTATABCNTCLI~".~"ESTADO~",
+         ~"V_UBICACIONES~".~"DISTRITO_DESC~",
+         ~"CARGOXCONTACTO~".~"DESCRIPCION~" 
+     FROM ~"VTATABCNTCLI~",
+          ~"V_UBICACIONES~",
+          ~"CARGOXCONTACTO~"
+    WHERE ( ~"VTATABCNTCLI~".~"CODUBI~" = ~"V_UBICACIONES~".~"CODUBI~"(+) ) and  
+          ( ~"VTATABCNTCLI~".~"CARCLI~" = ~"CARGOXCONTACTO~".~"CODCARGO~" (+) ) AND
+          ~"VTATABCNTCLI~".~"CODCLI~" = :codcli  
+" arguments=(("codcli", string)) )
+text(band=header alignment="2" text="Contacto" border="6" color="0" x="119" y="4" height="56" width="238" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Area" border="6" color="0" x="366" y="4" height="56" width="677" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Nombre del Contacto" border="6" color="0" x="1051" y="4" height="56" width="846" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo" border="6" color="0" x="1906" y="4" height="56" width="823" html.valueishtml="0"  name=t_15 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo" border="6" color="0" x="3401" y="4" height="56" width="626" html.valueishtml="0"  name=t_17 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Decisor" border="6" color="0" x="4037" y="4" height="56" width="325" html.valueishtml="0"  name=t_18 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Tipo Docto" border="6" color="0" x="7003" y="4" height="56" width="393" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="#  Docto" border="6" color="0" x="7406" y="4" height="56" width="325" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Act." border="6" color="0" x="9" y="4" height="56" width="101" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cargo Específico" border="6" color="0" x="2738" y="4" height="56" width="654" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Dirección" border="6" color="0" x="4370" y="4" height="56" width="1390" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Distrito " border="6" color="0" x="5769" y="4" height="56" width="1225" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="119" y="0" height="56" width="238" format="[general]" html.valueishtml="0"  name=codcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="366" y="0" height="56" width="677" format="[general]" html.valueishtml="0"  name=codarea visible="1" dddw.name=dddw_area_contacto dddw.displaycolumn=descripcion dddw.datacolumn=codarea dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1051" y="0" height="56" width="846" format="[general]" html.valueishtml="0"  name=nomcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="1906" y="0" height="56" width="823" format="[general]" html.valueishtml="0"  name=carcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="3401" y="0" height="56" width="626" format="[general]" html.valueishtml="0"  name=tipcnt visible="1" dddw.name=dddw_tipcnt_act dddw.displaycolumn=dsccnt dddw.datacolumn=tipcnt dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="4037" y="0" height="56" width="325" format="[general]" html.valueishtml="0"  name=decisor visible="1" dddw.name=dddw_tipo_decisor dddw.displaycolumn=descripcion dddw.datacolumn=codtipdes dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="7003" y="0" height="56" width="393" format="[general]" html.valueishtml="0"  name=tipdide visible="1" dddw.name=dddw_tipdoc dddw.displaycolumn=dscdid dddw.datacolumn=tipdide dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="7406" y="0" height="56" width="325" format="[general]" html.valueishtml="0"  name=nidcnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="0" height="56" width="101" format="[general]" html.valueishtml="0"  name=estado visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="2738" y="0" height="56" width="654" format="[general]" html.valueishtml="0"  name=carcli visible="1" dddw.name=ddd_contacto_cargo dddw.displaycolumn=descripcion dddw.datacolumn=codcargo dddw.percentwidth=0 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="4370" y="4" height="56" width="1390" format="[general]" html.valueishtml="0"  name=dircnt visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="5769" y="0" height="56" width="1225" format="[general]" html.valueishtml="0"  name=v_ubicaciones_distrito_desc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
