@@ -1,0 +1,21 @@
+HA$PBExportHeader$ddd_tel_tipo_empresa.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=decimal(0) updatewhereclause=yes name=idtipemp dbname="vtatipemp.idtipemp" )
+ column=(type=char(50) updatewhereclause=yes name=desctipemp dbname="vtatipemp.desctipemp" )
+ column=(type=char(30) updatewhereclause=yes name=codusu dbname="vtatipemp.codusu" )
+ column=(type=datetime updatewhereclause=yes name=fecusu dbname="vtatipemp.fecusu" )
+ column=(type=decimal(0) updatewhereclause=yes name=estado dbname="vtatipemp.estado" values="	1/	0" )
+ retrieve="  SELECT ~"VTATIPEMP~".~"IDTIPEMP~",   
+         ~"VTATIPEMP~".~"DESCTIPEMP~",   
+         ~"VTATIPEMP~".~"CODUSU~",   
+         ~"VTATIPEMP~".~"FECUSU~",   
+         ~"VTATIPEMP~".~"ESTADO~"  
+    FROM ~"VTATIPEMP~"   
+" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="0" x="9" y="4" height="60" width="846" format="[general]" html.valueishtml="0"  name=desctipemp visible="1" edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )
