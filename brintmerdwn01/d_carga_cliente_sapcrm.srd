@@ -1,0 +1,128 @@
+HA$PBExportHeader$d_carga_cliente_sapcrm.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no grid.lines=0 )
+header(height=0 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=char(4000) updatewhereclause=yes name=datos dbname="datos" )
+ retrieve="Select (d.Tipo_de_IC||'|'||
+d.Rol_IC||'|'||
+d.ID||'|'||
+d.Nombre_1||'|'||
+d.Nombre_2||'|'||
+d.Nombre_3||'|'||
+d.Concepto_busqueda||'|'||
+d.Concepto_busqueda_2||'|'||
+d.Categoria_1||'|'||
+d.Clase||'|'||
+d.Categoria_2||'|'||
+d.Subcategoria||'|'||
+d.Giro_Comercial||'|'||
+d.Fase_de_ciclo_de_vida||'|'||
+d.Fecha_Activo||'|'||
+d.Fecha_Estado||'|'||
+d.Categoria_IB||'|'||
+d.Numero_IB||'|'||
+d.Veraz||'|'||
+d.Sector||'|'||
+d.Subsector||'|'||
+d.Actividad_comercial||'|'||
+d.CIIU||'|'||
+d.Bloqueo_central||'|'||
+d.Idioma||'|'||
+d.Pais||'|'||
+d.Region||'|'||
+d.Ciudad||'|'||
+d.Comuna||'|'||
+d.Calle_3||'|'||
+d.Tipo_de_via||'|'||
+d.Calle||'|'||
+d.Numero||'|'||
+d.Manzana||'|'||
+d.Lote||'|'||
+d.Tipo_de_edificio||'|'||
+d.Edificio||'|'||
+d.Piso||'|'||
+d.Tipo_de_Dependencia||'|'||
+d.Dependencia||'|'||
+d.Sala||'|'||
+d.Codigo_Postal||'|'||
+d.Calle_4||'|'||
+d.Longitud||'|'||
+d.Latitud||'|'||
+d.ID_Mapas||'|'||
+d.Direccion_antigua||'|'||
+d.Calle_5||'|'||
+d.Comentarios||'|'||
+d.Tipo_de_direccion||'|'||
+d.No_direccion_sistema_externo||'|'||
+d.Telefono_formateado_1||'|'||
+d.Telefono_formateado_2||'|'||
+d.Telefono_formateado_3||'|'||
+d.Fax_formateado_1||'|'||
+d.Fax_formateado_2||'|'||
+d.Fax_formateado_3||'|'||
+d.Telefono_movil_1||'|'||
+d.Telefono_movil_2||'|'||
+d.Correo_electronico||'|'||
+d.Sitio_Web||'|'||
+d.Medios_de_comunicacion||'|'||
+d.Organizacion_ventas||'|'||
+d.Canal_de_distribucion||'|'||
+d.Sector_2||'|'||
+d.Oficina_de_ventas||'|'||
+d.Grupo_de_vendedores||'|'||
+d.ID_Vantive||'|'||
+d.ID_Billing||'|'||
+d.Numero_de_Cuentas_R3||'|'||
+d.Ex_Empresa_Vantive||'|'||
+d.ID_SGA_Chile||'|'||
+d.ID_Billing_Chile||'|'||
+d.ID_SAP_R3_Chile||'|'||
+d.ID_Legado_1||'|'||
+d.ID_Legado_2||'|'||
+d.ID_Legado_3||'|'||
+d.ID_Legado_4||'|'||
+d.ID_Legado_5||'|'||
+d.ID_Onyx||'|'||
+d.ID_Billing_Colombia||'|'||
+d.ID_SAP_R3_Colombia||'|'||
+d.ID_RR||'|'||
+d.ID_NGN||'|'||
+d.ID_ECare||'|'||
+d.ID_LEGADO_1_1||'|'|| 
+d.ID_LEGADO_2_1||'|'||
+d.ID_SGA_Peru||'|'||
+d.ID_Billing_Peru||'|'||
+d.ID_SAP_R3_Peru||'|'||
+d.ID_LEGADO_1_2||'|'||
+d.ID_LEGADO_2_2||'|'||
+d.ID_LEGADO_3_2||'|'|| 
+d.ID_LEGADO_4_2||'|'||
+d.ID_LEGADO_5_2||'|'||
+d.Categoria_CUIT||'|'||
+d.NIF||'|'||
+d.nivel_de_credito||'|'||
+d.Tipo_de_relacion||'|'||
+d.IC_relacionado||'|'||
+d.Tipo_ID||'|'||
+d.notas) datos
+  From Mkt_Cliente_Sap_Cab c, Mkt_Cliente_Sap_Det d
+ Where c.Idseqclicab = d.Idseqclicab
+   And c.Idseqclicab = :an_idseqcarga
+and d.validado = 1
+" arguments=(("an_idseqcarga", number)) )
+text(band=header alignment="0" text="Datos" border="0" color="0" x="5" y="4" height="76" width="4384" html.valueishtml="0"  name=datos_t visible="1"  font.face="Tahoma" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="8" height="72" width="4379" format="[general]" html.valueishtml="0"  name=datos visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 
