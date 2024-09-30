@@ -1,0 +1,12 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "brintmerfst01\\brintmerfst01.pbl" "";
+@end;
+@begin Objects
+ "brintmerfst01\\d_mnt_solution.srd" "brintmerfst01\\brintmerfst01.pbl";
+ "brintmerfst01\\w_mnt_solution.srw" "brintmerfst01\\brintmerfst01.pbl";
+ "brintmerfst01\\d_mnt_solution_tree.srd" "brintmerfst01\\brintmerfst01.pbl";
+ "brintmerfst01\\w_mnt_solution_tree.srw" "brintmerfst01\\brintmerfst01.pbl";
+ "brintmerfst01\\f_abrir_archivo.srf" "brintmerfst01\\brintmerfst01.pbl";
+ "brintmerfst01\\m_mnt_anormalidades.srm" "brintmerfst01\\brintmerfst01.pbl";
+@end;
