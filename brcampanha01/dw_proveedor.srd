@@ -1,0 +1,47 @@
+HA$PBExportHeader$dw_proveedor.srd
+release 7;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes key=yes name=codcli dbname="proveedor_servicio_temporal.codcli" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idoperador dbname="proveedor_servicio_temporal.idoperador" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idproductomkt dbname="proveedor_servicio_temporal.idproductomkt" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fechafin dbname="proveedor_servicio_temporal.fechafin" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=banwid dbname="proveedor_servicio_temporal.banwid" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=cr_moneda_local dbname="proveedor_servicio_temporal.cr_moneda_local" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=cr_moneda_ext dbname="proveedor_servicio_temporal.cr_moneda_ext" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=codusu dbname="proveedor_servicio_temporal.codusu" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecusu dbname="proveedor_servicio_temporal.fecusu" )
+ retrieve="  SELECT ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"CODCLI~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"IDOPERADOR~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"IDPRODUCTOMKT~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"FECHAFIN~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"BANWID~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"CR_MONEDA_LOCAL~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"CR_MONEDA_EXT~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"CODUSU~",   
+         ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"FECUSU~"  
+    FROM ~"PROVEEDOR_SERVICIO_TEMPORAL~"   
+    WHERE ~"PROVEEDOR_SERVICIO_TEMPORAL~".~"CODCLI~" = :codcli" update="PROVEEDOR_SERVICIO_TEMPORAL" updatewhere=0 updatekeyinplace=yes arguments=(("codcli", string)) )
+text(band=header alignment="2" text="Codcli" border="0" color="0" x="9" y="8" height="56" width="247"  name=codcli_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Idoperador" border="0" color="0" x="265" y="8" height="56" width="329"  name=idoperador_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Idproductomkt" border="0" color="0" x="603" y="8" height="56" width="375"  name=idproductomkt_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fechafin" border="0" color="0" x="987" y="8" height="56" width="603"  name=fechafin_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Banwid" border="0" color="0" x="1600" y="8" height="56" width="329"  name=banwid_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cr Moneda Local" border="0" color="0" x="1938" y="8" height="56" width="448"  name=cr_moneda_local_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Cr Moneda Ext" border="0" color="0" x="2395" y="8" height="56" width="398"  name=cr_moneda_ext_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Codusu" border="0" color="0" x="2802" y="8" height="56" width="1051"  name=codusu_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="2" text="Fecusu" border="0" color="0" x="3863" y="8" height="56" width="603"  name=fecusu_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="0" color="0" x="9" y="8" height="56" width="247" format="[general]"  name=codcli edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=20 border="0" color="0" x="265" y="8" height="56" width="329" format="[general]"  name=idoperador edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="0" x="603" y="8" height="56" width="375" format="[general]"  name=idproductomkt edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="0" x="987" y="8" height="56" width="603" format="[shortdate] [time]"  name=fechafin edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="1" tabsequence=50 border="0" color="0" x="1600" y="8" height="56" width="329" format="[general]"  name=banwid edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=60 border="0" color="0" x="1938" y="8" height="56" width="448" format="[general]"  name=cr_moneda_local edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=70 border="0" color="0" x="2395" y="8" height="56" width="398" format="[general]"  name=cr_moneda_ext edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=80 border="0" color="0" x="2802" y="8" height="56" width="1051" format="[general]"  name=codusu edit.limit=50 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=90 border="0" color="0" x="3863" y="8" height="56" width="603" format="[shortdate] [time]"  name=fecusu edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" )
