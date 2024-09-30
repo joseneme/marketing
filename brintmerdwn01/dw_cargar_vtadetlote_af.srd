@@ -1,0 +1,63 @@
+HA$PBExportHeader$dw_cargar_vtadetlote_af.srd
+release 10.5;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes print.preview.outline=yes hidegrayline=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=char(8) update=yes updatewhereclause=yes name=codcnt dbname="vtadetlote_af.codcnt" dbalias="DET.codcnt" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=idact dbname="vtadetlote_af.idact" dbalias="DET.idact" )
+ column=(type=char(2000) update=yes updatewhereclause=yes name=descripcion dbname="vtadetlote_af.descripcion" dbalias="DET.descripcion" )
+ column=(type=datetime update=yes updatewhereclause=yes name=fecact dbname="vtadetlote_af.fecact" dbalias="DET.fecact" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_invitacion dbname="vtadetlote_af.flg_invitacion" dbalias="DET.flg_invitacion" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=flg_asistencia dbname="vtadetlote_af.flg_asistencia" dbalias="DET.flg_asistencia" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=nivel_satisfaccion dbname="vtadetlote_af.nivel_satisfaccion" dbalias="DET.nivel_satisfaccion" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=idlote dbname="vtadetlote_af.idlote" dbalias="DET.idlote" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes key=yes name=iddet dbname="vtadetlote_af.iddet" dbalias="DET.iddet" )
+ column=(type=char(2000) update=yes updatewhereclause=yes name=trama dbname="vtadetlote_af.trama" dbalias="DET.trama" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=estado dbname="vtadetlote_af.estado" dbalias="DET.estado" )
+ retrieve="SELECT DET.CODCNT,
+		 DET.IDACT,
+		 DET.DESCRIPCION,
+		 DET.FECACT,
+		 DET.FLG_INVITACION,
+		 DET.FLG_ASISTENCIA,
+		 DET.NIVEL_SATISFACCION,
+		 DET.IDLOTE,
+		 DET.IDDET,
+		 DET.TRAMA,
+		 DET.ESTADO
+  FROM VTADETLOTE_AF DET" update="VTADETLOTE_AF" updatewhere=0 updatekeyinplace=yes )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="9" y="0" height="76" width="247" html.valueishtml="0"  name=codcnt visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="270" y="0" height="76" width="434" html.valueishtml="0"  name=idact visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=0 border="0" color="0" x="718" y="0" height="76" width="823" html.valueishtml="0"  name=descripcion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=0 border="0" color="0" x="1554" y="0" height="76" width="343" html.valueishtml="0"  name=fecact visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=0 border="0" color="0" x="1911" y="0" height="76" width="448" html.valueishtml="0"  name=flg_invitacion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=0 border="0" color="0" x="2373" y="0" height="76" width="443" html.valueishtml="0"  name=flg_asistencia visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=0 border="0" color="0" x="2830" y="0" height="76" width="594" html.valueishtml="0"  name=nivel_satisfaccion visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=0 border="0" color="0" x="3438" y="0" height="76" width="192" html.valueishtml="0"  name=idlote visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=0 border="0" color="0" x="3643" y="0" height="76" width="192" html.valueishtml="0"  name=iddet visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=0 border="0" color="0" x="3849" y="0" height="76" width="421" html.valueishtml="0"  name=trama visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="0" tabsequence=0 border="0" color="0" x="4283" y="0" height="76" width="23" html.valueishtml="0"  name=estado visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Codcnt" border="6" color="0" x="5" y="12" height="52" width="251" html.valueishtml="0"  name=codcnt_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Idact" border="6" color="0" x="265" y="12" height="52" width="439" html.valueishtml="0"  name=idact_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Descripcion" border="6" color="0" x="713" y="12" height="52" width="827" html.valueishtml="0"  name=descripcion_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Fecact" border="6" color="0" x="1550" y="12" height="52" width="347" html.valueishtml="0"  name=fecact_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Flg Invitacion" border="6" color="0" x="1906" y="12" height="52" width="453" html.valueishtml="0"  name=flg_invitacion_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Flg Asistencia" border="6" color="0" x="2368" y="12" height="52" width="448" html.valueishtml="0"  name=flg_asistencia_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Nivel Satisfaccion" border="6" color="0" x="2825" y="12" height="52" width="599" html.valueishtml="0"  name=nivel_satisfaccion_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Idlote" border="6" color="0" x="3433" y="12" height="52" width="197" html.valueishtml="0"  name=idlote_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Iddet" border="6" color="0" x="3639" y="12" height="52" width="197" html.valueishtml="0"  name=iddet_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Trama" border="6" color="0" x="3845" y="12" height="52" width="425" html.valueishtml="0"  name=trama_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+text(band=header alignment="2" text="Estado" border="6" color="0" x="4279" y="12" height="52" width="27" html.valueishtml="0"  name=estado_t visible="1"  font.face="Tahoma" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="134217739" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" pagingmethod=0 generatedddwframes="1" )
+xhtmlgen() cssgen(sessionspecific="0" )
+xmlgen(inline="0" )
+xsltgen()
+jsgen()
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )
+export.xhtml()
+ 
